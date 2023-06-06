@@ -6,7 +6,15 @@
 /logs/*
 /tmp/*
 #/vendor/*
-/webroot/uploads/*
+/webroot/uploads/2010/*
+/webroot/uploads/avatar/*
+/webroot/uploads/covid_test/*
+/webroot/uploads/dashboard/*
+/webroot/uploads/doc_incoming/*
+/webroot/uploads/doc_outgoing/*
+/webroot/uploads/doc_internal/*
+/webroot/uploads/or_attachments/*
+/webroot/uploads/test/*
 
 # OS generated files #
 ######################
