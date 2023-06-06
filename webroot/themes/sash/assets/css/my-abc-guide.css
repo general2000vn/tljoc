@@ -1,0 +1,14 @@
+.abc_guide{
+    font-size: medium;
+}
+
+ul.level-1 {
+    list-style-type: circle;
+    padding-left: 20px;
+}
+
+ul.level-2 {
+    list-style-type: '-   ';
+    padding-left: 30px;
+    
+}

@@ -1,0 +1,10 @@
+    <?php echo $this->Html->script(['../themes/sash/assets/plugins/gallery/picturefill'
+                            ,'../themes/sash/assets/plugins/gallery/lightgallery'
+                            ,'../themes/sash/assets/plugins/gallery/lightgallery-1'
+                            ,'../themes/sash/assets/plugins/gallery/lg-pager'
+                            ,'../themes/sash/assets/plugins/gallery/lg-autoplay'
+                            ,'../themes/sash/assets/plugins/gallery/lg-fullscreen'
+                            ,'../themes/sash/assets/plugins/gallery/lg-zoom'
+                            ,'../themes/sash/assets/plugins/gallery/lg-hash'
+                            ,'../themes/sash/assets/plugins/gallery/lg-share'
+    ]) ?>

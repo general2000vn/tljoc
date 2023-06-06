@@ -1,0 +1,19 @@
+.form-control:disabled, .form-control[readonly] {
+    background-color: #ebebeb;
+    opacity: 1;
+}
+
+.form-control {
+    /* background: rgba(248,250,252,1); */
+    opacity: 1;
+}
+
+.btn.btn-simple {
+    color: #495057;
+
+}
+
+.btn:disabled, .btn[disabled], .btn.disabled {
+    opacity: 1;
+    background-color: #ebebeb;
+}

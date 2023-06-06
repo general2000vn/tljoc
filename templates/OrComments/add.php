@@ -1,0 +1,32 @@
+<?php
+/**
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\OrComment $orComment
+ * @var \Cake\Collection\CollectionInterface|string[] $users
+ * @var \Cake\Collection\CollectionInterface|string[] $orderReqs
+ */
+?>
+<div class="row">
+    <aside class="column">
+        <div class="side-nav">
+            <h4 class="heading"><?= __('Actions') ?></h4>
+            <?= $this->Html->link(__('List Or Comments'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+        </div>
+    </aside>
+    <div class="column-responsive column-80">
+        <div class="orComments form content">
+            <?= $this->Form->create($orComment) ?>
+            <fieldset>
+                <legend><?= __('Add Or Comment') ?></legend>
+                <?php
+                    echo $this->Form->control('comment');
+                    echo $this->Form->control('cmt_date');
+                    echo $this->Form->control('user_id', ['options' => $users]);
+                    echo $this->Form->control('order_req_id', ['options' => $orderReqs]);
+                ?>
+            </fieldset>
+            <?= $this->Form->button(__('Submit')) ?>
+            <?= $this->Form->end() ?>
+        </div>
+    </div>
+</div>

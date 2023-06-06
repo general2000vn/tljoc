@@ -1,0 +1,58 @@
+.alert-danger {
+        color: #ffffff;
+        background-color: rgba(232, 38, 70, 0.8);
+        border-color: rgba(232, 38, 70, 0.6);
+}
+
+.alert-success {
+    color: #ffffff;
+    background-color: rgba(9, 173, 149, 0.8);
+    border-color: rgba(9, 173, 149, 0.6);
+}
+
+.alert-warning {
+    color: #ffffff;
+    background-color: rgba(247, 183, 49, 0.8);
+    border-color: rgba(247, 183, 49, 0.6);
+}
+
+.dark-mode .btn-close {
+    color: #ffffff;
+    opacity: 1;
+}
+
+.dark-mode .form-control {
+    /* background-color: #313162; */
+    background-color: #282848;
+}
+
+.dark-mode .form-control:disabled, .dark-mode .form-control[readonly] {
+    /* background-color: #282848; */
+    /* background-color: #313146; */
+    background-color: #2d2d48;
+}
+
+.dark-mode .select2-container--default.select2-container--disabled .select2-selection--single {
+    background-color: #2d2d48;
+    /* background-color: #28284e; */
+}
+
+.btn-right {
+    float: right;
+}
+
+
+.dark-mode .select2-search__field {
+    color: #ffffff;
+    opacity: 1;
+}
+
+.btn-primary {
+    margin-right: 5px;
+}
+
+label.required:after {
+    color: #f01d09;
+    content: " *";
+    display: inline;
+}

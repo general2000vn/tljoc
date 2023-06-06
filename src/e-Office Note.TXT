@@ -1,0 +1,4 @@
+********** Adding Order Requisition Management **********
+- Change group table
+- Change user table, allow group_id null
+- Thêm tables: order_reqs, or_statuses, or_items, deli_addresses, currencies, or_uploads

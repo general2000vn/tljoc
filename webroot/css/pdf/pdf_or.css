@@ -1,0 +1,57 @@
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  font-size: 10px;
+}
+
+div.main th,
+div.main td {
+  padding: 5px;
+  text-align: left;
+}
+
+
+.table-top th {
+  text-align: center;
+  background-color: aquamarine;
+}
+.table-top td {
+  text-align: center;
+  background-color: pink;
+}
+
+.table-bottom th {
+  text-align: center;
+  background-color: goldenrod;
+}
+.table-bottom-2 th {
+  background-color: goldenrod;
+}
+.table-bottom td p,
+.table-bottom-2 td p {
+  margin-bottom: 4px;
+}
+
+.text-special {
+  text-align: center;
+  background-color: rgb(66, 66, 225);
+}
+
+.header th {
+  background-color: aquamarine;
+  text-align: center;
+}
+
+.header-2 {
+  background-color: #ccc;
+  font-weight: bold;
+}
+
+ul {
+  margin-left: 25px;
+}
+ul li {
+  list-style: decimal;
+}

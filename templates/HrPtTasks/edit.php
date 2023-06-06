@@ -1,0 +1,40 @@
+<?php
+/**
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\HrPtTask $hrPtTask
+ * @var string[]|\Cake\Collection\CollectionInterface $hrPTaskStatuses
+ * @var string[]|\Cake\Collection\CollectionInterface $hrPts
+ * @var string[]|\Cake\Collection\CollectionInterface $users
+ */
+?>
+<div class="row">
+    <aside class="column">
+        <div class="side-nav">
+            <h4 class="heading"><?= __('Actions') ?></h4>
+            <?= $this->Form->postLink(
+                __('Delete'),
+                ['action' => 'delete', $hrPtTask->id],
+                ['confirm' => __('Are you sure you want to delete # {0}?', $hrPtTask->id), 'class' => 'side-nav-item']
+            ) ?>
+            <?= $this->Html->link(__('List Hr Pt Tasks'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+        </div>
+    </aside>
+    <div class="column-responsive column-80">
+        <div class="hrPtTasks form content">
+            <?= $this->Form->create($hrPtTask) ?>
+            <fieldset>
+                <legend><?= __('Edit Hr Pt Task') ?></legend>
+                <?php
+                    echo $this->Form->control('description');
+                    echo $this->Form->control('hr_p_task_status_id', ['options' => $hrPTaskStatuses]);
+                    echo $this->Form->control('modifier_id');
+                    echo $this->Form->control('hr_pt_id', ['options' => $hrPts]);
+                    echo $this->Form->control('reminding_date', ['empty' => true]);
+                    echo $this->Form->control('users._ids', ['options' => $users]);
+                ?>
+            </fieldset>
+            <?= $this->Form->button(__('Submit')) ?>
+            <?= $this->Form->end() ?>
+        </div>
+    </div>
+</div>

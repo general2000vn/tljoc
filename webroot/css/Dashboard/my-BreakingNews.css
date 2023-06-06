@@ -1,0 +1,43 @@
+
+.ticker {
+  overflow: hidden;
+  width: 100%;
+ 
+  left: 0;
+
+}
+
+.notice-item {
+  width:max-content;
+  padding-inline-start: 100px;
+}
+
+#notice-span {
+  width:max-content;
+}
+
+
+@keyframes title {
+  0% {transform: translateX(0);}
+  100% {transform: translateX(-233px);}
+}
+
+.ticker-news {
+  width: 100%;
+    
+  font-size: x-large;
+  color: rgb(240, 131, 149);
+}
+
+.ticker-news > * {
+  display: inline-block;
+  animation: news 10s infinite linear;
+}
+
+@keyframes news {
+  /* 0% {transform: translateX(0);}
+  100% {transform: translateX(-4135px);} */
+  0% {transform: translateX(101vw);}
+  100% {transform: translateX(-100%);}
+  
+}
