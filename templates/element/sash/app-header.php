@@ -5,8 +5,8 @@
             <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-bs-toggle="sidebar" href="javascript:void(0)"></a>
             <!-- sidebar-toggle-->
             <a class="logo-horizontal" href="<?= $this->Url->build('/', ['fullBase' => true]) ?>">
-                <?= $this->Html->image("branding/HLHV Logo small.png", ['class' => "header-brand-img desktop-logo", 'alt' => 'Logo']) ?>
-                <?= $this->Html->image("branding/HLHV Logo small.png", ['class' => "header-brand-img light-logo1", 'alt' => 'Logo']) ?>
+                <?= $this->Html->image("branding/TLJOC_logo_small.png", ['class' => "header-brand-img desktop-logo", 'alt' => 'Logo']) ?>
+                <?= $this->Html->image("branding/TLJOC_logo_small.png", ['class' => "header-brand-img light-logo1", 'alt' => 'Logo']) ?>
                 
             </a>
             <!-- LOGO -->

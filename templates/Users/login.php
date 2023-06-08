@@ -1,35 +1,69 @@
 <?php
-$this->layout = 'sash_login';
+    $this->layout = 'unauthenticated';
 ?>
 
-
-
-<div class="panel-body tabs-menu-body p-0 pt-5">
-    <div class="tab-content">
-        <div class="tab-pane active" id="tab5">
-            <div class="wrap-input100 validate-input input-group" data-bs-validate="Valid email is required: ex@abc.xyz">
-                <a href="javascript:void(0)" class="input-group-text bg-white text-muted">
-                    <i class="fa fa-user-circle text-muted" aria-hidden="true"></i>
-                </a>
-                <input class="input100 border-start-0 form-control ms-0" type="text" placeholder="Username" name="username">
+<div class="authentication">
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-lg-4 col-sm-12">
+                <!-- <form class="card auth_form"> -->
+                <?= $this->Form->create(null, ['class'=>"card auth_form", 'url' => ['action' => 'login']]) ?>
+                    <div class="header">
+                        <!-- <img class="logo" src="assets/images/logo.svg" alt=""> -->
+                        <?= $this->Html->image("../assets/images/logo.svg", ['class' => 'logo']) ?>
+                        
+                        <h5>HLHVJOCs e-Office</h5>
+                        
+                        <?= $this->Form->hidden('origin', ['value' => $origin]) ?>
+                        
+                    </div>
+                    <div class="body">
+                        <div class="input-group mb-3">
+                            <input name="username" type="text" class="form-control" placeholder="Username">
+                            <!-- <?= $this->Form->control('username', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Username']) ?> -->
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="zmdi zmdi-account-circle"></i></span>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                             <input name="password" type="password" class="form-control" placeholder="Password"> 
+                            <!--<?= $this->Form->control('password', ['class' => 'form-control', 'type' => 'text', 'placeholder' => 'Password']) ?>-->
+                            <div class="input-group-append">                                
+                                <span class="input-group-text"><a href="forgot-password.html" class="forgot" title="Forgot Password"><i class="zmdi zmdi-lock"></i></a></span>
+                            </div>                            
+                        </div>
+                        
+                        <!--
+                        <div class="checkbox">
+                            <input type="hidden" name="remember_me" value="0">
+                            <input id="remember-me" value="1" name="remember_me" type="checkbox">
+                            <label for="remember-me">Remember Me</label>
+                        </div>
+                        -->
+                        
+                        
+                        
+                        <?= $this->Form->submit("SIGN IN", ['class' => 'btn btn-primary btn-block waves-effect waves-light']) ?>
+                        <div class="signin_with mt-3">
+                            <p class="mb-0">Sign in using your HLHV accounts.</p>
+                            
+                        </div>
+                    </div>
+                <?= $this->Form->end() ?>
+                <!-- </form> -->
+                <div class="copyright text-center">
+                    &copy;
+                    <script>document.write(new Date().getFullYear())</script>,
+                    <span>Developed by <strong>Trần Hoàng Anh</strong></span>
+                </div>
             </div>
-            <div class="wrap-input100 validate-input input-group" id="Password-toggle">
-                <a href="javascript:void(0)" class="input-group-text bg-white text-muted">
-                    <i class="zmdi zmdi-eye text-muted" aria-hidden="true"></i>
-                </a>
-                <input class="input100 border-start-0 form-control ms-0" type="password" placeholder="Password" name="password">
+            <div class="col-lg-8 col-sm-12">
+                <div class="card">
+                    <!-- <img src="assets/images/signin.svg" alt="Sign In"/> -->
+                    <?= $this->Html->image("../assets/images/signin.svg", ['alt' => 'Sign In']) ?>
+                </div>
             </div>
-
-            <div class="container-login100-form-btn">
-                <a href="index.html" class="login100-form-btn btn-primary">
-                    Login
-                </a>
-            </div>
-            <div class="text-center pt-3">
-                <p class="text-dark mb-0">Please enter your TLJOC account to log in!</p>
-            </div>
-
         </div>
-
     </div>
 </div>
