@@ -3,11 +3,11 @@ div.dt-datetime {
     background-color: white;
     z-index: 6;
     border: 1px solid $border;
-    box-shadow: 0px 16px 18px rgba(104, 113 ,123,0.20);
+    box-shadow: 0px 16px 18px rgb(104 113 123 / 20%);
     padding: 0 20px 6px 20px;
     width: 300px;
     border-radius: 5px;
-    margin-block-start: 5px;
+    margin-top: 5px;
 }
 div.dt-datetime.inline {
     position: relative;
@@ -35,7 +35,7 @@ div.dt-datetime table {
     width: 100%;
 }
 div.dt-datetime table.dt-datetime-table-nospace {
-    margin-block-start: -12px;
+    margin-top: -12px;
 }
 div.dt-datetime table th {
     font-size: 13px;
@@ -97,13 +97,13 @@ div.dt-datetime table button {
 div.dt-datetime table button span {
     display: inline-block;
     min-width: 14px;
-    text-align: end;
+    text-align: right;
 }
 div.dt-datetime table.weekNumber th {
     width: 12.5%;
 }
 div.dt-datetime div.dt-datetime-calendar table {
-    margin-block-start: 0;
+    margin-top: 0;
 }
 div.dt-datetime div.dt-datetime-label {
     position: relative;
@@ -121,8 +121,8 @@ div.dt-datetime div.dt-datetime-label:hover {
 }
 div.dt-datetime div.dt-datetime-label select {
     position: absolute;
-    inset-block-start: 6px;
-    inset-inline-start: 0;
+    top: 6px;
+    left: 0;
     cursor: pointer;
     opacity: 0;
 }
@@ -134,16 +134,16 @@ div.dt-datetime.horizontal div.dt-datetime-time {
     width: 48%;
 }
 div.dt-datetime.horizontal div.dt-datetime-time {
-    margin-inline-start: 4%;
+    margin-left: 4%;
 }
 div.dt-datetime div.dt-datetime-date {
     position: relative;
-    float: $float-left;
+    float: left;
     width: 100%;
 }
 div.dt-datetime div.dt-datetime-time {
     position: relative;
-    float: $float-left;
+    float: left;
     width: 100%;
     text-align: center;
 }
@@ -151,7 +151,7 @@ div.dt-datetime div.dt-datetime-time > span {
     vertical-align: middle;
 }
 div.dt-datetime div.dt-datetime-time th {
-    text-align: start;
+    text-align: left;
 }
 div.dt-datetime div.dt-datetime-time div.dt-datetime-timeblock {
     display: inline-block;
@@ -191,14 +191,14 @@ div.dt-datetime div.dt-datetime-iconDown button {
 }
 div.dt-datetime div.dt-datetime-iconLeft {
     position: absolute;
-    inset-block-start: 15px;
-    inset-inline-start: 0px;
+    top: 15px;
+    left: 0px;
     background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAAUklEQVR42u3VMQoAIBADQf8Pgj+OD9hG2CtONJB2ymQkKe0HbwAP0xucDiQWARITIDEBEnMgMQ8S8+AqBIl6kKgHiXqQqAeJepBo/z38J/U0uAHlaBkBl9I4GwAAAABJRU5ErkJggg==");
 }
 div.dt-datetime div.dt-datetime-iconRight {
     position: absolute;
-    inset-block-start: 15px;
-    inset-inline-end: 0px;
+    top: 15px;
+    right: 0px;
     background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAAU0lEQVR42u3VOwoAMAgE0dwfAnNjU26bYkBCFGwfiL9VVWoO+BJ4Gf3gtsEKKoFBNTCoCAYVwaAiGNQGMUHMkjGbgjk2mIONuXo0nC8XnCf1JXgArVIZAQh5TKYAAAAASUVORK5CYII=");
 }
 div.dt-datetime div.dt-datetime-iconUp {

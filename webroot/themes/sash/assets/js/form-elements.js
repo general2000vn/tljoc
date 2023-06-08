@@ -1,4 +1,4 @@
-$(function (e) {
+$(function(e) {
     'use strict'
 
     // TOGGLES
@@ -20,7 +20,7 @@ $(function (e) {
 
     $('#tp3').timepicker();
 
-    $(document).on('click', '#setTimeButton', function () {
+    $(document).on('click', '#setTimeButton', function() {
         $('#tp3').timepicker('setTime', new Date());
     });
 
@@ -57,7 +57,6 @@ $(function (e) {
         selectOtherMonths: true,
         numberOfMonths: 2
     });
-
 
 
     // BOOTSTRAP DATEPICKER

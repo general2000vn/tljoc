@@ -7,8 +7,8 @@ License: MIT
 
 .sp-container {
     position: absolute;
-    inset-block-start: 0;
-    inset-inline-start: 0;
+    top: 0;
+    left: 0;
     display: inline-block;
     *display: inline;
     *zoom: 1;
@@ -44,50 +44,50 @@ License: MIT
 
 .sp-top-inner {
     position: absolute;
-    inset-block-start: 0;
-    inset-inline-start: 0;
-    inset-block-end: 0;
-    inset-inline-end: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
 
 .sp-color {
     position: absolute;
-    inset-block-start: 0;
-    inset-inline-start: 0;
-    inset-block-end: 0;
-    inset-inline-end: 20%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 20%;
 }
 
 .sp-hue {
     position: absolute;
-    inset-block-start: 0;
-    inset-inline-end: 0;
-    inset-block-end: 0;
-    inset-inline-start: 84%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 84%;
     height: 100%;
 }
 
 .sp-clear-enabled .sp-hue {
-    inset-block-start: 33px;
+    top: 33px;
     height: 77.5%;
 }
 
 .sp-fill {
-    padding-block-start: 80%;
+    padding-top: 80%;
 }
 
 .sp-sat,
 .sp-val {
     position: absolute;
-    inset-block-start: 0;
-    inset-inline-start: 0;
-    inset-inline-end: 0;
-    inset-block-end: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .sp-alpha-enabled {
     .sp-top {
-        margin-block-end: 18px;
+        margin-bottom: 18px;
     }
 
     .sp-alpha {
@@ -97,10 +97,10 @@ License: MIT
 
 .sp-alpha-handle {
     position: absolute;
-    inset-block-start: -4px;
-    inset-block-end: -4px;
+    top: -4px;
+    bottom: -4px;
     width: 6px;
-    inset-inline-start: 50%;
+    left: 50%;
     cursor: pointer;
     border: 1px solid black;
     background: white;
@@ -110,9 +110,9 @@ License: MIT
 .sp-alpha {
     display: none;
     position: absolute;
-    inset-block-end: -14px;
-    inset-inline-end: 0;
-    inset-inline-start: 0;
+    bottom: -14px;
+    right: 0;
+    left: 0;
     height: 8px;
 }
 
@@ -131,10 +131,10 @@ License: MIT
 .sp-clear-enabled .sp-clear {
     display: block;
     position: absolute;
-    inset-block-start: 0px;
-    inset-inline-end: 0;
-    inset-block-end: 0;
-    inset-inline-start: 84%;
+    top: 0px;
+    right: 0;
+    bottom: 0;
+    left: 84%;
     height: 28px;
 }
 
@@ -324,15 +324,15 @@ License: MIT
 /* Mobile devices, make hue slider bigger so it is easier to slide */
 @media (max-device-width: 480px) {
     .sp-color {
-        inset-inline-end: 40%;
+        right: 40%;
     }
 
     .sp-hue {
-        inset-inline-start: 63%;
+        left: 63%;
     }
 
     .sp-fill {
-        padding-block-start: 60%;
+        padding-top: 60%;
     }
 }
 
@@ -344,17 +344,17 @@ License: MIT
     background: #000;
     cursor: pointer;
     position: absolute;
-    inset-block-start: 0;
-    inset-inline-start: 0;
+    top: 0;
+    left: 0;
 }
 
 .sp-slider {
     position: absolute;
-    inset-block-start: 0;
+    top: 0;
     cursor: pointer;
     height: 3px;
-    inset-inline-start: -1px;
-    inset-inline-end: -1px;
+    left: -1px;
+    right: -1px;
     border: 1px solid #000;
     background: white;
     opacity: 0.8;
@@ -398,7 +398,7 @@ License: MIT
 }
 
 .sp-top {
-    margin-block-end: 3px;
+    margin-bottom: 3px;
 }
 
 .sp-color,
@@ -410,9 +410,9 @@ License: MIT
 /* Input */
 
 .sp-input-container {
-    float: $float-right;
+    float: right;
     width: 100px;
-    margin-block-end: 4px;
+    margin-bottom: 4px;
 }
 
 .sp-initial-disabled .sp-input-container {
@@ -441,22 +441,22 @@ License: MIT
 
 .sp-picker-container,
 .sp-palette-container {
-    float: $float-left;
+    float: left;
     position: relative;
     padding: 10px;
-    padding-block-end: 300px;
-    margin-block-end: -290px;
+    padding-bottom: 300px;
+    margin-bottom: -290px;
 }
 
 .sp-picker-container {
     width: 172px;
-    border-inline-start: solid 1px #fff;
+    border-left: solid 1px #fff;
 }
 
 /* Palettes */
 
 .sp-palette-container {
-    border-inline-end: solid 1px #ccc;
+    border-right: solid 1px #ccc;
 }
 
 .sp-palette-only .sp-palette-container {
@@ -466,7 +466,7 @@ License: MIT
 .sp-palette .sp-thumb-el {
     display: block;
     position: relative;
-    float: $float-left;
+    float: left;
     width: 24px;
     height: 15px;
     margin: 3px;
@@ -486,7 +486,7 @@ License: MIT
 /* Initial */
 
 .sp-initial {
-    float: $float-left;
+    float: left;
     border: solid 1px #333;
 
     span {
@@ -494,7 +494,7 @@ License: MIT
         height: 25px;
         border: none;
         display: block;
-        float: $float-left;
+        float: left;
         margin: 0;
     }
 
@@ -507,7 +507,7 @@ License: MIT
 
 .sp-palette-button-container,
 .sp-button-container {
-    float: $float-right;
+    float: right;
 }
 
 /* Replacer (the little preview div that shows up instead of the <input>) */
@@ -542,7 +542,7 @@ License: MIT
     padding: 2px 0;
     height: 16px;
     line-height: 16px;
-    float: $float-left;
+    float: left;
     font-size: 10px;
 }
 
@@ -551,8 +551,8 @@ License: MIT
     width: 25px;
     height: 20px;
     border: solid 1px #222;
-    margin-inline-end: 5px;
-    float: $float-left;
+    margin-right: 5px;
+    float: left;
     z-index: 0;
 }
 
@@ -569,7 +569,7 @@ License: MIT
 }
 
 .sp-container {
-    padding-block-end: 0;
+    padding-bottom: 0;
 
     button {
         background-color: #eeeeee;
@@ -579,7 +579,7 @@ License: MIT
         background-image: -o-linear-gradient(to top, #eeeeee, #cccccc);
         background-image: linear-gradient(to bottom, #eeeeee, #cccccc);
         border: 1px solid #ccc;
-        border-block-end: 1px solid #bbb;
+        border-bottom: 1px solid #bbb;
         border-radius: 3px;
         color: #333;
         font-size: 14px;
@@ -597,14 +597,14 @@ License: MIT
             background-image: -o-linear-gradient(to top, #dddddd, #bbbbbb);
             background-image: linear-gradient(to bottom, #dddddd, #bbbbbb);
             border: 1px solid #bbb;
-            border-block-end: 1px solid #999;
+            border-bottom: 1px solid #999;
             cursor: pointer;
             text-shadow: 0 1px 0 #ddd;
         }
 
         &:active {
             border: 1px solid #aaa;
-            border-block-end: 1px solid #888;
+            border-bottom: 1px solid #888;
             -webkit-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
             -moz-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
             -ms-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
@@ -621,7 +621,7 @@ License: MIT
     color: #d93f3f !important;
     margin: 0;
     padding: 2px;
-    margin-inline-end: 5px;
+    margin-right: 5px;
     vertical-align: middle;
     text-decoration: none;
 
@@ -650,10 +650,10 @@ License: MIT
 .sp-thumb-inner {
     display: block;
     position: absolute;
-    inset-block-start: 0;
-    inset-inline-start: 0;
-    inset-block-end: 0;
-    inset-inline-end: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
 
 .sp-palette {

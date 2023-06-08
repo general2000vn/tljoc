@@ -30,10 +30,10 @@
         cursor: pointer;
         display: block;
         font-size: 22px;
-        margin-block-start: -10px;
+        margin-top: -10px;
         padding: 8px 10px 9px;
         position: absolute;
-        inset-block-start: 50%;
+        top: 50%;
         z-index: 1080;
     }
 
@@ -49,7 +49,7 @@
     }
 
     .lg-next {
-        inset-inline-end: 20px;
+        right: 20px;
 
         &:before {
             content: "\e095";
@@ -57,7 +57,7 @@
     }
 
     .lg-prev {
-        inset-inline-start: 20px;
+        left: 20px;
 
         &:after {
             content: "\e094";
@@ -67,113 +67,113 @@
 
 @-webkit-keyframes lg-right-end {
     0% {
-        inset-inline-start: 0;
+        left: 0;
     }
 
     50% {
-        inset-inline-start: -30px;
+        left: -30px;
     }
 
     100% {
-        inset-inline-start: 0;
+        left: 0;
     }
 }
 
 @-moz-keyframes lg-right-end {
     0% {
-        inset-inline-start: 0;
+        left: 0;
     }
 
     50% {
-        inset-inline-start: -30px;
+        left: -30px;
     }
 
     100% {
-        inset-inline-start: 0;
+        left: 0;
     }
 }
 
 @-ms-keyframes lg-right-end {
     0% {
-        inset-inline-start: 0;
+        left: 0;
     }
 
     50% {
-        inset-inline-start: -30px;
+        left: -30px;
     }
 
     100% {
-        inset-inline-start: 0;
+        left: 0;
     }
 }
 
 @keyframes lg-right-end {
     0% {
-        inset-inline-start: 0;
+        left: 0;
     }
 
     50% {
-        inset-inline-start: -30px;
+        left: -30px;
     }
 
     100% {
-        inset-inline-start: 0;
+        left: 0;
     }
 }
 
 @-webkit-keyframes lg-left-end {
     0% {
-        inset-inline-start: 0;
+        left: 0;
     }
 
     50% {
-        inset-inline-start: 30px;
+        left: 30px;
     }
 
     100% {
-        inset-inline-start: 0;
+        left: 0;
     }
 }
 
 @-moz-keyframes lg-left-end {
     0% {
-        inset-inline-start: 0;
+        left: 0;
     }
 
     50% {
-        inset-inline-start: 30px;
+        left: 30px;
     }
 
     100% {
-        inset-inline-start: 0;
+        left: 0;
     }
 }
 
 @-ms-keyframes lg-left-end {
     0% {
-        inset-inline-start: 0;
+        left: 0;
     }
 
     50% {
-        inset-inline-start: 30px;
+        left: 30px;
     }
 
     100% {
-        inset-inline-start: 0;
+        left: 0;
     }
 }
 
 @keyframes lg-left-end {
     0% {
-        inset-inline-start: 0;
+        left: 0;
     }
 
     50% {
-        inset-inline-start: 30px;
+        left: 30px;
     }
 
     100% {
-        inset-inline-start: 0;
+        left: 0;
     }
 }
 
@@ -195,16 +195,16 @@
 
 .lg-toolbar {
     z-index: 1082;
-    inset-inline-start: 0;
+    left: 0;
     position: absolute;
-    inset-block-start: 0;
+    top: 0;
     width: 100%;
     background-color: $primary-1;
 
     .lg-icon {
         color: #fff;
         cursor: pointer;
-        float: $float-right;
+        float: right;
         font-size: 24px;
         height: 47px;
         line-height: 27px;
@@ -233,13 +233,13 @@
 
 .lg-sub-html {
     background-color: rgba(0, 0, 0, 0.45);
-    inset-block-end: 0;
+    bottom: 0;
     color: #eee;
     font-size: 16px;
-    inset-inline-start: 0;
+    left: 0;
     padding: 10px 40px;
     position: fixed;
-    inset-inline-end: 0;
+    right: 0;
     text-align: center;
     z-index: 1080;
 
@@ -259,8 +259,8 @@
     color: #fff;
     display: inline-block;
     font-size: 16px;
-    padding-inline-start: 20px;
-    padding-block-start: 12px;
+    padding-left: 20px;
+    padding-top: 12px;
     vertical-align: middle;
 }
 
@@ -325,7 +325,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom {
 .lg-outer {
     .lg-thumb-outer {
         background-color: #0d0a0a;
-        inset-block-end: 0;
+        bottom: 0;
         position: absolute;
         width: 100%;
         z-index: 1080;
@@ -368,18 +368,18 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom {
     .lg-thumb {
         padding: 10px 0;
         height: 100%;
-        margin-block-end: -5px;
+        margin-bottom: -5px;
     }
 
     .lg-thumb-item {
         border-radius: 5px;
         cursor: pointer;
-        float: $float-left;
+        float: left;
         overflow: hidden;
         height: 100%;
         border: 2px solid #fff;
         border-radius: 4px;
-        margin-block-end: 5px;
+        margin-bottom: 5px;
 
         &.active,
         &:hover {
@@ -394,11 +394,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom {
     }
 
     &.lg-has-thumb .lg-item {
-        padding-block-end: 120px;
+        padding-bottom: 120px;
     }
 
     &.lg-can-toggle .lg-item {
-        padding-block-end: 0;
+        padding-bottom: 0;
     }
 
     &.lg-pull-caption-up {
@@ -409,7 +409,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom {
         }
 
         &.lg-thumb-open .lg-sub-html {
-            inset-block-end: 100px;
+            bottom: 100px;
         }
     }
 
@@ -423,9 +423,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom {
         line-height: 27px;
         padding: 5px 0;
         position: absolute;
-        inset-inline-end: 20px;
+        right: 20px;
         text-align: center;
-        inset-block-start: -39px;
+        top: -39px;
         width: 50px;
 
         &:after {
@@ -449,15 +449,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom {
     .lg-video {
         width: 100%;
         height: 0;
-        padding-block-end: 56.25%;
+        padding-bottom: 56.25%;
         overflow: hidden;
         position: relative;
 
         .lg-object {
             display: inline-block;
             position: absolute;
-            inset-block-start: 0;
-            inset-inline-start: 0;
+            top: 0;
+            left: 0;
             width: 100% !important;
             height: 100% !important;
         }
@@ -466,10 +466,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom {
             width: 84px;
             height: 59px;
             position: absolute;
-            inset-inline-start: 50%;
-            inset-block-start: 50%;
-            margin-inline-start: -42px;
-            margin-block-start: -30px;
+            left: 50%;
+            top: 50%;
+            margin-left: -42px;
+            margin-top: -30px;
             z-index: 1080;
             cursor: pointer;
         }
@@ -479,8 +479,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom {
         width: 100% !important;
         height: 100% !important;
         position: absolute;
-        inset-block-start: 0;
-        inset-inline-start: 0;
+        top: 0;
+        left: 0;
     }
 
     .lg-has-video {
@@ -512,9 +512,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom {
 .lg-progress-bar {
     background-color: #333;
     height: 5px;
-    inset-inline-start: 0;
+    left: 0;
     position: absolute;
-    inset-block-start: 0;
+    top: 0;
     width: 100%;
     z-index: 1083;
     opacity: 0;
@@ -624,10 +624,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom {
 
 .lg-outer {
     .lg-pager-outer {
-        inset-block-end: 60px;
-        inset-inline-start: 0;
+        bottom: 60px;
+        left: 0;
         position: absolute;
-        inset-inline-end: 0;
+        right: 0;
         text-align: center;
         z-index: 1080;
         height: 10px;
@@ -659,11 +659,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom {
     .lg-pager-thumb-cont {
         background-color: #fff;
         color: #fff;
-        inset-block-end: 100%;
+        bottom: 100%;
         height: 83px;
-        inset-inline-start: 0;
-        margin-block-end: 20px;
-        margin-inline-start: -60px;
+        left: 0;
+        margin-bottom: 20px;
+        margin-left: -60px;
         opacity: 0;
         padding: 5px;
         position: absolute;
@@ -700,14 +700,14 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom {
     }
 
     .lg-caret {
-        border-inline-start: 10px solid transparent;
-        border-inline-end: 10px solid transparent;
-        border-block-start: 10px dashed;
-        inset-block-end: -10px;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px dashed;
+        bottom: -10px;
         display: inline-block;
         height: 0;
-        inset-inline-start: 50%;
-        margin-inline-start: -5px;
+        left: 50%;
+        margin-left: -5px;
         position: absolute;
         vertical-align: middle;
         width: 0;
@@ -725,12 +725,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom {
 .lg-outer {
     #lg-dropdown-overlay {
         background-color: rgba(0, 0, 0, 0.25);
-        inset-block-end: 0;
+        bottom: 0;
         cursor: default;
-        inset-inline-start: 0;
+        left: 0;
         position: fixed;
-        inset-inline-end: 0;
-        inset-block-start: 0;
+        right: 0;
+        top: 0;
         z-index: 1081;
         opacity: 0;
         visibility: hidden;
@@ -766,9 +766,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom {
         margin: 0;
         padding: 10px 0;
         position: absolute;
-        inset-inline-end: 0;
-        text-align: start;
-        inset-block-start: 50px;
+        right: 0;
+        text-align: left;
+        top: 50px;
         opacity: 0;
         visibility: hidden;
         -moz-transform: translate3d(0, 5px, 0);
@@ -788,14 +788,14 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom {
             width: 0;
             position: absolute;
             border: 8px solid transparent;
-            border-block-end-color	: #fff;
-            inset-inline-end: 16px;
-            inset-block-start: -16px;
+            border-bottom-color: #fff;
+            right: 16px;
+            top: -16px;
         }
 
         > li {
             &:last-child {
-                margin-block-end: 0px;
+                margin-bottom: 0px;
             }
 
             &:hover {
@@ -822,7 +822,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom {
         .lg-dropdown-text {
             display: inline-block;
             line-height: 1;
-            margin-block-start: -3px;
+            margin-top: -3px;
             vertical-align: middle;
         }
 
@@ -833,7 +833,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom {
             font-size: 20px;
             height: auto;
             line-height: 1;
-            margin-inline-end: 8px;
+            margin-right: 8px;
             padding: 0;
             vertical-align: middle;
             width: auto;
@@ -902,8 +902,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom {
     width: 100%;
     height: 100%;
     position: fixed;
-    inset-block-start: 0;
-    inset-inline-start: 0;
+    top: 0;
+    left: 0;
     z-index: 9999;
     opacity: 0;
     -webkit-transition: opacity 0.15s ease 0s;
@@ -965,8 +965,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom {
         width: 100%;
         position: relative;
         overflow: hidden;
-        margin-inline-start: auto;
-        margin-inline-end: auto;
+        margin-left: auto;
+        margin-right: auto;
         max-width: 100%;
         max-height: 100%;
     }
@@ -975,8 +975,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom {
         width: 100%;
         height: 100%;
         position: absolute;
-        inset-inline-start: 0;
-        inset-block-start: 0;
+        left: 0;
+        top: 0;
         white-space: nowrap;
     }
 
@@ -1011,7 +1011,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom {
         display: inline-block;
         height: 50%;
         width: 1px;
-        margin-inline-end: -1px;
+        margin-right: -1px;
     }
 
     .lg-img-wrap {
@@ -1020,15 +1020,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom {
             display: inline-block;
             height: 50%;
             width: 1px;
-            margin-inline-end: -1px;
+            margin-right: -1px;
         }
 
         position: absolute;
         padding: 0 5px;
-        inset-inline-start: 0;
-        inset-inline-end: 0;
-        inset-block-start: 0;
-        inset-block-end: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
     }
 
     .lg-item {
@@ -1075,10 +1075,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom {
 
 .lg-backdrop {
     position: fixed;
-    inset-block-start: 0;
-    inset-inline-start: 0;
-    inset-inline-end: 0;
-    inset-block-end: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 9999;
     background-color: rgba(0, 0, 0, 0.8);
     opacity: 0;
@@ -1160,18 +1160,18 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom {
         &.lg-use-left .lg-item {
             opacity: 0;
             position: absolute;
-            inset-inline-start: 0;
+            left: 0;
 
             &.lg-prev-slide {
-                inset-inline-start: -100%;
+                left: -100%;
             }
 
             &.lg-next-slide {
-                inset-inline-start: 100%;
+                left: 100%;
             }
 
             &.lg-current {
-                inset-inline-start: 0;
+                left: 0;
                 opacity: 1;
             }
 

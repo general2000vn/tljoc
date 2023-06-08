@@ -3,7 +3,7 @@
 .accordion .card {
     &:not(:first-of-type) {
         &:not(:last-of-type) {
-            border-block-end: 0;
+            border-bottom: 0;
             border-radius: 0;
         }
         .card-header:first-child {
@@ -11,13 +11,13 @@
         }
     }
     &:first-of-type {
-        border-block-end: 0;
-        border-end-end-radius: 0;
-        border-end-start-radius: 0;
+        border-bottom: 0;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
     }
     &:last-of-type {
-        border-start-start-radius: 0;
-        border-start-end-radius: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
     }
 }
 
@@ -37,8 +37,8 @@
         font-size: 24px;
         position: absolute;
         font-family: 'FontAwesome';
-        inset-inline-end: 5px;
-        inset-block-start: 10px;
+        right: 5px;
+        top: 10px;
         transform: rotate(180deg);
         transition: all 0.5s;
     }
@@ -53,8 +53,8 @@
 }
 
 .accordion-wizard .badge-pill {
-    padding-inline-end: .6em;
-    padding-inline-start: .6em;
+    padding-right: .6em;
+    padding-left: .6em;
     border-radius: 0;
 }
 
@@ -85,7 +85,7 @@
 
 .accordion-button:not(.collapsed)::after {
     background-image: none;
-    margin-inline-end: 5px;
+    margin-right: 5px;
 }
 
 .accordion-button::after {
@@ -99,7 +99,7 @@
 }
 
 #accordion .panel-default .collapsing .panel-body {
-    border-block-start: 0px solid transparent;
+    border-top: 0px solid transparent;
 }
 
 .accordion-button::after {

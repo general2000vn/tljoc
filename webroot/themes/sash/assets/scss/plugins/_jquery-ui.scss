@@ -44,8 +44,8 @@
 .ui-helper-zfix {
     width: 100%;
     height: 100%;
-    inset-block-start: 0;
-    inset-inline-start: 0;
+    top: 0;
+    left: 0;
     position: absolute;
     opacity: 0;
     filter: Alpha(Opacity = 0);
@@ -81,8 +81,8 @@
 
 .ui-widget-overlay {
     position: fixed;
-    inset-block-start: 0;
-    inset-inline-start: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
 }
@@ -101,31 +101,31 @@
     }
 
     .ui-accordion-icons {
-        padding-inline-start: 2.2em;
+        padding-left: 2.2em;
 
         .ui-accordion-icons {
-            padding-inline-start: 2.2em;
+            padding-left: 2.2em;
         }
     }
 
     .ui-accordion-header .ui-accordion-header-icon {
         position: absolute;
-        inset-inline-start: 0.5em;
-        inset-block-start: 50%;
-        margin-block-start: -8px;
+        left: 0.5em;
+        top: 50%;
+        margin-top: -8px;
     }
 
     .ui-accordion-content {
         padding: 1em 2.2em;
-        border-block-start: 0;
+        border-top: 0;
         overflow: auto;
     }
 }
 
 .ui-autocomplete {
     position: absolute;
-    inset-block-start: 0;
-    inset-inline-start: 0;
+    top: 0;
+    left: 0;
     cursor: default;
 }
 
@@ -134,7 +134,7 @@
     position: relative;
     padding: 0;
     line-height: normal;
-    margin-inline-end: 0.1em;
+    margin-right: 0.1em;
     cursor: pointer;
     vertical-align: middle;
     text-align: center;
@@ -200,8 +200,8 @@ button.ui-button-icons-only {
 
 .ui-button-text-icons .ui-button-text {
     padding: 0.4em 2.1em 0.4em 1em;
-    padding-inline-start: 2.1em;
-    padding-inline-end: 2.1em;
+    padding-left: 2.1em;
+    padding-right: 2.1em;
 }
 
 /* no icon support for input elements, provide padding by default */
@@ -218,35 +218,35 @@ input.ui-button {
 .ui-button-text-icons .ui-icon,
 .ui-button-icons-only .ui-icon {
     position: absolute;
-    inset-block-start: 50%;
-    margin-block-start: -8px;
+    top: 50%;
+    margin-top: -8px;
 }
 
 .ui-button-icon-only .ui-icon {
-    inset-inline-start: 50%;
-    margin-inline-start: -8px;
+    left: 50%;
+    margin-left: -8px;
 }
 
 .ui-button-text-icon-primary .ui-button-icon-primary,
 .ui-button-text-icons .ui-button-icon-primary,
 .ui-button-icons-only .ui-button-icon-primary {
-    inset-inline-start: 0.5em;
+    left: 0.5em;
 }
 
 .ui-button-text-icon-secondary .ui-button-icon-secondary,
 .ui-button-text-icons .ui-button-icon-secondary,
 .ui-button-icons-only .ui-button-icon-secondary {
-    inset-inline-end: 0.5em;
+    right: 0.5em;
 }
 
 /* button sets */
 
 .ui-buttonset {
-    margin-inline-end: 7px;
+    margin-right: 7px;
 
     .ui-button {
-        margin-inline-start: 0;
-        margin-inline-end: -0.3em;
+        margin-left: 0;
+        margin-right: -0.3em;
     }
 }
 
@@ -273,40 +273,40 @@ button.ui-button::-moz-focus-inner {
     .ui-datepicker-prev,
     .ui-datepicker-next {
         position: absolute;
-        inset-block-start: 2px;
+        top: 2px;
         width: 1.8em;
         height: 1.8em;
     }
 
     .ui-datepicker-prev-hover,
     .ui-datepicker-next-hover {
-        inset-block-start: 1px;
+        top: 1px;
     }
 
     .ui-datepicker-prev {
-        inset-inline-start: 2px;
+        left: 2px;
     }
 
     .ui-datepicker-next {
-        inset-inline-end: 2px;
+        right: 2px;
     }
 
     .ui-datepicker-prev-hover {
-        inset-inline-start: 1px;
+        left: 1px;
     }
 
     .ui-datepicker-next-hover {
-        inset-inline-end: 1px;
+        right: 1px;
     }
 
     .ui-datepicker-prev span,
     .ui-datepicker-next span {
         display: block;
         position: absolute;
-        inset-inline-start: 50%;
-        margin-inline-start: -8px;
-        inset-block-start: 50%;
-        margin-block-start: -8px;
+        left: 50%;
+        margin-left: -8px;
+        top: 50%;
+        margin-top: -8px;
     }
 
     .ui-datepicker-title {
@@ -349,7 +349,7 @@ button.ui-button::-moz-focus-inner {
         a {
             display: block;
             padding: 0.2em;
-            text-align: end;
+            text-align: right;
             text-decoration: none;
         }
     }
@@ -358,12 +358,12 @@ button.ui-button::-moz-focus-inner {
         background-image: none;
         margin: 0.7em 0 0 0;
         padding: 0 0.2em;
-        border-inline-start: 0;
-        border-inline-end: 0;
-        border-block-end: 0;
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 0;
 
         button {
-            float: $float-right;
+            float: right;
             margin: 0.5em 0.2em 0.4em;
             cursor: pointer;
             padding: 0.2em 0.6em 0.3em 0.6em;
@@ -371,7 +371,7 @@ button.ui-button::-moz-focus-inner {
             overflow: visible;
 
             &.ui-datepicker-current {
-                float: $float-left;
+                float: left;
             }
         }
     }
@@ -384,7 +384,7 @@ button.ui-button::-moz-focus-inner {
 /* with multiple calendars */
 
 .ui-datepicker-multi .ui-datepicker-group {
-    float: $float-left;
+    float: left;
 
     table {
         width: 95%;
@@ -407,7 +407,7 @@ button.ui-button::-moz-focus-inner {
 .ui-datepicker-multi {
     .ui-datepicker-group-last .ui-datepicker-header,
     .ui-datepicker-group-middle .ui-datepicker-header {
-        border-inline-start-width: 0;
+        border-left-width: 0;
     }
 
     .ui-datepicker-buttonpane {
@@ -427,53 +427,53 @@ button.ui-button::-moz-focus-inner {
     direction: rtl;
 
     .ui-datepicker-prev {
-        inset-inline-end: 2px;
-        inset-inline-start: auto;
+        right: 2px;
+        left: auto;
     }
 
     .ui-datepicker-next {
-        inset-inline-start: 2px;
-        inset-inline-end: auto;
+        left: 2px;
+        right: auto;
     }
 
     .ui-datepicker-prev:hover {
-        inset-inline-end: 1px;
-        inset-inline-start: auto;
+        right: 1px;
+        left: auto;
     }
 
     .ui-datepicker-next:hover {
-        inset-inline-start: 1px;
-        inset-inline-end: auto;
+        left: 1px;
+        right: auto;
     }
 
     .ui-datepicker-buttonpane {
         clear: right;
 
         button {
-            float: $float-left;
+            float: left;
 
             &.ui-datepicker-current {
-                float: $float-right;
+                float: right;
             }
         }
     }
 
     .ui-datepicker-group {
-        float: $float-right;
+        float: right;
     }
 
     .ui-datepicker-group-last .ui-datepicker-header,
     .ui-datepicker-group-middle .ui-datepicker-header {
-        border-inline-end-width: 0;
-        border-inline-start-width: 1px;
+        border-right-width: 0;
+        border-left-width: 1px;
     }
 }
 
 .ui-dialog {
     overflow: hidden;
     position: absolute;
-    inset-block-start: 0;
-    inset-inline-start: 0;
+    top: 0;
+    left: 0;
     padding: 0.2em;
     outline: 0;
 
@@ -483,7 +483,7 @@ button.ui-button::-moz-focus-inner {
     }
 
     .ui-dialog-title {
-        float: $float-left;
+        float: left;
         margin: 0.1em 0;
         white-space: nowrap;
         width: 90%;
@@ -493,8 +493,8 @@ button.ui-button::-moz-focus-inner {
 
     .ui-dialog-titlebar-close {
         position: absolute;
-        inset-inline-end: 0.3em;
-        inset-block-start: 50%;
+        right: 0.3em;
+        top: 50%;
         width: 20px;
         margin: -10px 0 0 0;
         padding: 1px;
@@ -510,14 +510,14 @@ button.ui-button::-moz-focus-inner {
     }
 
     .ui-dialog-buttonpane {
-        text-align: start;
+        text-align: left;
         border-width: 1px 0 0 0;
         background-image: none;
-        margin-block-start: 0.5em;
+        margin-top: 0.5em;
         padding: 0.3em 1em 0.5em 0.4em;
 
         .ui-dialog-buttonset {
-            float: $float-right;
+            float: right;
         }
 
         button {
@@ -529,8 +529,8 @@ button.ui-button::-moz-focus-inner {
     .ui-resizable-se {
         width: 12px;
         height: 12px;
-        inset-inline-end: -5px;
-        inset-block-end: -5px;
+        right: -5px;
+        bottom: -5px;
         background-position: 16px 16px;
     }
 }
@@ -586,7 +586,7 @@ button.ui-button::-moz-focus-inner {
     position: relative;
 
     .ui-menu-item {
-        padding-inline-start: 2em;
+        padding-left: 2em;
     }
 }
 
@@ -595,15 +595,15 @@ button.ui-button::-moz-focus-inner {
 .ui-menu {
     .ui-icon {
         position: absolute;
-        inset-block-start: 0;
-        inset-block-end: 0;
-        inset-inline-start: 0.2em;
+        top: 0;
+        bottom: 0;
+        left: 0.2em;
         margin: auto 0;
     }
 
     .ui-menu-icon {
-        inset-inline-start: auto;
-        inset-inline-end: 0;
+        left: auto;
+        right: 0;
     }
 }
 
@@ -611,7 +611,7 @@ button.ui-button::-moz-focus-inner {
 
 .ui-progressbar {
     height: 2em;
-    text-align: start;
+    text-align: left;
     overflow: hidden;
 
     .ui-progressbar-value {
@@ -651,31 +651,31 @@ button.ui-button::-moz-focus-inner {
     cursor: n-resize;
     height: 7px;
     width: 100%;
-    inset-block-start: -5px;
-    inset-inline-start: 0;
+    top: -5px;
+    left: 0;
 }
 
 .ui-resizable-s {
     cursor: s-resize;
     height: 7px;
     width: 100%;
-    inset-block-end: -5px;
-    inset-inline-start: 0;
+    bottom: -5px;
+    left: 0;
 }
 
 .ui-resizable-e {
     cursor: e-resize;
     width: 7px;
-    inset-inline-end: -5px;
-    inset-block-start: 0;
+    right: -5px;
+    top: 0;
     height: 100%;
 }
 
 .ui-resizable-w {
     cursor: w-resize;
     width: 7px;
-    inset-inline-start: -5px;
-    inset-block-start: 0;
+    left: -5px;
+    top: 0;
     height: 100%;
 }
 
@@ -683,32 +683,32 @@ button.ui-button::-moz-focus-inner {
     cursor: se-resize;
     width: 12px;
     height: 12px;
-    inset-inline-end: 1px;
-    inset-block-end: 1px;
+    right: 1px;
+    bottom: 1px;
 }
 
 .ui-resizable-sw {
     cursor: sw-resize;
     width: 9px;
     height: 9px;
-    inset-inline-start: -5px;
-    inset-block-end: -5px;
+    left: -5px;
+    bottom: -5px;
 }
 
 .ui-resizable-nw {
     cursor: nw-resize;
     width: 9px;
     height: 9px;
-    inset-inline-start: -5px;
-    inset-block-start: -5px;
+    left: -5px;
+    top: -5px;
 }
 
 .ui-resizable-ne {
     cursor: ne-resize;
     width: 9px;
     height: 9px;
-    inset-inline-end: -5px;
-    inset-block-start: -5px;
+    right: -5px;
+    top: -5px;
 }
 
 .ui-selectable {
@@ -726,8 +726,8 @@ button.ui-button::-moz-focus-inner {
     padding: 0;
     margin: 0;
     position: absolute;
-    inset-block-start: 0;
-    inset-inline-start: 0;
+    top: 0;
+    left: 0;
     display: none;
 
     .ui-menu {
@@ -735,7 +735,7 @@ button.ui-button::-moz-focus-inner {
 
         /* Support: IE7 */
         overflow-x: hidden;
-        padding-block-end: 1px;
+        padding-bottom: 1px;
 
         .ui-selectmenu-optgroup {
             font-size: 1em;
@@ -762,15 +762,15 @@ button.ui-button::-moz-focus-inner {
 
     span {
         &.ui-icon {
-            inset-inline-end: 0.5em;
-            inset-inline-start: auto;
-            margin-block-start: -8px;
+            right: 0.5em;
+            left: auto;
+            margin-top: -8px;
             position: absolute;
-            inset-block-start: 50%;
+            top: 50%;
         }
 
         &.ui-selectmenu-text {
-            text-align: start;
+            text-align: left;
             padding: 0.4em 2.1em 0.4em 1em;
             display: block;
             line-height: 1.4;
@@ -783,7 +783,7 @@ button.ui-button::-moz-focus-inner {
 
 .ui-slider {
     position: relative;
-    text-align: start;
+    text-align: left;
 
     .ui-slider-handle {
         position: absolute;
@@ -818,21 +818,21 @@ button.ui-button::-moz-focus-inner {
     height: 0.6em;
 
     .ui-slider-handle {
-        inset-block-start: -0.3em;
-        margin-inline-start: -0.6em;
+        top: -0.3em;
+        margin-left: -0.6em;
     }
 
     .ui-slider-range {
-        inset-block-start: 0;
+        top: 0;
         height: 100%;
     }
 
     .ui-slider-range-min {
-        inset-inline-start: 0;
+        left: 0;
     }
 
     .ui-slider-range-max {
-        inset-inline-end: 0;
+        right: 0;
     }
 }
 
@@ -841,22 +841,22 @@ button.ui-button::-moz-focus-inner {
     height: 100px;
 
     .ui-slider-handle {
-        inset-inline-start: -0.3em;
-        margin-inline-start: 0;
-        margin-block-end: -0.6em;
+        left: -0.3em;
+        margin-left: 0;
+        margin-bottom: -0.6em;
     }
 
     .ui-slider-range {
-        inset-inline-start: 0;
+        left: 0;
         width: 100%;
     }
 
     .ui-slider-range-min {
-        inset-block-end: 0;
+        bottom: 0;
     }
 
     .ui-slider-range-max {
-        inset-block-start: 0;
+        top: 0;
     }
 }
 
@@ -880,8 +880,8 @@ button.ui-button::-moz-focus-inner {
     padding: 0;
     margin: 0.2em 0;
     vertical-align: middle;
-    margin-inline-start: 0.4em;
-    margin-inline-end: 22px;
+    margin-left: 0.4em;
+    margin-right: 22px;
 }
 
 .ui-spinner-button {
@@ -895,34 +895,34 @@ button.ui-button::-moz-focus-inner {
     cursor: default;
     display: block;
     overflow: hidden;
-    inset-inline-end: 0;
+    right: 0;
 }
 
 /* more specificity required here to override default borders */
 
 .ui-spinner {
     a.ui-spinner-button {
-        border-block-start: none;
-        border-block-end: none;
-        border-inline-end: none;
+        border-top: none;
+        border-bottom: none;
+        border-right: none;
     }
 
     .ui-icon {
         position: absolute;
-        margin-block-start: -8px;
-        inset-block-start: 50%;
-        inset-inline-start: 0;
+        margin-top: -8px;
+        top: 50%;
+        left: 0;
     }
 }
 
 /* vertically center icon */
 
 .ui-spinner-up {
-    inset-block-start: 0;
+    top: 0;
 }
 
 .ui-spinner-down {
-    inset-block-end: 0;
+    bottom: 0;
 }
 
 /* TR overrides */
@@ -944,25 +944,25 @@ button.ui-button::-moz-focus-inner {
 
         li {
             list-style: none;
-            float: $float-left;
+            float: left;
             position: relative;
-            inset-block-start: 0;
+            top: 0;
             margin: 1px 0.2em 0 0;
-            border-block-end-width: 0;
+            border-bottom-width: 0;
             padding: 0;
             white-space: nowrap;
         }
 
         .ui-tabs-anchor {
-            float: $float-left;
+            float: left;
             padding: 0.5em 1em;
             text-decoration: none;
         }
 
         li {
             &.ui-tabs-active {
-                margin-block-end: -1px;
-                padding-block-end: 1px;
+                margin-bottom: -1px;
+                padding-bottom: 1px;
 
                 .ui-tabs-anchor {
                     cursor: text;
@@ -1869,26 +1869,26 @@ body .ui-tooltip {
 .ui-corner-top,
 .ui-corner-left,
 .ui-corner-tl {
-    border-start-start-radius: 4px;
+    border-top-left-radius: 4px;
 }
 
 .ui-corner-all,
 .ui-corner-top,
 .ui-corner-right,
 .ui-corner-tr {
-    border-start-end-radius: 4px;
+    border-top-right-radius: 4px;
 }
 
 .ui-corner-all,
 .ui-corner-bottom,
 .ui-corner-left,
 .ui-corner-bl {
-    border-end-start-radius: 4px;
+    border-bottom-left-radius: 4px;
 }
 
 .ui-corner-all,
 .ui-corner-bottom,
 .ui-corner-right,
 .ui-corner-br {
-    border-end-end-radius: 4px;
+    border-bottom-right-radius: 4px;
 }

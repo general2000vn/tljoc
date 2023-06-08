@@ -6,9 +6,9 @@
 
 .panel-footer-landing {
     border: solid 2px #1643A3 !important;
-    border-end-start-radius: 10px !important;
-    border-end-end-radius: 10px !important;
-    border-block-start: none !important;
+    border-bottom-left-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
+    border-top: none !important;
     text-align: center;
     background: #f7f7f7;
 }
@@ -18,10 +18,10 @@
     .lead {
         strong {
             font-size: 40px;
-            margin-block-end: 0;
+            margin-bottom: 0;
         }
         font-size: 20px;
-        margin-block-end: 0;
+        margin-bottom: 0;
         padding: 10px 0;
     }
 }
@@ -29,11 +29,11 @@
 .panel-footer {
     padding: 10px 15px;
     background-color: $white;
-    border-block-start: 1px solid $border;
-    border-inline-start: 1px solid $border;
-    border-inline-end: 1px solid $border;
-    border-end-end-radius: 3px;
-    border-end-start-radius: 3px;
+    border-top: 1px solid $border;
+    border-left: 1px solid $border;
+    border-right: 1px solid $border;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
 }
 
 .panel-group .panel,
@@ -57,7 +57,7 @@
 
 .panel-title {
     font-size: 14px;
-    margin-block-end: 0;
+    margin-bottom: 0;
     >a {
         display: block;
         padding: 15px;
@@ -67,7 +67,7 @@
 
 .panel-default>.panel-heading+.panel-collapse>.panel-body {
     border: 0px solid $border;
-    border-block-start: 0;
+    border-top: 0;
 }
 
 .panel1 {
@@ -77,7 +77,7 @@
     background: none;
     box-shadow: none;
     &:last-child {
-        border-block-end: none;
+        border-bottom: none;
     }
 }
 
@@ -97,11 +97,11 @@
 
 .panel-title1 {
     font-size: 14px;
-    margin-block-end: 0;
+    margin-bottom: 0;
 }
 
 .panel-group1 .panel1+.panel1 {
-    margin-block-start: 0;
+    margin-top: 0;
 }
 
 .panel-heading1 {
@@ -149,14 +149,14 @@
         padding: 0 10px 0 0;
         color: $white;
         font-family: FontAwesome;
-        float: $float-right;
+        float: right;
     }
     &.collapsed:before {
         content: "\f067";
         padding: 0 10px 0 0;
         color: $white;
         font-family: FontAwesome;
-        float: $float-right;
+        float: right;
     }
 }
 
@@ -166,8 +166,8 @@
             content: "\e9af";
             position: absolute;
             font-family: 'feather' !important;
-            inset-inline-end: 16px;
-            inset-block-start: 15px;
+            right: 16px;
+            top: 15px;
             font-size: 15px;
             transition: all 0.5s;
             transform: scale(1);
@@ -176,8 +176,8 @@
             content: "\e994";
             position: absolute;
             font-family: 'feather' !important;
-            inset-inline-end: 16px;
-            inset-block-start: 15px;
+            right: 16px;
+            top: 15px;
             font-size: 15px;
             transition: all 0.5s;
             transform: scale(1);
@@ -192,7 +192,7 @@
 
 .demo-accordion p:last-child,
 .panel-group1 p:last-child {
-    margin-block-end: 0;
+    margin-bottom: 0;
 }
 
 
@@ -243,14 +243,14 @@
 }
 
 .expanel-title {
-    margin-block-start: 0 !important;
-    margin-block-end: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
     font-size: 16px !important;
     color: inherit !important;
 }
 
 .expanel {
-    margin-block-end: 20px;
+    margin-bottom: 20px;
     background-color: $white !important;
     border: 1px solid $border !important;
     border-radius: 4px !important;
@@ -265,17 +265,17 @@
 
 .expanel-heading {
     padding: 10px 15px !important;
-    border-block-end: 1px solid $border;
-    border-start-start-radius: 3px !important;
-    border-start-end-radius: 3px !important;
+    border-bottom: 1px solid $border;
+    border-top-left-radius: 3px !important;
+    border-top-right-radius: 3px !important;
 }
 
 .expanel-footer {
     padding: 10px 15px !important;
     background-color: $primary-005 !important;
-    border-block-start: 1px solid $border !important;
-    border-end-end-radius: 3px !important;
-    border-end-start-radius: 3px !important;
+    border-top: 1px solid $border !important;
+    border-bottom-right-radius: 3px !important;
+    border-bottom-left-radius: 3px !important;
 }
 
 .expanel-body {

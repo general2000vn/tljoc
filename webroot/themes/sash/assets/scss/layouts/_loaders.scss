@@ -8,9 +8,9 @@ Dimmer
 		display: none;
 		margin: 0 auto;
 		position: absolute;
-		inset-block-start: 50%;
-		inset-inline-start: 0;
-		inset-inline-end: 0;
+		top: 50%;
+		left: 0;
+		right: 0;
 		-webkit-transform: translateY(-50%);
 		transform: translateY(-50%);
 	}
@@ -91,8 +91,8 @@ Dimmer
 	border-radius: 50%;
 	opacity: 0.6;
 	position: absolute;
-	inset-block-start: 0;
-	inset-inline-start: 0;
+	top: 0;
+	left: 0;
 	-webkit-animation: sk-bounce 2.0s infinite ease-in-out;
 	animation: sk-bounce 2.0s infinite ease-in-out;
 }
@@ -103,8 +103,8 @@ Dimmer
 	border-radius: 50%;
 	opacity: 0.6;
 	position: absolute;
-	inset-block-start: 0;
-	inset-inline-start: 0;
+	top: 0;
+	left: 0;
 	-webkit-animation: sk-bounce 2.0s infinite ease-in-out;
 	animation: sk-bounce 2.0s infinite ease-in-out;
 	-webkit-animation-delay: -1.0s;
@@ -144,8 +144,8 @@ Dimmer
 	width: 15px;
 	height: 15px;
 	position: absolute;
-	inset-block-start: 0;
-	inset-inline-start: 0;
+	top: 0;
+	left: 0;
 	-webkit-animation: sk-cubemove 1.8s infinite ease-in-out;
 	animation: sk-cubemove 1.8s infinite ease-in-out;
 }
@@ -154,8 +154,8 @@ Dimmer
 	width: 15px;
 	height: 15px;
 	position: absolute;
-	inset-block-start: 0;
-	inset-inline-start: 0;
+	top: 0;
+	left: 0;
 	-webkit-animation: sk-cubemove 1.8s infinite ease-in-out;
 	animation: sk-cubemove 1.8s infinite ease-in-out;
 	-webkit-animation-delay: -0.9s;
@@ -208,8 +208,8 @@ Dimmer
 	transform-origin: 32px 32px;
 	margin: 100px auto;
 	div {
-		inset-block-start: 23px;
-		inset-inline-start: 19px;
+		top: 23px;
+		left: 19px;
 		position: absolute;
 		width: 26px;
 		height: 26px;
@@ -231,7 +231,7 @@ Dimmer
 			border-radius: 50% 0 0 50%;
 		}
 		&:after {
-			inset-block-start: -17px;
+			top: -17px;
 			border-radius: 50% 50% 0 0;
 		}
 	}

@@ -6,7 +6,7 @@
 
 .pricing {
     .list-unstyled li {
-        border-block-end: 1px solid $white-1;
+        border-bottom: 1px solid $white-1;
         padding: 7px 0;
     }
 }
@@ -50,14 +50,14 @@
         -webkit-transition: all .3s ease;
     }
     h3 {
-        margin-block-end: 0;
+        margin-bottom: 0;
         padding: 20px 0;
     }
 }
 
 .panel-heading {
     padding: 10px 15px;
-    border-block-end: 1px solid $white-2;
+    border-bottom: 1px solid $white-2;
     background: $white;
 }
 
@@ -67,15 +67,15 @@
     }
     .list-group-item {
         &:last-child {
-            border-end-end-radius: 0px;
-            border-end-start-radius: 0px;
+            border-bottom-right-radius: 0px;
+            border-bottom-left-radius: 0px;
         }
         &:first-child {
-            border-start-end-radius: 0px;
-            border-start-start-radius: 0px;
+            border-top-right-radius: 0px;
+            border-top-left-radius: 0px;
         }
     }
-    margin-block-end: 1.5rem;
+    margin-bottom: 1.5rem;
     box-shadow: 0 4px 25px 0 rgba(168, 180, 208, .1);
     border-radius: 7px;
     background: $white;
@@ -83,10 +83,10 @@
 
 .price {
     .panel-footer {
-        border-block-end: 0px;
+        border-bottom: 0px;
         background-color: $white;
-        border-inline-start: 0;
-        border-inline-end: 0;
+        border-left: 0;
+        border-right: 0;
     }
     &.panel-color>.panel-body {
         background-color: $white;
@@ -102,19 +102,19 @@
 
 .pricing-divider-img {
     position: absolute;
-    inset-inline-start: 0;
+    left: 0;
     width: 100%;
 }
 
 .price-detail-wrap .rating-stars {
-    text-align: start !important;
+    text-align: left !important;
 }
 
 .ribbon-price {
     position: absolute;
-    inset-block-start: 0;
+    top: 0;
     z-index: 8;
-    inset-inline-end: 0;
+    right: 0;
     width: 100%;
     display: block;
     font-size: 15px;
@@ -124,10 +124,10 @@
 }
 
 .ribbon-price .badge {
-    float: $float-right;
+    float: right;
     transform: rotate( 45deg);
-    inset-inline-end: -70px;
-    inset-block-start: 21px;
+    right: -70px;
+    top: 21px;
     position: relative;
     text-align: center;
     width: 212px;
@@ -159,13 +159,13 @@
 
 .ribbone1-price .ribbon {
     position: absolute;
-    inset-inline-end: 6px;
-    inset-block-start: -5px;
+    right: 6px;
+    top: -5px;
     z-index: 1;
     overflow: hidden;
     width: 75px;
     height: 75px;
-    text-align: end;
+    text-align: right;
 }
 
 .ribbone1-price .ribbon span {
@@ -183,40 +183,37 @@
     background: $primary-1;
     box-shadow: 0 3px 10px -5px black;
     position: absolute;
-    inset-block-start: 19px;
-    inset-inline-end: -21px;
+    top: 19px;
+    right: -21px;
 }
 
 .ribbone1-price .ribbon span::before {
     content: "";
     position: absolute;
-    inset-inline-start: 0px;
-    inset-block-start: 100%;
+    left: 0px;
+    top: 100%;
     z-index: -1;
-    border-inline-start: 3px solid $primary-1;
-    border-inline-end: 3px solid transparent;
-    border-block-end: 3px solid transparent;
-    border-block-start: 3px solid $primary-1;
+    border-left: 3px solid $primary-1;
+    border-right: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    border-top: 3px solid $primary-1;
 }
 
 .ribbone1-price .ribbon span::after {
     content: "";
     position: absolute;
-    inset-inline-end: 0px;
-    inset-block-start: 100%;
+    right: 0px;
+    top: 100%;
     z-index: -1;
-    border-inline-start: 3px solid transparent;
-    border-inline-end: 3px solid $primary-1;
-    border-block-end: 3px solid transparent;
-    border-block-start: 3px solid $primary-1;
+    border-left: 3px solid transparent;
+    border-right: 3px solid $primary-1;
+    border-bottom: 3px solid transparent;
+    border-top: 3px solid $primary-1;
 }
 
 .price .list-group-flush .list-group-item {
     border: 0 !important;
-    padding-block-start: 0px;
-    padding-inline-end: 0px;
-    padding-block-end: 0px;
-    padding-inline-start: 16px;
+    padding: 0px 0px 0px 16px;
 }
 
 .primary .pricing-divider {

@@ -2,7 +2,7 @@
 
 .btn .badge {
     position: relative;
-    inset-block-start: -1px;
+    top: -1px;
 }
 
 .badge {
@@ -22,7 +22,7 @@
 }
 
 .badgetext {
-    float: $float-right;
+    float: right;
 }
 
 .btn-custom {
@@ -31,5 +31,5 @@
 }
 
 .badge.badge-sm {
-    padding: 3px 8px 5px;
+    padding: 3px 8px 5px 8px;
 }

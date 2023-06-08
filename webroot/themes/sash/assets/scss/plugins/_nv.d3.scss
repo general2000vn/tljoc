@@ -607,7 +607,7 @@ svg.nvd3-svg {
     display: block;
     font-family: Arial, sans-serif;
     font-size: 13px;
-    text-align: start;
+    text-align: left;
     pointer-events: none;
     white-space: nowrap;
     -webkit-user-select: none;
@@ -647,7 +647,7 @@ svg.nvd3-svg {
         background-color: rgba(247, 247, 247, 0.75);
         color: rgba(0, 0, 0, 1);
         text-align: center;
-        border-block-end: 1px solid #ebebeb;
+        border-bottom: 1px solid #ebebeb;
         border-radius: 5px 5px 0 0;
     }
 
@@ -679,7 +679,7 @@ svg.nvd3-svg {
             }
 
             &.value {
-                text-align: end;
+                text-align: right;
                 font-weight: bold;
             }
 
@@ -690,10 +690,10 @@ svg.nvd3-svg {
 
         tr.highlight td {
             padding: 1px 9px 1px 0;
-            border-block-end-style: solid;
-            border-block-end-width: 1px;
-            border-block-start-style: solid;
-            border-block-start-width: 1px;
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-top-style: solid;
+            border-top-width: 1px;
         }
 
         td.legend-color-guide div {

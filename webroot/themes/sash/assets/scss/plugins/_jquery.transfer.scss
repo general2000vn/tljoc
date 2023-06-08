@@ -9,19 +9,18 @@
     label {
         display: inline-block;
         position: relative;
-        padding-inline-start: 25px;
+        padding-left: 25px;
         cursor: pointer;
         font-size: 13px;
         line-height: 21px;
     }
 
-    +.checkbox-group label {
-        margin-inline-start: 15px;
+    + .checkbox-group label {
+        margin-left: 15px;
     }
 }
 
 .clearfix {
-
     &:before,
     &:after {
         content: "";
@@ -36,20 +35,20 @@
         width: 16px;
         height: 16px;
         position: absolute;
-        inset-block-start: 3px;
-        inset-inline-start: 0px;
+        top: 3px;
+        left: 0px;
         background: #fcfcfc;
         border: 1px solid #bbb;
     }
 
     .radio-normal {
-        +label:before {
+        + label:before {
             -webkit-border-radius: 10px;
             -moz-border-radius: 10px;
             border-radius: 10px;
         }
 
-        &:checked+label:before {
+        &:checked + label:before {
             content: "\e6bf";
             font-family: "iconfont";
             color: #fff;
@@ -57,7 +56,7 @@
             line-height: 15px;
         }
 
-        &:disabled+label:before {
+        &:disabled + label:before {
             color: #fff;
             border: 1px solid #ccc;
             background: #e7eaf3;
@@ -76,21 +75,21 @@
         width: 16px;
         height: 16px;
         position: absolute;
-        inset-block-start: 3px;
-        inset-inline-start: 0;
+        top: 3px;
+        left: 0;
         border-radius: 3px;
         background: #fff;
         border: 1px solid $border;
     }
 
     .checkbox-normal {
-        +label:before {
+        + label:before {
             -webkit-border-radius: 0px;
             -moz-border-radius: 0px;
             border-radius: 3px;
         }
 
-        &:checked+label:before {
+        &:checked + label:before {
             content: "\e93e";
             font-family: "iconfont";
             font-size: 9px;
@@ -102,7 +101,7 @@
             color: #fff;
         }
 
-        &:disabled+label:before {
+        &:disabled + label:before {
             color: #fff;
             border: 1px solid #ccc;
             background-color: #e7eaf3;
@@ -110,7 +109,7 @@
         }
     }
 
-    .checkbox-indeterminate+label:before {
+    .checkbox-indeterminate + label:before {
         content: "\e95f";
         font-family: "iconfont";
         font-size: 14px;
@@ -129,7 +128,7 @@
 .multi-select-active:after {
     content: "\e93e";
     font-family: "iconfont";
-    margin-inline-start: 64%;
+    margin-left: 64%;
     font-weight: bold;
 }
 
@@ -137,15 +136,15 @@
 .icon-double-add {
     font-size: 22px;
     position: absolute;
-    margin-inline-start: -30px;
-    margin-block-start: 7px;
+    margin-left: -30px;
+    margin-top: 7px;
 }
 
 .transfer-double {
     width: 100%;
     height: 100%;
     background-color: #fff;
-    inset-inline-start: 30%;
+    left: 30%;
     position: inherit;
     z-index: 1000;
     border-radius: 0px;
@@ -156,14 +155,14 @@
     width: 46%;
     border: 1px solid $border;
     border-radius: 7px;
-    float: $float-left;
+    float: left;
     overflow: hidden;
 }
 
 .transfer-double-content-middle {
     display: inline-block;
     width: 35px;
-    float: $float-left;
+    float: left;
     margin: 12% 22px 0 22px;
     text-align: center;
     vertical-align: middle;
@@ -179,7 +178,7 @@
 .transfer-double-content-tabs {
     display: inline-block;
     width: 100%;
-    border-block-end: 1px solid $border;
+    border-bottom: 1px solid $border;
 
     .tab-item-name {
         &.tab-active {
@@ -188,7 +187,7 @@
 
         display: inline-block;
         line-height: 36px;
-        margin-inline-start: 15%;
+        margin-left: 15%;
         width: 50%;
         cursor: pointer;
         margin: 0;
@@ -202,7 +201,7 @@
     display: inline-block;
     width: 100%;
     line-height: 36px;
-    border-block-end: 1px solid #e7eaf3;
+    border-bottom: 1px solid #e7eaf3;
     text-align: center;
     padding: 3px;
     font-weight: 500;
@@ -237,10 +236,7 @@
     width: 100%;
     line-height: 24px;
     border: 1px solid $border;
-    padding-block-start: 5px;
-    padding-inline-end: 0px;
-    padding-block-end: 4px;
-    padding-inline-start: 8px;
+    padding: 5px 0 4px 8px;
     border-radius: 7px;
     outline: 0;
 }
@@ -255,32 +251,32 @@
 
     .transfer-double-list-ul {
         list-style: none;
-        padding-inline-start: 7px;
+        padding-left: 7px;
         margin: 0;
 
         .transfer-double-list-li {
-            margin-block-start: 5px;
+            margin-top: 5px;
 
             input {
-                margin-inline-end: 10px;
+                margin-right: 10px;
             }
         }
     }
 
     .transfer-double-group-list-ul {
         list-style: none;
-        padding-inline-start: 7px;
+        padding-left: 7px;
         margin: 0;
 
         .transfer-double-group-list-li {
-            margin-block-start: 5px;
+            margin-top: 5px;
 
             .transfer-double-group-list-li-ul {
                 list-style: none;
-                padding-inline-start: 20px;
+                padding-left: 20px;
 
                 .transfer-double-group-list-li-ul-li {
-                    margin-block-start: 5px;
+                    margin-top: 5px;
                 }
             }
         }
@@ -297,10 +293,7 @@
     line-height: 24px;
     color: #777ab2 !important;
     border: 1px solid $border;
-    padding-block-start: 5px;
-    padding-inline-end: 0px;
-    padding-block-end: 4px;
-    padding-inline-start: 8px;
+    padding: 5px 0 4px 8px;
     border-radius: 7px;
     outline: 0;
 }
@@ -315,11 +308,11 @@
 
     .transfer-double-selected-list-ul {
         list-style: none;
-        padding-inline-start: 7px;
+        padding-left: 7px;
         margin: 0;
 
         .transfer-double-selected-list-li {
-            margin-block-start: 5px;
+            margin-top: 5px;
 
             .checkbox-group {
                 width: 65%;
@@ -327,7 +320,7 @@
 
             input {
                 &[type="checkbox"] {
-                    margin-inline-end: 10px;
+                    margin-right: 10px;
                 }
 
                 &[type="text"] {
@@ -342,12 +335,12 @@
 }
 
 .transfer-double-list-footer {
-    border-block-start: 1px solid $border;
-    padding-inline-start: 0px;
-    padding-block-start: 1px;
+    border-top: 1px solid $border;
+    padding-left: 0px;
+    padding-top: 1px;
 
     span {
-        margin-inline-start: 20px;
+        margin-left: 20px;
     }
 
     input {
@@ -355,22 +348,22 @@
         width: 40px;
         min-height: 24px;
         height: 24px;
-        margin-inline-start: 75px;
+        margin-left: 75px;
     }
 
     .btn-setting {
         display: inline-block;
-        margin-inline-start: 5px;
+        margin-left: 5px;
     }
 
     label {
-        margin-inline-start: 10px;
-        margin-block-start: 5px;
+        margin-left: 10px;
+        margin-top: 5px;
     }
 }
 
 .transfer-double-footer {
-    text-align: end;
+    text-align: right;
 }
 
 .btn-select-arrow {
@@ -384,8 +377,8 @@
     border: 1px solid $border;
     cursor: pointer;
 
-    +.btn-select-arrow {
-        margin-block-start: 10px;
+    + .btn-select-arrow {
+        margin-top: 10px;
     }
 }
 
@@ -432,7 +425,6 @@
 
 /** responsive **/
 @media (max-width: 480px) {
-
     .transfer-double-content-left,
     .transfer-double-content-right {
         width: 100%;
@@ -457,7 +449,7 @@
     }
 
     .transfer {
-        padding-inline-end: 0 !important;
+        padding-right: 0 !important;
     }
 }
 

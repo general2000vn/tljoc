@@ -12,9 +12,9 @@ img {
 	vertical-align: middle;
 	position: absolute;
 	text-align: center;
-	inset-inline-start: 0;
-	inset-inline-end: 0;
-	inset-block-end: -62px;
+	left: 0;
+	right: 0;
+	bottom: -62px;
 	img {
 		border-radius: 100%;
 		border: 6px solid rgba(225, 225, 225, 0.5);
@@ -35,10 +35,10 @@ img {
 }
 .loader-img {
 	position: absolute;
-	inset-inline-end: 0;
-	inset-block-end: 0;
-	inset-block-start: 43%;
-	inset-inline-start: 0;
+	right: 0;
+	bottom: 0;
+	top: 43%;
+	left: 0;
 	margin: 0 auto;
 	text-align: center;
 }
@@ -70,10 +70,10 @@ img {
 
 .demo-gallery {
 	>ul {
-		margin-block-end: 0;
+		margin-bottom: 0;
 		>li {
-			float: $float-left;
-			margin-block-end: 15px;
+			float: left;
+			margin-bottom: 15px;
 			width: 200px;
 			border: 0;
 			a {
@@ -82,7 +82,7 @@ img {
 				display: block;
 				overflow: hidden;
 				position: relative;
-				float: $float-left;
+				float: left;
 				>img {
 					-webkit-transition: -webkit-transform 0.15s ease 0s;
 					-moz-transition: -moz-transform 0.15s ease 0s;
@@ -107,13 +107,13 @@ img {
 	}
 }
 .home .demo-gallery {
-	padding-block-end: 80px;
+	padding-bottom: 80px;
 }
 .member img {
 	width: 100%;
 }
 .gallery a img {
-	float: $float-left;
+	float: left;
 	height: auto;
 	border: 1px solid $black-2;
 	-webkit-transition: -webkit-transform .15s ease;
@@ -141,10 +141,10 @@ img {
 
 .link-overlay-bg {
     position: absolute;
-    inset-block-start: 0;
-    inset-inline-start: 0;
-    inset-inline-end: 0;
-    inset-block-end: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: -ms-flexbox;
     display: flex;
     color: #fff;
@@ -159,12 +159,12 @@ img {
 }
 
 .img-gallery>.col, .img-gallery>[class*="col-"] {
-    padding-inline-start: 0.25rem;
-    padding-inline-end: 0.25rem;
-    padding-block-end: 0.5rem;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    padding-bottom: 0.5rem;
 }
 .img-gallery {
-    margin-inline-end: -0.25rem;
-    margin-inline-start: -0.25rem;
-    margin-block-end: -0.5rem;
+    margin-right: -0.25rem;
+    margin-left: -0.25rem;
+    margin-bottom: -0.5rem;
 }

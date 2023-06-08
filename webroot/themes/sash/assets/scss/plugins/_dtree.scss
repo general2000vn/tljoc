@@ -1,7 +1,7 @@
 .text {
     height: 18px;
     display: inline-block;
-    // float: $float-left;
+    // float: left;
     text-decoration: none;
 }
 
@@ -10,25 +10,25 @@ li.folder-group {
 }
 
 .folder-group ul {
-    padding-inline-start: 20px;
+    padding-left: 20px;
     display: none;
 }
 
 .folder {
     background: url("../plugins/dtree/images/misc.png") 0px -39px no-repeat;
-    padding-inline-start: 20px;
+    padding-left: 20px;
     height: 18px;
     display: inline-block;
-    // float: $float-left;
+    // float: left;
     transition: all 0.5s ease-in-out;
 }
 
 .folder-open {
     background: url("../plugins/dtree/images/misc.png") -21px -39px no-repeat;
-    padding-inline-start: 20px;
+    padding-left: 20px;
     height: 18px;
     display: inline-block;
-    // float: $float-left;
+    // float: left;
     transition: all 0.5s ease-in-out;
 }
 
@@ -37,7 +37,7 @@ li.folder-group {
     width: 18px;
     height: 18px;
     display: inline-block;
-    // float: $float-left;
+    // float: left;
 }
 
 .folder-group {
@@ -50,34 +50,34 @@ li.folder-group {
 
 .plus {
     background: url("../plugins/dtree/images/misc.png") 0px -59px no-repeat;
-    padding-inline-start: 20px;
+    padding-left: 20px;
     display: inline-block;
     height: 18px;
-    // float: $float-left;
+    // float: left;
 }
 
 .last .plus {
     background: url("../plugins/dtree/images/misc.png") 0px -82px no-repeat;
-    padding-inline-start: 20px;
+    padding-left: 20px;
     display: inline-block;
     height: 18px;
-    // float: $float-left;
+    // float: left;
 }
 
 .folder-group.last .minus {
     background: url("../plugins/dtree/images/misc.png") -18px -82px no-repeat;
-    padding-inline-start: 20px;
+    padding-left: 20px;
     display: inline-block;
     height: 18px;
-    // float: $float-left;
+    // float: left;
 }
 
 .minus {
     background: url("../plugins/dtree/images/misc.png") -18px -59px no-repeat ;
-    padding-inline-start: 20px;
+    padding-left: 20px;
     display: inline-block;
     height: 18px;
-    // float: $float-left;
+    // float: left;
 }
 
 .join {
@@ -85,7 +85,7 @@ li.folder-group {
     width: 18px;
     height: 18px;
     display: inline-block;
-    // float: $float-left;
+    // float: left;
 }
 
 .join-last .join {
@@ -93,7 +93,7 @@ li.folder-group {
     width: 18px;
     height: 18px;
     display: inline-block;
-    // float: $float-left;
+    // float: left;
 }
 
 .dTree {
@@ -110,7 +110,7 @@ li.folder-group {
     a {
         height: 18px;
         display: inline-block;
-        padding-block-start: 0px;
+        padding-top: 0px;
         color: #74829c;
         text-decoration: none;
     }
@@ -120,7 +120,7 @@ li.folder-group {
         width: 25px;
         height: 18px;
         display: inline-block;
-        // float: $float-left;
+        // float: left;
         min-height: auto;
     }
 

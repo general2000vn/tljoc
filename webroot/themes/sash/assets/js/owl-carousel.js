@@ -22,15 +22,11 @@
                 nav: true
             },
             600: {
-                items: 3,
+                items: 2,
                 nav: true
             },
-            1200: {
+            1300: {
                 items: 4,
-                nav: true
-            },
-            1400: {
-                items: 5,
                 nav: true
             }
 

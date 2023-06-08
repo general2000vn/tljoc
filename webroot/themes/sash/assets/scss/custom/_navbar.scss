@@ -26,9 +26,9 @@
 
 .navbar-brand {
     display: inline-block;
-    padding-block-start: 0.359375rem;
-    padding-block-end: 0.359375rem;
-    margin-inline-end: 1rem;
+    padding-top: 0.359375rem;
+    padding-bottom: 0.359375rem;
+    margin-right: 1rem;
     font-size: 1.125rem;
     line-height: inherit;
     white-space: nowrap;
@@ -43,12 +43,12 @@
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
-    padding-inline-start: 0;
-    margin-block-end: 0;
+    padding-left: 0;
+    margin-bottom: 0;
     list-style: none;
     .nav-link {
-        padding-inline-end: 0;
-        padding-inline-start: 0;
+        padding-right: 0;
+        padding-left: 0;
     }
     .dropdown-menu {
         position: static;
@@ -58,8 +58,8 @@
 
 .navbar-text {
     display: inline-block;
-    padding-block-start: 0.5rem;
-    padding-block-end: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
 .navbar-collapse {
@@ -113,8 +113,8 @@
     > {
         .container,
         .container-fluid {
-            padding-inline-end: 0;
-            padding-inline-start: 0;
+            padding-right: 0;
+            padding-left: 0;
             -ms-flex-wrap: nowrap;
             flex-wrap: nowrap;
         }
@@ -126,8 +126,8 @@
             position: absolute;
         }
         .nav-link {
-            padding-inline-end: 0.5rem;
-            padding-inline-start: 0.5rem;
+            padding-right: 0.5rem;
+            padding-left: 0.5rem;
         }
     }
     .navbar-collapse {
@@ -242,7 +242,7 @@
 @media (max-width: 991px) {
     .navresponsive-toggler {
         span {
-            margin-block-start: 8px;
+            margin-top: 8px;
             text-align: center;
             position: relative;
             color: $primary-1;
@@ -251,17 +251,17 @@
                 position: absolute;
                 width: 4px;
                 height: 12px;
-                inset-block-start: 4px;
-                inset-block-end: 0;
+                top: 4px;
+                bottom: 0;
                 border-radius: 50%;
-                inset-inline-end: 11px;
+                right: 11px;
                 background: rgba($primary-1, 0);
             }
         }
         padding: 2px;
     }
     .dropdown-menu.dropdown-menu-right {
-        inset-inline-start: 0 !important;
+        left: 0 !important;
     }
     .responsive-navbar .navbar-collapse .icon.navsearch {
         i {
@@ -282,20 +282,20 @@
     .responsive-navbar {
         .nav-link.icon {
             height: 2rem !important;
-            width: 1rem !important;
-            font-size: 1rem !important;
+            width: 2rem !important;
+            font-size: 1.2rem !important;
         }
         .avatar.profile-user {
             width: 2rem !important;
             height: 2rem !important;
             line-height: 1.5rem !important;
-            margin-block-start: 0 !important;
+            margin-top: 0 !important;
         }
         .dropdown-menu.dropdown-menu-end.show {
-            inset-block-start: 2.59rem !important;
+            top: 2.59rem !important;
         }
         .dropdown-menu.header-search.dropdown-menu-start.show {
-            inset-block-start: 2.59rem !important;
+            top: 2.59rem !important;
         }
     }
     .header .dropdown.message .dropdown-menu {
@@ -310,16 +310,16 @@
             position: fixed;
             width: 100%;
             background: $white;
-            margin-block-start: 41px;
+            margin-top: 41px;
             z-index: 999;
             box-shadow: 0 12px 11px -3px rgba(104, 113, 123, .1);
-            inset-inline-start: 0;
-            inset-inline-end: 0;
-            inset-block-start: 0;
+            left: 0;
+            right: 0;
+            top: 0;
         }
         .dropdown-menu.dropdown-menu-left {
-            inset-inline-start: -1px;
-            inset-inline-end: -1px;
+            left: -1px;
+            right: -1px;
             position: absolute;
         }
         .dropdown {
@@ -327,7 +327,7 @@
         }
         .nav-link.icon {
             padding: 10px !important;
-            margin: 13px 3px !important;
+            margin: 13px 4px !important;
             border-radius: 50px;
             height: 2.5rem;
             width: 2.5rem;
@@ -358,9 +358,9 @@
     height: 200px;
     overflow: auto;
     padding: .75rem;
-    border-inline-end: 1px solid $border;
-    border-inline-start: 1px solid $border;
-    border-block-end: 1px solid $border;
+    border-right: 1px solid $border;
+    border-left: 1px solid $border;
+    border-bottom: 1px solid $border;
 }
 
 .scrollspy-example-2 {
@@ -369,10 +369,7 @@
     overflow: auto;
     padding: .75rem;
     border: 1px solid $border;
-    border-start-start-radius: 0px;
-    border-start-end-radius: 5px;
-    border-end-end-radius: 5px;
-    border-end-start-radius: 0px;
+    border-radius: 0 5px 5px 0;
     .nav-link {
         padding: 10px;
     }

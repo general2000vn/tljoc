@@ -54,16 +54,15 @@
 
 .fc-direction-ltr {
     direction: ltr;
-    text-align: start;
+    text-align: left;
 }
 
 .fc-direction-rtl {
     direction: rtl;
-    text-align: end;
+    text-align: right;
 }
 
 .fc-theme-standard {
-
     td,
     th {
         border: 1px solid #e9edf4;
@@ -77,7 +76,6 @@
 /* TODO: best place for this? */
 
 .fc-liquid-hack {
-
     td,
     th {
         position: relative;
@@ -86,7 +84,8 @@
 
 @font-face {
     font-family: "fcicons";
-    src: url("data:application/x-font-ttf;charset=utf-8;base64,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") format("truetype");
+    src: url("data:application/x-font-ttf;charset=utf-8;base64,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")
+        format("truetype");
     font-weight: normal;
     font-style: normal;
 }
@@ -128,34 +127,6 @@
 }
 
 .fc-icon-chevrons-right:before {
-    content: "\e903";
-}
-
-.fc-icon-minus-square:before {
-    content: "\e904";
-}
-
-.fc-icon-plus-square:before {
-    content: "\e905";
-}
-
-.fc-icon-x:before {
-    content: "\e906";
-}
-
-.fc-icon-chevron-inset-inline-start:before {
-    content: "\e900";
-}
-
-.fc-icon-chevron-inset-inline-end:before {
-    content: "\e901";
-}
-
-.fc-icon-chevrons-inset-inline-start:before {
-    content: "\e902";
-}
-
-.fc-icon-chevrons-inset-inline-end:before {
     content: "\e903";
 }
 
@@ -254,7 +225,6 @@
         }
 
         &:not(:disabled) {
-
             &:active,
             &.fc-button-active {
                 color: #fff;
@@ -277,7 +247,7 @@
         display: inline-flex;
         vertical-align: middle;
 
-        >.fc-button {
+        > .fc-button {
             position: relative;
             flex: 1 1 auto;
 
@@ -291,29 +261,29 @@
     }
 }
 
-.fc-direction-ltr .fc-button-group>.fc-button {
+.fc-direction-ltr .fc-button-group > .fc-button {
     &:not(:first-child) {
-        margin-inline-start: -1px;
-        border-start-start-radius: 0;
-        border-end-start-radius: 0;
+        margin-left: -1px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
     }
 
     &:not(:last-child) {
-        border-start-end-radius: 0;
-        border-end-end-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
     }
 }
 
-.fc-direction-rtl .fc-button-group>.fc-button {
+.fc-direction-rtl .fc-button-group > .fc-button {
     &:not(:first-child) {
-        margin-inline-end: -1px;
-        border-start-end-radius: 0;
-        border-end-end-radius: 0;
+        margin-right: -1px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
     }
 
     &:not(:last-child) {
-        border-start-start-radius: 0;
-        border-end-start-radius: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
     }
 }
 
@@ -324,11 +294,11 @@
         align-items: center;
 
         &.fc-header-toolbar {
-            margin-block-end: 1.5em;
+            margin-bottom: 1.5em;
         }
 
         &.fc-footer-toolbar {
-            margin-block-start: 1.5em;
+            margin-top: 1.5em;
         }
     }
 
@@ -338,15 +308,15 @@
     }
 }
 
-.fc-direction-ltr .fc-toolbar>*> :not(:first-child) {
-    margin-inline-start: 0.75em;
+.fc-direction-ltr .fc-toolbar > * > :not(:first-child) {
+    margin-left: 0.75em;
 
     /* space between */
 }
 
 .fc-direction-rtl {
-    .fc-toolbar>*> :not(:first-child) {
-        margin-inline-end: 0.75em;
+    .fc-toolbar > * > :not(:first-child) {
+        margin-right: 0.75em;
 
         /* space between */
     }
@@ -371,10 +341,10 @@
 
     .fc-scroller-liquid-absolute {
         position: absolute;
-        inset-block-start: 0;
-        inset-inline-end: 0;
-        inset-inline-start: 0;
-        inset-block-end: 0;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
     }
 
     .fc-scroller-harness {
@@ -391,7 +361,7 @@
     }
 }
 
-.fc-direction-rtl .fc-scroller-harness>.fc-scroller {
+.fc-direction-rtl .fc-scroller-harness > .fc-scroller {
     /* undo above hack */
     direction: rtl;
 }
@@ -416,14 +386,14 @@
             table-layout: fixed;
 
             /* inner tables */
-            border-block-start-style: hidden;
-            border-inline-start-style: hidden;
-            border-inline-end-style: hidden;
+            border-top-style: hidden;
+            border-left-style: hidden;
+            border-right-style: hidden;
         }
 
         border-collapse: separate;
-        border-inline-end-width: 0;
-        border-block-end-width: 0;
+        border-right-width: 0;
+        border-bottom-width: 0;
     }
 
     .fc-scrollgrid-liquid {
@@ -436,7 +406,7 @@
 
         /* better than 0, for firefox */
 
-        >td {
+        > td {
             height: 1px;
 
             /* needs a height so inner div within grow. better than 0, for firefox */
@@ -454,31 +424,31 @@
     .fc-scrollgrid-section-liquid {
         height: auto;
 
-        >td {
+        > td {
             height: 100%;
 
             /* better than `auto`, for firefox */
         }
     }
 
-    .fc-scrollgrid-section>* {
-        border-block-start-width: 0;
-        border-inline-start-width: 0;
+    .fc-scrollgrid-section > * {
+        border-top-width: 0;
+        border-left-width: 0;
     }
 
-    .fc-scrollgrid-section-header>*,
-    .fc-scrollgrid-section-footer>* {
-        border-block-end-width: 0;
+    .fc-scrollgrid-section-header > *,
+    .fc-scrollgrid-section-footer > * {
+        border-bottom-width: 0;
     }
 
     .fc-scrollgrid-section-body table,
     .fc-scrollgrid-section-footer table {
-        border-block-end-style: hidden;
+        border-bottom-style: hidden;
 
         /* head keeps its bottom border tho */
     }
 
-    .fc-scrollgrid-section-sticky>* {
+    .fc-scrollgrid-section-sticky > * {
         background: #fff;
         background: var(--fc-page-bg-color, #fff);
         position: -webkit-sticky;
@@ -489,15 +459,15 @@
         /* TODO: box-shadow when sticking */
     }
 
-    .fc-scrollgrid-section-header.fc-scrollgrid-section-sticky>* {
-        inset-block-start: 0;
+    .fc-scrollgrid-section-header.fc-scrollgrid-section-sticky > * {
+        top: 0;
 
         /* because border-sharing causes a gap at the top */
         /* TODO: give safari -1. has bug */
     }
 
-    .fc-scrollgrid-section-footer.fc-scrollgrid-section-sticky>* {
-        inset-block-end: 0;
+    .fc-scrollgrid-section-footer.fc-scrollgrid-section-sticky > * {
+        bottom: 0;
 
         /* known bug: bottom-stickiness doesn't work in safari */
     }
@@ -507,7 +477,7 @@
         height: 1px;
 
         /* needs height to create scrollbars */
-        margin-block-end: -1px;
+        margin-bottom: -1px;
     }
 }
 
@@ -525,12 +495,12 @@
         position: relative;
     }
 
-    .fc-view-harness-active>.fc-view {
+    .fc-view-harness-active > .fc-view {
         position: absolute;
-        inset-block-start: 0;
-        inset-inline-end: 0;
-        inset-block-end: 0;
-        inset-inline-start: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
     }
 
     .fc-col-header-cell-cushion {
@@ -545,10 +515,10 @@
     .fc-highlight {
         /* will always have a harness with position:relative/absolute, so absolutely expand */
         position: absolute;
-        inset-block-start: 0;
-        inset-inline-start: 0;
-        inset-inline-end: 0;
-        inset-block-end: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
     }
 
     .fc-non-business {
@@ -556,7 +526,7 @@
     }
 
     .fc-bg-event {
-        background: rgba(4, 179, 114, 0.3);
+        background: rgb(4, 179, 114, 0.3);
         opacity: 0.3;
 
         .fc-event-title {
@@ -591,7 +561,6 @@ a.fc-event {
 /* cursor */
 
 .fc-event {
-
     &[href],
     &.fc-event-draggable {
         cursor: pointer;
@@ -662,10 +631,10 @@ a.fc-event {
         &:before {
             content: "";
             position: absolute;
-            inset-block-start: -20px;
-            inset-inline-start: -20px;
-            inset-inline-end: -20px;
-            inset-block-end: -20px;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
         }
     }
 
@@ -677,10 +646,10 @@ a.fc-event {
         content: "";
         position: absolute;
         z-index: 3;
-        inset-block-start: 0;
-        inset-inline-start: 0;
-        inset-inline-end: 0;
-        inset-block-end: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
     }
 
     /* dimmer effect */
@@ -695,10 +664,10 @@ a.fc-event {
         /* assume there's a border on all sides. overcome it. */
         /* sometimes there's NOT a border, in which case the dimmer will go over */
         /* an adjacent border, which looks fine. */
-        inset-block-start: -1px;
-        inset-inline-start: -1px;
-        inset-inline-end: -1px;
-        inset-block-end: -1px;
+        top: -1px;
+        left: -1px;
+        right: -1px;
+        bottom: -1px;
     }
 }
 
@@ -753,10 +722,10 @@ a.fc-event {
         vertical-align: top;
 
         /* for not messing up line-height */
-        inset-inline-start: 4px;
+        left: 4px;
 
         /* for sticky */
-        inset-inline-end: 0;
+        right: 0;
 
         /* for sticky */
         max-width: 100%;
@@ -767,8 +736,8 @@ a.fc-event {
 
     &.fc-event-selected:before {
         /* expand hit area */
-        inset-block-start: -10px;
-        inset-block-end: -10px;
+        top: -10px;
+        bottom: -10px;
     }
 }
 
@@ -776,23 +745,23 @@ a.fc-event {
 
 .fc-direction-ltr .fc-daygrid-block-event:not(.fc-event-start),
 .fc-direction-rtl .fc-daygrid-block-event:not(.fc-event-end) {
-    border-start-start-radius: 0;
-    border-end-start-radius: 0;
-    border-inline-start-width: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left-width: 0;
 }
 
 .fc-direction-ltr .fc-daygrid-block-event:not(.fc-event-end),
 .fc-direction-rtl .fc-daygrid-block-event:not(.fc-event-start) {
-    border-start-end-radius: 0;
-    border-end-end-radius: 0;
-    border-inline-end-width: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right-width: 0;
 }
 
 /* resizers */
 
 .fc-h-event:not(.fc-event-selected) .fc-event-resizer {
-    inset-block-start: 0;
-    inset-block-end: 0;
+    top: 0;
+    bottom: 0;
     width: 8px;
     width: var(--fc-event-resizer-thickness, 8px);
 }
@@ -800,35 +769,35 @@ a.fc-event {
 .fc-direction-ltr .fc-h-event:not(.fc-event-selected) .fc-event-resizer-start,
 .fc-direction-rtl .fc-h-event:not(.fc-event-selected) .fc-event-resizer-end {
     cursor: w-resize;
-    inset-inline-start: -4px;
-    inset-inline-start: calc(var(--fc-event-resizer-thickness, 8px) / -2);
+    left: -4px;
+    left: calc(var(--fc-event-resizer-thickness, 8px) / -2);
 }
 
 .fc-direction-ltr .fc-h-event:not(.fc-event-selected) .fc-event-resizer-end,
 .fc-direction-rtl .fc-h-event:not(.fc-event-selected) .fc-event-resizer-start {
     cursor: e-resize;
-    inset-inline-end: -4px;
-    inset-inline-end: calc(var(--fc-event-resizer-thickness, 8px) / -2);
+    right: -4px;
+    right: calc(var(--fc-event-resizer-thickness, 8px) / -2);
 }
 
 /* resizers for TOUCH */
 
 .fc-h-event.fc-event-selected .fc-event-resizer {
-    inset-block-start: 50%;
-    margin-block-start: -4px;
-    margin-block-start: calc(var(--fc-event-resizer-dot-total-width, 8px) / -2);
+    top: 50%;
+    margin-top: -4px;
+    margin-top: calc(var(--fc-event-resizer-dot-total-width, 8px) / -2);
 }
 
 .fc-direction-ltr .fc-h-event.fc-event-selected .fc-event-resizer-start,
 .fc-direction-rtl .fc-h-event.fc-event-selected .fc-event-resizer-end {
-    inset-inline-start: -4px;
-    inset-inline-start: calc(var(--fc-event-resizer-dot-total-width, 8px) / -2);
+    left: -4px;
+    left: calc(var(--fc-event-resizer-dot-total-width, 8px) / -2);
 }
 
 .fc-direction-ltr .fc-h-event.fc-event-selected .fc-event-resizer-end,
 .fc-direction-rtl .fc-h-event.fc-event-selected .fc-event-resizer-start {
-    inset-inline-end: -4px;
-    inset-inline-end: calc(var(--fc-event-resizer-dot-total-width, 8px) / -2);
+    right: -4px;
+    right: calc(var(--fc-event-resizer-dot-total-width, 8px) / -2);
 }
 
 :root {
@@ -838,7 +807,7 @@ a.fc-event {
 .fc {
     .fc-popover {
         position: absolute;
-        inset-block-start: 0;
+        top: 0;
 
         /* for when not positioned yet */
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
@@ -898,7 +867,7 @@ a.fc-event {
     }
 
     .fc-daygrid-day.fc-day-today {
-        background-color: rgb(240, 240, 245);
+        background-color: rgb(240 240 245);
     }
 
     .fc-daygrid-day-frame {
@@ -927,15 +896,15 @@ a.fc-event {
     }
 
     .fc-daygrid-day-events {
-        margin-block-start: 1px;
+        margin-top: 1px;
 
         /* needs to be margin, not padding, so that available cell height can be computed */
     }
 
     .fc-daygrid-body-balanced .fc-daygrid-day-events {
         /* position: absolute; */
-        inset-inline-start: 0;
-        inset-inline-end: 0;
+        left: 0;
+        right: 0;
     }
 
     .fc-daygrid-body-unbalanced .fc-daygrid-day-events {
@@ -949,7 +918,7 @@ a.fc-event {
 
     .fc-daygrid-body-natural {
         .fc-daygrid-day-events {
-            margin-block-end: 1em;
+            margin-bottom: 1em;
         }
     }
 
@@ -959,21 +928,21 @@ a.fc-event {
 
     .fc-daygrid-event-harness-abs {
         position: absolute;
-        inset-block-start: 0;
+        top: 0;
 
         /* fallback coords for when cannot yet be computed */
-        inset-inline-start: 0;
+        left: 0;
 
         /* */
-        inset-inline-end: 0;
+        right: 0;
 
         /* */
     }
 
     .fc-daygrid-bg-harness {
         position: absolute;
-        inset-block-start: 0;
-        inset-block-end: 0;
+        top: 0;
+        bottom: 0;
     }
 
     .fc-daygrid-day-bg {
@@ -992,7 +961,7 @@ a.fc-event {
 
     .fc-daygrid-event {
         z-index: 6;
-        margin-block-start: 1px;
+        margin-top: 1px;
 
         &.fc-event-mirror {
             z-index: 7;
@@ -1013,7 +982,7 @@ a.fc-event {
     .fc-daygrid-week-number {
         position: absolute;
         z-index: 5;
-        inset-block-start: 0;
+        top: 0;
         padding: 2px;
         min-width: 1.5em;
         text-align: center;
@@ -1035,21 +1004,21 @@ a.fc-event {
 
 .fc-direction-ltr .fc-daygrid-event.fc-event-start,
 .fc-direction-rtl .fc-daygrid-event.fc-event-end {
-    margin-inline-start: 2px;
+    margin-left: 2px;
 }
 
 .fc-direction-ltr .fc-daygrid-event.fc-event-end,
 .fc-direction-rtl .fc-daygrid-event.fc-event-start {
-    margin-inline-end: 2px;
+    margin-right: 2px;
 }
 
 .fc-direction-ltr .fc-daygrid-week-number {
-    inset-inline-start: 0;
+    left: 0;
     border-radius: 0 0 3px 0;
 }
 
 .fc-direction-rtl .fc-daygrid-week-number {
-    inset-inline-end: 0;
+    right: 0;
     border-radius: 0 0 0 3px;
 }
 
@@ -1109,8 +1078,8 @@ a.fc-event {
 
     &.fc-event-selected:before {
         /* expand hit area */
-        inset-block-start: -10px;
-        inset-block-end: -10px;
+        top: -10px;
+        bottom: -10px;
     }
 }
 
@@ -1129,11 +1098,11 @@ a.fc-event {
 /* --- spacing between time and title --- */
 
 .fc-direction-ltr .fc-daygrid-event .fc-event-time {
-    margin-inline-end: 3px;
+    margin-right: 3px;
 }
 
 .fc-direction-rtl .fc-daygrid-event .fc-event-time {
-    margin-inline-start: 3px;
+    margin-left: 3px;
 }
 
 /*
@@ -1178,8 +1147,8 @@ a.fc-event {
 
     .fc-event-title {
         /* will have fc-sticky on it */
-        inset-block-start: 0;
-        inset-block-end: 0;
+        top: 0;
+        bottom: 0;
         max-height: 100%;
 
         /* clip overflow */
@@ -1187,21 +1156,21 @@ a.fc-event {
     }
 
     &:not(.fc-event-start) {
-        border-block-start-width: 0;
-        border-start-start-radius: 0;
-        border-start-end-radius: 0;
+        border-top-width: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
     }
 
     &:not(.fc-event-end) {
-        border-block-end-width: 0;
-        border-end-start-radius: 0;
-        border-end-end-radius: 0;
+        border-bottom-width: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
     }
 
     &.fc-event-selected:before {
         /* expand hit area */
-        inset-inline-start: -10px;
-        inset-inline-end: -10px;
+        left: -10px;
+        right: -10px;
     }
 
     /* resizer (mouse AND touch) */
@@ -1220,18 +1189,18 @@ a.fc-event {
         .fc-event-resizer {
             height: 8px;
             height: var(--fc-event-resizer-thickness, 8px);
-            inset-inline-start: 0;
-            inset-inline-end: 0;
+            left: 0;
+            right: 0;
         }
 
         .fc-event-resizer-start {
-            inset-block-start: -4px;
-            inset-block-start: calc(var(--fc-event-resizer-thickness, 8px) / -2);
+            top: -4px;
+            top: calc(var(--fc-event-resizer-thickness, 8px) / -2);
         }
 
         .fc-event-resizer-end {
-            inset-block-end: -4px;
-            inset-block-end: calc(var(--fc-event-resizer-thickness, 8px) / -2);
+            bottom: -4px;
+            bottom: calc(var(--fc-event-resizer-thickness, 8px) / -2);
         }
     }
 
@@ -1239,19 +1208,19 @@ a.fc-event {
 
     &.fc-event-selected {
         .fc-event-resizer {
-            inset-inline-start: 50%;
-            margin-inline-start: -4px;
-            margin-inline-start: calc(var(--fc-event-resizer-dot-total-width, 8px) / -2);
+            left: 50%;
+            margin-left: -4px;
+            margin-left: calc(var(--fc-event-resizer-dot-total-width, 8px) / -2);
         }
 
         .fc-event-resizer-start {
-            inset-block-start: -4px;
-            inset-block-start: calc(var(--fc-event-resizer-dot-total-width, 8px) / -2);
+            top: -4px;
+            top: calc(var(--fc-event-resizer-dot-total-width, 8px) / -2);
         }
 
         .fc-event-resizer-end {
-            inset-block-end: -4px;
-            inset-block-end: calc(var(--fc-event-resizer-dot-total-width, 8px) / -2);
+            bottom: -4px;
+            bottom: calc(var(--fc-event-resizer-dot-total-width, 8px) / -2);
         }
     }
 }
@@ -1286,7 +1255,7 @@ a.fc-event {
 
         /* offset parent for now-indicator-container */
 
-        >table {
+        > table {
             position: relative;
             z-index: 1;
 
@@ -1302,7 +1271,7 @@ a.fc-event {
     .fc-timegrid-slot {
         /* a <td> */
         height: 1.5em;
-        border-block-end: 0;
+        border-bottom: 0;
 
         /* each cell owns its top border */
 
@@ -1314,7 +1283,7 @@ a.fc-event {
     }
 
     .fc-timegrid-slot-minor {
-        border-block-start-style: dotted;
+        border-top-style: dotted;
     }
 
     .fc-timegrid-slot-label-cushion {
@@ -1361,20 +1330,20 @@ a.fc-event {
 }
 
 .fc-direction-ltr .fc-timegrid-slot-label-frame {
-    text-align: end;
+    text-align: right;
 }
 
 .fc-direction-rtl .fc-timegrid-slot-label-frame {
-    text-align: start;
+    text-align: left;
 }
 
 .fc-liquid-hack .fc-timegrid-axis-frame-liquid {
     height: auto;
     position: absolute;
-    inset-block-start: 0;
-    inset-inline-end: 0;
-    inset-block-end: 0;
-    inset-inline-start: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
 .fc {
@@ -1394,10 +1363,10 @@ a.fc-event {
 .fc-liquid-hack .fc-timegrid-col-frame {
     height: auto;
     position: absolute;
-    inset-block-start: 0;
-    inset-inline-end: 0;
-    inset-block-end: 0;
-    inset-inline-start: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
 .fc-media-screen {
@@ -1405,12 +1374,12 @@ a.fc-event {
         position: absolute;
 
         /* no z-index. children will decide and go above slots */
-        inset-block-start: 0;
-        inset-inline-start: 0;
-        inset-inline-end: 0;
-        inset-block-end: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
 
-        >table {
+        > table {
             height: 100%;
         }
     }
@@ -1419,9 +1388,9 @@ a.fc-event {
     .fc-timegrid-col-events,
     .fc-timegrid-now-indicator-container {
         position: absolute;
-        inset-block-start: 0;
-        inset-inline-start: 0;
-        inset-inline-end: 0;
+        top: 0;
+        left: 0;
+        right: 0;
     }
 
     .fc-timegrid-event-harness {
@@ -1455,8 +1424,8 @@ a.fc-event {
         position: absolute;
 
         /* top/bottom will be set by JS */
-        inset-inline-start: 0;
-        inset-inline-end: 0;
+        left: 0;
+        right: 0;
     }
 
     .fc-timegrid-col-events {
@@ -1466,7 +1435,7 @@ a.fc-event {
     }
 
     .fc-timegrid-now-indicator-container {
-        inset-block-end: 0;
+        bottom: 0;
         overflow: hidden;
 
         /* don't let overflow of lines/arrows cause unnecessary scrolling */
@@ -1506,7 +1475,7 @@ a.fc-event {
         white-space: nowrap;
         font-size: 0.85em;
         font-size: var(--fc-small-font-size, 0.85em);
-        margin-block-end: 1px;
+        margin-bottom: 1px;
     }
 }
 
@@ -1530,12 +1499,12 @@ a.fc-event {
     position: absolute;
 
     /* absolute WITHIN the harness */
-    inset-block-start: 0;
-    inset-block-end: 1px;
+    top: 0;
+    bottom: 1px;
 
     /* stay away from bottom slot line */
-    inset-inline-start: 0;
-    inset-inline-end: 0;
+    left: 0;
+    right: 0;
 }
 
 .fc {
@@ -1543,8 +1512,8 @@ a.fc-event {
     .fc-timegrid-now-indicator-line {
         position: absolute;
         z-index: 4;
-        inset-inline-start: 0;
-        inset-inline-end: 0;
+        left: 0;
+        right: 0;
         border-style: solid;
         border-color: red;
         border-color: var(--fc-now-indicator-color, red);
@@ -1554,7 +1523,7 @@ a.fc-event {
     .fc-timegrid-now-indicator-arrow {
         position: absolute;
         z-index: 4;
-        margin-block-start: -5px;
+        margin-top: -5px;
 
         /* vertically center on top coordinate */
         border-style: solid;
@@ -1563,21 +1532,21 @@ a.fc-event {
 }
 
 .fc-direction-ltr .fc-timegrid-now-indicator-arrow {
-    inset-inline-start: 0;
+    left: 0;
 
     /* triangle pointing right. TODO: mixin */
     border-width: 5px 0 5px 6px;
-    border-block-start-color: transparent;
-    border-block-end-color: transparent;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
 }
 
 .fc-direction-rtl .fc-timegrid-now-indicator-arrow {
-    inset-inline-end: 0;
+    right: 0;
 
     /* triangle pointing left. TODO: mixin */
     border-width: 5px 6px 5px 0;
-    border-block-start-color: transparent;
-    border-block-end-color: transparent;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
 }
 
 :root {
@@ -1611,17 +1580,17 @@ a.fc-event {
 
         /* kill outer border on theme */
 
-        tr>* {
-            border-inline-start: 0;
-            border-inline-end: 0;
+        tr > * {
+            border-left: 0;
+            border-right: 0;
         }
     }
 
-    .fc-list-sticky .fc-list-day>* {
+    .fc-list-sticky .fc-list-day > * {
         /* the cells */
         position: -webkit-sticky;
         position: sticky;
-        inset-block-start: 0;
+        top: 0;
         background: #fff;
         background: var(--fc-page-bg-color, #fff);
 
@@ -1659,24 +1628,24 @@ a.fc-event {
 
 .fc-direction-ltr .fc-list-day-text,
 .fc-direction-rtl .fc-list-day-side-text {
-    float: $float-left;
+    float: left;
     color: #282f53;
 }
 
 .fc-direction-ltr .fc-list-day-side-text,
 .fc-direction-rtl .fc-list-day-text {
-    float: $float-right;
+    float: right;
     color: #282f53;
 }
 
 /* make the dot closer to the event title */
 
 .fc-direction-ltr .fc-list-table .fc-list-event-graphic {
-    padding-inline-end: 0;
+    padding-right: 0;
 }
 
 .fc-direction-rtl .fc-list-table .fc-list-event-graphic {
-    padding-inline-start: 0;
+    padding-left: 0;
 }
 
 .fc .fc-list-event.fc-event-forced-url {
@@ -1732,11 +1701,11 @@ a.fc-event {
 #external-events {
     padding: 1rem;
     border: 1px solid #e9edf4;
-    text-align: start;
+    text-align: left;
 
     h4 {
         font-size: 16px;
-        margin-block-end: 1rem;
+        margin-bottom: 1rem;
         font-weight: 600;
     }
 
@@ -1760,13 +1729,13 @@ a.fc-event {
 
 @media (min-width: 1366px) {
     #external-events {
-        margin-block-start: 3.5rem;
+        margin-top: 3.5rem;
     }
 }
 
 @media (max-width: 1366px) {
     #external-events {
-        margin-block-end: 3.5rem;
+        margin-bottom: 3.5rem;
     }
 }
 
@@ -1778,14 +1747,14 @@ a.fc-event {
 
         .fc-toolbar-title {
             position: absolute;
-            inset-inline-end: 10px;
+            right: 10px;
             font-size: 20px;
-            inset-block-start: 10px;
+            top: 10px;
         }
     }
 
     .fc-toolbar-chunk {
-        margin-block-end: 10px;
+        margin-bottom: 10px;
     }
 }
 
@@ -1793,8 +1762,8 @@ a.fc-event {
     .fc {
         .fc-toolbar-title {
             position: relative;
-            inset-inline-end: 0;
-            inset-block-start: 0;
+            right: 0;
+            top: 0;
         }
 
         .fc-daygrid-day-number {

@@ -1,7 +1,7 @@
 .iti {
 	position: relative;
 	display: inline-block;
-	margin-block-end: 4px;
+	margin-bottom: 4px;
 }
 
 .iti__hide {
@@ -15,10 +15,10 @@
 .iti input {
 	position: relative;
 	z-index: 0;
-	margin-block-start: 1px !important;
-	margin-block-end: 0 !important;
-	padding-inline-end: 36px;
-	margin-inline-end: 0;
+	margin-top: 1px !important;
+	margin-bottom: 0 !important;
+	padding-right: 36px;
+	margin-right: 0;
 	height: 36px;
 	border: 1px solid #ecf0fa;
 	border-radius: 4px;
@@ -27,10 +27,10 @@
 	&[type="tel"] {
 		position: relative;
 		z-index: 0;
-		margin-block-start: 1px !important;
-		margin-block-end: 0 !important;
-		padding-inline-end: 36px;
-		margin-inline-end: 0;
+		margin-top: 1px !important;
+		margin-bottom: 0 !important;
+		padding-right: 36px;
+		margin-right: 0;
 		height: 36px;
 		border: 1px solid #ecf0fa;
 		border-radius: 4px;
@@ -46,9 +46,9 @@
 
 .iti__flag-container {
 	position: absolute;
-	inset-block-start: 0;
-	inset-block-end: 0;
-	inset-inline-end: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
 	padding: 1px;
 }
 
@@ -58,37 +58,31 @@
 	display: flex;
 	align-items: center;
 	height: 100%;
-	padding-block-start: 0px;
-    padding-inline-end: 6px;
-    padding-block-end: 0px;
-    padding-inline-start: 8px;
-	border-inline-end: 1px solid #ecf0fa;
+	padding: 0 6px 0 8px;
+	border-right: 1px solid #ecf0fa;
 }
 
 .iti__arrow {
-	margin-inline-start: 6px;
+	margin-left: 6px;
 	width: 0;
 	height: 0;
-	border-inline-start: 3px solid transparent;
-	border-inline-end: 3px solid transparent;
-	border-block-start: 4px solid #b6b9ce;
+	border-left: 3px solid transparent;
+	border-right: 3px solid transparent;
+	border-top: 4px solid #b6b9ce;
 }
 
 .iti__arrow--up {
-	border-block-start: none;
-	border-block-end: 4px solid #b6b9ce;
+	border-top: none;
+	border-bottom: 4px solid #b6b9ce;
 }
 
 .iti__country-list {
 	position: absolute;
 	z-index: 2;
 	list-style: none;
-	text-align: start;
+	text-align: left;
 	padding: 0;
-	margin-block-start: 0px;
-    margin-inline-end: 0px;
-    margin-block-end: 0px;
-    margin-inline-start: -1px;
+	margin: 0 0 0 -1px;
 	background-color: white;
 	border: 1px solid #eaeaec;
 	border-radius: 4px;
@@ -101,8 +95,8 @@
 }
 
 .iti__country-list--dropup {
-	inset-block-end: 100%;
-	margin-block-end: -1px;
+	bottom: 100%;
+	margin-bottom: -1px;
 }
 
 @media (max-width: 500px) {
@@ -117,9 +111,9 @@
 }
 
 .iti__divider {
-	padding-block-end: 5px;
-	margin-block-end: 5px;
-	border-block-end: 1px solid #e7eaf3;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+	border-bottom: 1px solid #e7eaf3;
 }
 
 .iti__country {
@@ -147,39 +141,39 @@
 
 .iti__flag-box,
 .iti__country-name {
-	margin-inline-end: 6px;
+	margin-right: 6px;
 }
 
 .iti--allow-dropdown input {
-	padding-inline-end: 6px;
-	padding-inline-start: 52px;
-	margin-inline-start: 0;
+	padding-right: 6px;
+	padding-left: 52px;
+	margin-left: 0;
 
 	&[type="text"],
 	&[type="tel"] {
-		padding-inline-end: 6px;
-		padding-inline-start: 52px;
-		margin-inline-start: 0;
+		padding-right: 6px;
+		padding-left: 52px;
+		margin-left: 0;
 	}
 }
 
 .iti--separate-dial-code input {
-	padding-inline-end: 6px;
-	padding-inline-start: 52px;
-	margin-inline-start: 0;
+	padding-right: 6px;
+	padding-left: 52px;
+	margin-left: 0;
 
 	&[type="text"],
 	&[type="tel"] {
-		padding-inline-end: 6px;
-		padding-inline-start: 52px;
-		margin-inline-start: 0;
+		padding-right: 6px;
+		padding-left: 52px;
+		margin-left: 0;
 	}
 }
 
 .iti--allow-dropdown .iti__flag-container,
 .iti--separate-dial-code .iti__flag-container {
-	inset-inline-end: auto;
-	inset-inline-start: 0;
+	right: auto;
+	left: 0;
 }
 
 .iti--allow-dropdown {
@@ -210,14 +204,14 @@
 	}
 
 	.iti__selected-dial-code {
-		margin-inline-start: 6px;
+		margin-left: 6px;
 	}
 }
 
 .iti--container {
 	position: absolute;
-	inset-block-start: -1000px;
-	inset-inline-start: -1000px;
+	top: -1000px;
+	left: -1000px;
 	z-index: 1060;
 	padding: 1px;
 
@@ -228,10 +222,10 @@
 
 .iti-mobile {
 	.iti--container {
-		inset-block-start: 30px;
-		inset-block-end: 30px;
-		inset-inline-start: 30px;
-		inset-inline-end: 30px;
+		top: 30px;
+		bottom: 30px;
+		left: 30px;
+		right: 30px;
 		position: fixed;
 	}
 

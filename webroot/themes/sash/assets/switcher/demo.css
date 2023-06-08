@@ -15,9 +15,6 @@
   padding: 0;
 }
 
-.rtl .swichermainleft {
-    float: right;
-  }
 /*-- color-1 --*/
 .color1{
 	background: #8667ff !important;
@@ -75,7 +72,7 @@
 	margin: 0px;
     background: #FFFFFF;
     position: absolute; top: 0; bottom: 0;
-    inset-inline-end: 13px;
+    right: 13px;
     border: 1px solid #CCCCCC; border-radius: 15px;
     transition: all 0.3s ease-in 0s; 
 }
@@ -86,7 +83,7 @@
    border-color: #0fa751;
 }
 .onoffswitch-checkbox:checked + .onoffswitch-label:before {
-    inset-inline-end: 0px; 
+    right: 0px; 
 }
 
 /* //////////////////  switch-2  //////////////// */
@@ -121,12 +118,12 @@
 	margin: 0px;
     background: #FFFFFF;
     position: absolute; top: 0; bottom: 0;
-    inset-inline-end: 13px;
+    right: 13px;
     border: 1px solid #CCCCCC; border-radius: 15px;
     transition: all 0.3s ease-in 0s; 
 }
 .onoffswitch2-checkbox:checked + .onoffswitch2-label:before {
-    inset-inline-end: 0px; 
+    right: 0px; 
 }
 
 /* //////////////////  switch-3  //////////////// */
@@ -161,7 +158,7 @@
 	margin: 0px;
     background: #FFFFFF;
     position: absolute; top: 0; bottom: 0;
-    inset-inline-end: 13px;
+    right: 13px;
     border: 1px solid #CCCCCC; border-radius: 15px;
     transition: all 0.3s ease-in 0s; 
 }
@@ -172,7 +169,7 @@
    border-color: #0fa751;
 }
 .onoffswitch3-checkbox:checked + .onoffswitch3-label:before {
-    inset-inline-end: 0px; 
+    right: 0px; 
 }
 .switch-toggle{
 	padding:3px 0;
