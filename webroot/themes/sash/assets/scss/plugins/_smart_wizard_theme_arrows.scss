@@ -24,22 +24,22 @@
         padding: 15px;
         border: 0px solid #eff0f6;
         background-color: #fff;
-        text-align: left;
+        text-align: start;
     }
 
     .sw-toolbar {
         padding: 10px;
-        margin-bottom: 0 !important;
+        margin-block-end: 0 !important;
     }
 
     > {
         ul.step-anchor {
             border: 0;
-            border-bottom: 1px solid #eff0f6;
+            border-block-end: 1px solid #eff0f6;
             padding: 0px;
             background: #fff;
             border-radius: 0;
-            border-top-right-radius: 5px;
+            border-start-end-radius: 5px;
             list-style: none;
             overflow: hidden;
 
@@ -76,13 +76,13 @@
                         display: block;
                         width: 0;
                         height: 0;
-                        border-top: 50px solid transparent;
-                        border-bottom: 50px solid transparent;
-                        border-left: 30px solid #f4f5f5;
+                        border-block-start: 50px solid transparent;
+                        border-block-end: 50px solid transparent;
+                        border-inline-start: 30px solid #f4f5f5;
                         position: absolute;
-                        top: 50%;
-                        margin-top: -50px;
-                        left: 100%;
+                        inset-block-start: 50%;
+                        margin-block-start: -50px;
+                        inset-inline-start: 100%;
                         z-index: 2;
                     }
 
@@ -91,22 +91,22 @@
                         display: block;
                         width: 0;
                         height: 0;
-                        border-top: 50px solid transparent;
+                        border-block-start: 50px solid transparent;
 
                         /* Go big on the size, and let overflow hide */
-                        border-bottom: 50px solid transparent;
-                        border-left: 30px solid #dbdef1;
+                        border-block-end: 50px solid transparent;
+                        border-inline-start: 30px solid #dbdef1;
                         position: absolute;
-                        top: 50%;
-                        margin-top: -50px;
-                        margin-left: 1px;
-                        left: 100%;
+                        inset-block-start: 50%;
+                        margin-block-start: -50px;
+                        margin-inline-start: 1px;
+                        inset-inline-start: 100%;
                         z-index: 1;
                     }
                 }
 
                 &:first-child > a {
-                    padding-left: 15px;
+                    padding-inline-start: 15px;
                 }
 
                 > a {
@@ -118,7 +118,7 @@
                         border-color: #f4f5f5;
 
                         &:after {
-                            border-left-color: #f4f5f5;
+                            border-inline-start-color: #f4f5f5;
                         }
                     }
                 }
@@ -134,7 +134,7 @@
                     background: #7673e6 !important;
 
                     &:after {
-                        border-left: 30px solid #7673e6 !important;
+                        border-inline-start: 30px solid #7673e6 !important;
                     }
                 }
 
@@ -146,7 +146,7 @@
                     background: #f4f5f5 !important;
 
                     &:after {
-                        border-left: 30px solid #f4f5f5;
+                        border-inline-start: 30px solid #f4f5f5;
 
                         /* c3e6cb */
                     }
@@ -158,7 +158,7 @@
                     background: #d9534f !important;
 
                     &:after {
-                        border-left: 30px solid #d9534f !important;
+                        border-inline-start: 30px solid #d9534f !important;
                     }
                 }
 
@@ -175,7 +175,7 @@
 
     &::before {
         border: 10px solid #f3f3f3;
-        border-top: 10px solid #7673e6;
+        border-block-start: 10px solid #7673e6;
     }
 }
 
@@ -189,7 +189,7 @@
 
         .nav-tabs > li {
             float: none !important;
-            margin-bottom: 0;
+            margin-block-end: 0;
         }
     }
 }
@@ -203,18 +203,18 @@
 
         .nav-tabs > li {
             float: none !important;
-            margin-bottom: 0;
+            margin-block-end: 0;
         }
 
         ul.step-anchor > li > a {
-            padding-left: 15px;
-            margin-right: 0;
-            margin-bottom: 1px;
+            padding-inline-start: 15px;
+            margin-inline-end: 0;
+            margin-block-end: 1px;
 
             &:hover {
-                padding-left: 15px;
-                margin-right: 0;
-                margin-bottom: 1px;
+                padding-inline-start: 15px;
+                margin-inline-end: 0;
+                margin-block-end: 1px;
             }
 
             &:after,

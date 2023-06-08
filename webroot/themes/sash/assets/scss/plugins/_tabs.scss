@@ -7,7 +7,7 @@
     text-align: center;
 
     span {
-      border-bottom: 2px solid $primary-1;
+      border-block-end: 2px solid $primary-1;
       display: inline-block;
       padding: 0 10px 10px;
       color: $primary-1;
@@ -29,19 +29,19 @@
     clear: both;
     display: inline-block;
     width: 100%;
-    margin-bottom: 0;
+    margin-block-end: 0;
 
     li {
-      float: left;
+      float: $float-left;
       cursor: pointer;
       font-weight: 500;
       padding: 8px 18px;
       text-transform: uppercase;
       border: 1px solid $border;
       font-size: 1.05em;
-      border-bottom: 0;
+      border-block-end: 0;
       position: relative;
-      border-top: 1px solid $border;
+      border-block-start: 1px solid $border;
       margin: 0 5px 0 0;
       border-radius: 5px 5px 0px 0px;
 
@@ -51,9 +51,9 @@
         &:after {
           content: "";
           position: absolute;
-          bottom: -1px;
+          inset-block-end: -1px;
           height: 1px;
-          left: 0;
+          inset-inline-start: 0;
           background: #fff;
           width: 100%;
         }
@@ -66,8 +66,8 @@
     overflow: hidden;
     clear: both;
     position: absolute;
-    top: 0;
-    right: 0;
+    inset-block-start: 0;
+    inset-inline-end: 0;
 
     span {
       padding: 8px 22px;
@@ -77,19 +77,19 @@
       display: inline-block;
 
       &.next {
-        float: right;
-        margin-left: 10px;
+        float: $float-right;
+        margin-inline-start: 10px;
       }
     }
   }
 
   .content_wrapper {
-    float: left;
+    float: $float-left;
     width: 100%;
     border: 1px solid $border;
     box-sizing: border-box;
     position: relative;
-    top: -5px;
+    inset-block-start: -5px;
 
     .tab_content {
       display: none;
@@ -105,8 +105,8 @@
       padding: 10px 20px;
       text-transform: uppercase;
       font-weight: bold;
-      border-top: 1px solid #eee;
-      border-bottom: 1px solid #fff;
+      border-block-start: 1px solid #eee;
+      border-block-end: 1px solid #fff;
       position: relative;
       cursor: pointer;
 
@@ -116,8 +116,8 @@
 
         &:after {
           position: absolute;
-          top: 0;
-          left: 0;
+          inset-block-start: 0;
+          inset-inline-start: 0;
           content: "";
           width: 5px;
           height: 100%;
@@ -126,7 +126,7 @@
       }
 
       .arrow {
-        float: right;
+        float: $float-right;
         display: inline-block;
         width: 12px;
         height: 12px;
@@ -134,15 +134,15 @@
         border-radius: 2px;
         transform: rotate(-135deg);
         background: #fff;
-        border-top: 3px solid #ccc;
-        border-left: 3px solid #ccc;
+        border-block-start: 3px solid #ccc;
+        border-inline-start: 3px solid #ccc;
       }
 
       &.active .arrow {
         transform: rotate(45deg);
-        margin-top: 5px;
-        border-top: 3px solid $primary-1;
-        border-left: 3px solid $primary-1;
+        margin-block-start: 5px;
+        border-block-start: 3px solid $primary-1;
+        border-inline-start: 3px solid $primary-1;
       }
     }
   }
@@ -150,8 +150,8 @@
   &.left_side {
     > ul {
       width: 25%;
-      float: left;
-      border-bottom: 1px solid #ccc;
+      float: $float-left;
+      border-block-end: 1px solid #ccc;
 
       li {
         width: 100%;
@@ -159,12 +159,12 @@
         margin: 0;
         padding: 12px 18px;
         border-width: 1px;
-        border-right: 0;
-        border-left: 0;
+        border-inline-end: 0;
+        border-inline-start: 0;
 
         &:after {
-          left: 0;
-          top: 0;
+          inset-inline-start: 0;
+          inset-block-start: 0;
           content: "";
           position: absolute;
           width: 5px;
@@ -176,17 +176,17 @@
           border-color: #ccc;
 
           &:after {
-            left: 0;
-            top: 0;
+            inset-inline-start: 0;
+            inset-block-start: 0;
             width: 5px;
             height: 100%;
             background: $primary-1;
           }
 
           &:before {
-            right: -1px;
+            inset-inline-end: -1px;
             position: absolute;
-            top: 0;
+            inset-block-start: 0;
             content: "";
             width: 2px;
             height: 100%;
@@ -199,19 +199,19 @@
     .content_wrapper {
       width: 75%;
       border: 1px solid $border;
-      float: left;
+      float: $float-left;
     }
 
     .controller {
-      top: -50px;
+      inset-block-start: -50px;
     }
   }
 
   &.right_side {
     > ul {
       width: 25%;
-      float: right;
-      border-bottom: 1px solid $border;
+      float: $float-right;
+      border-block-end: 1px solid $border;
 
       li {
         width: 100%;
@@ -219,14 +219,14 @@
         margin: 0;
         padding: 12px 18px;
         border-width: 1px;
-        border-right: 0;
-        border-left: 1px solid $border;
-        text-align: right;
+        border-inline-end: 0;
+        border-inline-start: 1px solid $border;
+        text-align: end;
 
         &:after {
-          right: 0;
-          left: inherit;
-          top: 0;
+          inset-inline-end: 0;
+          inset-inline-start: inherit;
+          inset-block-start: 0;
           content: "";
           position: absolute;
           width: 5px;
@@ -238,19 +238,19 @@
           border-color: #d7e7ff;
 
           &:after {
-            right: 0;
-            left: inherit;
-            top: 0;
+            inset-inline-end: 0;
+            inset-inline-start: inherit;
+            inset-block-start: 0;
             width: 5px;
             height: 100%;
             content: "";
           }
 
           &:before {
-            left: -2px;
-            right: inherit;
+            inset-inline-start: -2px;
+            inset-inline-end: inherit;
             position: absolute;
-            top: 0;
+            inset-block-start: 0;
             content: "";
             width: 2px;
             height: 100%;
@@ -262,12 +262,12 @@
 
     .content_wrapper {
       width: 75%;
-      float: left;
+      float: $float-left;
       border: 1px solid $border;
     }
 
     .controller {
-      top: -50px;
+      inset-block-start: -50px;
     }
   }
 
@@ -291,7 +291,7 @@
     background: #000000;
     padding: 12px;
     text-align: center;
-    padding-right: 50px;
+    padding-inline-end: 50px;
     color: #fff;
     cursor: pointer;
     border-radius: 30px;
@@ -304,9 +304,9 @@
       text-align: center;
       background: #fff;
       position: absolute;
-      right: 6px;
+      inset-inline-end: 6px;
       border-radius: 50%;
-      top: 50%;
+      inset-block-start: 50%;
       transform: translateY(-50%);
 
       &:after {
@@ -314,14 +314,14 @@
         width: 10px;
         display: inline-block;
         height: 10px;
-        border-right: 3px solid #000;
-        border-bottom: 3px solid #000;
+        border-inline-end: 3px solid #000;
+        border-block-end: 3px solid #000;
         transform: rotate(45deg);
         position: absolute;
-        top: 50%;
-        left: 50%;
-        margin-left: -6px;
-        margin-top: -8px;
+        inset-block-start: 50%;
+        inset-inline-start: 50%;
+        margin-inline-start: -6px;
+        margin-block-start: -8px;
       }
     }
 
@@ -334,7 +334,7 @@
 
 @media only screen and (min-width: 768px) {
   .tab_wrapper.right_side .content_wrapper {
-    border-right: 0;
+    border-inline-end: 0;
   }
 }
 
@@ -355,7 +355,7 @@
     &.left_side .content_wrapper,
     &.right_side .content_wrapper {
       width: 100%;
-      border-top: 0;
+      border-block-start: 0;
     }
 
     .controller {
@@ -370,24 +370,24 @@
         z-index: 3;
         background: #fff;
         border-radius: 5px;
-        margin-top: 15px;
+        margin-block-start: 15px;
 
         &:before {
           content: "";
           position: absolute;
-          top: -6px;
-          left: 50%;
+          inset-block-start: -6px;
+          inset-inline-start: 50%;
           width: 14px;
           height: 14px;
           background: #fff;
           transform: rotate(45deg);
           box-shadow: -3px -4px 5px #efefef;
-          margin-left: -7px;
+          margin-inline-start: -7px;
         }
 
         li {
           border: 0;
-          border-bottom: 1px solid #ccc;
+          border-block-end: 1px solid #ccc;
 
           &.active:after {
             display: none;

@@ -34,20 +34,20 @@
 }
 
 .note-icon-pull-left {
-    float: left;
+    float: $float-left;
 }
 
 .note-icon-pull-right {
-    float: right;
+    float: $float-right;
 }
 
 .note-icon {
     &.note-icon-pull-left {
-        margin-right: 0.3em;
+        margin-inline-end: 0.3em;
     }
 
     &.note-icon-pull-right {
-        margin-left: 0.3em;
+        margin-inline-start: 0.3em;
     }
 }
 
@@ -67,7 +67,7 @@
     content: "";
 }
 
-.note-icon-align-left:before {
+.note-icon-align-inset-inline-start:before {
     content: "";
 }
 
@@ -75,7 +75,7 @@
     content: "";
 }
 
-.note-icon-align-right:before {
+.note-icon-align-inset-inline-end:before {
     content: "";
 }
 
@@ -83,11 +83,11 @@
     content: "";
 }
 
-.note-icon-arrow-circle-left:before {
+.note-icon-arrow-circle-inset-inline-start:before {
     content: "";
 }
 
-.note-icon-arrow-circle-right:before {
+.note-icon-arrow-circle-inset-inline-end:before {
     content: "";
 }
 
@@ -147,7 +147,7 @@
     content: "";
 }
 
-.note-icon-float-left:before {
+.note-icon-float-inset-inline-start:before {
     content: "";
 }
 
@@ -155,7 +155,7 @@
     content: "";
 }
 
-.note-icon-float-right:before {
+.note-icon-float-inset-inline-end:before {
     content: "";
 }
 
@@ -319,11 +319,11 @@
 
             img {
                 &.note-float-left {
-                    margin-right: 10px;
+                    margin-inline-end: 10px;
                 }
 
                 &.note-float-right {
-                    margin-left: 10px;
+                    margin-inline-start: 10px;
                 }
             }
         }
@@ -378,14 +378,14 @@
         -ms-box-sizing: border-box;
         box-sizing: border-box;
         border-radius: 0;
-        margin-bottom: 0;
+        margin-block-end: 0;
     }
 
     &.note-airframe.fullscreen,
     &.note-frame.fullscreen {
         position: fixed;
-        top: 0;
-        left: 0;
+        inset-block-start: 0;
+        inset-inline-start: 0;
         width: 100% !important;
         z-index: 9999;
     }
@@ -402,21 +402,21 @@
         font-size: 14px;
         line-height: 1.42857143;
         height: 20px;
-        margin-bottom: 0;
+        margin-block-end: 0;
         color: #000;
         border: 0;
-        border-top: 1px solid #e2e2e2;
+        border-block-start: 1px solid #e2e2e2;
     }
 
     &.note-airframe .note-status-output:empty,
     &.note-frame .note-status-output:empty {
         height: 0;
-        border-top: 0 solid transparent;
+        border-block-start: 0 solid transparent;
     }
 
     &.note-airframe .note-status-output .pull-right,
     &.note-frame .note-status-output .pull-right {
-        float: right !important;
+        float: $float-right !important;
     }
 
     &.note-airframe .note-status-output .text-muted,
@@ -460,7 +460,7 @@
 
     &.note-airframe .note-status-output .alert .note-icon,
     &.note-frame .note-status-output .alert .note-icon {
-        margin-right: 5px;
+        margin-inline-end: 5px;
     }
 
     &.note-airframe .note-status-output .alert-success,
@@ -490,14 +490,14 @@
     &.note-airframe .note-statusbar,
     &.note-frame .note-statusbar {
         background-color: hsla(0, 0%, 50.2%, 0.11);
-        border-bottom-left-radius: 4px;
-        border-bottom-right-radius: 4px;
-        border-top: 1px solid rgba(0, 0, 0, 0.2);
+        border-end-start-radius: 4px;
+        border-end-end-radius: 4px;
+        border-block-start: 1px solid rgba(0, 0, 0, 0.2);
     }
 
     &.note-airframe .note-statusbar .note-resizebar,
     &.note-frame .note-statusbar .note-resizebar {
-        padding-top: 1px;
+        padding-block-start: 1px;
         height: 9px;
         width: 100%;
         cursor: ns-resize;
@@ -507,7 +507,7 @@
     &.note-frame .note-statusbar .note-resizebar .note-icon-bar {
         width: 20px;
         margin: 1px auto;
-        border-top: 1px solid rgba(0, 0, 0, 0.2);
+        border-block-start: 1px solid rgba(0, 0, 0, 0.2);
     }
 
     &.note-airframe .note-statusbar.locked .note-resizebar,
@@ -548,7 +548,7 @@
     }
 
     .arrow {
-        left: 20px !important;
+        inset-inline-start: 20px !important;
     }
 }
 
@@ -564,9 +564,9 @@
 
 .note-editor .note-toolbar > .note-btn-group,
 .note-popover .popover-content > .note-btn-group {
-    margin-top: 5px;
-    margin-left: 0;
-    margin-right: 5px;
+    margin-block-start: 5px;
+    margin-inline-start: 0;
+    margin-inline-end: 5px;
 }
 
 .note-editor .note-toolbar .note-btn-group .note-table,
@@ -659,7 +659,7 @@
 .note-editor .note-toolbar .note-color .dropdown-toggle,
 .note-popover .popover-content .note-color .dropdown-toggle {
     width: 20px;
-    padding-left: 5px;
+    padding-inline-start: 5px;
 }
 
 .note-editor .note-toolbar .note-color .note-dropdown-menu .note-palette,
@@ -679,7 +679,7 @@
     font-size: 12px;
     margin: 2px 7px;
     text-align: center;
-    border-bottom: 1px solid #eee;
+    border-block-end: 1px solid #eee;
 }
 
 .note-editor .note-toolbar .note-color .note-dropdown-menu .note-palette {
@@ -743,7 +743,7 @@
 
 .note-editor .note-toolbar .note-para .note-dropdown-menu > div + div,
 .note-popover .popover-content .note-para .note-dropdown-menu > div + div {
-    margin-left: 5px;
+    margin-inline-start: 5px;
 }
 
 .note-editor .note-toolbar .note-dropdown-menu,
@@ -753,20 +753,20 @@
 
 .note-editor .note-toolbar .note-dropdown-menu.right,
 .note-popover .popover-content .note-dropdown-menu.right {
-    right: 0;
-    left: auto;
+    inset-inline-end: 0;
+    inset-inline-start: auto;
 }
 
-.note-editor .note-toolbar .note-dropdown-menu.right:before,
-.note-popover .popover-content .note-dropdown-menu.right:before {
-    right: 9px;
-    left: auto !important;
+.note-editor .note-toolbar .note-dropdown-menu.inset-inline-end:before,
+.note-popover .popover-content .note-dropdown-menu.inset-inline-end:before {
+    inset-inline-end: 9px;
+    inset-inline-start: auto !important;
 }
 
-.note-editor .note-toolbar .note-dropdown-menu.right:after,
-.note-popover .popover-content .note-dropdown-menu.right:after {
-    right: 10px;
-    left: auto !important;
+.note-editor .note-toolbar .note-dropdown-menu.inset-inline-end:after,
+.note-popover .popover-content .note-dropdown-menu.inset-inline-end:after {
+    inset-inline-end: 10px;
+    inset-inline-start: auto !important;
 }
 
 .note-editor .note-toolbar .note-dropdown-menu.note-check a i,
@@ -814,8 +814,8 @@
     }
 
     .form-group {
-        margin-left: 0;
-        margin-right: 0;
+        margin-inline-start: 0;
+        margin-inline-end: 0;
     }
 
     .note-modal-form {
@@ -829,7 +829,7 @@
         color: #d3d3d3;
         text-align: center;
         border: 4px dashed #d3d3d3;
-        margin-bottom: 10px;
+        margin-block-end: 10px;
     }
 }
 
@@ -881,41 +881,41 @@
     }
 
     .note-control-nw {
-        top: -5px;
-        left: -5px;
-        border-right: none;
-        border-bottom: none;
+        inset-block-start: -5px;
+        inset-inline-start: -5px;
+        border-inline-end: none;
+        border-block-end: none;
     }
 
     .note-control-ne {
-        top: -5px;
-        right: -5px;
-        border-bottom: none;
-        border-left: none;
+        inset-block-start: -5px;
+        inset-inline-end: -5px;
+        border-block-end: none;
+        border-inline-start: none;
     }
 
     .note-control-sw {
-        bottom: -5px;
-        left: -5px;
-        border-top: none;
-        border-right: none;
+        inset-block-end: -5px;
+        inset-inline-start: -5px;
+        border-block-start: none;
+        border-inline-end: none;
     }
 
     .note-control-se {
-        right: -5px;
-        bottom: -5px;
+        inset-inline-end: -5px;
+        inset-block-end: -5px;
         cursor: se-resize;
 
         &.note-control-holder {
             cursor: default;
-            border-top: none;
-            border-left: none;
+            border-block-start: none;
+            border-inline-start: none;
         }
     }
 
     .note-control-selection-info {
-        right: 0;
-        bottom: 0;
+        inset-inline-end: 0;
+        inset-block-end: 0;
         padding: 5px;
         margin: 5px;
         color: #fff;
@@ -971,7 +971,7 @@
 
 .note-editor.note-frame.panel.panel-default .panel-heading {
     background-color: #ffffff;
-    border-bottom: 1px solid $border;
+    border-block-end: 1px solid $border;
 }
 
 .note-btn.btn-default {
@@ -985,7 +985,7 @@
     }
 
     .btn-group .btn + .btn-group {
-        border-left: 0px solid rgba(0, 0, 0, 0.08) !important;
+        border-inline-start: 0px solid rgba(0, 0, 0, 0.08) !important;
     }
 }
 
@@ -1008,7 +1008,7 @@
 input {
     &[type="radio"],
     &[type="checkbox"] {
-        margin-right: 7px;
+        margin-inline-end: 7px;
     }
 }
 
@@ -1024,7 +1024,7 @@ input {
 .note-editor{
     .note-editable{
         ul li{
-            margin-left: 20px;
+            margin-inline-start: 20px;
             list-style-type: disc;
         }
     }

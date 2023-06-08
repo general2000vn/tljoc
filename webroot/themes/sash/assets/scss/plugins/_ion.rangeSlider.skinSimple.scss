@@ -1,4 +1,4 @@
-/* Ion.RangeSlider, Simple Skin
+/* ion-rangeslider, Simple Skin
 // css version 2.0.3
 // © Denis Ineshin, 2014    https://github.com/IonDen
 // ===================================================================================================================*/
@@ -12,7 +12,7 @@
 .irs-bar,
 .irs-bar-edge,
 .irs-slider {
-    background: url(../plugins/ion.rangeSlider/img/sprite-skin-simple.png) repeat-x;
+    background: url(../plugins/ion-rangeslider/img/sprite-skin-simple.png) repeat-x;
 }
 
 .irs {
@@ -25,7 +25,7 @@
 
 .irs-line {
     height: 6px;
-    top: 25px;
+    inset-block-start: 25px;
 }
 
 .irs-line-left {
@@ -45,12 +45,12 @@
 
 .irs-bar {
     height: 6px;
-    top: 25px;
+    inset-block-start: 25px;
     background-position: 0 -60px;
 }
 
 .irs-bar-edge {
-    top: 25px;
+    inset-block-start: 25px;
     height: 6px;
     width: 7px;
     background-position: 0 -90px;
@@ -58,7 +58,7 @@
 
 .irs-shadow {
     height: 1px;
-    top: 34px;
+    inset-block-start: 34px;
     background: #000;
     opacity: 0.75;
 }
@@ -70,7 +70,7 @@
 .irs-slider {
     width: 8px;
     height: 15px;
-    top: 21px;
+    inset-block-start: 21px;
     background-position: 0 -120px;
     background-color: $primary-1;
 
@@ -86,7 +86,7 @@
     font-size: 10px;
     line-height: 1.333;
     text-shadow: none;
-    top: 0;
+    inset-block-start: 0;
     padding: 1px 3px;
     background: #e3e1eb;
     -moz-border-radius: 3px;
@@ -111,6 +111,7 @@
     background: #e3e1eb;
     -moz-border-radius: 3px;
     border-radius: 3px;
+    inset-inline-end: auto !important;
 }
 
 .lt-ie9 {

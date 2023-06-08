@@ -56,34 +56,34 @@
 .map,
 .chart {
     position: relative;
-    padding-top: 56.25%;
+    padding-block-start: 56.25%;
 }
 
 .map-square,
 .chart-square {
-    padding-top: 100%;
+    padding-block-start: 100%;
 }
 
 .map-content,
 .chart-content {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    inset-block-end: 0;
 }
 
 .map-header {
-    margin-bottom: 1.5rem;
+    margin-block-end: 1.5rem;
     height: 15rem;
     position: relative;
-    margin-bottom: -1.5rem;
+    margin-block-end: -1.5rem;
     &:before {
         content: '';
         position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        inset-block-end: 0;
+        inset-inline-start: 0;
+        inset-inline-end: 0;
         height: 10rem;
         background: linear-gradient(to bottom, rgba(245, 247, 251, 0) 5%, #f6f6fb 95%);
         pointer-events: none;
@@ -123,12 +123,12 @@
 
 .chart-circle-value {
     position: absolute;
-    top: 0px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    bottom: 0;
+    inset-block-start: 0px;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    inset-block-end: 0;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: center;
@@ -147,12 +147,12 @@
 
 .chart-circle-value-3 {
     position: absolute;
-    top: 20px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    bottom: 0;
+    inset-block-start: 20px;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    inset-block-end: 0;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: center;
@@ -207,9 +207,9 @@
 #AreaChart5 {
     width: 105% !important;
     height: 163px !important;
-    bottom: -15px;
+    inset-block-end: -15px;
     position: relative;
-    left: -7px;
+    inset-inline-start: -7px;
 }
 
 
@@ -248,16 +248,16 @@
     height: 70px;
     width: 70px;
     position: absolute;
-    margin-top: 13px;
-    margin-left: 13px;
-    float: right;
+    margin-block-start: 13px;
+    margin-inline-start: 13px;
+    float: $float-right;
 }
 
 .square-icon {
     height: 88px;
     width: 81px;
     position: absolute;
-    float: right;
+    float: $float-right;
     border-radius: 7px 0px 0px 7px;
     line-height: 7;
 }

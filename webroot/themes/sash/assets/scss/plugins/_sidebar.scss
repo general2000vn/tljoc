@@ -5,18 +5,18 @@
 
 .navbar {
     &.navbar-static .navbar-header {
-        float: left;
+        float: $float-left;
     }
 
     .navbar-toggle {
         &.toggle-left {
-            float: left;
-            margin-left: 15px;
+            float: $float-left;
+            margin-inline-start: 15px;
         }
 
         &.toggle-right {
-            float: right;
-            margin-right: 15px;
+            float: $float-right;
+            margin-inline-end: 15px;
         }
 
         &.toggle-sidebar {
@@ -34,33 +34,33 @@
 .sidebar {
     position: fixed;
     display: block;
-    top: 0;
+    inset-block-start: 0;
     width: 300px;
-    bottom: 0;
+    inset-block-end: 0;
     z-index: 9999;
     min-height: 100%;
     max-height: none;
     overflow: auto;
     background-color: #fff;
 
-    /* border-right: 1px solid #eee; */
+    /* border-inline-end: 1px solid #eee; */
     border: 1px solid $border;
-    box-shadow: 0px 8px 14.72px 1.28px rgb(229, 228, 230, 0.5);
+    box-shadow: 0px 8px 14.72px 1.28px rgba(229, 228, 230, 0.5);
 }
 
 .sidebar-left {
-    left: 0;
+    inset-inline-start: 0;
 }
 
 .sidebar-right {
-    right: 0;
+    inset-inline-end: 0;
 }
 
 /* css to override hiding the sidebar according to different screen sizes */
 
 .row .sidebar {
     &.sidebar-left.sidebar-xs-show {
-        left: 0;
+        inset-inline-start: 0;
         -webkit-transform: translate(0, 0);
         -ms-transform: translate(0, 0);
         -o-transform: translate(0, 0);
@@ -69,7 +69,7 @@
     }
 
     &.sidebar-right.sidebar-xs-show {
-        right: 0;
+        inset-inline-end: 0;
         -webkit-transform: translate(0, 0);
         -ms-transform: translate(0, 0);
         -o-transform: translate(0, 0);
@@ -83,7 +83,7 @@
 @media (min-width: 768px) {
     .row .sidebar {
         &.sidebar-left.sidebar-sm-show {
-            left: 0;
+            inset-inline-start: 0;
             -webkit-transform: translate(0, 0);
             -ms-transform: translate(0, 0);
             -o-transform: translate(0, 0);
@@ -92,7 +92,7 @@
         }
 
         &.sidebar-right.sidebar-sm-show {
-            right: 0;
+            inset-inline-end: 0;
             -webkit-transform: translate(0, 0);
             -ms-transform: translate(0, 0);
             -o-transform: translate(0, 0);
@@ -107,7 +107,7 @@
 @media (min-width: 992px) {
     .row .sidebar {
         &.sidebar-left.sidebar-md-show {
-            left: 0;
+            inset-inline-start: 0;
             -webkit-transform: translate(0, 0);
             -ms-transform: translate(0, 0);
             -o-transform: translate(0, 0);
@@ -116,7 +116,7 @@
         }
 
         &.sidebar-right.sidebar-md-show {
-            right: 0;
+            inset-inline-end: 0;
             -webkit-transform: translate(0, 0);
             -ms-transform: translate(0, 0);
             -o-transform: translate(0, 0);
@@ -129,7 +129,7 @@
 @media (min-width: 1170px) {
     .row .sidebar {
         &.sidebar-left.sidebar-lg-show {
-            left: 0;
+            inset-inline-start: 0;
             -webkit-transform: translate(0, 0);
             -moz-transform: translate(0, 0);
             -ms-transform: translate(0, 0);
@@ -138,7 +138,7 @@
         }
 
         &.sidebar-right.sidebar-lg-show {
-            right: 0;
+            inset-inline-end: 0;
             -webkit-transform: translate(0, 0);
             -moz-transform: translate(0, 0);
             -ms-transform: translate(0, 0);

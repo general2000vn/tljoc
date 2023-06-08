@@ -14,6 +14,7 @@ $(function() {
                 backgroundColor: 'transparent',
                 borderColor: '#6c5ffc',
                 borderWidth: 3,
+                lineTension:0.3,
                 pointBackgroundColor: '#ffffff',
                 pointRadius: 2
             }, {
@@ -23,6 +24,7 @@ $(function() {
                 backgroundColor: 'transparent',
                 borderColor: '#05c3fb',
                 borderWidth: 3,
+                lineTension:0.3,
                 pointBackgroundColor: '#ffffff',
                 pointRadius: 2
             }]
@@ -32,21 +34,21 @@ $(function() {
             maintainAspectRatio: false,
 
             scales: {
-                xAxes: [{
+                x: {
                     ticks: {
-                        fontColor: "#9ba6b5",
+                        color: "#9ba6b5",
                     },
                     display: true,
-                    gridLines: {
+                    grid: {
                         color: 'rgba(119, 119, 142, 0.2)'
                     }
-                }],
-                yAxes: [{
+                },
+                y: {
                     ticks: {
-                        fontColor: "#9ba6b5",
+                        color: "#9ba6b5",
                     },
                     display: true,
-                    gridLines: {
+                    grid: {
                         color: 'rgba(119, 119, 142, 0.2)'
                     },
                     scaleLabel: {
@@ -54,7 +56,7 @@ $(function() {
                         labelString: 'Thousands',
                         fontColor: 'rgba(119, 119, 142, 0.2)'
                     }
-                }]
+                }
             },
             legend: {
                 labels: {
@@ -88,30 +90,30 @@ $(function() {
                 display: true
             },
             scales: {
-                yAxes: [{
+                y: {
                     ticks: {
                         beginAtZero: true,
                         stepSize: 150,
-                        fontColor: "#9ba6b5",
+                        color: "#9ba6b5",
                     },
-                    gridLines: {
+                    grid: {
                         color: 'rgba(119, 119, 142, 0.2)'
                     }
-                }],
-                xAxes: [{
+                },
+                x: {
                     barPercentage: 0.4,
                     barValueSpacing: 0,
                     barDatasetSpacing: 0,
                     barRadius: 0,
                     ticks: {
                         display: true,
-                        fontColor: "#9ba6b5",
+                        color: "#9ba6b5",
                     },
-                    gridLines: {
+                    grid: {
                         display: false,
                         color: 'rgba(119, 119, 142, 0.2)'
                     }
-                }]
+                }
             },
             legend: {
                 labels: {
@@ -145,31 +147,31 @@ $(function() {
             responsive: true,
             maintainAspectRatio: false,
             scales: {
-                xAxes: [{
+                x: {
                     barPercentage: 0.4,
                     barValueSpacing: 0,
                     barDatasetSpacing: 0,
                     barRadius: 0,
                     ticks: {
-                        fontColor: "#9ba6b5",
+                        color: "#9ba6b5",
                     },
-                    gridLines: {
+                    grid: {
                         color: 'rgba(119, 119, 142, 0.2)'
                     }
-                }],
-                yAxes: [{
+                },
+                y: {
                     ticks: {
                         beginAtZero: true,
-                        fontColor: "#9ba6b5",
+                        color: "#9ba6b5",
                     },
-                    gridLines: {
+                    grid: {
                         color: 'rgba(119, 119, 142, 0.2)'
                     },
-                }]
+                }
             },
             legend: {
                 labels: {
-                    fontColor: "#9ba6b5"
+                    color: "#9ba6b5"
                 },
             },
         }
@@ -185,14 +187,18 @@ $(function() {
                 label: "Data1",
                 borderColor: "#6c5ffc",
                 borderWidth: "3",
+                lineTension:0.3,
                 backgroundColor: "rgba(108, 95, 252, .1)",
+                fill: true,
                 data: [22, 44, 67, 43, 76, 45, 12]
             }, {
                 label: "Data2",
                 borderColor: "rgba(5, 195, 251 ,0.9)",
                 borderWidth: "3",
-                backgroundColor: "rgba(	5, 195, 251, 0.7)",
+                lineTension:0.3,
+                backgroundColor: "rgba(5, 195, 251, 0.7)",
                 pointHighlightStroke: "rgba(5, 195, 251 ,1)",
+                fill: true,
                 data: [16, 32, 18, 26, 42, 33, 44]
             }]
         },
@@ -208,27 +214,27 @@ $(function() {
                 intersect: true
             },
             scales: {
-                xAxes: [{
+                x: {
                     ticks: {
-                        fontColor: "#9ba6b5",
+                        color: "#9ba6b5",
                     },
-                    gridLines: {
+                    grid: {
                         color: 'rgba(119, 119, 142, 0.2)'
                     }
-                }],
-                yAxes: [{
+                },
+                yAxes: {
                     ticks: {
                         beginAtZero: true,
-                        fontColor: "#9ba6b5",
+                        color: "#9ba6b5",
                     },
-                    gridLines: {
+                    grid: {
                         color: 'rgba(119, 119, 142, 0.2)'
                     },
-                }]
+                }
             },
             legend: {
                 labels: {
-                    fontColor: "#9ba6b5"
+                    color: "#9ba6b5"
                 },
             },
         }
@@ -304,14 +310,15 @@ $(function() {
             },
             scale: {
                 angleLines: { color: '#9ba6b5' },
-                gridLines: {
+                grid: {
                     color: 'rgba(119, 119, 142, 0.2)'
                 },
                 ticks: {
                     beginAtZero: true,
+                    color: 'rgba(119, 119, 142, 0.2)'
                 },
                 pointLabels: {
-                    fontColor: '#9ba6b5',
+                    color: '#9ba6b5',
                 },
             },
 
@@ -333,7 +340,7 @@ $(function() {
         },
         options: {
             scale: {
-                gridLines: {
+                grid: {
                     color: 'rgba(119, 119, 142, 0.2)'
                 }
             },
@@ -341,7 +348,7 @@ $(function() {
             maintainAspectRatio: false,
             legend: {
                 labels: {
-                    fontColor: "#9ba6b5"
+                    color: "#9ba6b5"
                 },
             },
         }

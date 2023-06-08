@@ -22,7 +22,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: 1.5;
-    text-align: left;
+    text-align: start;
     text-align: start;
     text-decoration: none;
     text-shadow: none;
@@ -53,7 +53,7 @@
     &.bs-tether-element-attached-bottom,
     &.tooltip-top {
         padding: 5px 0;
-        margin-top: -3px;
+        margin-block-start: -3px;
     }
 }
 
@@ -61,53 +61,53 @@
     &.bs-tether-element-attached-left,
     &.tooltip-end {
         padding: 0 5px;
-        margin-left: 3px;
+        margin-inline-start: 3px;
     }
     &.bs-tether-element-attached-bottom .tooltip-inner::before,
     &.tooltip-top .tooltip-inner::before {
-        bottom: 0;
-        left: 50%;
-        margin-left: -5px;
+        inset-block-end: 0;
+        inset-inline-start: 50%;
+        margin-inline-start: -5px;
         content: "";
         border-width: 5px 5px 0;
-        border-top-color: $black;
+        border-block-start-color: $black;
     }
     &.bs-tether-element-attached-left .tooltip-inner::before,
     &.tooltip-end .tooltip-inner::before {
-        top: 50%;
-        left: 0;
-        margin-top: -5px;
+        inset-block-start: 50%;
+        inset-inline-start: 0;
+        margin-block-start: -5px;
         content: "";
         border-width: 5px 5px 5px 0;
-        border-right-color: $black;
+        border-inline-end-color: $black;
     }
     &.bs-tether-element-attached-top,
     &.tooltip-bottom {
         padding: 5px 0;
-        margin-top: 3px;
+        margin-block-start: 3px;
     }
     &.bs-tether-element-attached-top .tooltip-inner::before,
     &.tooltip-bottom .tooltip-inner::before {
-        top: 0;
-        left: 50%;
-        margin-left: -5px;
+        inset-block-start: 0;
+        inset-inline-start: 50%;
+        margin-inline-start: -5px;
         content: "";
         border-width: 0 5px 5px;
-        border-bottom-color: $black;
+        border-block-end-color	: $black;
     }
     &.bs-tether-element-attached-right,
     &.tooltip-start {
         padding: 0 5px;
-        margin-left: -3px;
+        margin-inline-start: -3px;
     }
     &.bs-tether-element-attached-right .tooltip-inner::before,
     &.tooltip-start .tooltip-inner::before {
-        top: 50%;
-        right: 0;
-        margin-top: -5px;
+        inset-block-start: 50%;
+        inset-inline-end: 0;
+        margin-block-start: -5px;
         content: "";
         border-width: 5px 0 5px 5px;
-        border-left-color: $black;
+        border-inline-start-color: $black;
     }
 }
 
@@ -129,14 +129,14 @@
 
 .bs-tooltip-top .tooltip-arrow,
 .bs-tooltip-auto[data-popper-placement^="top"] .tooltip-arrow {
-    bottom: 0;
+    inset-block-end: 0;
 }
 
 .bs-tooltip-top .tooltip-arrow::before,
 .bs-tooltip-auto[data-popper-placement^="top"] .tooltip-arrow::before {
-    top: -1px;
+    inset-block-start: -1px;
     border-width: 0.4rem 0.4rem 0;
-    border-top-color: $black;
+    border-block-start-color: $black;
 }
 
 .bs-tooltip-end,
@@ -146,16 +146,19 @@
 
 .bs-tooltip-end .tooltip-arrow,
 .bs-tooltip-auto[data-popper-placement^="right"] .tooltip-arrow {
-    left: 0;
+    inset-inline-end: 0;
     width: 0.4rem;
     height: 0.8rem;
 }
 
 .bs-tooltip-end .tooltip-arrow::before,
 .bs-tooltip-auto[data-popper-placement^="right"] .tooltip-arrow::before {
-    right: 0;
-    border-width: 0.4rem 0.4rem 0.4rem 0;
-    border-right-color: $black;
+    inset-inline-end: 0;
+	border-block-start-width: 0.4rem;
+	border-inline-end-width: 0.4rem;
+	border-block-end-width: 0.4rem;
+	border-inline-start-width: 0px;
+    border-inline-end-color: $black;
 }
 
 .bs-tooltip-bottom,
@@ -165,14 +168,14 @@
 
 .bs-tooltip-bottom .tooltip-arrow,
 .bs-tooltip-auto[data-popper-placement^="bottom"] .tooltip-arrow {
-    top: 0;
+    inset-block-start: 0;
 }
 
 .bs-tooltip-bottom .tooltip-arrow::before,
 .bs-tooltip-auto[data-popper-placement^="bottom"] .tooltip-arrow::before {
-    bottom: 0;
+    inset-block-end: 0;
     border-width: 0 0.4rem 0.4rem;
-    border-bottom-color: $black;
+    border-block-end-color	: $black;
 }
 
 .bs-tooltip-start,
@@ -182,16 +185,19 @@
 
 .bs-tooltip-start .tooltip-arrow,
 .bs-tooltip-auto[data-popper-placement^="left"] .tooltip-arrow {
-    right: 0;
+    inset-inline-end: 0;
     width: 0.4rem;
     height: 0.8rem;
 }
 
 .bs-tooltip-start .tooltip-arrow::before,
 .bs-tooltip-auto[data-popper-placement^="left"] .tooltip-arrow::before {
-    left: -1px;
-    border-width: 0.4rem 0 0.4rem 0.4rem;
-    border-left-color: $black;
+    inset-inline-start: -1px;
+    border-block-start-width: 0.4rem;
+    border-inline-end-width: 0px;
+    border-block-end-width: 0.4rem;
+    border-inline-start-width: 0.4rem;
+    border-inline-start-color: $black;
 }
 
 .tooltip-inner {
@@ -205,7 +211,7 @@
 
 .bs-popover-top .popover-arrow,
 .bs-popover-auto[data-popper-placement^="top"] .popover-arrow {
-    bottom: calc((0.5rem + 1px) * -1);
+    inset-block-end: calc((0.5rem + 1px) * -1);
 }
 
 .bs-popover-top .popover-arrow::before,
@@ -217,19 +223,19 @@
 
 .bs-popover-top .popover-arrow::before,
 .bs-popover-auto[data-popper-placement^="top"] .popover-arrow::before {
-    bottom: 0;
-    border-top-color: rgba(0, 0, 0, 0.25);
+    inset-block-end: 0;
+    border-block-start-color: rgba(0, 0, 0, 0.25);
 }
 
 .bs-popover-top .popover-arrow::after,
 .bs-popover-auto[data-popper-placement^="top"] .popover-arrow::after {
-    bottom: 1px;
-    border-top-color: $white;
+    inset-block-end: 1px;
+    border-block-start-color: $white;
 }
 
 .bs-popover-end .popover-arrow,
 .bs-popover-auto[data-popper-placement^="right"] .popover-arrow {
-    left: calc((0.5rem + 1px) * -1);
+    inset-inline-end: calc((0.5rem + 1px) * -1);
     width: 0.5rem;
     height: 0.5rem;
     margin: 3px 0;
@@ -244,19 +250,19 @@
 
 .bs-popover-end .popover-arrow::before,
 .bs-popover-auto[data-popper-placement^="right"] .popover-arrow::before {
-    left: 0;
-    border-right-color: #dee3eb;
+    inset-inline-start: 0;
+    border-inline-end-color: #dee3eb;
 }
 
 .bs-popover-end .popover-arrow::after,
 .bs-popover-auto[data-popper-placement^="right"] .popover-arrow::after {
-    left: 1px;
-    border-right-color: $white;
+    inset-inline-start: 1px;
+    border-inline-end-color: $white;
 }
 
 .bs-popover-bottom .popover-arrow,
 .bs-popover-auto[data-popper-placement^="bottom"] .popover-arrow {
-    top: calc((0.5rem + 1px) * -1);
+    inset-block-start: calc((0.5rem + 1px) * -1);
 }
 
 .bs-popover-bottom .popover-arrow::before,
@@ -268,19 +274,19 @@
 
 .bs-popover-bottom .popover-arrow::before,
 .bs-popover-auto[data-popper-placement^="bottom"] .popover-arrow::before {
-    top: 0;
-    border-bottom-color: #dee3eb;
+    inset-block-start: 0;
+    border-block-end-color	: #dee3eb;
 }
 
 .bs-popover-bottom .popover-arrow::after,
 .bs-popover-auto[data-popper-placement^="bottom"] .popover-arrow::after {
-    top: 1px;
-    border-bottom-color: $white;
+    inset-block-start: 1px;
+    border-block-end-color	: $white;
 }
 
 .bs-popover-start .popover-arrow,
 .bs-popover-auto[data-popper-placement^="left"] .popover-arrow {
-    right: calc((0.5rem + 1px) * -1);
+    inset-inline-end: calc((0.5rem + 1px) * -1);
     width: 0.5rem;
     height: 0.5rem;
     margin: 3px 0;
@@ -295,14 +301,14 @@
 
 .bs-popover-start .popover-arrow::before,
 .bs-popover-auto[data-popper-placement^="left"] .popover-arrow::before {
-    right: 0;
-    border-left-color: #dee3eb;
+    inset-inline-end: 0;
+    border-inline-start-color: #dee3eb;
 }
 
 .bs-popover-start .popover-arrow::after,
 .bs-popover-auto[data-popper-placement^="left"] .popover-arrow::after {
-    right: 1px;
-    border-left-color: $white;
+    inset-inline-end: 1px;
+    border-inline-start-color: $white;
 }
 
 .popover-static-demo .popover {
@@ -339,28 +345,28 @@
     .bs-tooltip-auto[data-popper-placement^="top"] .tooltip-arrow,
     .bs-tooltip-bottom .tooltip-arrow,
     .bs-tooltip-auto[data-popper-placement^="bottom"] .tooltip-arrow {
-        left: 50%;
-        margin-left: -2px;
+        inset-inline-start: 50%;
+        margin-inline-start: -2px;
     }
     .bs-tooltip-start,
     .bs-tooltip-auto[data-popper-placement^="left"],
     .bs-tooltip-end,
     .bs-tooltip-auto[data-popper-placement^="right"] {
-        margin-top: 5px;
+        margin-block-start: 5px;
     }
     .bs-tooltip-start .tooltip-arrow,
     .bs-tooltip-auto[data-popper-placement^="left"] .tooltip-arrow,
     .bs-tooltip-end .tooltip-arrow,
     .bs-tooltip-auto[data-popper-placement^="right"] .tooltip-arrow {
-        top: 50%;
-        margin-top: -5px;
+        inset-block-start: 50%;
+        margin-block-start: -5px;
     }
 }
 
 .popover-static-demo {
     background-color: #f6f6fb;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-block-start: 40px;
+    padding-block-end: 40px;
     text-align: center;
     border: 1px solid $border;
     .popover {
@@ -375,21 +381,21 @@
     .bs-popover-auto[data-popper-placement^="top"] .popover-arrow,
     .bs-popover-bottom .popover-arrow,
     .bs-popover-auto[data-popper-placement^="bottom"] .popover-arrow {
-        left: 50%;
-        margin-left: -5px;
+        inset-inline-start: 50%;
+        margin-inline-start: -5px;
     }
     .bs-popover-start,
     .bs-popover-auto[data-popper-placement^="left"],
     .bs-popover-end,
     .bs-popover-auto[data-popper-placement^="right"] {
-        margin-top: 5px;
+        margin-block-start: 5px;
     }
     .bs-popover-start .popover-arrow,
     .bs-popover-auto[data-popper-placement^="left"] .popover-arrow,
     .bs-popover-end .popover-arrow,
     .bs-popover-auto[data-popper-placement^="right"] .popover-arrow {
-        top: 50%;
-        margin-top: -5px;
+        inset-block-start: 50%;
+        margin-block-start: -5px;
     }
 }
 
@@ -400,19 +406,19 @@
     }
     &.bs-tooltip-top .tooltip-arrow::before,
     &.bs-tooltip-auto[data-popper-placement^="top"] .tooltip-arrow::before {
-        border-top-color: $primary-1;
+        border-block-start-color: $primary-1;
     }
     &.bs-tooltip-bottom .tooltip-arrow::before,
     &.bs-tooltip-auto[data-popper-placement^="bottom"] .tooltip-arrow::before {
-        border-bottom-color: $primary-1;
+        border-block-end-color	: $primary-1;
     }
     &.bs-tooltip-start .tooltip-arrow::before,
     &.bs-tooltip-auto[data-popper-placement^="left"] .tooltip-arrow::before {
-        border-left-color: $primary-1;
+        border-inline-start-color: $primary-1;
     }
     &.bs-tooltip-end .tooltip-arrow::before,
     &.bs-tooltip-auto[data-popper-placement^="right"] .tooltip-arrow::before {
-        border-right-color: $primary-1;
+        border-inline-end-color: $primary-1;
     }
 }
 
@@ -423,19 +429,19 @@
     }
     &.bs-tooltip-top .tooltip-arrow::before,
     &.bs-tooltip-auto[data-popper-placement^="top"] .tooltip-arrow::before {
-        border-top-color: $secondary !important;
+        border-block-start-color: $secondary !important;
     }
     &.bs-tooltip-bottom .tooltip-arrow::before,
     &.bs-tooltip-auto[data-popper-placement^="bottom"] .tooltip-arrow::before {
-        border-bottom-color: $secondary !important;
+        border-block-end-color	: $secondary !important;
     }
     &.bs-tooltip-start .tooltip-arrow::before,
     &.bs-tooltip-auto[data-popper-placement^="left"] .tooltip-arrow::before {
-        border-left-color: $secondary !important;
+        border-inline-start-color: $secondary !important;
     }
     &.bs-tooltip-end .tooltip-arrow::before,
     &.bs-tooltip-auto[data-popper-placement^="right"] .tooltip-arrow::before {
-        border-right-color: $secondary !important;
+        border-inline-end-color: $secondary !important;
     }
 }
 
@@ -446,19 +452,19 @@
     }
     &.bs-tooltip-top .tooltip-arrow::before,
     &.bs-tooltip-auto[data-popper-placement^="top"] .tooltip-arrow::before {
-        border-top-color: $success !important;
+        border-block-start-color: $success !important;
     }
     &.bs-tooltip-bottom .tooltip-arrow::before,
     &.bs-tooltip-auto[data-popper-placement^="bottom"] .tooltip-arrow::before {
-        border-bottom-color: $success !important;
+        border-block-end-color	: $success !important;
     }
     &.bs-tooltip-start .tooltip-arrow::before,
     &.bs-tooltip-auto[data-popper-placement^="left"] .tooltip-arrow::before {
-        border-left-color: $success !important;
+        border-inline-start-color: $success !important;
     }
     &.bs-tooltip-end .tooltip-arrow::before,
     &.bs-tooltip-auto[data-popper-placement^="right"] .tooltip-arrow::before {
-        border-right-color: $success !important;
+        border-inline-end-color: $success !important;
     }
 }
 
@@ -469,19 +475,19 @@
     }
     &.bs-tooltip-top .tooltip-arrow::before,
     &.bs-tooltip-auto[data-popper-placement^="top"] .tooltip-arrow::before {
-        border-top-color: $danger !important;
+        border-block-start-color: $danger !important;
     }
     &.bs-tooltip-bottom .tooltip-arrow::before,
     &.bs-tooltip-auto[data-popper-placement^="bottom"] .tooltip-arrow::before {
-        border-bottom-color: $danger !important;
+        border-block-end-color	: $danger !important;
     }
     &.bs-tooltip-start .tooltip-arrow::before,
     &.bs-tooltip-auto[data-popper-placement^="left"] .tooltip-arrow::before {
-        border-left-color: $danger !important;
+        border-inline-start-color: $danger !important;
     }
     &.bs-tooltip-end .tooltip-arrow::before,
     &.bs-tooltip-auto[data-popper-placement^="right"] .tooltip-arrow::before {
-        border-right-color: $danger !important;
+        border-inline-end-color: $danger !important;
     }
 }
 
@@ -492,33 +498,33 @@
     }
     &.bs-tooltip-top .tooltip-arrow::before,
     &.bs-tooltip-auto[data-popper-placement^="top"] .tooltip-arrow::before {
-        border-top-color: $info !important;
+        border-block-start-color: $info !important;
     }
     &.bs-tooltip-bottom .tooltip-arrow::before,
     &.bs-tooltip-auto[data-popper-placement^="bottom"] .tooltip-arrow::before {
-        border-bottom-color: $info !important;
+        border-block-end-color	: $info !important;
     }
     &.bs-tooltip-start .tooltip-arrow::before,
     &.bs-tooltip-auto[data-popper-placement^="left"] .tooltip-arrow::before {
-        border-left-color: $info !important;
+        border-inline-start-color: $info !important;
     }
     &.bs-tooltip-end .tooltip-arrow::before,
     &.bs-tooltip-auto[data-popper-placement^="right"] .tooltip-arrow::before {
-        border-right-color: $info !important;
+        border-inline-end-color: $info !important;
     }
 }
 
 .popover {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset-block-start: 0;
+    inset-inline-start: 0;
     z-index: 1;
     display: block;
     max-width: 276px;
     font-style: normal;
     font-weight: 400;
     line-height: 1.5;
-    text-align: left;
+    text-align: start;
     text-align: start;
     text-decoration: none;
     text-shadow: none;
@@ -555,45 +561,45 @@
     filter: drop-shadow(0 1px 3px $black-1);
     &.bs-popover-top,
     &.bs-popover-auto[data-popper-placement^="top"] {
-        margin-bottom: 0.625rem;
+        margin-block-end: 0.625rem;
     }
     .popover-arrow {
-        margin-left: calc(.25rem + -5px);
+        margin-inline-start: calc(.25rem + -5px);
     }
 }
 
 .bs-popover-top,
 .bs-popover-auto[data-popper-placement^="top"] {
-    margin-bottom: 0.5rem;
+    margin-block-end: 0.5rem;
 }
 
 .bs-popover-top>.popover-arrow,
 .bs-popover-auto[data-popper-placement^="top"]>.popover-arrow {
-    bottom: calc((0.5rem + 1px) * -1);
+    inset-block-end: calc((0.5rem + 1px) * -1);
 }
 
 .bs-popover-top>.popover-arrow::before,
 .bs-popover-auto[data-popper-placement^="top"]>.popover-arrow::before {
-    bottom: 0;
+    inset-block-end: 0;
     border-width: 0.5rem 0.5rem 0;
-    border-top-color: rgb(211, 223, 234);
+    border-block-start-color: rgb(211, 223, 234);
 }
 
 .bs-popover-top>.popover-arrow::after,
 .bs-popover-auto[data-popper-placement^="top"]>.popover-arrow::after {
-    bottom: 1px;
+    inset-block-end: 1px;
     border-width: 0.5rem 0.5rem 0;
-    border-top-color: $white;
+    border-block-start-color: $white;
 }
 
 .bs-popover-end,
 .bs-popover-auto[data-popper-placement^="right"] {
-    margin-left: 0.5rem;
+    margin-inline-start: 0.5rem;
 }
 
 .bs-popover-end>.popover-arrow,
 .bs-popover-auto[data-popper-placement^="right"]>.popover-arrow {
-    left: calc((0.5rem + 1px) * -1);
+    inset-inline-end: calc((0.5rem + 1px) * -1);
     width: 0.5rem;
     height: 1rem;
     margin: 0.3rem 0;
@@ -601,62 +607,68 @@
 
 .bs-popover-end>.popover-arrow::before,
 .bs-popover-auto[data-popper-placement^="right"]>.popover-arrow::before {
-    left: 0;
-    border-width: 0.5rem 0.5rem 0.5rem 0;
-    border-right-color: rgb(211, 223, 234);
+    inset-inline-start: 0;
+    border-block-start-width: 0.5rem;
+    border-inline-end-width: 0.5rem;
+    border-block-end-width: 0.5rem;
+    border-inline-start-width: 0px;
+    border-inline-end-color: rgb(211, 223, 234);
 }
 
 .bs-popover-end>.popover-arrow::after,
 .bs-popover-auto[data-popper-placement^="right"]>.popover-arrow::after {
-    left: 1px;
-    border-width: 0.5rem 0.5rem 0.5rem 0;
-    border-right-color: $white;
+    inset-inline-start: 1px;
+    border-block-start-width: 0.5rem;
+    border-inline-end-width: 0.5rem;
+    border-block-end-width: 0.5rem;
+    border-inline-start-width: 0px;
+    border-inline-end-color: $white;
 }
 
 .bs-popover-bottom,
 .bs-popover-auto[data-popper-placement^="bottom"] {
-    margin-top: 0.5rem;
+    margin-block-start: 0.5rem;
 }
 
 .bs-popover-bottom>.popover-arrow,
 .bs-popover-auto[data-popper-placement^="bottom"]>.popover-arrow {
-    top: calc((0.5rem + 1px) * -1);
+    inset-block-start: calc((0.5rem + 1px) * -1);
 }
 
 .bs-popover-bottom>.popover-arrow::before,
 .bs-popover-auto[data-popper-placement^="bottom"]>.popover-arrow::before {
-    top: 0;
+    inset-block-start: 0;
     border-width: 0 0.5rem 0.5rem 0.5rem;
-    border-bottom-color: rgb(211, 223, 234);
+    border-block-end-color	: rgb(211, 223, 234);
 }
 
 .bs-popover-bottom>.popover-arrow::after,
 .bs-popover-auto[data-popper-placement^="bottom"]>.popover-arrow::after {
-    top: 1px;
+    inset-block-start: 1px;
     border-width: 0 0.5rem 0.5rem 0.5rem;
-    border-bottom-color: $white;
+    border-block-end-color	: $white;
 }
 
 .bs-popover-bottom .popover-header::before,
 .bs-popover-auto[data-popper-placement^="bottom"] .popover-header::before {
     position: absolute;
-    top: 0;
-    left: 50%;
+    inset-block-start: 0;
+    inset-inline-start: 50%;
     display: block;
     width: 1rem;
-    margin-left: -0.5rem;
+    margin-inline-start: -0.5rem;
     content: "";
-    border-bottom: 1px solid #e9ebfa;
+    border-block-end: 1px solid #e9ebfa;
 }
 
 .bs-popover-start,
 .bs-popover-auto[data-popper-placement^="left"] {
-    margin-right: 0.5rem;
+    margin-inline-end: 0.5rem;
 }
 
 .bs-popover-start>.popover-arrow,
 .bs-popover-auto[data-popper-placement^="left"]>.popover-arrow {
-    right: calc((0.5rem + 1px) * -1);
+    inset-inline-end: calc((0.5rem + 1px) * -1);
     width: 0.5rem;
     height: 1rem;
     margin: 0.3rem 0;
@@ -664,16 +676,22 @@
 
 .bs-popover-start>.popover-arrow::before,
 .bs-popover-auto[data-popper-placement^="left"]>.popover-arrow::before {
-    right: 0;
-    border-width: 0.5rem 0 0.5rem 0.5rem;
-    border-left-color: rgb(211, 223, 234);
+    inset-inline-end: 0;
+    border-block-start-width: 0.5rem;
+    border-inline-end-width: 0px;
+    border-block-end-width: 0.5rem;
+    border-inline-start-width: 0.5rem;
+    border-inline-start-color: rgb(211, 223, 234);
 }
 
 .bs-popover-start>.popover-arrow::after,
 .bs-popover-auto[data-popper-placement^="left"]>.popover-arrow::after {
-    right: 1px;
-    border-width: 0.5rem 0 0.5rem 0.5rem;
-    border-left-color: $white;
+    inset-inline-end: 1px;
+    border-block-start-width: 0.5rem;
+    border-inline-end-width: 0px;
+    border-block-end-width: 0.5rem;
+    border-inline-start-width: 0.5rem;
+    border-inline-start-color: $white;
 }
 
 .popover-header {
@@ -694,7 +712,7 @@
     padding: 15px;
     color: #6e7687;
     p:last-child {
-        margin-bottom: 0;
+        margin-block-end: 0;
     }
 }
 
@@ -705,19 +723,19 @@
     }
     &.bs-popover-top .popover-arrow,
     &.bs-popover-auto[data-popper-placement^="top"] .popover-arrow {
-        bottom: -7px;
+        inset-block-end: -7px;
     }
     &.bs-popover-start .popover-arrow,
     &.bs-popover-auto[data-popper-placement^="left"] .popover-arrow {
-        right: -7px;
+        inset-inline-end: -7px;
     }
     &.bs-popover-end .popover-arrow,
     &.bs-popover-auto[data-popper-placement^="right"] .popover-arrow {
-        left: -7px;
+        inset-inline-start: -7px;
     }
     &.bs-popover-bottom .popover-arrow::after,
     &.bs-popover-auto[data-popper-placement^="bottom"] .popover-arrow::after {
-        border-bottom-color: $primary-1 !important;
+        border-block-end-color	: $primary-1 !important;
     }
     &.bs-popover-bottom .popover-arrow::before,
     &.bs-popover-auto[data-popper-placement^="bottom"] .popover-arrow::before {
@@ -732,19 +750,19 @@
     }
     &.bs-popover-top .popover-arrow,
     &.bs-popover-auto[data-popper-placement^="top"] .popover-arrow {
-        bottom: -7px;
+        inset-block-end: -7px;
     }
     &.bs-popover-start .popover-arrow,
     &.bs-popover-auto[data-popper-placement^="left"] .popover-arrow {
-        right: -7px;
+        inset-inline-end: -7px;
     }
     &.bs-popover-end .popover-arrow,
     &.bs-popover-auto[data-popper-placement^="right"] .popover-arrow {
-        left: -7px;
+        inset-inline-start: -7px;
     }
     &.bs-popover-bottom .popover-arrow::after,
     &.bs-popover-auto[data-popper-placement^="bottom"] .popover-arrow::after {
-        border-bottom-color: $secondary !important;
+        border-block-end-color	: $secondary !important;
     }
     &.bs-popover-bottom .popover-arrow::before,
     &.bs-popover-auto[data-popper-placement^="bottom"] .popover-arrow::before {
@@ -763,9 +781,9 @@
 .popover-head-primary .popover-body,
 .popover-head-secondary .popover-body {
     border: 1px solid rgba(20, 17, 45, 0.2);
-    border-top-width: 0;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
+    border-block-start-width: 0;
+    border-end-end-radius: 5px;
+    border-end-start-radius: 5px;
 }
 
 .popover-primary {
@@ -774,7 +792,7 @@
     padding: 15px;
     .popover-header {
         background-color: $primary-1 !important;
-        border-bottom-width: 0 !important;
+        border-block-end-width: 0 !important;
         padding: 0 0 15px;
         color: $white;
     }
@@ -787,19 +805,19 @@
     }
     &.bs-popover-top .popover-arrow::after,
     &.bs-popover-auto[data-popper-placement^="top"] .popover-arrow::after {
-        border-top-color: $primary-1 !important;
+        border-block-start-color: $primary-1 !important;
     }
     &.bs-popover-bottom .popover-arrow::after,
     &.bs-popover-auto[data-popper-placement^="bottom"] .popover-arrow::after {
-        border-bottom-color: $primary-1 !important;
+        border-block-end-color	: $primary-1 !important;
     }
     &.bs-popover-start .popover-arrow::after,
     &.bs-popover-auto[data-popper-placement^="left"] .popover-arrow::after {
-        border-left-color: $primary-1 !important;
+        border-inline-start-color: $primary-1 !important;
     }
     &.bs-popover-end .popover-arrow::after,
     &.bs-popover-auto[data-popper-placement^="right"] .popover-arrow::after {
-        border-right-color: $primary-1 !important;
+        border-inline-end-color: $primary-1 !important;
     }
 }
 
@@ -809,7 +827,7 @@
     padding: 15px;
     .popover-header {
         background-color: $secondary !important;
-        border-bottom-width: 0 !important;
+        border-block-end-width: 0 !important;
         padding: 0 0 15px;
         color: $white;
     }
@@ -822,18 +840,18 @@
     }
     &.bs-popover-top .popover-arrow::after,
     &.bs-popover-auto[data-popper-placement^="top"] .popover-arrow::after {
-        border-top-color: $secondary !important;
+        border-block-start-color: $secondary !important;
     }
     &.bs-popover-bottom .popover-arrow::after,
     &.bs-popover-auto[data-popper-placement^="bottom"] .popover-arrow::after {
-        border-bottom-color: $secondary !important;
+        border-block-end-color	: $secondary !important;
     }
     &.bs-popover-start .popover-arrow::after,
     &.bs-popover-auto[data-popper-placement^="left"] .popover-arrow::after {
-        border-left-color: $secondary !important;
+        border-inline-start-color: $secondary !important;
     }
     &.bs-popover-end .popover-arrow::after,
     &.bs-popover-auto[data-popper-placement^="right"] .popover-arrow::after {
-        border-right-color: $secondary !important;
+        border-inline-end-color: $secondary !important;
     }
 }

@@ -1,7 +1,7 @@
 .logo-container {
-    left: 50px;
+    inset-inline-start: 50px;
     position: absolute;
-    top: 20px;
+    inset-block-start: 20px;
     z-index: 3;
 
     .logo {
@@ -9,16 +9,16 @@
         border-radius: 50%;
         border: 1px solid #333333;
         width: 60px;
-        float: left;
+        float: $float-left;
     }
 
     .brand {
         font-size: 18px;
         color: #fff;
         line-height: 20px;
-        float: left;
-        margin-left: 10px;
-        margin-top: 10px;
+        float: $float-left;
+        margin-inline-start: 10px;
+        margin-block-start: 10px;
         width: 60px;
     }
 }
@@ -28,7 +28,7 @@
 }
 
 .tim-row {
-    margin-bottom: 20px;
+    margin-block-end: 20px;
 }
 
 .tim-white-buttons {
@@ -36,50 +36,50 @@
 }
 
 .title {
-    margin-top: 30px;
-    margin-bottom: 25px;
+    margin-block-start: 30px;
+    margin-block-end: 25px;
     min-height: 32px;
     font-weight: 500;
 
     &.text-center {
-        margin-bottom: 50px;
+        margin-block-end: 50px;
     }
 }
 
 .tim-typo {
-    padding-left: 25%;
-    margin-bottom: 40px;
+    padding-inline-start: 25%;
+    margin-block-end: 40px;
     position: relative;
 
     .tim-note {
-        bottom: 10px;
+        inset-block-end: 10px;
         color: #c0c1c2;
         display: block;
         font-weight: 400;
         font-size: 13px;
         line-height: 13px;
-        left: 0;
-        margin-left: 20px;
+        inset-inline-start: 0;
+        margin-inline-start: 20px;
         position: absolute;
         width: 260px;
     }
 }
 
 .tim-row {
-    padding-top: 50px;
+    padding-block-start: 50px;
 
     h3 {
-        margin-top: 0;
+        margin-block-start: 0;
     }
 }
 
 .switch {
-    margin-right: 20px;
+    margin-inline-end: 20px;
 }
 
 #navbar-full .navbar {
     border-radius: 0 !important;
-    margin-bottom: 15px;
+    margin-block-end: 15px;
     z-index: 2;
 }
 
@@ -109,7 +109,7 @@
     }
     background-position: center center;
     background-size: cover;
-    margin-top: 0;
+    margin-block-start: 0;
     min-height: 740px;
 }
 
@@ -120,7 +120,7 @@
     position: relative;
 
     .alert-danger {
-        margin-bottom: 0px;
+        margin-block-end: 0px;
     }
 }
 
@@ -139,9 +139,9 @@
 }
 
 .be-social {
-    padding-bottom: 20px;
+    padding-block-end: 20px;
 
-    /*     border-bottom: 1px solid #aaa; */
+    /*     border-block-end: 1px solid #aaa; */
     margin: 0 auto 40px;
 }
 
@@ -166,8 +166,8 @@
 .logo-container {
     &.logo-documentation {
         position: relative;
-        top: 0;
-        left: 0;
+        inset-block-start: 0;
+        inset-inline-start: 0;
     }
 
     .logo {
@@ -175,18 +175,18 @@
         border-radius: 50%;
         border: 1px solid #333333;
         width: 50px;
-        float: left;
+        float: $float-left;
     }
 
     .brand {
         font-size: 16px;
         line-height: 18px;
-        float: left;
-        margin-left: 10px;
-        margin-top: 7px;
+        float: $float-left;
+        margin-inline-start: 10px;
+        margin-block-start: 7px;
         width: 70px;
         height: 40px;
-        text-align: left;
+        text-align: start;
     }
 }
 
@@ -201,7 +201,7 @@
 .logo-container {
     .brand-material {
         font-size: 18px;
-        margin-top: 15px;
+        margin-block-start: 15px;
         height: 25px;
         width: auto;
     }
@@ -216,7 +216,7 @@
 }
 
 .fixed-section {
-    top: 90px;
+    inset-block-start: 90px;
     max-height: 80vh;
     overflow: scroll;
 
@@ -237,9 +237,9 @@
 
     &.float {
         position: fixed;
-        top: 100px;
+        inset-block-start: 100px;
         width: 200px;
-        margin-top: 0;
+        margin-block-start: 0;
     }
 }
 
@@ -286,8 +286,8 @@
 }
 
 .social-buttons-demo .btn {
-    margin-right: 5px;
-    margin-bottom: 7px;
+    margin-inline-end: 5px;
+    margin-block-end: 7px;
 }
 
 .img-container {
@@ -322,8 +322,8 @@
 @media (max-width: 768px) {
 
     .parallax .motto {
-        top: 170px;
-        margin-top: 0;
+        inset-block-start: 170px;
+        margin-block-start: 0;
         font-size: 60px;
         width: 270px;
     }
@@ -359,11 +359,11 @@
 }
 
 #images h4 {
-    margin-bottom: 30px;
+    margin-block-end: 30px;
 }
 
 #javascriptComponents {
-    padding-bottom: 0;
+    padding-block-end: 0;
 
     .btn-raised {
         margin: 10px 5px;
@@ -374,15 +374,15 @@
 
 .layers-container {
     display: block;
-    margin-top: 50px;
+    margin-block-start: 50px;
     position: relative;
 
     img {
         position: absolute;
         width: 100%;
         height: auto;
-        top: 0;
-        left: 0;
+        inset-block-start: 0;
+        inset-inline-start: 0;
         text-align: center;
     }
 }
@@ -410,7 +410,7 @@
 }
 
 .sharing-area {
-    margin-top: 80px;
+    margin-block-start: 80px;
 
     .btn {
         margin: 15px 4px 0;
@@ -419,8 +419,8 @@
         i {
             font-size: 18px;
             position: relative;
-            top: 2px;
-            margin-right: 5px;
+            inset-block-start: 2px;
+            margin-inline-end: 5px;
         }
     }
 
@@ -447,7 +447,7 @@
 }
 
 .section-navbars {
-    padding-top: 0;
+    padding-block-start: 0;
 }
 
 #navbar .navbar {
@@ -459,11 +459,11 @@
 }
 
 .section-pagination {
-    padding-bottom: 0;
+    padding-block-end: 0;
 }
 
 .section-download h4 {
-    margin-bottom: 50px;
+    margin-block-end: 50px;
 }
 
 .section-examples {
@@ -472,14 +472,14 @@
     }
 
     h5 {
-        margin-top: 30px;
+        margin-block-start: 30px;
     }
 }
 
 .components-page .wrapper > .header,
 .tutorial-page .wrapper > .header {
     height: 400px;
-    padding-top: 100px;
+    padding-block-start: 100px;
     background-size: cover;
     background-position: center center;
 }
@@ -511,8 +511,8 @@
         width: 100%;
         height: 100%;
         display: block;
-        left: 0;
-        top: 0;
+        inset-inline-start: 0;
+        inset-block-start: 0;
         content: "";
     }
 
@@ -563,7 +563,7 @@
         background-color: transparent;
         box-shadow: none;
         color: #fff;
-        padding-top: 25px;
+        padding-block-start: 25px;
     }
 }
 
@@ -585,15 +585,15 @@
     }
 
     &:not(.btn) .material-icons {
-        margin-top: -3px;
-        top: 0px;
+        margin-block-start: -3px;
+        inset-block-start: 0px;
         position: relative;
-        margin-right: 3px;
+        margin-inline-end: 3px;
     }
 
     color: inherit;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-block-start: 15px;
+    padding-block-end: 15px;
     font-weight: 400;
     font-size: 12px;
     text-transform: uppercase;
@@ -608,8 +608,8 @@
         }
 
         .navbar-nav > li > a {
-            padding-top: 15px;
-            padding-bottom: 15px;
+            padding-block-start: 15px;
+            padding-block-end: 15px;
         }
     }
 }
@@ -620,8 +620,8 @@
 
 footer {
     &.footer-documentation {
-        margin-top: 0;
-        bottom: 0;
+        margin-block-start: 0;
+        inset-block-end: 0;
         text-shadow: none;
         color: inherit;
 
@@ -636,7 +636,7 @@ footer {
     }
 
     ul {
-        margin-bottom: 0;
+        margin-block-end: 0;
         padding: 0;
         list-style: none;
 
@@ -666,11 +666,11 @@ footer {
 
         &.links-horizontal {
             &:first-child a {
-                padding-left: 0;
+                padding-inline-start: 0;
             }
 
             &:last-child a {
-                padding-right: 0;
+                padding-inline-end: 0;
             }
         }
 
@@ -686,18 +686,18 @@ footer {
     .social-buttons {
         a,
         .btn {
-            margin-top: 5px;
-            margin-bottom: 5px;
+            margin-block-start: 5px;
+            margin-block-end: 5px;
         }
     }
 
     .footer-brand {
-        float: left;
+        float: $float-left;
         height: 50px;
         padding: 15px 15px;
         font-size: 18px;
         line-height: 20px;
-        margin-left: -15px;
+        margin-inline-start: -15px;
 
         &:hover,
         &:focus {
@@ -712,7 +712,7 @@ footer {
         .material-icons {
             font-size: 18px;
             position: relative;
-            top: 3px;
+            inset-block-start: 3px;
         }
     }
 
@@ -733,12 +733,12 @@ footer {
 
     .navbar.navbar-transparent {
         background-color: rgba(0, 0, 0, 0.4);
-        padding-top: 10px;
+        padding-block-start: 10px;
         border-radius: 0;
     }
 
     .main-raised {
-        margin-left: 10px;
-        margin-right: 10px;
+        margin-inline-start: 10px;
+        margin-inline-end: 10px;
     }
 }

@@ -19,20 +19,20 @@ textarea {
 	white-space: nowrap;
 }
 .text-start {
-	text-align: left !important;
+	text-align: start !important;
 }
 .text-end {
-	text-align: right !important;
+	text-align: end !important;
 }
 .text-center {
 	text-align: center !important;
 }
 @media (min-width: 576px) {
 	.text-sm-left {
-		text-align: left !important;
+		text-align: start !important;
 	}
 	.text-sm-right {
-		text-align: right !important;
+		text-align: end !important;
 	}
 	.text-sm-center {
 		text-align: center !important;
@@ -40,10 +40,10 @@ textarea {
 }
 @media (min-width: 768px) {
 	.text-md-left {
-		text-align: left !important;
+		text-align: start !important;
 	}
 	.text-md-right {
-		text-align: right !important;
+		text-align: end !important;
 	}
 	.text-md-center {
 		text-align: center !important;
@@ -51,10 +51,10 @@ textarea {
 }
 @media (min-width: 992px) {
 	.text-lg-left {
-		text-align: left !important;
+		text-align: start !important;
 	}
 	.text-lg-right {
-		text-align: right !important;
+		text-align: end !important;
 	}
 	.text-lg-center {
 		text-align: center !important;
@@ -62,10 +62,10 @@ textarea {
 }
 @media (min-width: 1280px) {
 	.text-xl-left {
-		text-align: left !important;
+		text-align: start !important;
 	}
 	.text-xl-right {
-		text-align: right !important;
+		text-align: end !important;
 	}
 	.text-xl-center {
 		text-align: center !important;
@@ -173,13 +173,13 @@ a.text-dark {
 	line-height: 1.66;
 	> {
 		:first-child {
-			margin-top: 0;
+			margin-block-start: 0;
 		}
 		:last-child {
-			margin-bottom: 0;
+			margin-block-end: 0;
 		}
 		h1, h2, h3, h4, h5, h6 {
-			margin-top: 1em;
+			margin-block-start: 1em;
 		}
 	}
 }
@@ -280,7 +280,7 @@ textarea[cols] {
 	height: auto;
 }
 .text-end {
-	text-align: right;
+	text-align: end;
 }
 .text-transparent {
 	color: #332525;

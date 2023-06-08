@@ -33,13 +33,13 @@
     > {
         span {
             position: absolute;
-            top: 13px;
-            left: 0;
+            inset-block-start: 13px;
+            inset-inline-start: 0;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
             display: block;
-            padding-left: 8px;
+            padding-inline-start: 8px;
 
             &.placeholder {
                 color: #999;
@@ -48,8 +48,8 @@
 
         div {
             position: absolute;
-            top: 7px;
-            right: 7px;
+            inset-block-start: 7px;
+            inset-inline-end: 7px;
             width: 20px;
             height: 25px;
             background: url("../plugins/multipleselect/multiple-select.png") left top no-repeat;
@@ -65,7 +65,7 @@
     width: 100%;
     overflow: hidden;
     display: none;
-    margin-top: -1px;
+    margin-block-start: -1px;
     padding: 0;
     position: absolute;
     z-index: 1000;
@@ -77,12 +77,12 @@
     border-radius: 4px;
 
     &.bottom {
-        top: 100%;
+        inset-block-start: 100%;
         box-shadow: 0px 16px 18px rgba(104, 113, 123, 0.2);
     }
 
     &.top {
-        bottom: 100%;
+        inset-block-end: 100%;
         -webkit-box-shadow: 0 -4px 5px rgba(104, 113, 123, 0.2);
         -moz-box-shadow: 0 -4px 5px rgba(104, 113, 123, 0.2);
         box-shadow: 0 -4px 5px rgba(104, 113, 123, 0.2);
@@ -170,7 +170,7 @@
 
             &.multiple {
                 display: block;
-                float: left;
+                float: $float-left;
             }
 
             &.group {
@@ -201,16 +201,16 @@
         &[type="checkbox"] {
             vertical-align: middle;
             vertical-align: middle;
-            margin-right: 6px;
-            margin-bottom: 1px;
-            margin-left: 6px;
+            margin-inline-end: 6px;
+            margin-block-end: 1px;
+            margin-inline-start: 6px;
         }
 
         &[type="radio"] {
-            margin-right: 6px;
-            margin-bottom: 1px;
-            margin-left: 6px;
-            margin-top: 1px;
+            margin-inline-end: 6px;
+            margin-block-end: 1px;
+            margin-inline-start: 6px;
+            margin-block-start: 1px;
         }
     }
 
@@ -224,6 +224,6 @@
 
     ul > li.multiple {
         display: block !important;
-        float: left;
+        float: $float-left;
     }
 }

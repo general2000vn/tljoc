@@ -17,7 +17,7 @@
 
 	.non-selected-wrapper {
 		background: #f6f6fb;
-		border-right: 1px solid $border;
+		border-inline-end: 1px solid $border;
 	}
 
 	.selected-wrapper {
@@ -67,7 +67,7 @@
 
 	.search-input {
 		border: 0;
-		border-bottom: 1px solid $border;
+		border-block-end: 1px solid $border;
 		border-radius: 0;
 		display: block;
 		font-size: 14px !important;

@@ -178,7 +178,7 @@
 
   th {
     padding: 6px 6px;
-    text-align: left;
+    text-align: start;
   }
 
   td {
@@ -189,13 +189,13 @@
       display: inline-block;
       width: 8px;
       height: 8px;
-      margin-right: 8px;
+      margin-inline-end: 8px;
       border-radius: 50%;
       vertical-align: baseline;
     }
 
     &.value {
-      text-align: right;
+      text-align: end;
     }
   }
 }

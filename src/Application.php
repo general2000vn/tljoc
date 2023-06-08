@@ -219,7 +219,7 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
             'fields' => $fields,
             'loginUrl' => '/users/login',
             'cookie' => [
-                'name' => 'HLHV eOffice',
+                'name' => 'TLJOC eOffice',
                 //'expire' => ''
             ]
         ]);

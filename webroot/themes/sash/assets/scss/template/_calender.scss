@@ -1,6 +1,6 @@
 @media (max-width: 320px) {
     .fc-toolbar .fc-right {
-        float: right;
+        float: $float-right;
         width: 100%;
         text-align: center;
         margin: 10px 0;
@@ -20,10 +20,12 @@
 .richText {
     .richText-toolbar {
         ul li a {
-            border-right: rgba(156, 162, 161, 0.2) solid 1px;
+            border-inline-end: rgba(156, 162, 161, 0.2) solid 1px;
         }
-        border-bottom: rgba(156, 162, 161, 0.1) solid 1px;
+
+        border-block-end: rgba(156, 162, 161, 0.1) solid 1px;
     }
+
     border: $border solid 1px;
     background-color: #f6f6fb !important;
 }
@@ -32,46 +34,57 @@
     .clndr {
         .clndr-table {
             .header-days .header-day {
-                border-left: 1px solid $border;
-                border-top: 1px solid $border;
-                border-right: 1px solid $border;
+                border-inline-start: 1px solid $border;
+                border-block-start: 1px solid $border;
+                border-inline-end: 1px solid $border;
             }
+
             tr {
+
                 .empty,
                 .adjacent-month,
                 .my-empty,
                 .my-adjacent-month {
-                    border-left: 1px solid $border;
-                    border-top: 1px solid $border;
+                    border-inline-start: 1px solid $border;
+                    border-block-start: 1px solid $border;
                     color: #76839a;
                 }
+
                 .day {
+
                     &.event,
                     &.my-event {
                         background: #fafafb !important;
                     }
-                    border-left: 1px solid $border;
-                    border-top: 1px solid $border;
+
+                    border-inline-start: 1px solid $border;
+                    border-block-start: 1px solid $border;
+
                     &:last-child {
-                        border-right: 1px solid $border;
+                        border-inline-end: 1px solid $border;
                     }
+
                     &:hover {
                         background: #f6f6fb;
                     }
                 }
             }
         }
+
         .clndr-controls .clndr-control-button {
+
             .clndr-previous-button,
             .clndr-next-button {
                 color: $white;
             }
         }
     }
+
     font-size: 14px;
 }
 
 .fc-unthemed {
+
     .fc-content,
     .fc-divider,
     .fc-list-heading td,
@@ -92,6 +105,7 @@
 }
 
 .fc-unthemed {
+
     .fc-divider,
     .fc-list-heading td,
     .fc-popover .fc-header {
@@ -100,6 +114,7 @@
 }
 
 .fc-toolbar {
+
     .fc-state-active,
     .ui-state-active {
         background: #b4b4b4;
@@ -116,6 +131,7 @@
 }
 
 .cal1 .clndr .clndr-table tr {
+
     .empty:hover,
     .adjacent-month:hover,
     .my-empty:hover,
@@ -127,13 +143,26 @@
 .error-page {
     .display-1 {
         font-size: 8.5rem;
-        margin-top: 0px;
+        margin-block-start: 0px;
     }
+
     position: relative;
 }
 
-@media (max-width: 360px) {
-    .cal1 .clndr .clndr-controls{
+@media (max-width: 480px) {
+    .cal1 .clndr .clndr-controls {
         display: grid !important;
     }
+
+    .cal1 .clndr .clndr-controls .month {
+        width: 100% !important;
+        text-align: start !important;
+    }
+
+    .cal1 .clndr .clndr-controls .clndr-control-button.rightalign {
+        text-align: start !important;
+    }
+}
+.alert-inner--icon {
+    display: inline-flex !important;
 }

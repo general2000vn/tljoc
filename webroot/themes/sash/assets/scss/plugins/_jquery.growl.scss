@@ -19,62 +19,62 @@
 }
 
 #growls-default {
-    top: 10px;
-    right: 10px;
+    inset-block-start: 10px;
+    inset-inline-end: 10px;
 }
 
 #growls-tl {
-    top: 10px;
-    left: 10px;
+    inset-block-start: 10px;
+    inset-inline-start: 10px;
 }
 
 #growls-tr {
-    top: 10px;
-    right: 10px;
+    inset-block-start: 10px;
+    inset-inline-end: 10px;
 }
 
 #growls-bl {
-    bottom: 10px;
-    left: 10px;
+    inset-block-end: 10px;
+    inset-inline-start: 10px;
 }
 
 #growls-br {
-    bottom: 10px;
-    right: 10px;
+    inset-block-end: 10px;
+    inset-inline-end: 10px;
 }
 
 #growls-tc {
-    top: 10px;
-    right: 10px;
-    left: 10px;
+    inset-block-start: 10px;
+    inset-inline-end: 10px;
+    inset-inline-start: 10px;
 }
 
 #growls-bc {
-    bottom: 10px;
-    right: 10px;
-    left: 10px;
+    inset-block-end: 10px;
+    inset-inline-end: 10px;
+    inset-inline-start: 10px;
 }
 
 #growls-cc {
-    top: 50%;
-    left: 50%;
-    margin-left: -125px;
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+    margin-inline-start: -125px;
 }
 
 #growls-cl {
-    top: 50%;
-    left: 10px;
+    inset-block-start: 50%;
+    inset-inline-start: 10px;
 }
 
 #growls-cr {
-    top: 50%;
-    right: 10px;
+    inset-block-start: 50%;
+    inset-inline-end: 10px;
 }
 
 #growls-tc .growl,
 #growls-bc .growl {
-    margin-left: auto;
-    margin-right: auto;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
 }
 
 .growl {
@@ -112,7 +112,7 @@
 
     &.growl-default {
         color: #fff;
-        background: linear-gradient(to bottom right, #1e63c3 0%, #00f2fe 100%);
+        background: linear-gradient(to bottom right, $primary-1 0%, #05c3fb 100%);
     }
 
     &.growl-error {
@@ -152,7 +152,7 @@
 
     .growl-close {
         cursor: pointer;
-        float: right;
+        float: $float-right;
         font-size: 14px;
         line-height: 18px;
         font-weight: normal;
@@ -163,7 +163,7 @@
         font-size: 16px;
         line-height: 24px;
         font-weight: 500;
-        margin-bottom: 5px;
+        margin-block-end: 5px;
     }
 
     .growl-message {

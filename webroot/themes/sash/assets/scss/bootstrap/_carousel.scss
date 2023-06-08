@@ -44,7 +44,7 @@
 .carousel-item-next,
 .carousel-item-prev {
     position: absolute;
-    top: 0;
+    inset-block-start: 0;
 }
 
 .carousel-item-next.carousel-item-start,
@@ -144,8 +144,8 @@
 .carousel-control-prev,
 .carousel-control-next {
     position: absolute;
-    top: 0;
-    bottom: 0;
+    inset-block-start: 0;
+    inset-block-end: 0;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
@@ -179,11 +179,11 @@
 }
 
 .carousel-control-prev {
-    left: 0;
+    inset-inline-start: 0;
 }
 
 .carousel-control-next {
-    right: 0;
+    inset-inline-end: 0;
 }
 
 .carousel-control-prev-icon,
@@ -205,17 +205,17 @@
 
 .carousel-indicators {
     position: absolute;
-    right: 0;
-    bottom: 10px;
-    left: 0;
+    inset-inline-end: 0;
+    inset-block-end: 10px;
+    inset-inline-start: 0;
     z-index: 8;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: center;
     justify-content: center;
-    padding-left: 0;
-    margin-right: 15%;
-    margin-left: 15%;
+    padding-inline-start: 0;
+    margin-inline-end: 15%;
+    margin-inline-start: 15%;
     list-style: none;
     li {
         position: relative;
@@ -223,15 +223,15 @@
         flex: 0 1 auto;
         width: 7px;
         height: 7px;
-        margin-right: 3px;
-        margin-left: 3px;
+        margin-inline-end: 3px;
+        margin-inline-start: 3px;
         text-indent: -999px;
         border-radius: 50%;
         background-color: $white-5;
         &::before {
             position: absolute;
-            top: -10px;
-            left: 0;
+            inset-block-start: -10px;
+            inset-inline-start: 0;
             display: inline-block;
             width: 100%;
             height: 10px;
@@ -239,8 +239,8 @@
         }
         &::after {
             position: absolute;
-            bottom: -10px;
-            left: 0;
+            inset-block-end: -10px;
+            inset-inline-start: 0;
             display: inline-block;
             width: 100%;
             height: 10px;
@@ -254,17 +254,17 @@
 
 .carousel-indicators1 {
     position: absolute;
-    right: 0;
-    top: 10px;
-    left: 0;
+    inset-inline-end: 0;
+    inset-block-start: 10px;
+    inset-inline-start: 0;
     z-index: 8;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: center;
     justify-content: center;
-    padding-left: 0;
-    margin-right: 15%;
-    margin-left: 15%;
+    padding-inline-start: 0;
+    margin-inline-end: 15%;
+    margin-inline-start: 15%;
     list-style: none;
     li {
         position: relative;
@@ -272,15 +272,15 @@
         flex: 0 1 auto;
         width: 7px;
         height: 7px;
-        margin-right: 3px;
-        margin-left: 3px;
+        margin-inline-end: 3px;
+        margin-inline-start: 3px;
         text-indent: -999px;
         background-color: $white-5;
         border-radius: 50%;
         &::before {
             position: absolute;
-            top: -10px;
-            left: 0;
+            inset-block-start: -10px;
+            inset-inline-start: 0;
             display: inline-block;
             width: 100%;
             height: 10px;
@@ -288,8 +288,8 @@
         }
         &::after {
             position: absolute;
-            bottom: -10px;
-            left: 0;
+            inset-block-end: -10px;
+            inset-inline-start: 0;
             display: inline-block;
             width: 100%;
             height: 10px;
@@ -303,15 +303,15 @@
 
 .carousel-indicators2 {
     position: absolute;
-    right: 24px;
-    left: auto;
-    top: 15px;
+    inset-inline-end: 24px;
+    inset-inline-start: auto;
+    inset-block-start: 15px;
     z-index: 8;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: center;
     justify-content: center;
-    padding-left: 0;
+    padding-inline-start: 0;
     margin: 0px;
     list-style: none;
     li {
@@ -320,15 +320,15 @@
         flex: 0 1 auto;
         width: 7px;
         height: 7px;
-        margin-right: 3px;
-        margin-left: 3px;
+        margin-inline-end: 3px;
+        margin-inline-start: 3px;
         text-indent: -999px;
         background-color: $white-5;
         border-radius: 50%;
         &::before {
             position: absolute;
-            top: -10px;
-            left: 0;
+            inset-block-start: -10px;
+            inset-inline-start: 0;
             display: inline-block;
             width: 100%;
             height: 10px;
@@ -336,8 +336,8 @@
         }
         &::after {
             position: absolute;
-            bottom: -10px;
-            left: 0;
+            inset-block-end: -10px;
+            inset-inline-start: 0;
             display: inline-block;
             width: 100%;
             height: 10px;
@@ -351,15 +351,15 @@
 
 .carousel-indicators3 {
     position: absolute;
-    top: 15px;
-    left: 24px;
+    inset-block-start: 15px;
+    inset-inline-start: 24px;
     z-index: 8;
-    right: auto;
+    inset-inline-end: auto;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: center;
     justify-content: center;
-    padding-left: 0;
+    padding-inline-start: 0;
     margin: 0px;
     list-style: none;
     li {
@@ -368,15 +368,15 @@
         flex: 0 1 auto;
         width: 7px;
         height: 7px;
-        margin-right: 3px;
-        margin-left: 3px;
+        margin-inline-end: 3px;
+        margin-inline-start: 3px;
         text-indent: -999px;
         background-color: $white-5;
         border-radius: 50%;
         &::before {
             position: absolute;
-            top: -10px;
-            left: 0;
+            inset-block-start: -10px;
+            inset-inline-start: 0;
             display: inline-block;
             width: 100%;
             height: 10px;
@@ -384,8 +384,8 @@
         }
         &::after {
             position: absolute;
-            bottom: -10px;
-            left: 0;
+            inset-block-end: -10px;
+            inset-inline-start: 0;
             display: inline-block;
             width: 100%;
             height: 10px;
@@ -399,15 +399,15 @@
 
 .carousel-indicators4 {
     position: absolute;
-    right: 24px;
-    bottom: 15px;
+    inset-inline-end: 24px;
+    inset-block-end: 15px;
     z-index: 8;
-    left: auto;
+    inset-inline-start: auto;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: center;
     justify-content: center;
-    padding-left: 0;
+    padding-inline-start: 0;
     margin: 0;
     list-style: none;
     li {
@@ -416,15 +416,15 @@
         flex: 0 1 auto;
         width: 7px;
         height: 7px;
-        margin-right: 3px;
-        margin-left: 3px;
+        margin-inline-end: 3px;
+        margin-inline-start: 3px;
         text-indent: -999px;
         background-color: $white-5;
         border-radius: 50%;
         &::before {
             position: absolute;
-            top: -10px;
-            left: 0;
+            inset-block-start: -10px;
+            inset-inline-start: 0;
             display: inline-block;
             width: 100%;
             height: 10px;
@@ -432,8 +432,8 @@
         }
         &::after {
             position: absolute;
-            bottom: -10px;
-            left: 0;
+            inset-block-end: -10px;
+            inset-inline-start: 0;
             display: inline-block;
             width: 100%;
             height: 10px;
@@ -447,15 +447,15 @@
 
 .carousel-indicators5 {
     position: absolute;
-    bottom: 15px;
-    left: 24px;
-    right: auto;
+    inset-block-end: 15px;
+    inset-inline-start: 24px;
+    inset-inline-end: auto;
     z-index: 8;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: center;
     justify-content: center;
-    padding-left: 0;
+    padding-inline-start: 0;
     margin: 0;
     list-style: none;
     li {
@@ -464,15 +464,15 @@
         flex: 0 1 auto;
         width: 7px;
         height: 7px;
-        margin-right: 3px;
-        margin-left: 3px;
+        margin-inline-end: 3px;
+        margin-inline-start: 3px;
         text-indent: -999px;
         background-color: $white-5;
         border-radius: 50%;
         &::before {
             position: absolute;
-            top: -10px;
-            left: 0;
+            inset-block-start: -10px;
+            inset-inline-start: 0;
             display: inline-block;
             width: 100%;
             height: 10px;
@@ -480,8 +480,8 @@
         }
         &::after {
             position: absolute;
-            bottom: -10px;
-            left: 0;
+            inset-block-end: -10px;
+            inset-inline-start: 0;
             display: inline-block;
             width: 100%;
             height: 10px;
@@ -495,12 +495,12 @@
 
 .carousel-caption {
     position: absolute;
-    right: 15%;
-    top: 35%;
-    left: 15%;
+    inset-inline-end: 15%;
+    inset-block-start: 35%;
+    inset-inline-start: 15%;
     z-index: 10;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-block-start: 20px;
+    padding-block-end: 20px;
     color: $white;
     text-align: center;
 }
@@ -509,10 +509,10 @@
     content: '';
     background: $black-5;
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    inset-block-end: 0;
 }
 
 .carousel-inner>.item> {
@@ -529,6 +529,6 @@
 }
 @media (min-width: 992px) and (max-width:1400px) {
     .carousel-caption {
-        top: 15%;
+        inset-block-start: 15%;
     }
 }

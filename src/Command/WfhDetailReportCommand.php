@@ -188,7 +188,7 @@ class WfhDetailReportCommand extends Command
             'format' => 'html',
             'config' => 'eoffice-cli',
             'from_name' => 'e.Office',
-            'from_email' => 'e.office@hlhvjoc.com.vn'
+            'from_email' => Configure::read('from_email')
         ];
 
         EmailQueue::enqueue($to, $cc, $emailData, $options);

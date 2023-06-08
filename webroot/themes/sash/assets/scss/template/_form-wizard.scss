@@ -8,7 +8,7 @@
             padding: 20px;
             > ul {
                 padding: 0;
-                margin-bottom: 0;
+                margin-block-end: 0;
                 display: flex;
                 li {
                     float: none;
@@ -18,14 +18,14 @@
                         display: none;
                     }
                     .title {
-                        margin-left: 5px;
+                        margin-inline-start: 5px;
                         white-space: nowrap;
                         transition: all 0.2s ease-in-out;
                         margin: 0;
                         min-height: auto;
                     }
                     + li {
-                        margin-left: 5px;
+                        margin-inline-start: 5px;
                     }
                 }
             }
@@ -61,7 +61,7 @@
                     background-color: $primary-01;
                     border-radius: 100%;
                     transition: all 0.2s ease-in-out;
-                    margin-right: 5px;
+                    margin-inline-end: 5px;
                 }
             }
             .disabled a {
@@ -109,8 +109,8 @@
             }
         }
         .content {
-            border-top: 1px solid $border;
-            border-bottom: 1px solid $border;
+            border-block-start: 1px solid $border;
+            border-block-end: 1px solid $border;
             min-height: 150px;
             padding: 20px;
             > {
@@ -118,7 +118,7 @@
                     font-size: 18px;
                     color: $default-color;
                     font-weight: 600;
-                    padding-bottom: 15px;
+                    padding-block-end: 15px;
                     display: none;
                     margin: 0;
                     &.current {
@@ -186,7 +186,7 @@
             padding: 20px;
             ul li {
                 + li {
-                    margin-left: 10px;
+                    margin-inline-start: 10px;
                 }
                 .title {
                     display: none;
@@ -232,7 +232,7 @@
 @media (min-width: 576px) {
     .wizard > .steps > ul li .title {
         display: none;
-        margin-left: 10px;
+        margin-inline-start: 10px;
     }
 }
 
@@ -244,13 +244,13 @@
 
 @media (min-width: 576px) {
     .wizard > .steps > ul li + li {
-        margin-left: 20px;
+        margin-inline-start: 20px;
     }
 }
 
 @media (min-width: 992px) {
     .wizard > .steps > ul li + li {
-        margin-left: 30px;
+        margin-inline-start: 30px;
     }
 }
 
@@ -341,7 +341,7 @@
 
 @media (min-width: 576px) {
     .wizard.vertical > .steps {
-        float: left;
+        float: $float-left;
         width: 20%;
     }
 }
@@ -367,14 +367,14 @@
 
 @media (min-width: 576px) {
     .wizard.vertical > .steps ul li + li {
-        margin-top: 10px;
-        margin-left: 0;
+        margin-block-start: 10px;
+        margin-inline-start: 0;
     }
 }
 
 @media (min-width: 768px) {
     .wizard.vertical > .steps ul li + li {
-        margin-top: 20px;
+        margin-block-start: 20px;
     }
 }
 
@@ -404,11 +404,11 @@
 
 @media (min-width: 576px) {
     .wizard.vertical > .content {
-        border-top-width: 0;
-        border-bottom-width: 0;
+        border-block-start-width: 0;
+        border-block-end-width: 0;
         width: 80%;
-        float: right;
-        border-left: 1px solid $border;
+        float: $float-right;
+        border-inline-start: 1px solid $border;
     }
 }
 
@@ -428,8 +428,8 @@
 @media (min-width: 576px) {
     .wizard.vertical > .actions {
         width: 80%;
-        float: right;
-        border-left: 1px solid $border;
+        float: $float-right;
+        border-inline-start: 1px solid $border;
     }
 }
 
@@ -489,8 +489,8 @@
         .title,
         &:hover .title,
         &:active .title {
-            margin-right: 20px;
-            margin-left: 20px;
+            margin-inline-end: 20px;
+            margin-inline-start: 20px;
         }
     }
     .current a {
@@ -536,7 +536,7 @@
         .title,
         &:hover .title,
         &:active .title {
-            margin-right: 20px;
+            margin-inline-end: 20px;
         }
     }
     .current a {
@@ -560,7 +560,7 @@
 /*--- WIZARD ELEMENTS ---*/
 
 .wizard-card .moving-tab {
-    margin-top: 5px;
+    margin-block-start: 5px;
     background-color: $primary-1 !important;
 }
 

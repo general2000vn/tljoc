@@ -14,9 +14,7 @@ $(function(e) {
     });
 
     // select2-search__field
-    // $('.select2').on('click', () => {
-    //$('.select2-show-search').on('click', () => {
-    $('.select2-show-search.select2').on('click', () => {    
+    $('.select2').on('click', () => {
         let selectField = document.querySelectorAll('.select2-search__field')
         selectField.forEach((element, index) => {
             element.focus();

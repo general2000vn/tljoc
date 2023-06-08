@@ -12,11 +12,11 @@
 }
 
 .left-align {
-  text-align: left;
+  text-align: start;
 }
 
 .right-align {
-  text-align: right;
+  text-align: end;
 }
 
 .cal1 .clndr {
@@ -26,11 +26,11 @@
     display: flex;
     padding: 15px;
     border: 1px solid $border;
-    border-bottom: 0;
+    border-block-end: 0;
     background-color: transparent;
 
     .month {
-      float: left;
+      float: $float-left;
       width: 33%;
       text-align: center;
       line-height: 32px;
@@ -39,11 +39,11 @@
     }
 
     .clndr-control-button {
-      float: left;
+      float: $float-left;
       width: 33%;
 
       &.rightalign {
-        text-align: right;
+        text-align: end;
         width: 34%;
       }
 
@@ -147,7 +147,7 @@
           box-sizing: border-box;
           padding: 8px 15px;
           font-size: 13px;
-          text-align: right;
+          text-align: end;
         }
       }
 
@@ -163,18 +163,18 @@
       .adjacent-month:last-child,
       .my-empty:last-child,
       .my-adjacent-month:last-child {
-        border-right: 1px solid $border;
+        border-inline-end: 1px solid $border;
       }
 
       &:last-child {
         .day,
         .my-day {
-          border-bottom: 1px solid $border;
+          border-block-end: 1px solid $border;
         }
 
         .empty,
         .my-empty {
-          border-bottom: 1px solid #d7e7ff;
+          border-block-end: 1px solid #d7e7ff;
         }
       }
     }
@@ -191,12 +191,12 @@
       display: block;
       display: inline-block;
       width: 100%;
-      margin-bottom: 3px;
+      margin-block-end: 3px;
 
       .clndr-previous-button {
-        float: left;
+        float: $float-left;
         width: 10%;
-        text-align: left;
+        text-align: start;
         cursor: pointer;
         user-select: none;
         -webkit-user-select: none;
@@ -215,15 +215,15 @@
       }
 
       .month {
-        float: left;
+        float: $float-left;
         width: 80%;
         text-align: center;
       }
 
       .clndr-next-button {
-        float: left;
+        float: $float-left;
         width: 10%;
-        text-align: right;
+        text-align: end;
         cursor: pointer;
         -webkit-user-select: none;
 
@@ -248,14 +248,14 @@
       display: inline-block;
 
       .header-day {
-        float: left;
+        float: $float-left;
         width: 25px;
         height: 25px;
         background: #ff4545;
       }
 
       .day {
-        float: left;
+        float: $float-left;
         width: 25px;
         height: 25px;
 
@@ -278,7 +278,7 @@
 
       .empty,
       .adjacent-month {
-        float: left;
+        float: $float-left;
         width: 25px;
         height: 25px;
         background: #ddd;
@@ -317,7 +317,7 @@
   font-family: "Droid Sans Mono";
 
   .cal {
-    float: left;
+    float: $float-left;
     width: 177px;
   }
 
@@ -326,18 +326,18 @@
       display: block;
       display: inline-block;
       width: 100%;
-      margin-bottom: 8px;
+      margin-block-end: 8px;
 
       &.top {
-        margin-bottom: -22px;
+        margin-block-end: -22px;
         position: relative;
         z-index: 1;
       }
 
       .clndr-previous-button {
-        float: left;
+        float: $float-left;
         width: 10%;
-        text-align: left;
+        text-align: start;
         cursor: pointer;
         -webkit-user-select: none;
 
@@ -362,9 +362,9 @@
       }
 
       .clndr-next-button {
-        float: right;
+        float: $float-right;
         width: 10%;
-        text-align: right;
+        text-align: end;
         cursor: pointer;
         -webkit-user-select: none;
 
@@ -389,14 +389,14 @@
       display: inline-block;
 
       .header-day {
-        float: left;
+        float: $float-left;
         width: 25px;
         height: 25px;
         background: #ff4545;
       }
 
       .day {
-        float: left;
+        float: $float-left;
         width: 25px;
         height: 25px;
 
@@ -411,7 +411,7 @@
 
       .empty,
       .adjacent-month {
-        float: left;
+        float: $float-left;
         width: 25px;
         height: 25px;
         background: #ddd;

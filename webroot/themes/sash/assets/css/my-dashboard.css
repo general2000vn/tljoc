@@ -1,0 +1,26 @@
+:root {
+    --dashboard-splitter: 15px;
+
+  }
+
+.app-content {
+    margin-left: 0px;
+    min-height: calc(100vh - 162px);
+
+}
+
+.dashboard-splitter {
+    margin-top: var(--dashboard-splitter);
+}
+
+.carousel-item {
+    text-align: left;
+}
+
+.row {
+    /* margin: 10px; */
+}
+
+.sidebar-mini footer.footer {
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}

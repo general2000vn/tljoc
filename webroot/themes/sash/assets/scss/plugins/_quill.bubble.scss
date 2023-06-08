@@ -25,11 +25,11 @@
 }
 
 .ql-clipboard {
-	left: -100000px;
+	inset-inline-start: -100000px;
 	height: 1px;
 	overflow-y: hidden;
 	position: absolute;
-	top: 50%;
+	inset-block-start: 50%;
 
 	p {
 		margin: 0;
@@ -46,7 +46,7 @@
 	padding: 20px 25px;
 	tab-size: 4;
 	-moz-tab-size: 4;
-	text-align: left;
+	text-align: start;
 	white-space: pre-wrap;
 	word-wrap: break-word;
 	font-size: 14px;
@@ -74,7 +74,7 @@
 
 	ol,
 	ul {
-		padding-left: 1.5em;
+		padding-inline-start: 1.5em;
 	}
 
 	ol > li {
@@ -124,25 +124,25 @@
 		}
 
 		&:not(.ql-direction-rtl)::before {
-			margin-left: -1.5em;
-			margin-right: 0.3em;
-			text-align: right;
+			margin-inline-start: -1.5em;
+			margin-inline-end: 0.3em;
+			text-align: end;
 		}
 
 		&.ql-direction-rtl::before {
-			margin-left: 0.3em;
-			margin-right: -1.5em;
+			margin-inline-start: 0.3em;
+			margin-inline-end: -1.5em;
 		}
 	}
 
 	ol li:not(.ql-direction-rtl),
 	ul li:not(.ql-direction-rtl) {
-		padding-left: 1.5em;
+		padding-inline-start: 1.5em;
 	}
 
 	ol li.ql-direction-rtl,
 	ul li.ql-direction-rtl {
-		padding-right: 1.5em;
+		padding-inline-end: 1.5em;
 	}
 
 	ol li {
@@ -243,147 +243,147 @@
 	}
 
 	.ql-indent-1:not(.ql-direction-rtl) {
-		padding-left: 3em;
+		padding-inline-start: 3em;
 	}
 
 	li.ql-indent-1:not(.ql-direction-rtl) {
-		padding-left: 4.5em;
+		padding-inline-start: 4.5em;
 	}
 
 	.ql-indent-1.ql-direction-rtl.ql-align-right {
-		padding-right: 3em;
+		padding-inline-end: 3em;
 	}
 
 	li.ql-indent-1.ql-direction-rtl.ql-align-right {
-		padding-right: 4.5em;
+		padding-inline-end: 4.5em;
 	}
 
 	.ql-indent-2:not(.ql-direction-rtl) {
-		padding-left: 6em;
+		padding-inline-start: 6em;
 	}
 
 	li.ql-indent-2:not(.ql-direction-rtl) {
-		padding-left: 7.5em;
+		padding-inline-start: 7.5em;
 	}
 
 	.ql-indent-2.ql-direction-rtl.ql-align-right {
-		padding-right: 6em;
+		padding-inline-end: 6em;
 	}
 
 	li.ql-indent-2.ql-direction-rtl.ql-align-right {
-		padding-right: 7.5em;
+		padding-inline-end: 7.5em;
 	}
 
 	.ql-indent-3:not(.ql-direction-rtl) {
-		padding-left: 9em;
+		padding-inline-start: 9em;
 	}
 
 	li.ql-indent-3:not(.ql-direction-rtl) {
-		padding-left: 10.5em;
+		padding-inline-start: 10.5em;
 	}
 
 	.ql-indent-3.ql-direction-rtl.ql-align-right {
-		padding-right: 9em;
+		padding-inline-end: 9em;
 	}
 
 	li.ql-indent-3.ql-direction-rtl.ql-align-right {
-		padding-right: 10.5em;
+		padding-inline-end: 10.5em;
 	}
 
 	.ql-indent-4:not(.ql-direction-rtl) {
-		padding-left: 12em;
+		padding-inline-start: 12em;
 	}
 
 	li.ql-indent-4:not(.ql-direction-rtl) {
-		padding-left: 13.5em;
+		padding-inline-start: 13.5em;
 	}
 
 	.ql-indent-4.ql-direction-rtl.ql-align-right {
-		padding-right: 12em;
+		padding-inline-end: 12em;
 	}
 
 	li.ql-indent-4.ql-direction-rtl.ql-align-right {
-		padding-right: 13.5em;
+		padding-inline-end: 13.5em;
 	}
 
 	.ql-indent-5:not(.ql-direction-rtl) {
-		padding-left: 15em;
+		padding-inline-start: 15em;
 	}
 
 	li.ql-indent-5:not(.ql-direction-rtl) {
-		padding-left: 16.5em;
+		padding-inline-start: 16.5em;
 	}
 
 	.ql-indent-5.ql-direction-rtl.ql-align-right {
-		padding-right: 15em;
+		padding-inline-end: 15em;
 	}
 
 	li.ql-indent-5.ql-direction-rtl.ql-align-right {
-		padding-right: 16.5em;
+		padding-inline-end: 16.5em;
 	}
 
 	.ql-indent-6:not(.ql-direction-rtl) {
-		padding-left: 18em;
+		padding-inline-start: 18em;
 	}
 
 	li.ql-indent-6:not(.ql-direction-rtl) {
-		padding-left: 19.5em;
+		padding-inline-start: 19.5em;
 	}
 
 	.ql-indent-6.ql-direction-rtl.ql-align-right {
-		padding-right: 18em;
+		padding-inline-end: 18em;
 	}
 
 	li.ql-indent-6.ql-direction-rtl.ql-align-right {
-		padding-right: 19.5em;
+		padding-inline-end: 19.5em;
 	}
 
 	.ql-indent-7:not(.ql-direction-rtl) {
-		padding-left: 21em;
+		padding-inline-start: 21em;
 	}
 
 	li.ql-indent-7:not(.ql-direction-rtl) {
-		padding-left: 22.5em;
+		padding-inline-start: 22.5em;
 	}
 
 	.ql-indent-7.ql-direction-rtl.ql-align-right {
-		padding-right: 21em;
+		padding-inline-end: 21em;
 	}
 
 	li.ql-indent-7.ql-direction-rtl.ql-align-right {
-		padding-right: 22.5em;
+		padding-inline-end: 22.5em;
 	}
 
 	.ql-indent-8:not(.ql-direction-rtl) {
-		padding-left: 24em;
+		padding-inline-start: 24em;
 	}
 
 	li.ql-indent-8:not(.ql-direction-rtl) {
-		padding-left: 25.5em;
+		padding-inline-start: 25.5em;
 	}
 
 	.ql-indent-8.ql-direction-rtl.ql-align-right {
-		padding-right: 24em;
+		padding-inline-end: 24em;
 	}
 
 	li.ql-indent-8.ql-direction-rtl.ql-align-right {
-		padding-right: 25.5em;
+		padding-inline-end: 25.5em;
 	}
 
 	.ql-indent-9:not(.ql-direction-rtl) {
-		padding-left: 27em;
+		padding-inline-start: 27em;
 	}
 
 	li.ql-indent-9:not(.ql-direction-rtl) {
-		padding-left: 28.5em;
+		padding-inline-start: 28.5em;
 	}
 
 	.ql-indent-9.ql-direction-rtl.ql-align-right {
-		padding-right: 27em;
+		padding-inline-end: 27em;
 	}
 
 	li.ql-indent-9.ql-direction-rtl.ql-align-right {
-		padding-right: 28.5em;
+		padding-inline-end: 28.5em;
 	}
 
 	.ql-video {
@@ -489,17 +489,17 @@
 	}
 
 	.ql-align-right {
-		text-align: right;
+		text-align: end;
 	}
 
 	&.ql-blank::before {
 		color: rgba(0, 0, 0, 0.6);
 		content: attr(data-placeholder);
 		font-style: italic;
-		left: 15px;
+		inset-inline-start: 15px;
 		pointer-events: none;
 		position: absolute;
-		right: 15px;
+		inset-inline-end: 15px;
 	}
 }
 
@@ -517,7 +517,7 @@
 		border: none;
 		cursor: pointer;
 		display: inline-block;
-		// float: left;
+		// float: $float-left;
 		height: 24px;
 		padding: 3px 5px;
 		width: 28px;
@@ -526,7 +526,7 @@
 
 	&.ql-toolbar button svg,
 	.ql-toolbar button svg {
-		float: left;
+		float: $float-left;
 		height: 100%;
 	}
 
@@ -742,10 +742,10 @@
 		}
 
 		blockquote {
-			border-left: 4px solid #ccc;
-			margin-bottom: 5px;
-			margin-top: 5px;
-			padding-left: 16px;
+			border-inline-start: 4px solid #ccc;
+			margin-block-end: 5px;
+			margin-block-start: 5px;
+			padding-inline-start: 16px;
 		}
 
 		code {
@@ -757,8 +757,8 @@
 			background-color: #f0f0f0;
 			border-radius: 3px;
 			white-space: pre-wrap;
-			margin-bottom: 5px;
-			margin-top: 5px;
+			margin-block-end: 5px;
+			margin-block-start: 5px;
 			padding: 5px 10px;
 		}
 
@@ -781,7 +781,7 @@
 	.ql-picker {
 		color: #ccc;
 		display: inline-block;
-		// float: left;
+		// float: $float-left;
 		font-size: 14px;
 		font-weight: 500;
 		height: 24px;
@@ -793,8 +793,8 @@
 		cursor: pointer;
 		display: inline-block;
 		height: 100%;
-		padding-left: 8px;
-		padding-right: 2px;
+		padding-inline-start: 8px;
+		padding-inline-end: 2px;
 		position: relative;
 		width: 100%;
 
@@ -815,8 +815,8 @@
 		.ql-picker-item {
 			cursor: pointer;
 			display: block;
-			padding-bottom: 5px;
-			padding-top: 5px;
+			padding-block-end: 5px;
+			padding-block-start: 5px;
 		}
 	}
 
@@ -836,8 +836,8 @@
 
 		.ql-picker-options {
 			display: block;
-			margin-top: -1px;
-			top: 100%;
+			margin-block-start: -1px;
+			inset-block-start: 100%;
 			z-index: 1;
 		}
 	}
@@ -853,12 +853,12 @@
 	}
 
 	.ql-color-picker .ql-picker-label svg {
-		right: 4px;
+		inset-inline-end: 4px;
 	}
 
 	.ql-icon-picker {
 		.ql-picker-label svg {
-			right: 4px;
+			inset-inline-end: 4px;
 		}
 
 		.ql-picker-options {
@@ -880,7 +880,7 @@
 
 		.ql-picker-item {
 			border: 1px solid transparent;
-			float: left;
+			float: $float-left;
 			height: 16px;
 			margin: 2px;
 			padding: 0px;
@@ -891,9 +891,9 @@
 	.ql-picker {
 		&:not(.ql-color-picker):not(.ql-icon-picker) svg {
 			position: absolute;
-			margin-top: -9px;
-			right: 0;
-			top: 50%;
+			margin-block-start: -9px;
+			inset-inline-end: 0;
+			inset-block-start: 50%;
 			width: 18px;
 		}
 
@@ -1062,7 +1062,7 @@
 		margin: 8px 12px 8px 0px;
 
 		&:first-child {
-			margin-left: 12px;
+			margin-inline-start: 12px;
 		}
 	}
 
@@ -1086,24 +1086,24 @@
 	}
 
 	.ql-tooltip-arrow {
-		border-left: 6px solid transparent;
-		border-right: 6px solid transparent;
+		border-inline-start: 6px solid transparent;
+		border-inline-end: 6px solid transparent;
 		content: " ";
 		display: block;
-		left: 50%;
-		margin-left: -6px;
+		inset-inline-start: 50%;
+		margin-inline-start: -6px;
 		position: absolute;
 	}
 
 	.ql-tooltip {
 		&:not(.ql-flip) .ql-tooltip-arrow {
-			border-bottom: 6px solid #444;
-			top: -6px;
+			border-block-end: 6px solid #444;
+			inset-block-start: -6px;
 		}
 
 		&.ql-flip .ql-tooltip-arrow {
-			border-top: 6px solid #444;
-			bottom: -6px;
+			border-block-start: 6px solid #444;
+			inset-block-end: -6px;
 		}
 
 		&.ql-editing {
@@ -1133,9 +1133,9 @@
 		}
 
 		a {
-			top: 10px;
+			inset-block-start: 10px;
 			position: absolute;
-			right: 20px;
+			inset-inline-end: 20px;
 
 			&:before {
 				color: #ccc;
@@ -1177,7 +1177,7 @@
 	&::before {
 		background-color: #444;
 		border-radius: 15px;
-		top: -5px;
+		inset-block-start: -5px;
 		font-size: 12px;
 		color: #fff;
 		content: attr(href);
@@ -1189,10 +1189,10 @@
 	}
 
 	&::after {
-		border-top: 6px solid #444;
-		border-left: 6px solid transparent;
-		border-right: 6px solid transparent;
-		top: 0;
+		border-block-start: 6px solid #444;
+		border-inline-start: 6px solid transparent;
+		border-inline-end: 6px solid transparent;
+		inset-block-start: 0;
 		content: " ";
 		height: 0;
 		width: 0;
@@ -1200,8 +1200,8 @@
 
 	&::before,
 	&::after {
-		left: 0;
-		margin-left: 50%;
+		inset-inline-start: 0;
+		margin-inline-start: 50%;
 		position: absolute;
 		transform: translate(-50%, -100%);
 		transition: visibility 0s ease 200ms;

@@ -1,9 +1,9 @@
 .nav-sidebar .list-unstyled li:last-child {
-    border-bottom: 0px;
+    border-block-end: 0px;
 }
 
 .nav-item.show .dropdown-menu.dropdown-menu-arrow.show {
-    top: -1px !important;
+    inset-block-start: -1px !important;
 }
 
 
@@ -14,8 +14,8 @@
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    padding-left: 0;
-    margin-bottom: 0;
+    padding-inline-start: 0;
+    margin-block-end: 0;
     list-style: none;
 }
 
@@ -35,9 +35,9 @@
 }
 
 .nav-tabs {
-    border-bottom: 1px solid $border;
+    border-block-end: 1px solid $border;
     .nav-item {
-        margin-bottom: -1px;
+        margin-block-end: -1px;
         position: relative;
     }
     .nav-link {
@@ -51,8 +51,8 @@
         border: 0;
     }
     .dropdown-menu {
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
+        border-start-start-radius: 0;
+        border-start-end-radius: 0;
     }
 }
 
@@ -80,7 +80,7 @@
 .nav.nav-pills.nav-stacked.labels-info p {
     color: #9d9f9e;
     font-size: 11px;
-    margin-bottom: 0;
+    margin-block-end: 0;
     padding: 0 22px;
 }
 
@@ -104,8 +104,8 @@
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    padding-left: 0;
-    margin-bottom: 0;
+    padding-inline-start: 0;
+    margin-block-end: 0;
     list-style: none;
     background: $primary-005;
 }
@@ -128,19 +128,19 @@
 }
 
 .nav-tabs {
-    border-bottom: 1px solid $border;
+    border-block-end: 1px solid $border;
     .nav-item1 {
-        margin-bottom: -1px;
+        margin-block-end: -1px;
         position: relative;
         &.nav-link {
             border: 1px solid transparent;
-            border-top-left-radius: 3px;
-            border-top-right-radius: 3px;
+            border-start-start-radius: 3px;
+            border-start-end-radius: 3px;
         }
         .nav-link {
             border: 0;
             color: inherit;
-            margin-bottom: -1px;
+            margin-block-end: -1px;
             color: #76839a;
             transition: .3s border-color;
             font-weight: 400;
@@ -155,13 +155,13 @@
             }
         }
         i {
-            margin-right: .25rem;
+            margin-inline-end: .25rem;
             line-height: 1;
             font-size: 0rem;
             width: 0.875rem;
             vertical-align: baseline;
             display: inline-block;
-            margin-right: 10px;
+            margin-inline-end: 10px;
         }
         &:hover .nav-submenu {
             display: block;
@@ -202,10 +202,10 @@
                 position: absolute;
                 width: 12px;
                 height: 12px;
-                top: 5px;
-                bottom: 0;
+                inset-block-start: 5px;
+                inset-block-end: 0;
                 border-radius: 50%;
-                right: 3px;
+                inset-inline-end: 3px;
                 background: rgba($primary-1, 0);
             }
         }
@@ -294,20 +294,20 @@
 
 .nav-tabs {
     .nav-item i {
-        margin-right: .25rem;
+        margin-inline-end: .25rem;
         line-height: 1;
         font-size: 0rem;
         width: 0.875rem;
         vertical-align: baseline;
         display: inline-block;
-        margin-right: 10px;
+        margin-inline-end: 10px;
     }
     .nav-submenu {
         display: none;
         position: absolute;
         background: $white;
         border: 1px solid $border;
-        border-top: none;
+        border-block-start: none;
         z-index: 10;
         box-shadow: 0 1px 2px 0 $black-05;
         min-width: 10rem;
@@ -334,25 +334,25 @@
 .hor-menu .nav-badge {
     border-radius: 30px;
     position: absolute;
-    top: 3px;
-    right: 14px;
+    inset-block-start: 3px;
+    inset-inline-end: 14px;
     padding: 0.2em 0.4em;
     font-size: 12px;
 }
 
 @media (max-width: 992px) {
     .hor-menu .nav-badge {
-        right: auto !important;
+        inset-inline-end: auto !important;
     }
 }
 
 #smartwizard {
     .nav.nav-tabs.step-anchor {
-        border-bottom: 0 !important;
+        border-block-end: 0 !important;
         padding: 30px;
     }
     .nav-tabs {
-        border-top: 0 !important;
+        border-block-start: 0 !important;
     }
     .nav-link {
         padding: 8px 40px;

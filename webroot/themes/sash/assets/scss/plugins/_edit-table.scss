@@ -5,12 +5,12 @@ div {
 		div {
 			&.DTE_Header {
 				position: absolute;
-				top: 0;
-				left: 0;
+				inset-block-start: 0;
+				inset-inline-start: 0;
 				height: 52px;
 				width: 100%;
 				background-color: #e8e9eb;
-				border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+				border-block-end: 1px solid rgba(0, 0, 0, 0.15);
 				padding: 16px 10px 2px 16px;
 				font-size: 1.3em;
 				-webkit-box-sizing: border-box;
@@ -24,12 +24,12 @@ div {
 
 			&.DTE_Footer {
 				position: absolute;
-				bottom: 0;
-				left: 0;
+				inset-block-end: 0;
+				inset-inline-start: 0;
 				height: 52px;
 				width: 100%;
 				background-color: #e8e9eb;
-				border-top: 1px solid rgba(0, 0, 0, 0.15);
+				border-block-start: 1px solid rgba(0, 0, 0, 0.15);
 				padding: 10px;
 				-webkit-box-sizing: border-box;
 				-moz-box-sizing: border-box;
@@ -37,7 +37,7 @@ div {
 			}
 
 			&.DTE_Form_Info {
-				margin-bottom: 0.5em;
+				margin-block-end: 0.5em;
 				display: none;
 			}
 
@@ -47,7 +47,7 @@ div {
 			}
 
 			&.DTE_Form_Error {
-				float: left;
+				float: $float-left;
 				padding: 5px;
 				display: none;
 				color: #b11f1f;
@@ -62,11 +62,11 @@ div {
 			position: relative;
 			text-align: center;
 			display: block;
-			margin-top: 0;
+			margin-block-start: 0;
 			padding: 0.5em 1em;
 			cursor: pointer;
-			float: right;
-			margin-left: 0.75em;
+			float: $float-right;
+			margin-inline-start: 0.75em;
 			color: inherit;
 			font-size: 14px;
 			white-space: nowrap;
@@ -127,10 +127,10 @@ div {
 		button.btn:focus:after,
 		div.DTE_Form_Buttons button:focus:after {
 			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
+			inset-block-start: 0;
+			inset-inline-start: 0;
+			inset-inline-end: 0;
+			inset-block-end: 0;
 			background: white;
 			display: block;
 			content: " ";
@@ -167,7 +167,7 @@ div {
 	}
 
 	&.DTTT_container {
-		float: left;
+		float: $float-left;
 	}
 
 	&.DTE_Field {
@@ -220,10 +220,10 @@ div {
 
 		label div.DTE_Label_Info {
 			font-size: 0.85em;
-			margin-top: 0.25em;
+			margin-block-start: 0.25em;
 
 			&:empty {
-				margin-top: 0;
+				margin-block-start: 0;
 			}
 		}
 
@@ -233,17 +233,17 @@ div {
 			&.DTE_Field_Error {
 				font-size: 11px;
 				line-height: 1em;
-				margin-top: 5px;
+				margin-block-start: 5px;
 			}
 
 			&.DTE_Field_Info:empty,
 			&.DTE_Field_Message:empty {
-				margin-top: 0;
+				margin-block-start: 0;
 			}
 
 			&.DTE_Field_Error {
 				&:empty {
-					margin-top: 0;
+					margin-block-start: 0;
 				}
 
 				display: none;
@@ -293,7 +293,7 @@ div {
 
 		div.multi-restore {
 			display: none;
-			margin-top: 0.5em;
+			margin-block-start: 0.5em;
 			font-size: 0.8em;
 			line-height: 1.25em;
 			color: #3879d9;
@@ -319,22 +319,22 @@ div {
 
 	&.DTE_Field_Type_checkbox div.DTE_Field_Input > div > div,
 	&.DTE_Field_Type_radio div.DTE_Field_Input > div > div {
-		margin-bottom: 0.25em;
+		margin-block-end: 0.25em;
 	}
 
 	&.DTE_Field_Type_checkbox div.DTE_Field_Input > div > div:last-child,
 	&.DTE_Field_Type_radio div.DTE_Field_Input > div > div:last-child {
-		margin-bottom: 0;
+		margin-block-end: 0;
 	}
 
 	&.DTE_Field_Type_checkbox div.DTE_Field_Input > div > div label,
 	&.DTE_Field_Type_radio div.DTE_Field_Input > div > div label {
-		margin-left: 0.75em;
+		margin-inline-start: 0.75em;
 		vertical-align: middle;
 	}
 
 	&.DTE_Field_Type_select div.DTE_Field_Input {
-		padding-top: 4px;
+		padding-block-start: 4px;
 	}
 
 	&.DTE_Field_Type_datatable {
@@ -342,8 +342,8 @@ div {
 			&.dataTables_info {
 				font-size: 0.8em;
 				line-height: 1.3em;
-				padding-right: 1em;
-				padding-bottom: 0.5em;
+				padding-inline-end: 1em;
+				padding-block-end: 0.5em;
 
 				span.select-info {
 					display: block;
@@ -351,8 +351,8 @@ div {
 			}
 
 			&.dataTables_filter {
-				padding-right: 1em;
-				padding-bottom: 0.5em;
+				padding-inline-end: 1em;
+				padding-block-end: 0.5em;
 
 				input {
 					width: 100%;
@@ -360,15 +360,15 @@ div {
 			}
 
 			&.dt-buttons {
-				padding-right: 1em;
-				padding-bottom: 0.5em;
+				padding-inline-end: 1em;
+				padding-block-end: 0.5em;
 
 				button {
 					width: 100%;
 				}
 
 				&:empty {
-					padding-bottom: 0;
+					padding-block-end: 0;
 				}
 			}
 
@@ -381,28 +381,28 @@ div {
 
 		table.dataTable {
 			&.no-footer {
-				border-bottom: 1px solid #aaa !important;
+				border-block-end: 1px solid #aaa !important;
 			}
 
 			thead {
 				th,
 				td {
 					font-weight: normal;
-					padding-top: 3px;
-					padding-bottom: 3px;
-					border-bottom: 1px solid #aaa;
+					padding-block-start: 3px;
+					padding-block-end: 3px;
+					border-block-end: 1px solid #aaa;
 				}
 			}
 
 			tbody {
 				th:first-child,
 				td:first-child {
-					border-left: 1px solid #aaa;
+					border-inline-start: 1px solid #aaa;
 				}
 
 				th:last-child,
 				td:last-child {
-					border-right: 1px solid #aaa;
+					border-inline-end: 1px solid #aaa;
 				}
 			}
 
@@ -410,21 +410,21 @@ div {
 				th,
 				td {
 					font-weight: normal;
-					padding-top: 3px;
-					padding-bottom: 3px;
-					border-top: 1px solid #aaa;
+					padding-block-start: 3px;
+					padding-block-end: 3px;
+					border-block-start: 1px solid #aaa;
 				}
 			}
 		}
 
 		div {
 			&.dataTables_scrollHead table.dataTable {
-				border-bottom: none !important;
+				border-block-end: none !important;
 
 				thead {
 					th,
 					td {
-						border-bottom: none !important;
+						border-block-end: none !important;
 					}
 				}
 			}
@@ -434,17 +434,17 @@ div {
 				border-radius: 3px;
 
 				table.dataTable {
-					border-bottom: none !important;
+					border-block-end: none !important;
 
 					tbody {
 						th:first-child,
 						td:first-child {
-							border-left: none;
+							border-inline-start: none;
 						}
 
 						th:last-child,
 						td:last-child {
-							border-right: none;
+							border-inline-end: none;
 						}
 					}
 				}
@@ -487,13 +487,13 @@ div {
 
 					> {
 						label {
-							float: left;
+							float: $float-left;
 							width: 40%;
-							padding-top: 6px;
+							padding-block-start: 6px;
 						}
 
 						div.DTE_Field_Input {
-							float: right;
+							float: $float-right;
 							width: 60%;
 						}
 					}
@@ -566,16 +566,16 @@ div {
 html[dir="rtl"] div {
 	&.DTE_Body div.DTE_Body_Content div.DTE_Field > {
 		label {
-			float: right;
+			float: $float-right;
 		}
 
 		div.DTE_Field_Input {
-			float: left;
+			float: $float-left;
 		}
 	}
 
 	&.DTE div.DTE_Form_Buttons button {
-		float: left;
+		float: $float-left;
 	}
 }
 
@@ -637,7 +637,7 @@ html[dir="rtl"] div {
 			label {
 				float: none;
 				width: auto;
-				padding-top: 0;
+				padding-block-start: 0;
 			}
 
 			div.DTE_Field_Input {
@@ -671,16 +671,16 @@ div {
 	&.DTE_Bubble {
 		position: absolute;
 		z-index: 11;
-		margin-top: -6px;
+		margin-block-start: -6px;
 		opacity: 0;
 
 		div {
 			&.DTE_Bubble_Liner {
 				position: absolute;
-				bottom: 0;
+				inset-block-end: 0;
 				border: 1px solid black;
 				width: 300px;
-				margin-left: -150px;
+				margin-inline-start: -150px;
 				background-color: white;
 				box-shadow: 0 12px 30px 0 rgba(0, 0, 0, 0.5);
 				border-radius: 6px;
@@ -700,16 +700,16 @@ div {
 
 							div.DTE_Field {
 								position: relative;
-								margin-bottom: 0.5em;
+								margin-block-end: 0.5em;
 
 								&:last-child {
-									margin-bottom: 0;
+									margin-block-end: 0;
 								}
 
 								> {
 									label {
-										padding-top: 0;
-										margin-bottom: 0;
+										padding-block-start: 0;
+										margin-block-end: 0;
 									}
 
 									div {
@@ -724,23 +724,23 @@ div {
 						}
 
 						div.DTE_Form_Buttons {
-							text-align: right;
-							margin-top: 1em;
+							text-align: end;
+							margin-block-start: 1em;
 
 							button {
-								margin-bottom: 0;
+								margin-block-end: 0;
 							}
 						}
 					}
 
 					&.DTE_Header {
-						border-top-left-radius: 5px;
-						border-top-right-radius: 5px;
+						border-start-start-radius: 5px;
+						border-start-end-radius: 5px;
 
 						+ div {
 							&.DTE_Form_Info,
 							&.DTE_Bubble_Table {
-								padding-top: 42px;
+								padding-block-start: 42px;
 							}
 						}
 					}
@@ -749,13 +749,13 @@ div {
 						float: none;
 						display: none;
 						padding: 0;
-						margin-bottom: 0.5em;
+						margin-block-end: 0.5em;
 					}
 
 					&.DTE_Bubble_Close {
 						position: absolute;
-						top: 19px;
-						right: 19px;
+						inset-block-start: 19px;
+						inset-inline-end: 19px;
 						cursor: pointer;
 						z-index: 12;
 
@@ -778,11 +778,11 @@ div {
 				position: absolute;
 				height: 10px;
 				width: 10px;
-				top: -6px;
+				inset-block-start: -6px;
 				background-color: white;
 				border: 1px solid #666;
-				border-top: none;
-				border-right: none;
+				border-block-start: none;
+				border-inline-end: none;
 				-webkit-transform: rotate(-45deg);
 				-moz-transform: rotate(-45deg);
 				-ms-transform: rotate(-45deg);
@@ -793,12 +793,12 @@ div {
 
 		&.below div {
 			&.DTE_Bubble_Liner {
-				top: 10px;
-				bottom: auto;
+				inset-block-start: 10px;
+				inset-block-end: auto;
 			}
 
 			&.DTE_Bubble_Triangle {
-				top: 4px;
+				inset-block-start: 4px;
 				-webkit-transform: rotate(135deg);
 				-moz-transform: rotate(135deg);
 				-ms-transform: rotate(135deg);
@@ -810,8 +810,8 @@ div {
 
 	&.DTE_Bubble_Background {
 		position: fixed;
-		top: 0;
-		left: 0;
+		inset-block-start: 0;
+		inset-inline-start: 0;
 		width: 100%;
 		height: 100%;
 		background: rgba(0, 0, 0, 0.7);
@@ -848,10 +848,10 @@ div {
 
 		> div {
 			position: absolute;
-			top: 0;
-			right: 0;
-			left: 0;
-			bottom: 0;
+			inset-block-start: 0;
+			inset-inline-end: 0;
+			inset-inline-start: 0;
+			inset-block-end: 0;
 			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
 			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
 
@@ -951,12 +951,12 @@ div {
 				font-size: 11px;
 				line-height: 1.2em;
 				padding: 0;
-				margin-top: 10px;
+				margin-block-start: 10px;
 			}
 
 			&.DTE_Field_Error:empty,
 			&.DTE_Form_Error:empty {
-				margin-top: 0;
+				margin-block-start: 0;
 			}
 		}
 	}
@@ -969,9 +969,9 @@ span.dtr-data div.DTE_Inline {
 div {
 	&.DTED_Lightbox_Wrapper {
 		position: fixed;
-		top: 0;
-		left: 50%;
-		margin-left: -390px;
+		inset-block-start: 0;
+		inset-inline-start: 50%;
+		margin-inline-start: -390px;
 		width: 780px;
 		height: 100%;
 		z-index: 11;
@@ -1007,10 +1007,10 @@ div {
 
 								div {
 									&.DTE_Header {
-										right: 0;
+										inset-inline-end: 0;
 										width: auto;
-										border-top-left-radius: 6px;
-										border-top-right-radius: 6px;
+										border-start-start-radius: 6px;
+										border-start-end-radius: 6px;
 									}
 
 									&.DTE_Body_Content {
@@ -1019,18 +1019,18 @@ div {
 									}
 
 									&.DTE_Footer {
-										right: 0;
+										inset-inline-end: 0;
 										width: auto;
-										border-bottom-left-radius: 6px;
-										border-bottom-right-radius: 6px;
+										border-end-start-radius: 6px;
+										border-end-end-radius: 6px;
 									}
 								}
 							}
 
 							&.DTED_Lightbox_Close {
 								position: absolute;
-								top: 19px;
-								right: 19px;
+								inset-block-start: 19px;
+								inset-inline-end: 19px;
 								cursor: pointer;
 								z-index: 12;
 
@@ -1068,8 +1068,8 @@ div {
 
 	&.DTED_Lightbox_Background {
 		position: fixed;
-		top: 0;
-		left: 0;
+		inset-block-start: 0;
+		inset-inline-start: 0;
 		width: 100%;
 		height: 100%;
 		background: rgba(0, 0, 0, 0.7);
@@ -1106,10 +1106,10 @@ div {
 
 		> div {
 			position: absolute;
-			top: 0;
-			right: 0;
-			left: 0;
-			bottom: 0;
+			inset-block-start: 0;
+			inset-inline-end: 0;
+			inset-inline-start: 0;
+			inset-block-end: 0;
 			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
 			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
 
@@ -1131,13 +1131,13 @@ body.DTED_Lightbox_Mobile div {
 
 	&.DTED_Lightbox_Wrapper {
 		position: fixed;
-		top: 0px;
-		left: 0px;
-		right: 0px;
-		bottom: 0px;
+		inset-block-start: 0px;
+		inset-inline-start: 0px;
+		inset-inline-end: 0px;
+		inset-block-end: 0px;
 		width: auto;
 		height: auto;
-		margin-left: 0;
+		margin-inline-start: 0;
 		-webkit-overflow-scrolling: touch;
 
 		div.DTED_Lightbox_Container {
@@ -1160,24 +1160,24 @@ body.DTED_Lightbox_Mobile div {
 
 							div {
 								&.DTE_Header {
-									border-top-left-radius: 0;
-									border-top-right-radius: 0;
+									border-start-start-radius: 0;
+									border-start-end-radius: 0;
 								}
 
 								&.DTE_Body_Content {
-									padding-bottom: 52px;
+									padding-block-end: 52px;
 								}
 
 								&.DTE_Footer {
-									border-bottom-left-radius: 0;
-									border-bottom-right-radius: 0;
+									border-end-start-radius: 0;
+									border-end-end-radius: 0;
 								}
 							}
 						}
 
 						&.DTED_Lightbox_Close {
-							top: 11px;
-							right: 15px;
+							inset-block-start: 11px;
+							inset-inline-end: 15px;
 							background-color: transparent;
 							border: none;
 							box-shadow: none;
@@ -1192,13 +1192,13 @@ body.DTED_Lightbox_Mobile div {
 @media only screen and (max-width: 780px) {
 	body div.DTED_Lightbox_Wrapper {
 		position: fixed;
-		top: 0;
-		left: 0;
+		inset-block-start: 0;
+		inset-inline-start: 0;
 		width: 100%;
-		margin-left: 0;
+		margin-inline-start: 0;
 
 		div.DTED_Lightbox_Close {
-			right: 0 !important;
+			inset-inline-end: 0 !important;
 		}
 	}
 }
@@ -1206,9 +1206,9 @@ body.DTED_Lightbox_Mobile div {
 div {
 	&.DTED_Envelope_Wrapper {
 		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 50%;
+		inset-block-start: 0;
+		inset-block-end: 0;
+		inset-inline-start: 50%;
 		height: 100%;
 		z-index: 11;
 		display: none;
@@ -1217,9 +1217,9 @@ div {
 		div {
 			&.DTED_Envelope_Shadow {
 				position: absolute;
-				top: -10px;
-				left: 10px;
-				right: 10px;
+				inset-block-start: -10px;
+				inset-inline-start: 10px;
+				inset-inline-end: 10px;
 				height: 10px;
 				z-index: 10;
 				box-shadow: 0 0 20px black;
@@ -1227,31 +1227,31 @@ div {
 
 			&.DTED_Envelope_Container {
 				position: absolute;
-				top: 0;
-				left: 5%;
+				inset-block-start: 0;
+				inset-inline-start: 5%;
 				width: 90%;
-				border-left: 1px solid #777;
-				border-right: 1px solid #777;
-				border-bottom: 1px solid #777;
+				border-inline-start: 1px solid #777;
+				border-inline-end: 1px solid #777;
+				border-block-end: 1px solid #777;
 				box-shadow: 3px 3px 10px #555;
-				border-bottom-left-radius: 5px;
-				border-bottom-right-radius: 5px;
+				border-end-start-radius: 5px;
+				border-end-end-radius: 5px;
 				background-color: white;
 
 				div {
 					&.DTE_Processing_Indicator {
-						right: 36px;
+						inset-inline-end: 36px;
 					}
 
 					&.DTE_Footer {
-						border-bottom-left-radius: 5px;
-						border-bottom-right-radius: 5px;
+						border-end-start-radius: 5px;
+						border-end-end-radius: 5px;
 					}
 
 					&.DTED_Envelope_Close {
 						position: absolute;
-						top: 19px;
-						right: 19px;
+						inset-block-start: 19px;
+						inset-inline-end: 19px;
 						cursor: pointer;
 						z-index: 12;
 
@@ -1274,8 +1274,8 @@ div {
 
 	&.DTED_Envelope_Background {
 		position: fixed;
-		top: 0;
-		left: 0;
+		inset-block-start: 0;
+		inset-inline-start: 0;
 		width: 100%;
 		height: 100%;
 		background: rgba(0, 0, 0, 0.7);
@@ -1312,10 +1312,10 @@ div {
 
 		> div {
 			position: absolute;
-			top: 0;
-			right: 0;
-			left: 0;
-			bottom: 0;
+			inset-block-start: 0;
+			inset-inline-end: 0;
+			inset-inline-start: 0;
+			inset-block-end: 0;
 			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
 			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
 
@@ -1479,7 +1479,7 @@ table.dataTable {
 div.DTE {
 	div {
 		&.editor_upload {
-			padding-top: 4px;
+			padding-block-start: 4px;
 
 			div {
 				&.eu_table {
@@ -1498,12 +1498,12 @@ div.DTE {
 					vertical-align: top;
 
 					+ div.cell {
-						padding-left: 10px;
+						padding-inline-start: 10px;
 					}
 				}
 
 				&.row + div.row div.cell {
-					padding-top: 10px;
+					padding-block-start: 10px;
 				}
 			}
 
@@ -1522,8 +1522,8 @@ div.DTE {
 				text-align: center;
 				line-height: 1em;
 				position: absolute;
-				top: 0;
-				left: 0;
+				inset-block-start: 0;
+				inset-inline-start: 0;
 				width: 100%;
 				opacity: 0;
 			}
@@ -1538,7 +1538,7 @@ div.DTE {
 					border-radius: 6px;
 					min-height: 4em;
 					color: #999;
-					padding-top: 3px;
+					padding-block-start: 3px;
 					text-align: center;
 
 					&.over {
@@ -1566,7 +1566,7 @@ div.DTE {
 				}
 
 				&.rendered {
-					margin-top: 10px;
+					margin-block-start: 10px;
 				}
 			}
 
@@ -1582,7 +1582,7 @@ div.DTE {
 
 						div.drop {
 							min-height: 0;
-							padding-bottom: 5px;
+							padding-block-end: 5px;
 						}
 					}
 
@@ -1598,10 +1598,10 @@ div.DTE {
 
 					li {
 						position: relative;
-						margin-top: 0.5em;
+						margin-block-start: 0.5em;
 
 						&:first-child {
-							margin-top: 0;
+							margin-block-start: 0;
 						}
 
 						img {
@@ -1611,9 +1611,9 @@ div.DTE {
 						button {
 							position: absolute;
 							width: 40px;
-							right: 0;
-							top: 50%;
-							margin-top: -1.5em;
+							inset-inline-end: 0;
+							inset-block-start: 50%;
+							margin-block-start: -1.5em;
 						}
 					}
 				}
@@ -1622,8 +1622,8 @@ div.DTE {
 
 		&.DTE_Processing_Indicator {
 			position: absolute;
-			top: 17px;
-			right: 42px;
+			inset-block-start: 17px;
+			inset-inline-end: 42px;
 			height: 2em;
 			width: 2em;
 			z-index: 20;
@@ -1646,20 +1646,20 @@ div.DTE {
 	}
 
 	div.DTE_Field div.DTE_Processing_Indicator {
-		top: 13px;
-		right: 0;
+		inset-block-start: 13px;
+		inset-inline-end: 0;
 		font-size: 8px;
 	}
 
 	&.DTE_Inline div.DTE_Processing_Indicator {
-		top: 5px;
-		right: 6px;
+		inset-block-start: 5px;
+		inset-inline-end: 6px;
 		font-size: 6px;
 	}
 
 	&.DTE_Bubble div.DTE_Processing_Indicator {
-		top: 10px;
-		right: 14px;
+		inset-block-start: 10px;
+		inset-inline-end: 14px;
 		font-size: 8px;
 	}
 
@@ -1680,12 +1680,12 @@ div.DTE {
 		&:before,
 		&:after {
 			position: absolute;
-			top: 0;
+			inset-block-start: 0;
 			content: "";
 		}
 
 		&:before {
-			left: -1em;
+			inset-inline-start: -1em;
 			-webkit-animation-delay: -0.3s;
 			animation-delay: -0.3s;
 		}
@@ -1696,7 +1696,7 @@ div.DTE {
 		}
 
 		&:after {
-			left: 1em;
+			inset-inline-start: 1em;
 		}
 	}
 }

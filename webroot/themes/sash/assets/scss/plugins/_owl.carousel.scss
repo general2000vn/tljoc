@@ -66,7 +66,7 @@
         -ms-transform: translate3d(0, 0, 0);
         position: relative;
         min-height: 1px;
-        float: left;
+        float: $float-left;
         -webkit-backface-visibility: hidden;
         -webkit-tap-highlight-color: transparent;
         -webkit-touch-callout: none;
@@ -158,7 +158,7 @@
         direction: rtl;
 
         .owl-item {
-            float: right;
+            float: $float-right;
         }
     }
 }
@@ -241,10 +241,10 @@
         position: absolute;
         height: 80px;
         width: 80px;
-        left: 50%;
-        top: 50%;
-        margin-left: -40px;
-        margin-top: -40px;
+        inset-inline-start: 50%;
+        inset-block-start: 50%;
+        margin-inline-start: -40px;
+        margin-block-start: -40px;
         cursor: pointer;
         z-index: 1;
         -webkit-backface-visibility: hidden;
@@ -322,7 +322,7 @@
         zoom: 1;
     }
 
-    margin-bottom: 30px;
+    margin-block-end: 30px;
     text-align: center;
 }
 
@@ -339,17 +339,17 @@
         color: #fff;
         text-transform: capitalize;
         margin: 0;
-        margin-bottom: 1px;
+        margin-block-end: 1px;
     }
 }
 
 .owl-nav {
     .owl-prev {
         position: absolute;
-        top: 50%;
-        left: -25px;
-        right: -1.5em;
-        margin-top: -1.65em;
+        inset-block-start: 50%;
+        inset-inline-start: -25px;
+        inset-inline-end: -1.5em;
+        margin-block-start: -1.65em;
     }
 
     button {
@@ -360,19 +360,19 @@
         width: 3rem;
         height: 3rem;
         text-align: center;
-        background: rgba(255, 255, 255, 0.5) !important;
+        background: $white-5 !important;
         border: 1px solid #e8ebf3 !important;
         z-index: 99;
-        box-shadow: 0 4px 15px rgb(67 67 67 / 15%);
+        box-shadow: 0 4px 15px rgba(67, 67, 67 ,0.15);
 
         &:before {
             content: "";
             position: absolute;
             z-index: -1;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            inset-block-start: 0;
+            inset-inline-start: 0;
+            inset-inline-end: 0;
+            inset-block-end: 0;
             background: #2098d1;
             -webkit-transform: scaleY(0);
             transform: scaleY(0);
@@ -389,8 +389,8 @@
 
     .owl-next {
         position: absolute;
-        top: 50%;
-        right: -25px;
-        margin-top: -1.65em;
+        inset-block-start: 50%;
+        inset-inline-end: -25px;
+        margin-block-start: -1.65em;
     }
 }

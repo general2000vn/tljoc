@@ -81,23 +81,23 @@
 }
 
 .col-form-label {
-    padding-top: calc(0.375rem + 1px);
-    padding-bottom: calc(0.375rem + 1px);
-    margin-bottom: 0;
+    padding-block-start: calc(0.375rem + 1px);
+    padding-block-end: calc(0.375rem + 1px);
+    margin-block-end: 0;
     font-size: inherit;
     line-height: 1.6;
 }
 
 .col-form-label-lg {
-    padding-top: calc(0.5rem + 1px);
-    padding-bottom: calc(0.5rem + 1px);
+    padding-block-start: calc(0.5rem + 1px);
+    padding-block-end: calc(0.5rem + 1px);
     font-size: 1.125rem;
     line-height: 1.44444444;
 }
 
 .col-form-label-sm {
-    padding-top: calc(0.25rem + 1px);
-    padding-bottom: calc(0.25rem + 1px);
+    padding-block-start: calc(0.25rem + 1px);
+    padding-block-end: calc(0.25rem + 1px);
     font-size: 0.875rem;
     line-height: 1.14285714;
 }
@@ -105,9 +105,9 @@
 .form-control-plaintext {
     display: block;
     width: 100%;
-    padding-top: 0.375rem;
-    padding-bottom: 0.375rem;
-    margin-bottom: 0;
+    padding-block-start: 0.375rem;
+    padding-block-end: 0.375rem;
+    margin-block-end: 0;
     line-height: 1.6;
     color: #495057;
     background-color: transparent;
@@ -115,8 +115,8 @@
     border-width: 1px 0;
     outline: 0;
     &.form-control-sm {
-        padding-right: 0;
-        padding-left: 0;
+        padding-inline-end: 0;
+        padding-inline-start: 0;
     }
 }
 
@@ -126,8 +126,8 @@
     .input-group-text>.form-control-plaintext.input-group-text,
     .input-group-text>.form-control-plaintext.btn,
     .input-group-text>.form-control-plaintext.btn {
-        padding-right: 0;
-        padding-left: 0;
+        padding-inline-end: 0;
+        padding-inline-start: 0;
     }
 }
 
@@ -140,8 +140,8 @@
 }
 
 .form-control-plaintext.form-control-lg {
-    padding-right: 0;
-    padding-left: 0;
+    padding-inline-end: 0;
+    padding-inline-start: 0;
 }
 
 .input-group-lg> {
@@ -150,8 +150,8 @@
     .input-group-text>.form-control-plaintext.input-group-text,
     .input-group-text>.form-control-plaintext.btn,
     .input-group-text>.form-control-plaintext.btn {
-        padding-right: 0;
-        padding-left: 0;
+        padding-inline-end: 0;
+        padding-inline-start: 0;
     }
 }
 
@@ -218,13 +218,13 @@ select.form-control-sm:not([size]):not([multiple]) {
 }
 
 .form-group {
-    margin-bottom: 1rem;
+    margin-block-end: 1rem;
     display: block;
 }
 
 .form-text {
     display: block;
-    margin-top: 0.25rem;
+    margin-block-start: 0.25rem;
 }
 
 .form-row {
@@ -232,13 +232,13 @@ select.form-control-sm:not([size]):not([multiple]) {
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    margin-right: -5px;
-    margin-left: -5px;
+    margin-inline-end: -5px;
+    margin-inline-start: -5px;
     > {
         .col,
         [class*="col-"] {
-            padding-right: 5px;
-            padding-left: 5px;
+            padding-inline-end: 5px;
+            padding-inline-start: 5px;
         }
     }
 }
@@ -246,20 +246,20 @@ select.form-control-sm:not([size]):not([multiple]) {
 .form-check {
     position: relative;
     display: block;
-    padding-left: 1.25rem;
+    padding-inline-start: 1.25rem;
 }
 
 .form-check-input {
     position: absolute;
-    margin-top: 0.3rem;
-    margin-left: -1.25rem;
+    margin-block-start: 0.3rem;
+    margin-inline-start: -1.25rem;
     &:disabled~.form-check-label {
         color: #505662;
     }
 }
 
 .form-check-label {
-    margin-bottom: 0;
+    margin-block-end: 0;
 }
 
 .form-check-inline {
@@ -267,13 +267,13 @@ select.form-control-sm:not([size]):not([multiple]) {
     display: inline-flex;
     -ms-flex-align: center;
     align-items: center;
-    padding-left: 0;
-    margin-right: 0.75rem;
+    padding-inline-start: 0;
+    margin-inline-end: 0.75rem;
     .form-check-input {
         position: static;
-        margin-top: 0;
-        margin-right: 0.3125rem;
-        margin-left: 0;
+        margin-block-start: 0;
+        margin-inline-end: 0.3125rem;
+        margin-inline-start: 0;
     }
 }
 
@@ -537,7 +537,7 @@ select.form-control-sm:not([size]):not([multiple]) {
 }
 
 .header .form-inline {
-    margin-right: 7px;
+    margin-inline-end: 7px;
 }
 
 .form-inline .form-check {
@@ -553,7 +553,7 @@ select.form-control-sm:not([size]):not([multiple]) {
             align-items: center;
             -ms-flex-pack: center;
             justify-content: center;
-            margin-bottom: 0;
+            margin-block-end: 0;
         }
         .form-group {
             display: -ms-flexbox;
@@ -564,7 +564,7 @@ select.form-control-sm:not([size]):not([multiple]) {
             flex-flow: row wrap;
             -ms-flex-align: center;
             align-items: center;
-            margin-bottom: 0;
+            margin-block-end: 0;
         }
         .form-control {
             display: inline-block;
@@ -585,13 +585,13 @@ select.form-control-sm:not([size]):not([multiple]) {
             -ms-flex-pack: center;
             justify-content: center;
             width: auto;
-            padding-left: 0;
+            padding-inline-start: 0;
         }
         .form-check-input {
             position: relative;
-            margin-top: 0;
-            margin-right: 0.25rem;
-            margin-left: 0;
+            margin-block-start: 0;
+            margin-inline-end: 0.25rem;
+            margin-inline-start: 0;
         }
         .custom-control {
             -ms-flex-align: center;
@@ -600,17 +600,17 @@ select.form-control-sm:not([size]):not([multiple]) {
             justify-content: center;
         }
         .custom-control-label {
-            margin-bottom: 0;
+            margin-block-end: 0;
         }
     }
 }
 
 .form-label {
     display: block;
-    margin-bottom: .375rem;
+    margin-block-end: .375rem;
     font-weight: 500;
     font-size: 0.875rem;
-    margin-top: 9px;
+    margin-block-start: 9px;
 }
 
 .form-label-small {
@@ -619,7 +619,7 @@ select.form-control-sm:not([size]):not([multiple]) {
 }
 
 .form-footer {
-    margin-top: 2rem;
+    margin-block-start: 2rem;
 }
 
 .form-control.header-search {
@@ -628,7 +628,7 @@ select.form-control-sm:not([size]):not([multiple]) {
     color: $white;
     padding: 0.375rem 0.75rem;
     width: 100%;
-    margin-top: 4px;
+    margin-block-start: 4px;
     &::placeholder {
         color: $white;
         opacity: 0.7;
@@ -657,7 +657,7 @@ select.form-control-sm:not([size]):not([multiple]) {
 
 .wizard-card {
     .moving-tab {
-        margin-top: 5px;
+        margin-block-start: 5px;
     }
     &.form-group .form-control {
         background-image: linear-gradient(#c4c4c4, #c4c4c4, linear-gradient(#e1e1e2, #e1e1e2));
@@ -671,19 +671,19 @@ form.convFormDynamic button.submit:hover {
 .valid-feedback {
     display: none;
     width: 100%;
-    margin-top: 0.25rem;
+    margin-block-start: 0.25rem;
     font-size: 87.5%;
     color: #198754;
 }
 
 .valid-tooltip {
     position: absolute;
-    top: 100%;
+    inset-block-start: 100%;
     z-index: 5;
     display: none;
     max-width: 100%;
     padding: .5rem;
-    margin-top: .1rem;
+    margin-block-start: .1rem;
     font-size: .875rem;
     line-height: 1;
     color: $white;
@@ -694,19 +694,19 @@ form.convFormDynamic button.submit:hover {
 .invalid-feedback {
     display: none;
     width: 100%;
-    margin-top: 0.25rem;
+    margin-block-start: 0.25rem;
     font-size: 87.5%;
     color: #e23e3d;
 }
 
 .invalid-tooltip {
     position: absolute;
-    top: 100%;
+    inset-block-start: 100%;
     z-index: 5;
     display: none;
     max-width: 100%;
     padding: .5rem;
-    margin-top: .1rem;
+    margin-block-start: .1rem;
     font-size: .875rem;
     line-height: 1;
     color: $white;
@@ -724,9 +724,9 @@ ul {
         h4 {
             color: #5c5c5e;
             font-size: 13px;
-            padding-left: 15px;
-            padding-right: 15px;
-            padding-top: 5px;
+            padding-inline-start: 15px;
+            padding-inline-end: 15px;
+            padding-block-start: 5px;
             text-transform: uppercase;
         }
         margin: 0;
@@ -739,7 +739,7 @@ ul {
                 color: #6a6a6a;
             }
             i {
-                padding-right: 10px;
+                padding-inline-end: 10px;
             }
         }
     }
@@ -781,7 +781,7 @@ ul {
         }
     }
     .border-right-1 {
-        border-right: 0 !important;
+        border-inline-end: 0 !important;
     }
 }
 

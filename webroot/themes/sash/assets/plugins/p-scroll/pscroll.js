@@ -1,11 +1,6 @@
 (function($) {
     "use strict";
 
-    const ps = new PerfectScrollbar('.app-sidebar', {
-        useBothWheelAxes: true,
-        suppressScrollX: true,
-        suppressScrollY: false,
-    });
     const ps1 = new PerfectScrollbar('.header-dropdown-list', {
         useBothWheelAxes: true,
         suppressScrollX: true,

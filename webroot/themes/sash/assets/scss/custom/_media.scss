@@ -24,7 +24,7 @@
 
 .media-right,
 .media>.pull-right {
-    padding-left: 10px;
+    padding-inline-start: 10px;
 }
 
 .media-body,
@@ -35,12 +35,12 @@
 
 .media-left,
 .media>.pull-left {
-    padding-right: 10px;
+    padding-inline-end: 10px;
 }
 
 .media-heading {
-    margin-top: 0;
-    margin-bottom: 5px;
+    margin-block-start: 0;
+    margin-block-end: 5px;
 }
 
 .media-body h4 {
@@ -83,7 +83,7 @@
 }
 
 .btn-close {
-    float: right;
+    float: $float-right;
     font-size: 1.40625rem;
     font-weight: 700;
     line-height: 1;

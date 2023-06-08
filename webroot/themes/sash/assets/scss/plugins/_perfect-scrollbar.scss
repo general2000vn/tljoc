@@ -22,7 +22,7 @@
   height: 15px;
 
   /* there must be 'bottom' or 'top' for ps__rail-x */
-  bottom: 0px;
+  inset-block-end: 0px;
 
   /* please don't change 'position' */
   position: absolute;
@@ -36,38 +36,42 @@
   width: 15px;
 
   /* there must be 'right' or 'left' for ps__rail-y */
-  right: 0;
+  inset-inline-start: auto !important;
+  inset-inline-end: 0;
 
   /* please don't change 'position' */
   position: absolute;
 }
 
-.ps--active-x > .ps__rail-x,
-.ps--active-y > .ps__rail-y {
+.ps--active-x>.ps__rail-x,
+.ps--active-y>.ps__rail-y {
   display: block;
   background-color: transparent;
 }
 
-.ps:hover > {
+.ps:hover> {
+
   .ps__rail-x,
   .ps__rail-y {
     opacity: 0.6;
   }
 }
 
-.ps--focus > {
+.ps--focus> {
+
   .ps__rail-x,
   .ps__rail-y {
     opacity: 0.6;
   }
 }
 
-.ps--scrolling-x > .ps__rail-x,
-.ps--scrolling-y > .ps__rail-y {
+.ps--scrolling-x>.ps__rail-x,
+.ps--scrolling-y>.ps__rail-y {
   opacity: 0.6;
 }
 
 .ps {
+
   .ps__rail-x:hover,
   .ps__rail-y:hover,
   .ps__rail-x:focus,
@@ -91,7 +95,7 @@
   height: 6px;
 
   /* there must be 'bottom' for ps__thumb-x */
-  bottom: 2px;
+  inset-block-end: 2px;
 
   /* please don't change 'position' */
   position: absolute;
@@ -105,15 +109,16 @@
   width: 3px;
 
   /* there must be 'right' for ps__thumb-y */
-  right: 0px;
+  inset-inline-end: 0px;
 
   /* please don't change 'position' */
   position: absolute;
 }
 
 .ps__rail-x {
-  &:hover > .ps__thumb-x,
-  &:focus > .ps__thumb-x,
+
+  &:hover>.ps__thumb-x,
+  &:focus>.ps__thumb-x,
   &.ps--clicking .ps__thumb-x {
     background-color: #8497bf;
     height: 11px;
@@ -121,8 +126,9 @@
 }
 
 .ps__rail-y {
-  &:hover > .ps__thumb-y,
-  &:focus > .ps__thumb-y,
+
+  &:hover>.ps__thumb-y,
+  &:focus>.ps__thumb-y,
   &.ps--clicking .ps__thumb-y {
     background-color: #8497bf;
     width: 3px;
@@ -136,7 +142,8 @@
   }
 }
 
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media screen and (-ms-high-contrast: active),
+(-ms-high-contrast: none) {
   .ps {
     overflow: auto !important;
   }
