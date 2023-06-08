@@ -5,7 +5,11 @@
     <?= $this->html->script(["../themes/sash/assets/plugins/bootstrap/js/popper.min", "../themes/sash/assets/plugins/bootstrap/js/bootstrap.min"]) ?>
 
     <!-- Perfect SCROLLBAR JS-->
-    <?= $this->html->script(["../themes/sash/assets/plugins/p-scroll/perfect-scrollbar", "../themes/sash/assets/plugins/p-scroll/pscroll", "../themes/sash/assets/plugins/p-scroll/pscroll-1"]) ?>
+    <?= $this->html->script([
+                            "../themes/sash/assets/plugins/p-scroll/perfect-scrollbar",
+                            //"../themes/sash/assets/plugins/p-scroll/pscroll",
+                            //"../themes/sash/assets/plugins/p-scroll/pscroll-1"
+                            ]) ?>
 
     <!-- SIDE-MENU JS -->
     <?= $this->html->script("../themes/sash/assets/plugins/sidemenu/sidemenu") ?>
@@ -28,7 +32,8 @@
     <?= $this->html->script("../themes/sash/assets/js/custom-swicher") ?>
 
     <!-- Switcher js -->
-    <?= $this->html->script("../themes/sash/assets/js/switcher") ?>
+    <?= $this->html->script("../themes/sash/assets/switcher/js/switcher") ?>
 
+    
     <!-- Number format js -->
     <?= $this->html->script(["jquery.numeric.min" , "myNumeric"]) ?>
