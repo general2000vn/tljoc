@@ -13,7 +13,7 @@
                         <!-- <img class="logo" src="assets/images/logo.svg" alt=""> -->
                         <?= $this->Html->image("../assets/images/logo.svg", ['class' => 'logo']) ?>
                         
-                        <h5>HLHVJOCs e-Office</h5>
+                        <h5>TLJOC e-Office</h5>
                         
                         <?= $this->Form->hidden('origin', ['value' => $origin]) ?>
                         

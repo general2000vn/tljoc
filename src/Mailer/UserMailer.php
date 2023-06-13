@@ -8,7 +8,7 @@
             public function welcome($user)
             {
                 return $this // Returning the chain is a good idea :)
-                    ->setTo('Thanh@hlhvjoc.com.vn')
+                    ->setTo('nngoc@tljoc.com.vn')
                     ->setSubject(sprintf("Welcome %s", $user->name))
                     //->template("welcome_mail") // By default template with same name as method name is used.
                     //->layout("custom")

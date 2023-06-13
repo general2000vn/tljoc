@@ -164,7 +164,7 @@ class HrPtsTable extends Table
                 'Creators' => ['fields' => ['id', 'title', 'firstname', 'lastname', 'email']]
             ]
         ]);
-        //$to = ['thanh@hlhvjoc.com.vn'];
+        //$to = ['nngoc@tljoc.com.vn'];
         $to = array();
         $HR_Sup = $this->Staffs->getOneByRole(RolesTable::R_HR_SUP);
         $cc = array();
@@ -226,7 +226,7 @@ class HrPtsTable extends Table
                             ]
             ]
         ]);
-        //$to = ['thanh@hlhvjoc.com.vn'];
+        //$to = ['nngoc@tljoc.com.vn'];
         $to = array();
         $to[] = $hrPt->creator->email;
 

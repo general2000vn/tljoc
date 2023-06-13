@@ -177,8 +177,8 @@ class WfhDetailReportCommand extends Command
         //$mailer->setProfile('WFH');
         
         $to = [$ADM_Man->email];
-        //$to = ['thanh@hlhvjoc.com.vn'];
-        $cc = ['thanh@hlhvjoc.com.vn'];
+        //$to = ['nngoc@tljoc.com.vn'];
+        $cc = ['nngoc@tljoc.com.vn'];
         
        
         $emailData = ['data' => $data, 'from_date' => $from_date, 'to_date' => $to_date];

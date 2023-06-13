@@ -171,7 +171,7 @@ class WfhReportCommand extends Command
         //$mailer->setProfile('WFH');
         
         $to = [$ADM_Man->email, $HSE_Man->email];
-        $cc = ['thanh@hlhvjoc.com.vn'];
+        $cc = ['nngoc@tljoc.com.vn'];
         foreach ($HRs as $HR) {
             $cc[] = $HR->email;
         }
@@ -205,7 +205,7 @@ class WfhReportCommand extends Command
         
         $mailer->setTo([$ADM_Man->email => $ADM_Man->name]);
         $mailer->addTo([$HSE_Man->email => $HSE_Man->name]);
-        $mailer->addCC(['thanh@hlhvjoc.com.vn' => 'e-Office Super Admin']);
+        $mailer->addCC(['nngoc@tljoc.com.vn' => 'e-Office Super Admin']);
         foreach ($HRs as $HR) {
             $mailer->addCc([$HR->email => $HR->name]);
         }

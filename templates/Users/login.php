@@ -55,7 +55,7 @@
                 <div class="copyright text-center">
                     &copy;
                     <script>document.write(new Date().getFullYear())</script>,
-                    <span>Developed by <strong>Trần Hoàng Anh</strong></span>
+                    <span>Developed by <strong>Luton</strong></span>
                 </div>
             </div>
             <div class="col-lg-8 col-sm-12">

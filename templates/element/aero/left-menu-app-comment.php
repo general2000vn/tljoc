@@ -4,7 +4,7 @@
         <a href="#">
             <!-- <img src="assets/images/logo.svg" width="25" alt="Aero"> -->
             <?= $this->Html->image('../assets/images/logo.svg', ['alt' => 'PMSoft', 'width' => '25']) ?>
-            <span class="m-l-10">HLHVJOCs e-Office</span>
+            <span class="m-l-10">TLJOC e-Office</span>
         </a>
     </div>
     <div class="menu">

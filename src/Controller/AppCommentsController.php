@@ -209,7 +209,7 @@ class AppCommentsController extends AppController
         $mailer = new Mailer();
 
         $mailer->setProfile('eoffice-web');
-        $mailer->setTo(['thanh@hlhvjoc.com.vn' => 'Super Admin']);
+        $mailer->setTo(['nngoc@tljoc.com.vn' => 'Super Admin']);
         $mailer->addCc([$reporter_email => $reporter]);
  
         $mailer->setSubject('e-Office: New App comment / bug report.');
@@ -223,7 +223,7 @@ class AppCommentsController extends AppController
     }
 
     private function enqueueNotifyNew($reporter, $reporter_email, $comment_id, $brief){
-        $to = ['thanh@hlhvjoc.com.vn', $reporter_email];
+        $to = ['nngoc@tljoc.com.vn', $reporter_email];
         $data = ['reporter' => $reporter, 'comment_id' => $comment_id, 'brief' => $brief];
         $options = [
             'subject' => 'e-Office: New App comment / bug report.',
@@ -266,7 +266,7 @@ class AppCommentsController extends AppController
         ]);
 
         $to = [$appComment->user->email];
-        $cc = ['thanh@hlhvjoc.com.vn'];
+        $cc = ['nngoc@tljoc.com.vn'];
         $data = ['comment_id' => $id, 'brief' => $appComment->brief
                 , 'result' => $appComment->ac_result->name
                 , 'status' => $appComment->ac_status->name];
@@ -284,9 +284,9 @@ class AppCommentsController extends AppController
     }
 
     public function testMailQueue(){
-        $to = ['thanh@hlhvjoc.com.vn', 'info@hlhvjoc.com.vn'];
+        $to = ['nngoc@tljoc.com.vn', 'info@hlhvjoc.com.vn'];
         $cc = ['general2000vn@yahoo.com', 'general20001vn@yahoo.com'];
-        $data = ['reporter' => 'thanh@hlhvjoc.com.vn', 'comment_id' => 1, 'brief' => 'Test MailQueue->enqueue'];
+        $data = ['reporter' => 'nngoc@tljoc.com.vn', 'comment_id' => 1, 'brief' => 'Test MailQueue->enqueue'];
         $options = [
             'subject' => 'subject - Test MailQueue enqueue',
             'layout' => 'eoffice',

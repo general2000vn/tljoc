@@ -38,7 +38,7 @@ $cakeDescription = 'eOffice';
 <body>
     <nav class="top-nav">
         <div class="top-nav-title">
-            <a href="<?= $this->Url->build('/') ?>"><span>HLHVJOCs</span> eOffice</a>
+            <a href="<?= $this->Url->build('/') ?>"><span>TLJOC</span> eOffice</a>
         </div>
         <div class="top-nav-links">
             <?php

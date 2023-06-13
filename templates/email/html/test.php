@@ -2,7 +2,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>HLHVJOCs e-Office</title>
+    <title>TLJOC e-Office</title>
 </head>
 
 <body>
