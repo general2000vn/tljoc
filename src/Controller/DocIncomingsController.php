@@ -9,6 +9,7 @@ use App\Model\Table\DocIncomingsTable;
 use App\Model\Table\DocStatusesTable;
 use Cake\I18n\FrozenDate;
 use EmailQueue\EmailQueue;
+use Cake\Core\Configure;
 
 /**
  * DocIncomings Controller

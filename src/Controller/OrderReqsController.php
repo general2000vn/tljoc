@@ -16,6 +16,7 @@ use Cake\ORM\Locator\TableLocator;
 use Cake\ORM\TableRegistry;
 use Cake\I18n\FrozenDate;
 use EmailQueue\EmailQueue;
+use Cake\Core\Configure;
 
 /**
  * OrderReqs Controller

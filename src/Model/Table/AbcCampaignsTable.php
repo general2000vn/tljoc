@@ -9,6 +9,7 @@ use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 use EmailQueue\EmailQueue;
+use Cake\Core\Configure;
 
 /**
  * AbcCampaigns Model

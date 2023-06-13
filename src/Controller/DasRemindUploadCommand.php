@@ -124,7 +124,7 @@ class DasRemindUploadCommand extends Command
             'format' => 'html',
             'config' => 'eoffice-cli',
             'from_name' => 'e.Office',
-            'from_email' => Configure::read('from_email')
+            'from_email' => Configure::read('from_email')::read('from_email')
         ];
 
         $io->out();

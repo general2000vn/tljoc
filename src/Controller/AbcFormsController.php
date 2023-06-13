@@ -15,6 +15,7 @@ use Cake\I18n\FrozenTime;
 use Cake\ORM\TableRegistry;
 use Cake\Routing\Router;
 use EmailQueue\EmailQueue;
+use Cake\Core\Configure;
 
 use function PHPUnit\Framework\isNull;
 

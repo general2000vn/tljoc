@@ -10,6 +10,7 @@ use Cake\I18n\FrozenDate;
 use Cake\Mailer\Mailer;
 use EmailQueue\EmailQueue;
 use Cake\Console\ConsoleOptionParser;
+use Cake\Core\Configure;
 
 class WfhDetailReportCommand extends Command
 {

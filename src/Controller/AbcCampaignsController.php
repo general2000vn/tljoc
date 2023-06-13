@@ -10,6 +10,7 @@ use App\Model\Table\RolesTable;
 use Cake\ORM\Locator\TableLocator;
 use Cake\Database\Query;
 use EmailQueue\EmailQueue;
+use Cake\Core\Configure;
 
 /**
  * AbcCampaigns Controller

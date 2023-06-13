@@ -14,6 +14,7 @@ use Cake\Mailer\Mailer;
 use Cake\Console\ConsoleOptionParser;
 use Cake\Datasource\ConnectionManager;
 use EmailQueue\EmailQueue;
+use Cake\Core\Configure;
 
 class HrRemindTasksCommand extends Command
 {

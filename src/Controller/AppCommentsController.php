@@ -7,6 +7,7 @@ use Cake\ORM\Locator\TableLocator;
 use Error;
 use EmailQueue\EmailQueue;
 use Cake\Mailer\Mailer;
+use Cake\Core\Configure;
 
 /**
  * AppComments Controller

@@ -11,6 +11,7 @@ use App\Model\Entity\User;
 use Cake\Mailer\Mailer;
 use Cake\ORM\Locator\TableLocator;
 use EmailQueue\EmailQueue;
+use Cake\Core\Configure;
 
 /**
  * Users Model

@@ -12,7 +12,7 @@ use Cake\ORM\Table;
 use Cake\Validation\Validator;
 use EmailQueue\EmailQueue;
 use Cake\I18n\FrozenDate;
-
+use Cake\Core\Configure;
 
 /**
  * HrPts Model
