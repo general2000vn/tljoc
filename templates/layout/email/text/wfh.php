@@ -25,7 +25,7 @@ echo "\n";
 echo $this->fetch('content');
 echo "\n";
 echo "____________________________________\n";
-echo "      Developed by Tran Hoang Anh (2021)     \n";
+echo "      Developed by Luton (2023)     \n";
 
 
 ?>

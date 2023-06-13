@@ -209,7 +209,7 @@ class AppCommentsController extends AppController
         $mailer = new Mailer();
 
         $mailer->setProfile('eoffice-web');
-        $mailer->setTo(['nngoc@tljoc.com.vn' => 'Super Admin']);
+        $mailer->setTo([Configure::read('admin_email') => 'Super Admin']);
         $mailer->addCc([$reporter_email => $reporter]);
  
         $mailer->setSubject('e-Office: New App comment / bug report.');
@@ -223,7 +223,7 @@ class AppCommentsController extends AppController
     }
 
     private function enqueueNotifyNew($reporter, $reporter_email, $comment_id, $brief){
-        $to = ['nngoc@tljoc.com.vn', $reporter_email];
+        $to = [Configure::read('admin_email'), $reporter_email];
         $data = ['reporter' => $reporter, 'comment_id' => $comment_id, 'brief' => $brief];
         $options = [
             'subject' => 'e-Office: New App comment / bug report.',
@@ -251,7 +251,7 @@ class AppCommentsController extends AppController
             'layout' => 'eoffice',
             'template' => 'new_app_comment',
             'format' => 'html',
-            'config' => 'default',
+            'config' => 'eoffice-cli',
             'from_name' => 'e-Office',
             'from_email' => Configure::read('from_email')
         ];
@@ -266,7 +266,7 @@ class AppCommentsController extends AppController
         ]);
 
         $to = [$appComment->user->email];
-        $cc = ['nngoc@tljoc.com.vn'];
+        $cc = [Configure::read('admin_email')];
         $data = ['comment_id' => $id, 'brief' => $appComment->brief
                 , 'result' => $appComment->ac_result->name
                 , 'status' => $appComment->ac_status->name];
@@ -284,9 +284,9 @@ class AppCommentsController extends AppController
     }
 
     public function testMailQueue(){
-        $to = ['nngoc@tljoc.com.vn', 'info@hlhvjoc.com.vn'];
+        $to = [Configure::read('admin_email'), 'info@hlhvjoc.com.vn'];
         $cc = ['general2000vn@yahoo.com', 'general20001vn@yahoo.com'];
-        $data = ['reporter' => 'nngoc@tljoc.com.vn', 'comment_id' => 1, 'brief' => 'Test MailQueue->enqueue'];
+        $data = ['reporter' => Configure::read('admin_email'), 'comment_id' => 1, 'brief' => 'Test MailQueue->enqueue'];
         $options = [
             'subject' => 'subject - Test MailQueue enqueue',
             'layout' => 'eoffice',

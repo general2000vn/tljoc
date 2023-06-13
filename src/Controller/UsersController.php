@@ -73,7 +73,7 @@ class UsersController extends AppController
                 if ($this->Users->save($theUser)) {
                     $this->Flash->success(__('Your account has been created!'));
                 } else {
-                    $this->Flash->error(__('The system can not create your account. Please contact developer Tran Hoang Anh !'));
+                    $this->Flash->error(__('The system can not create your account. Please contact IT !'));
 
                     $this->set('patchErrors', $theUser->getErrors());
                     return;
@@ -89,7 +89,7 @@ class UsersController extends AppController
             ])->first();
 
             if (is_null($theUser) || ($theUser->is_deleted == true)) {
-                $this->Flash->error(__('Your account has been deactivated! Please contact developer Tran Hoang Anh !'));
+                $this->Flash->error(__('Your account has been deactivated! Please contact IT !'));
                 $this->Authentication->logout();
                 return;
             }
@@ -100,7 +100,7 @@ class UsersController extends AppController
 
             if (is_null($theUser->department_id)) {
                 $this->Flash->error(__('Your account has not been configured to any Department!'));
-                $this->Flash->error(__('Please contact developer Tran Hoang Anh !'));
+                $this->Flash->error(__('Please contact IT !'));
                 $this->Authentication->logout();
                 return;
             }
@@ -175,7 +175,7 @@ class UsersController extends AppController
         $filter = "(sAMAccountName=$username)";
 
         //Firstname = 'givenName' = 'Anh'
-        //Lastname = 'sn' = 'Tran Hoang'
+        //Lastname = 'sn' = 'IT'
         //'department' = 'Administrator/ICT'
 
         //ldap_bind($theLDAP,$fullUsername,$password);

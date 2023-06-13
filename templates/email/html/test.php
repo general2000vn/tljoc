@@ -17,7 +17,7 @@
         2022-12-202023-01-27
     </table>
     
-    <br> Regards, <br> <br> ______________________________________ <br> -------- Developed by Tran Hoang Anh -------- </p>
+    <br> Regards, <br> <br> ______________________________________ <br> -------- Developed by Luton -------- </p>
 </body>
 
 </html>
