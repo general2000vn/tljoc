@@ -11,9 +11,9 @@
                 <?= $this->Form->create(null, ['class'=>"card auth_form", 'url' => ['action' => 'login']]) ?>
                     <div class="header">
                         <!-- <img class="logo" src="assets/images/logo.svg" alt=""> -->
-                        <?= $this->Html->image("../assets/images/logo.svg", ['class' => 'logo']) ?>
+                        <?= $this->Html->image("branding/TLJOC_logo_large.png", ['class' => 'logo']) ?>
                         
-                        <h5>HLHVJOCs e-Office</h5>
+                        <h5>TLJOC e-Office</h5>
                         
                         <?= $this->Form->hidden('origin', ['value' => $origin]) ?>
                         
@@ -46,7 +46,7 @@
                         
                         <?= $this->Form->submit("SIGN IN", ['class' => 'btn btn-primary btn-block waves-effect waves-light']) ?>
                         <div class="signin_with mt-3">
-                            <p class="mb-0">Sign in using your HLHV accounts.</p>
+                            <p class="mb-0">Sign in using your TLJOC accounts.</p>
                             
                         </div>
                     </div>
