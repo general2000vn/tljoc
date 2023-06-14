@@ -103,8 +103,8 @@ class EmailQueueTable extends Table
 */
 
 
-//THA modified
-public function enqueue($to, $cc, array $data, array $options = []): bool
+    //THA modified
+    public function enqueue($to, $cc, array $data, array $options = []): bool
     {
         if (array_key_exists('template', $options) && strlen($options['template']) > self::MAX_TEMPLATE_LENGTH) {
             throw new LengthException('`template` length must be less or equal to ' . self::MAX_TEMPLATE_LENGTH);
