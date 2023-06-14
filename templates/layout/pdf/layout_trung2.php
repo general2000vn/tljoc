@@ -13,7 +13,7 @@
   <div class="form-2 w-100 mx-25 py-15">
     <div class="row my-3">
       <div class="w-20 text-center">
-        <?= $this->Html->image('branding/HLHV-Logo-small.jpg', ['fullBase' => true]); ?>
+        <?= $this->Html->image('branding/-Logo-small.jpg', ['fullBase' => true]); ?>
       </div>
 
       <div class="w-80 text-center">

@@ -66,7 +66,7 @@ $cakeDescription = 'e-Office DAS';
             </div>
         </div>
     </section>
-    <div class="align-center">Copyright (C) 2021<br>Developed by <Strong>Trần Hoàng Anh</Strong></div>
+    <div class="align-center">Copyright (C) 2021<br>Developed by <Strong>Luton</Strong></div>
 
     <?= $this->Html->script('../assets/bundles/libscripts.bundle') ?>
     <?= $this->Html->script('../assets/bundles/vendorscripts.bundle') ?>

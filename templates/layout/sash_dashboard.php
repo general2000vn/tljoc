@@ -7,9 +7,9 @@
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="HLHVJOC Dashboard">
+    <meta name="description" content="TLJOC Dashboard">
     <meta name="author" content="Luton">
-    <meta name="keywords" content="dashboard, hlhvjoc, oil rate, LTI">
+    <meta name="keywords" content="dashboard, tljoc, oil rate, LTI">
     <!-- <meta http-equiv="refresh" content="30"> -->
 
     <!-- FAVICON -->
@@ -74,9 +74,9 @@
 
                         <a class="logo-horizontal " href="<?= $this->Url->build('/', ['fullBase' => true]) ?>">
 
-                            <?= $this->Html->image('branding/HLHV Logo tiny.png', ['class' => 'header-brand-img desktop-logo', 'alt' => 'logo']) ?>
+                            <?= $this->Html->image('branding/ Logo tiny.png', ['class' => 'header-brand-img desktop-logo', 'alt' => 'logo']) ?>
 
-                            <?= $this->Html->image('branding/HLHV Logo tiny.png', ['class' => 'header-brand-img light-logo1', 'alt' => 'logo']) ?>
+                            <?= $this->Html->image('branding/ Logo tiny.png', ['class' => 'header-brand-img light-logo1', 'alt' => 'logo']) ?>
                         </a>
                         <!-- LOGO -->
 
@@ -183,7 +183,7 @@
             <div class="container">
                 <div class="row align-items-center flex-row-reverse">
                     <div class="col-md-12 col-sm-12 text-center">
-                        Copyright © <span id="year"></span> <a href="javascript:void(0)">Trần Hoàng Anh</a> <span class="fa fa-heart text-danger"></span>. All rights reserved.
+                        Copyright © <span id="year"></span> <a href="javascript:void(0)">Luton</a> <span class="fa fa-heart text-danger"></span>. All rights reserved.
                     </div>
                 </div>
             </div>

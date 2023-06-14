@@ -8,8 +8,8 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="TLJOC e-Office">
-    <meta name="author" content="Trần Hoàng Anh">
-    <meta name="keywords" content="HLHV HLHVJOC e-Office">
+    <meta name="author" content="Luton">
+    <meta name="keywords" content=" TLJOC e-Office">
 
     <!-- FAVICON -->
     <?= $this->Html->meta('favicon.png', '/img/branding/favicon.png', ['type' => 'icon']); ?>

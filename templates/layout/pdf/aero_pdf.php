@@ -40,7 +40,7 @@ $cakeDescription = 'e-Office';
         <div class="container">
             <div class="row">
                 <div class="col-6">
-                    <?= $this->Html->image('branding/HLHV Logo tiny.png', ['class' => 'header-brand-img desktop-logo', 'alt' => 'logo']) ?>
+                    <?= $this->Html->image('branding/ Logo tiny.png', ['class' => 'header-brand-img desktop-logo', 'alt' => 'logo']) ?>
                 </div>
                 <div class="col-6 text-right">
                     Hoàng Long Hoàn Vũ JOCs
@@ -61,7 +61,7 @@ $cakeDescription = 'e-Office';
             </div>
         </div>
     </section>
-    <div class="align-center">Copyright (C) 2021<br>Developed by <Strong>Trần Hoàng Anh</Strong></div>
+    <div class="align-center">Copyright (C) 2021<br>Developed by <Strong>Luton</Strong></div>
 
     <?= $this->Html->script('../assets/bundles/libscripts.bundle') ?>
     <?= $this->Html->script('../assets/bundles/vendorscripts.bundle') ?>
