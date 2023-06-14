@@ -7,7 +7,7 @@
 /tmp/*
 #/vendor/*
 /webroot/uploads/2010/*
-/webroot/uploads/avatar/*
+#/webroot/uploads/avatar/*
 /webroot/uploads/covid_test/*
 /webroot/uploads/dashboard/*
 /webroot/uploads/doc_incoming/*
