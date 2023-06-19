@@ -7,7 +7,7 @@ BACKUP_DIR=/data_disk/backup/databases
 MYSQLDUMP="$(which mysqldump)"
 TAR="$(which tar)"
 
-APP_PATH=/data_disk/html/e-office
+APP_PATH=/data_disk/apps/tljoc
 APP_DB='tljoc_eoffice'
 APP_USER='tldas'
 APP_PASS='Tldas@123'
