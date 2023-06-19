@@ -13,7 +13,7 @@
     <?php $cakeDescription = "e-Office: "; ?>
 
     <title>
-        <?= $cakeDescription ?>:
+        <?= $cakeDescription ?>
         <?= $this->fetch('title') ?>
     </title>
 
@@ -21,6 +21,7 @@
 
 
     <?= $this->Html->css(['../assets/plugins/bootstrap/css/bootstrap.min', '../assets/css/style.min']) ?>
+    <?= $this->Html->css(['myCustomAero']) ?>
 </head>
 
 <body class="theme-blue">

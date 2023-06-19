@@ -15,7 +15,7 @@
     <?= $this->Html->meta('favicon.png', '/img/branding/favicon.png', ['type' => 'icon']); ?>
 
     <!-- TITLE -->
-    <title><?= 'e-Office: ' . $page_heading ?></title>
+    <title><?= 'e-Office : ' . $page_heading ?></title>
 
     <!-- BOOTSTRAP CSS -->
     <?= $this->Html->css("../themes/sash/assets/plugins/bootstrap/css/bootstrap.min") ?>

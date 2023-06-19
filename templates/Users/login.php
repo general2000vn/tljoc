@@ -1,5 +1,6 @@
 <?php
     $this->layout = 'unauthenticated';
+    $this->set('title', 'Login');
 ?>
 
 <div class="authentication">
@@ -12,8 +13,10 @@
                     <div class="header">
                         <!-- <img class="logo" src="assets/images/logo.svg" alt=""> -->
                         <?= $this->Html->image("branding/TLJOC_logo_large.png", ['class' => 'logo']) ?>
+                        <!-- <?= $this->Html->image("branding/TLJOC_logo_large.png", ['class' => '']) ?> -->
+                        <!-- <?= $this->Html->image("branding/TLJOC_logo_medium.png", ['class' => '']) ?> -->
                         
-                        <h5>TLJOC e-Office</h5>
+                        <h5>e-Office</h5>
                         
                         <?= $this->Form->hidden('origin', ['value' => $origin]) ?>
                         
