@@ -8,9 +8,9 @@ MYSQLDUMP="$(which mysqldump)"
 TAR="$(which tar)"
 
 APP_PATH=/data_disk/html/e-office
-APP_DB='e.office'
+APP_DB='tljoc_eoffice'
 APP_USER='tldas'
-APP_PASS='tldas@123'
+APP_PASS='Tldas@123'
 
 TimeStamp=`date +%Y%m%d-%H%M%S`
 
@@ -23,7 +23,7 @@ function compressfiles(){
 	
 	echo Compressing APP DB... >> $LOG_FILE
 	$MYSQLDUMP --add-drop-table --complete-insert --extended-insert --quote-names -u $APP_USER -h localhost -p$APP_PASS $APP_DB 2>>$LOG_FILE | gzip > $BACKUP_DIR/$SERVER_PREFIX.db.$TimeStamp.sql.gz 2>>$LOG_FILE
-
+    
 }
 
 
