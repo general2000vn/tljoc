@@ -228,14 +228,14 @@
     /******* Theme Style ********/
 
 	//---- Light mode ----- //
-	//$('body').addClass('light-mode');
-	//$('body').removeClass('transparent-mode');
-	//$('body').removeClass('dark-mode');
+	$('body').addClass('light-mode');
+	$('body').removeClass('transparent-mode');
+	$('body').removeClass('dark-mode');
 
 	//---- Dark mode ----- //
-	 $('body').addClass('dark-mode');
-	 $('body').removeClass('light-mode');
-	 $('body').removeClass('transparent-mode');
+	//  $('body').addClass('dark-mode');
+	//  $('body').removeClass('light-mode');
+	//  $('body').removeClass('transparent-mode');
 
 	//---- Transparent mode ----//
 	// $('body').addClass('transparent-mode');

@@ -77,7 +77,8 @@ $this->end();
             <div class="card-body">
                 <div class="row">
                     
-                    <?= $this->Form->control('title', [ 'required', 'templateVars' => ['lblClass' => 'required','ctnClass' => 'col-lg-2 col-md-2']]) ?>
+                    
+                    <?= $this->Form->control('title', ['empty' => false, 'type' => 'select', 'options' => ['Mr.' => 'Mr.', 'Ms.' => 'Ms.', "Dr." => 'Dr.'],'label' => 'Title', 'required', 'templateVars' => ['lblClass' => 'required', 'ctnClass' => 'col-md-2']]) ?>
                     <?= $this->Form->control('firstname', [ 'disabled', 'templateVars' => ['ctnClass' => 'col-md-5']]) ?>
                     <?= $this->Form->control('lastname', [ 'disabled', 'templateVars' => ['ctnClass' => 'col-md-5']]) ?>
                     

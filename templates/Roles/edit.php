@@ -43,7 +43,7 @@ $this->end();
             <div class="card-body">
                 <div class="row">
                     <?php
-                    echo $this->Form->control('name', ['class' => 'form-control', 'label' => 'Role Name', 'templateVars' => ['ctnClass' => 'col-md-12']]);
+                    echo $this->Form->control('name', ['class' => 'form-control', 'label' => 'Role Name', 'templateVars' => ['lblClass' => 'required', 'ctnClass' => 'col-md-12']]);
                     echo $this->Form->control('description', ['class' => 'form-control',  'label' => 'Description', 'templateVars' => ['ctnClass' => 'col-md-12']]);
                     echo $this->Form->control('users._ids', ['options' => $users, 'label' => 'Assigned Users', 'multiple', 'templateVars' => ['extra_class' => 'select2-show-search form-select', 'ctnClass' => 'col-md-12']]);
 

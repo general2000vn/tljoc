@@ -208,6 +208,7 @@ class DocInternalsTable extends Table
             $docNum ++;
         }
         
+        $docInternal->reg_num = $docNum;
         $docInternal->reg_text = 'INT/' . $today->format('y-') . sprintf('%03d', $docInternal->reg_num);
 
 

@@ -260,7 +260,7 @@ class DocIncomingsTable extends Table
 
         $docIncoming->reg_num = $docNum;
         //$docIncoming->reg_text = $today->format('yy-mm-') . str_pad(print($docCount), 4, "0", STR_PAD_LEFT) . '/' . $company->name;
-        $docIncoming->reg_text = 'TL' . '/' .$today->format('Y-') . sprintf('%03d', $docIncoming->reg_num)  ;
+        $docIncoming->reg_text = 'TL' . '/' .$today->format('y-') . sprintf('%03d', $docIncoming->reg_num)  ;
 
 
         if ($this->save($docIncoming)) {
@@ -273,7 +273,7 @@ class DocIncomingsTable extends Table
     public function saveReserveDoc(DocIncoming $docIncoming)
     {
         
-        $docIncoming->reg_text = 'TL' . '/' . $docIncoming->reg_date->format('Y-') . sprintf('%03d', $docIncoming->reg_num)  ;
+        $docIncoming->reg_text = 'TL' . '/' . $docIncoming->reg_date->format('y-') . sprintf('%03d', $docIncoming->reg_num)  ;
 
 
         if ($this->save($docIncoming)) {
@@ -287,7 +287,7 @@ class DocIncomingsTable extends Table
     {
 
         // $company = $this->DocCompanies->get($docIncoming->doc_company_id);
-        $docIncoming->reg_text = 'TL' . '/' .$docIncoming->reg_date->format('Y-') . sprintf('%03d', $docIncoming->reg_num)  ;
+        // $docIncoming->reg_text = 'TL' . '/' .$docIncoming->reg_date->format('Y-') . sprintf('%03d', $docIncoming->reg_num)  ;
 
 
         if ($this->save($docIncoming)) {

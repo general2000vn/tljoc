@@ -1066,7 +1066,7 @@ switcherEvents();
 /******* Theme Style ********/
 
 // $('body').addClass('light-mode');
-$('body').addClass('dark-mode');
+// $('body').addClass('dark-mode');
 // $('body').addClass('transparent-mode');
 
 /******* RTL VERSION *******/
