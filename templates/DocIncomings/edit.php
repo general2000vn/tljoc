@@ -72,7 +72,7 @@ $this->loadHelper('Form', [
                     echo $this->Form->control('doc_type_id', ['options' => $docTypes, 'label' => 'Type',   'templateVars' => ['lblClass' => 'required', 'ctnClass' => 'col-md-3']]);
                     echo $this->Form->control('contract_num', ['label' => 'RFP/Contract No.', 'templateVars' => ['ctnClass' => 'col-md-3']]);
 
-                    echo $this->Form->control('departments._ids', ['label' => 'Distributed To', 'options' => $doc_in_depts, 'required', 'multiple', 'data-placeholder' => "Pick one or more Departments", 'templateVars' => ['lblClass' => 'required', 'extra_class' => 'select2-show-search form-select', 'ctnClass' => 'col-md-12']]);
+                    echo $this->Form->control('departments._ids', ['label' => 'Distributed To', 'options' => $departments, 'required', 'multiple', 'data-placeholder' => "Pick one or more Departments", 'templateVars' => ['lblClass' => 'required', 'extra_class' => 'select2-show-search form-select', 'ctnClass' => 'col-md-12']]);
 
                     echo $this->Form->control('doc_outgoing_id', ['label' => 'Related Outgoing Document', 'options' => $relatedDoc, 'empty' => true, 'templateVars' => ['extra_class' => 'select2-show-search form-select selectDocOut', 'ctnClass' => 'col-md-12']]);
 

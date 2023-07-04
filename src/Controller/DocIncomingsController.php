@@ -199,13 +199,13 @@ class DocIncomingsController extends AppController
         $inputters = $this->DocIncomings->Inputters->find('list', ['conditions' => ['id' => $docIncoming->inputter_id]]);
         $modifiers = $this->DocIncomings->Modifiers->find('list', ['conditions' => ['id' => $docIncoming->modifier_id]]);
 
-        $doc_in_depts = $this->DocIncomings->Departments->find('list');
+        $departments = $this->DocIncomings->Departments->find('list');
 
         $secretLevels = $this->DocIncomings->DocSecLevels->find('list', ['limit' => 200]);
         $docMethods = $this->DocIncomings->DocMethods->find('list', ['limit' => 200]);
         $docStatuses = $this->DocIncomings->DocStatuses->find('list', ['limit' => 200]);
         $docTypes = $this->DocIncomings->DocTypes->find('list', ['limit' => 200]);
-        $this->set(compact('docIncoming',  'partners',  'docMethods', 'docStatuses', 'docTypes', 'secretLevels', 'referer', 'inputters', 'modifiers', 'doc_in_depts'));
+        $this->set(compact('docIncoming',  'partners',  'docMethods', 'docStatuses', 'docTypes', 'secretLevels', 'referer', 'inputters', 'modifiers', 'departments'));
     }
 
     /**
@@ -232,7 +232,7 @@ class DocIncomingsController extends AppController
 
         //$docCompanies = $this->DocIncomings->DocCompanies->find('list', ['limit' => 200]);
         $partners = [];
-        $doc_in_depts = $this->DocIncomings->Departments->find('list');
+        $departments = $this->DocIncomings->Departments->find('list');
 
         $secretLevels = $this->DocIncomings->DocSecLevels->find('list', ['limit' => 200]);
         $docMethods = $this->DocIncomings->DocMethods->find('list', ['limit' => 200]);
@@ -246,7 +246,7 @@ class DocIncomingsController extends AppController
             'docStatuses',
             'docTypes',
             'secretLevels',
-            'doc_in_depts'
+            'departments'
             //'relatedDocs', 
         ));
     }
@@ -276,7 +276,7 @@ class DocIncomingsController extends AppController
 
         //$docCompanies = $this->DocIncomings->DocCompanies->find('list', ['limit' => 200]);
         $partners = [];
-        $doc_in_depts = $this->DocIncomings->Departments->find('list');
+        $departments = $this->DocIncomings->Departments->find('list');
 
         $secretLevels = $this->DocIncomings->DocSecLevels->find('list', ['limit' => 200]);
         $docMethods = $this->DocIncomings->DocMethods->find('list', ['limit' => 200]);
@@ -290,7 +290,7 @@ class DocIncomingsController extends AppController
             'docStatuses',
             'docTypes',
             'secretLevels',
-            'doc_in_depts'
+            'departments'
             //'relatedDocs', 
         ));
     }
@@ -343,7 +343,7 @@ class DocIncomingsController extends AppController
             $partners[$docIncoming->partner->id] = $docIncoming->partner->name2 . ' - ' . $docIncoming->partner->name;
         }
 
-        $doc_in_depts = $this->DocIncomings->Departments->find('list');
+        $departments = $this->DocIncomings->Departments->find('list');
 
 
         $docMethods = $this->DocIncomings->DocMethods->find('list', ['limit' => 200]);
@@ -356,7 +356,7 @@ class DocIncomingsController extends AppController
                 'text' => $docIncoming->doc_outgoing->name, 'value' => $docIncoming->doc_outgoing->id, 'selected' => 'selected'
             ];
         }
-        $this->set(compact('docIncoming',  'partners', 'secretLevels', 'docMethods', 'docStatuses', 'docTypes', 'doc_in_depts', 'inputters', 'modifiers', 'relatedDoc'));
+        $this->set(compact('docIncoming',  'partners', 'secretLevels', 'docMethods', 'docStatuses', 'docTypes', 'departments', 'inputters', 'modifiers', 'relatedDoc'));
     }
 
     /**
@@ -420,8 +420,8 @@ class DocIncomingsController extends AppController
         /*
         $deptIDs = array();
         $i = 0;
-        foreach ($docIncoming->doc_in_depts as $doc_in_dept){
-            $deptIDs[$i] = $doc_in_dept->id;
+        foreach ($docIncoming->departments as $department){
+            $deptIDs[$i] = $department->id;
             $i++;
         }
 
@@ -456,8 +456,8 @@ class DocIncomingsController extends AppController
 
         $deptIDs = array();
         $i = 0;
-        foreach ($docIncoming->doc_in_depts as $doc_in_dept) {
-            $deptIDs[$i] = $doc_in_dept->id;
+        foreach ($docIncoming->departments as $department) {
+            $deptIDs[$i] = $department->id;
             $i++;
         }
 

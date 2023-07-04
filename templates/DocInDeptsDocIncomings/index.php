@@ -12,7 +12,7 @@
             <thead>
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>
-                    <th><?= $this->Paginator->sort('doc_in_dept_id') ?></th>
+                    <th><?= $this->Paginator->sort('department_id') ?></th>
                     <th><?= $this->Paginator->sort('doc_incoming_id') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>

@@ -18,7 +18,7 @@
             <fieldset>
                 <legend><?= __('Add Doc In Depts Doc Incoming') ?></legend>
                 <?php
-                    echo $this->Form->control('doc_in_dept_id');
+                    echo $this->Form->control('department_id');
                     echo $this->Form->control('doc_incoming_id', ['options' => $docIncomings]);
                 ?>
             </fieldset>
