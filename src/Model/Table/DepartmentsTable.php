@@ -12,6 +12,7 @@ use Cake\Validation\Validator;
  * Departments Model
  *
  * @property \App\Model\Table\UsersTable&\Cake\ORM\Association\BelongsTo $Managers
+ * @property \App\Model\Table\UsersTable&\Cake\ORM\Association\BelongsTo $Dlms
  * @property \App\Model\Table\DepartmentsTable&\Cake\ORM\Association\BelongsTo $ParentDepartments
  * @property \App\Model\Table\DepartmentsTable&\Cake\ORM\Association\HasMany $ChildDepartments
  * @property \App\Model\Table\DocOutgoingsTable&\Cake\ORM\Association\HasMany $DocOutgoings
@@ -61,6 +62,12 @@ class DepartmentsTable extends Table
             'className' => 'Users',
             'foreignKey' => 'user_id',
         ]);
+
+        $this->belongsTo('Dlms',[
+            'className' => 'Users',
+            'foreignKey' => 'dlm_id',
+        ]);
+
         $this->belongsTo('ParentDepartments', [
             'className' => 'Departments',
             'foreignKey' => 'parent_id',

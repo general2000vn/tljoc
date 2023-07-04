@@ -67,7 +67,7 @@ class UsersTable extends Table
         $this->belongsTo('EmpTypes', [
             'className' => 'EmpTypes',
             'foreignKey' => 'emp_type_id',
-            'joinType' => 'INNER',
+            'joinType' => 'LEFT',
         ]);
 
         $this->belongsTo('Groups', [
@@ -79,7 +79,7 @@ class UsersTable extends Table
         $this->belongsTo('Departments', [
             'className' => 'Departments',
             'foreignKey' => 'department_id',
-            'joinType' => 'INNER'
+            'joinType' => 'LEFT'
         ]);
 
         $this->belongsTo('UserTitles', [
@@ -90,13 +90,13 @@ class UsersTable extends Table
         $this->belongsTo('Vaccinations', [
             'className' => 'Vaccinations',
             'foreignKey' => 'vaccination_id',
-            'joinType' => 'INNER',
+            'joinType' => 'LEFT',
         ]);
 
         $this->belongsTo('Healths', [
             'className' => 'Healths',
             'foreignKey' => 'health_id',
-            'joinType' => 'INNER',
+            'joinType' => 'LEFT',
         ]);
 
         $this->belongsTo('Vaccine1', [

@@ -32,7 +32,7 @@
     <!-- My global customization -->
     <?= $this->Html->css("../themes/sash/assets/css/my-sash-custom") ?>
 
-    <?= $this->element('sash/JS_URL') ?>
+    <?= $this->element('JS_URL') ?>
     <?= $this->fetch('head_css') ?>
     <?= $this->fetch('head_scripts') ?>
 

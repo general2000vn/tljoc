@@ -248,7 +248,7 @@ class UsersController extends AppController
 
         $users = $this->Users->find('all', [
 
-            'conditions' => ['is_deleted' => true],
+            'conditions' => ['Users.is_deleted' => true],
             'fields' => ['id', 'username', 'firstname', 'lastname', 'phone', 'mobile', 'email', 'is_active', 'is_deleted', 'department_id', 'group_id'],
             'contain' => ['Departments', 'Groups']
         ])->all();
