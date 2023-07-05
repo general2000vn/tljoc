@@ -43,11 +43,13 @@ $this->loadHelper('Form', [
                 <?= $this->Form->create($department) ?>
                 <div class="row">
                     <?php
-                    echo $this->Form->control('name', ['required', 'templateVars' => ['lblClass' => 'required', 'ctnClass' => 'col-md-8']]);
+                    echo $this->Form->control('name', ['required', 'templateVars' => ['lblClass' => 'required', 'ctnClass' => 'col-md-4']]);
                     echo $this->Form->control('init', ['required', 'label' => 'Abbreviation', 'templateVars' => ['lblClass' => 'required', 'ctnClass' => 'col-md-4']]);
+                    echo $this->Form->control('parent_id', ['options' => $parentDepartments, 'empty' => true, 'label' => 'Parent Department', 'templateVars' => ['ctnClass' => 'col-md-4']]);
 
                     echo $this->Form->control('user_id',  ['options' => $users, 'empty' => true, 'label' => 'Line Manager', 'templateVars' => ['lblClass' => 'required', 'extra_class' => 'select2-show-search form-select', 'ctnClass' => 'col-md-6']]);
-                    echo $this->Form->control('parent_id', ['options' => $parentDepartments, 'empty' => true, 'label' => 'Parent Department', 'templateVars' => ['ctnClass' => 'col-md-6']]);
+                    echo $this->Form->control('dlm_id',  ['options' => $users, 'empty' => true, 'label' => 'Deputy Line Manager', 'templateVars' => ['extra_class' => 'select2-show-search form-select', 'ctnClass' => 'col-md-6']]);
+                    
                     ?>
                     <div class="form-footer mt-2 text-center">
                         <?= $this->Form->button(__('Create'), ['templateVars' => ['extra_class' => 'btn-primary']]) ?>

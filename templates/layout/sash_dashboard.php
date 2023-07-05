@@ -39,7 +39,7 @@
     <!-- COLOR SKIN CSS -->
     <?= $this->Html->css('../themes/sash/assets/colors/color1.css', ['id' => 'theme', 'media' => 'all']) ?>
 
-    <?= $this->element('sash/JS_URL') ?>
+    <?= $this->element('JS_URL') ?>
     <?= $this->fetch('head_css') ?>
     <?= $this->fetch('head_scripts') ?>
 

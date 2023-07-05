@@ -323,7 +323,7 @@ class DocIncomingsController extends AppController
             $docIncoming = $this->DocIncomings->patchEntity($docIncoming, $this->request->getData());
 
             if ($this->DocIncomings->saveEditedDoc($docIncoming)) {
-                if ($docIncoming->doc_status_id == DocStatusesTable::S_DISTRIBUTED){
+                if (($docIncoming->isDirty('doc_status_id') || $docIncoming->isDirty('doc_file')) && ($docIncoming->doc_status_id == DocStatusesTable::S_DISTRIBUTED) && ($docIncoming->has('doc_file'))){
                     $this->notifyRecievers($docIncoming);
                     
                 }
@@ -477,13 +477,19 @@ class DocIncomingsController extends AppController
     private function notifyRecievers($docIncoming){
         $to = array();
         $data = array();
-        $LMs = array();
+        $Mans = array();
 
         foreach ($docIncoming->departments as $department) {
             $LM = $this->DocIncomings->Departments->getLineManager($department->id);
+            $DM = $this->DocIncomings->Departments->getDeputyManager($department->id);
             if (!is_null($LM)){
-                $LMs[] = $LM;
+                $Mans[] = $LM;
                 $to[] = $LM->email;
+            }
+
+            if (!is_null($DM)){
+                $Mans[] = $DM;
+                $to[] = $DM->email;
             }
 
         }
@@ -501,8 +507,9 @@ class DocIncomingsController extends AppController
 
             $curUser = $this->Authentication->getIdentity();
             $cc = $curUser->email;
-            $data['LMs'] = $LMs;
+            $data['LMs'] = $Mans;
             $data['doc_subject'] = $docIncoming->subject;
+            $data['doc_id'] = $docIncoming->id;
             $data['doc_type'] = $docIncoming->doc_type->name;
             $data['doc_sender'] = $docIncoming->partner->name;
 

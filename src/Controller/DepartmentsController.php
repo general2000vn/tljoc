@@ -33,7 +33,7 @@ class DepartmentsController extends AppController
                         ],
         ];
         $departments = $this->Departments->find()->where(['Departments.is_deleted' => false])
-                                                    ->contain(['ParentDepartments', 'Managers' => ['fields' => ['id', 'firstname', 'lastname']]
+                                                    ->contain(['ParentDepartments', 'Managers' => ['fields' => ['id', 'firstname', 'lastname']], 'Dlms' => ['fields' => ['id', 'firstname', 'lastname']]
        ]);
 
         $this->set(compact('departments'));

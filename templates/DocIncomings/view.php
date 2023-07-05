@@ -62,7 +62,7 @@ $this->loadHelper('Form', [
                     echo $this->Form->control('modifier_id', ['type' => 'text', 'value' => $docIncoming->modifier->name,  'disabled', 'label' => 'Last Modifier', 'templateVars' => ['ctnClass' => 'col-md-6']]);
 
                     echo $this->Form->control('doc_sec_level_id', ['options' => $secretLevels, 'label' => 'Sensitivity level',  'disabled', 'templateVars' => ['lblClass' => 'required', 'ctnClass' => 'col-md-3']]);
-                    echo $this->Form->control('subject', ['templateVars' => ['lblClass' => 'required',  'disabled', 'ctnClass' => 'col-md-9']]);
+                    echo $this->Form->control('subject', ['disabled', 'templateVars' => ['lblClass' => 'required',  'disabled', 'ctnClass' => 'col-md-9']]);
 
                     echo $this->Form->control('partner_id', ['label' => 'Sender',  'disabled', 'templateVars' => ['lblClass' => 'required', 'extra_class' => 'select2-show-search form-select selectPartner', 'ctnClass' => 'col-md-6']]);
                     echo $this->Form->control('ref_text', ['label' => 'Reference Number',  'disabled', 'templateVars' => ['ctnClass' => 'col-md-3']]);

@@ -50,8 +50,8 @@ $this->loadHelper('Form', [
                     
 
                     
-                    echo $this->Form->checkbox('is_active', ['checked' => true, 'required', 'templateVars' => ['text' => 'Active', 'lblClass' => 'custom-checkbox-lg', 'ctnClass' => 'col-md-2']]);
-                    echo $this->Form->checkbox('is_deleted', ['checked' => false, 'required', 'templateVars' => ['text' => 'Deleted', 'lblClass' => 'custom-checkbox-lg', 'ctnClass' => 'col-md-2']]);
+                    echo $this->Form->checkbox('is_active', ['checked' => true, 'templateVars' => ['text' => 'Active', 'lblClass' => 'custom-checkbox-lg', 'ctnClass' => 'col-md-2']]);
+                    echo $this->Form->checkbox('is_deleted', ['checked' => false, 'templateVars' => ['text' => 'Deleted', 'lblClass' => 'custom-checkbox-lg', 'ctnClass' => 'col-md-2']]);
                     echo $this->Form->control('emp_type_id', ['required', 'label' => 'Employee Type', 'templateVars' => ['lblClass' => 'required', 'ctnClass' => 'col-md-2']]);
                     echo $this->Form->control('department_id', ['required', 'label' => 'Department', 'templateVars' => ['lblClass' => 'required', 'ctnClass' => 'col-md-3']]);
                     echo $this->Form->control('group_id', ['required' => false, 'label' => 'Group', 'empty' => true, 'templateVars' => ['ctnClass' => 'col-md-3']]);

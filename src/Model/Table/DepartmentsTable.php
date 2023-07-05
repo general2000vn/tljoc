@@ -34,15 +34,16 @@ use Cake\Validation\Validator;
  */
 class DepartmentsTable extends Table
 {
-    const D_MAN = 1;
-    const D_PRD = 2;
-    const D_HSE = 3;
-    const D_PRJ = 4;
-    const D_SUB = 5;
+    const D_MGT = 1;
+    const D_DRI = 2;
+    const D_SUB = 3;
+    const D_ADM = 4;
+    const D_OPS = 5;
     const D_FIN = 6;
-    const D_ADM = 7;
-    const D_CP = 8;
-    const D_DRI = 9;
+    const D_HSE = 7;
+    const D_HR = 8;
+    const D_PRO = 9;
+    
     
     /**
      * Initialize method
@@ -129,5 +130,10 @@ class DepartmentsTable extends Table
     public function getLineManager($deptID){
         $dept = $this->get($deptID, ['contain' => ['Managers']]);
         return $dept->manager;
+    }
+
+    public function getDeputyManager($deptID){
+        $dept = $this->get($deptID, ['contain' => ['Dlms']]);
+        return $dept->dlm;
     }
 }
