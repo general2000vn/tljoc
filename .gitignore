@@ -3,6 +3,7 @@
 /config/app_local.php
 /config/app_local-e-office.php
 /config/.env
+/config/LDAP.php
 /logs/*
 /tmp/*
 #/vendor/*
