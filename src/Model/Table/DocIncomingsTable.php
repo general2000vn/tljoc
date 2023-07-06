@@ -259,7 +259,6 @@ class DocIncomingsTable extends Table
         }
 
         $docIncoming->reg_num = $docNum;
-        //$docIncoming->reg_text = $today->format('yy-mm-') . str_pad(print($docCount), 4, "0", STR_PAD_LEFT) . '/' . $company->name;
         $docIncoming->reg_text = 'TL' . '/' .$today->format('y-') . sprintf('%03d', $docIncoming->reg_num)  ;
 
 

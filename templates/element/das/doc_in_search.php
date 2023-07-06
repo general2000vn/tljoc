@@ -1,3 +1,4 @@
+
 <?= $this->Form->create(null, ['type' => 'get']) ?>
 <div class="row">
     <div class="col-md-12">
@@ -10,8 +11,9 @@
 
                 <div class="row">
                     <?php
-                    echo $this->Form->control('date_from', ['class' => 'form-control', 'type' => 'date', 'value' => $criteria['date_from'], 'label' => 'From', 'templateVars' => ['ctnClass' => 'col-md-3']]);
-                    echo $this->Form->control('date_to', ['class' => 'form-control', 'type' => 'date', 'value' => $criteria['date_to'], 'label' => 'To', 'templateVars' => ['ctnClass' => 'col-md-3']]);
+                    echo $this->Form->control('date_from', ['class' => 'form-control', 'type' => 'date', 'value' => $criteria['date_from'], 'label' => 'From', 'templateVars' => ['ctnClass' => 'col-md-2']]);
+                    echo $this->Form->control('date_to', ['class' => 'form-control', 'type' => 'date', 'value' => $criteria['date_to'], 'label' => 'To', 'templateVars' => ['ctnClass' => 'col-md-2']]);
+                    echo $this->Form->control('dept_id', ['class' => 'form-control', 'type' => 'select', 'empty' => false, 'value' => $criteria['dept_id'], 'options' => $deptList, 'label' => 'Department', 'templateVars' => ['ctnClass' => 'col-md-2']]);
                     echo $this->Form->control('search_text', ['class' => 'form-control', 'label' => 'Contain', 'value' => $criteria['search_text'], 'placeholder' => 'search by: Document Number, Subject, Reference Number, Attachment name','templateVars' => ['ctnClass' => 'col-md-6']]);
 
                     ?>

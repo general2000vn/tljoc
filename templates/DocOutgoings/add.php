@@ -66,7 +66,7 @@
                     echo $this->Form->control('doc_sec_level_id', ['options' => $docSecLevels, 'label' => 'Sensitivity', 'required', 'templateVars' => ['lblClass' => 'required', 'ctnClass' => 'col-md-3']]);
                     echo $this->Form->control('subject', ['label' => 'Subject', 'required', 'templateVars' => ['lblClass' => 'required', 'ctnClass' => 'col-md-9']]);
 
-                    echo $this->Form->control('department_id', ['label' => 'Department','value' => $this->Identity->get('department_id'), 'required','class' => 'form-control', 'templateVars' => ['lblClass' => 'required', 'extra_class' => 'select2-show-search form-select', 'ctnClass' => 'col-md-4']]);
+                    echo $this->Form->control('department_id', ['label' => 'Department', 'value' => $default_dept_id, 'required', 'class' => 'form-control', 'templateVars' => ['lblClass' => 'required', 'extra_class' => 'select2-show-search form-select', 'ctnClass' => 'col-md-4']]);
                     echo $this->Form->control('originator_id', ['label' => 'Originator', 'value' => $this->Identity->get('id'), 'required','empty' => true,'data-placeholder' => "Select a staff", 'templateVars' => ['lblClass' => 'required', 'extra_class' => 'select2-show-search form-select','ctnClass' => 'col-md-4']]);
                     echo $this->Form->control('issued_date', ['label' => 'Issued Date', 'class' => 'form-control', 'templateVars' => ['ctnClass' => 'col-md-4']]);
                     

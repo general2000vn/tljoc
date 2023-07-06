@@ -69,7 +69,7 @@ $page_heading = 'Register New';
                     echo $this->Form->control('doc_sec_level_id', ['options' => $docSecLevels, 'required', 'label' => 'Sensitivity', 'templateVars' => ['lblClass' => 'required', 'ctnClass' => 'col-md-3']]);
                     echo $this->Form->control('subject', ['label' => 'Subject', 'required', 'templateVars' => ['lblClass' => 'required', 'ctnClass' => 'col-md-9']]);
                     
-                    echo $this->Form->control('department_id', ['label' => 'Department', 'required', 'value' => $this->Identity->get('department_id'), 'templateVars' => ['lblClass' => 'required', 'ctnClass' => 'col-md-4']]);
+                    echo $this->Form->control('department_id', ['label' => 'Department', 'required', 'value' => $default_dept_id, 'templateVars' => ['lblClass' => 'required', 'ctnClass' => 'col-md-4']]);
                     echo $this->Form->control('originator_id', ['label' => 'Originator', 'required', 'options' => $users, 'value' => $this->Identity->get('id'), 'empty' => true,'data-placeholder' => "Select a staff", 'templateVars' => ['lblClass' => 'required', 'extra_class' => 'select2-show-search form-select', 'ctnClass' => 'col-md-4']]);
                     echo $this->Form->control('issued_date', ['label' => 'Issued Date', 'templateVars' => ['ctnClass' => 'col-md-4']]);
                     

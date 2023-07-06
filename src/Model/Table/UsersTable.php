@@ -18,7 +18,8 @@ use Cake\Core\Configure;
  *
  * @property \App\Model\Table\VaccinationsTable&\Cake\ORM\Association\BelongsTo $Vaccinations
  * @property \App\Model\Table\GroupsTable&\Cake\ORM\Association\BelongsTo $Groups
- * @property \App\Model\Table\DepartmentsTable&\Cake\ORM\Association\BelongsTo $Departments
+ * @property \App\Model\Table\DepartmentsTable&\Cake\ORM\Association\BelongsToMany $Departments
+ * // \App\Model\Table\DeptsTable&\Cake\ORM\Association\BelongsToMany $Depts
  * @property \App\Model\Table\EmpTypesTable&\Cake\ORM\Association\BelongsTo $EmpTypes
  * @property \App\Model\Table\UserTitlesTable&\Cake\ORM\Association\BelongsTo $UserTitles
  * @property \App\Model\Table\HealthsTable&\Cake\ORM\Association\BelongsTo $Healths
@@ -76,10 +77,17 @@ class UsersTable extends Table
             //'joinType' => 'INNER'
         ]);
 
-        $this->belongsTo('Departments', [
-            'className' => 'Departments',
-            'foreignKey' => 'department_id',
-            'joinType' => 'LEFT'
+        // $this->belongsToMany('Departments', [
+        //     'className' => 'Departments',
+        //     'foreignKey' => 'department_id',
+        //     'joinType' => 'LEFT'
+        // ]);
+
+        $this->belongsToMany('Departments', [
+            'foreignKey' => 'user_id',
+            'targetForeignKey' => 'department_id',
+            'joinTable' => 'departments_users',
+            'through' => 'DepartmentsUsers',
         ]);
 
         $this->belongsTo('UserTitles', [
@@ -145,6 +153,8 @@ class UsersTable extends Table
             'joinTable' => 'roles_users',
             'through' => 'RolesUsers',
         ]);
+
+        
 
         $this->belongsToMany('HrPtTasks', [
             'foreignKey' => 'user_id',
@@ -503,15 +513,40 @@ class UsersTable extends Table
 
     }
 
+    public function inDepartments($user_id, $dept_id_array){
+        $user = $this->get($user_id, [
+                                    //'contain' => ['Departments' => ['Managers' => ['fields' => ['id', 'title', 'firstname', 'lastname', 'email']]]]
+                                    'contain' => ['Departments' ]
+                                    //,'fields' => ['id', 'title', 'firstname', 'lastname', 'email', 'department_id']
+                                    ]);
+        $result = false;
+        foreach ($user->departments as $department) {
+            if (in_array($department->id, $dept_id_array)){
+                $result = true;
+                break;
+            }
+        }
+        return $result;
+    }
+/*
     public function findLineManager($user_id){
         $user = $this->get($user_id, [
                                     //'contain' => ['Departments' => ['Managers' => ['fields' => ['id', 'title', 'firstname', 'lastname', 'email']]]]
                                     'contain' => ['Departments.Managers' ]
                                     //,'fields' => ['id', 'title', 'firstname', 'lastname', 'email', 'department_id']
                                     ]);
-        //debug($user);
-        //debug($user->department);
-        //debug($user->department->manager);
         return $user->department->manager;
     }
+
+    public function findDeputyManager($user_id){
+        $user = $this->get($user_id, [
+                                    //'contain' => ['Departments' => ['Managers' => ['fields' => ['id', 'title', 'firstname', 'lastname', 'email']]]]
+                                    'contain' => ['Departments.Managers' ]
+                                    //,'fields' => ['id', 'title', 'firstname', 'lastname', 'email', 'department_id']
+                                    ]);
+        
+        return $user->department->dlm;
+    }
+*/
+
 }

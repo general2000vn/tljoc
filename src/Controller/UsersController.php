@@ -85,7 +85,7 @@ class UsersController extends AppController
                     'username' => $theIdentity->get('username')
                     //,'is_deleted' => false
                 ],
-                'contain' => ['Roles'],
+                'contain' => ['Roles', 'Departments'],
             ])->first();
 
             if (is_null($theUser) || ($theUser->is_deleted == true)) {
@@ -435,7 +435,7 @@ class UsersController extends AppController
         $this->set('menuElement', "sash/left-menu-admin");
 
 
-        $user = $this->Users->get($id);
+        $user = $this->Users->get($id, ['contain' => ['Departments']]);
 
         if ($this->request->is(['patch', 'post', 'put'])) {
         //if ($this->request->is('post')) {

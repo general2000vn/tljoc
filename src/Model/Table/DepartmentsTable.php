@@ -80,9 +80,14 @@ class DepartmentsTable extends Table
         $this->hasMany('DocOutgoings', [
             'foreignKey' => 'department_id',
         ]);
-        $this->hasMany('Users', [
+        $this->belongsToMany('Users', [
             'foreignKey' => 'department_id',
+            'targetForeignKey' => 'user_id',
+            'joinTable' => 'departments_users',
+            'through' => 'DepartmentsUsers',
         ]);
+
+
     }
 
     /**

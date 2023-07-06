@@ -22,7 +22,8 @@ $this->start('head_scripts');
 $this->end();
 
 $this->start('bottom_scripts');
-
+    echo $this->Html->script(['../themes/sash/assets/plugins/select2/select2.full.min', '../themes/sash/assets/js/select2']);
+    echo $this->Html->script('myDAS_select2');
 $this->end();
 
 $this->loadHelper('Form', [
@@ -53,7 +54,8 @@ $this->loadHelper('Form', [
                     echo $this->Form->checkbox('is_active', ['checked' => true, 'templateVars' => ['text' => 'Active', 'lblClass' => 'custom-checkbox-lg', 'ctnClass' => 'col-md-2']]);
                     echo $this->Form->checkbox('is_deleted', ['checked' => false, 'templateVars' => ['text' => 'Deleted', 'lblClass' => 'custom-checkbox-lg', 'ctnClass' => 'col-md-2']]);
                     echo $this->Form->control('emp_type_id', ['required', 'label' => 'Employee Type', 'templateVars' => ['lblClass' => 'required', 'ctnClass' => 'col-md-2']]);
-                    echo $this->Form->control('department_id', ['required', 'label' => 'Department', 'templateVars' => ['lblClass' => 'required', 'ctnClass' => 'col-md-3']]);
+                    // echo $this->Form->control('department_id', ['required', 'label' => 'Department', 'templateVars' => ['lblClass' => 'required', 'ctnClass' => 'col-md-3']]);
+                    echo $this->Form->control('departments._ids', ['required', 'label' => 'Departments', 'option' => $departments, 'templateVars' => ['lblClass' => 'required', 'extra_class' => 'select2', 'ctnClass' => 'col-md-3']]);
                     echo $this->Form->control('group_id', ['required' => false, 'label' => 'Group', 'empty' => true, 'templateVars' => ['ctnClass' => 'col-md-3']]);
                     
                 ?>

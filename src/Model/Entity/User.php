@@ -29,6 +29,7 @@ use Authentication\PasswordHasher\DefaultPasswordHasher;
  * @property string|null $picture
  * @property int $group_id
  * @property int $department_id
+ 
  * @property int $vaccine1_id
  * @property int $vaccine2_id
  * @property int $vaccine3_id
@@ -46,6 +47,7 @@ use Authentication\PasswordHasher\DefaultPasswordHasher;
  * @property \App\Model\Entity\UserTitle $user_title
  * @property \App\Model\Entity\Group $group
  * @property \App\Model\Entity\Department $department
+ * @property \App\Model\Entity\Dept[] $depts
  * @property \App\Model\Entity\Vaccine $vaccine1
  * @property \App\Model\Entity\Vaccine $vaccine2
  * @property \App\Model\Entity\Vaccine $vaccine3
@@ -85,7 +87,8 @@ class User extends Entity
         'user_title_id' => true,'user_title' => true,
         'title' => true,
         //'profile' => true,
-        'department' => true, 'department_id' => true,
+        //'department' => true, 'department_id' => true,
+        'departments' => true,
         'timesheets' => true,
         'roles' => true,
         'vaccination' => true,

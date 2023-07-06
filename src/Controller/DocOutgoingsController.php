@@ -6,7 +6,7 @@ namespace App\Controller;
 
 use App\Model\Table\DocOutgoingsTable;
 use Cake\I18n\FrozenDate;
-
+use App\Model\Table\RolesTable;
 
 /**
  * DocOutgoings Controller
@@ -32,6 +32,13 @@ class DocOutgoingsController extends AppController
      */
     public function index()
     {        
+        $curUser = $this->Authentication->getIdentity();
+
+        if (count(array_intersect($curUser->roleIDs, [RolesTable::R_GM, RolesTable::R_DGM, RolesTable::R_GM_SEC,])) == 0) {
+            $this->Flash->error('You have no privilege to view All Documents!');
+            $this->redirect(['action' => 'mydoc']);
+        }
+        
         $params = $this->request->getQueryParams();
         $criteria = $this->getSearchCriteria($params); //default values or based on posted.
         //$columns = $this->getColumns($params);
@@ -60,6 +67,20 @@ class DocOutgoingsController extends AppController
             ]
         );
 
+        $dept_id = $criteria['dept_id'];
+
+        if ($dept_id != 0) {
+            $docOutgoings->matching('Departments', function ($q) use ($dept_id) {
+                return $q->where(['Departments.id' => $dept_id]);
+            });
+        }
+        
+
+        $deptList = [0 => 'All Departments'];
+        $depts = $this->DocOutgoings->Departments->find('list')->toArray();
+        $deptList = array_merge($deptList, $depts);
+        $this->set('deptList', $deptList);
+
         $this->set(compact('docOutgoings'));
     }
 
@@ -68,6 +89,9 @@ class DocOutgoingsController extends AppController
         $criteria['date_from'] = $today->subDay(30)->format('Y-m-d');
         $criteria['date_to'] = $today->format('Y-m-d');
         $criteria['search_text'] = '';
+
+        $curUser = $this->Authentication->getIdentity();
+        $criteria['dept_id'] = $curUser->departments[0]->id;
       
         if (isset($posted['date_from']) && ($posted['date_from'] != '')) {
             //$docOutgoings->where(['OR' => ['reg_date >=' => $posted['date_from'], 'issued_date >=' => $posted['date_from']]]);
@@ -82,6 +106,11 @@ class DocOutgoingsController extends AppController
         if (isset($posted['search_text'])) {
             //$docOutgoings->where(['OR' => ['reg_date >=' => $posted['date_from'], 'issued_date >=' => $posted['date_from']]]);
             $criteria['search_text'] = $posted['search_text'];
+        }
+
+        if (isset($posted['dept_id']) && ($posted['dept_id'] != '')) {
+            //$docOutgoings->where(['OR' => ['reg_date >=' => $posted['date_from'], 'issued_date >=' => $posted['date_from']]]);
+            $criteria['dept_id'] = $posted['dept_id'];
         }
         
         return $criteria;
@@ -133,6 +162,21 @@ class DocOutgoingsController extends AppController
             ]
         );
 
+        $dept_id = $criteria['dept_id'];
+        
+        if ($dept_id != 0) {
+            $docOutgoings->matching('Departments', function ($q) use ($dept_id) {
+                return $q->where(['Departments.id' => $dept_id]);
+            });
+        }
+
+        $curUserID = $curUser->id;
+        $deptList = $this->DocOutgoings->Departments->find('list')->matching('Users', function ($q) use ($curUserID){
+            return $q->where(['Users.id' => $curUserID]);
+        })->toArray();
+
+        $this->set('deptList', $deptList);
+
         $this->set(compact('docOutgoings'));
     }
 
@@ -168,6 +212,22 @@ class DocOutgoingsController extends AppController
         $docOutgoings->matching('Departments', function ($q) use ($curDeptID) {
             return $q->where(['Departments.id' => $curDeptID]);
         });
+
+        $dept_id = $criteria['dept_id'];
+        
+        if ($dept_id != 0) {
+            $docOutgoings->matching('Departments', function ($q) use ($dept_id) {
+                return $q->where(['Departments.id' => $dept_id]);
+            });
+        }
+
+
+        $curUserID = $curUser->id;
+        $deptList = $this->DocOutgoings->Departments->find('list')->matching('Users', function ($q) use ($curUserID){
+            return $q->where(['Users.id' => $curUserID]);
+        })->toArray();
+
+        $this->set('deptList', $deptList);
 
         $this->set(compact('docOutgoings'));
     }
@@ -231,6 +291,8 @@ class DocOutgoingsController extends AppController
             'conditions' => ['is_deleted' => false], 'order' => ['firstname' => 'ASC', 'lastname' => 'ASC']
         ]);
 
+        $default_dept_id = $curUser->departments[0]->id;
+
         $docCategories = $this->DocOutgoings->DocCategories->find('list', ['limit' => 200]);
         $docMethods = $this->DocOutgoings->DocMethods->find('list', ['limit' => 200]);
         $docSecLevels = $this->DocOutgoings->DocSecLevels->find('list', ['limit' => 200]);
@@ -238,7 +300,7 @@ class DocOutgoingsController extends AppController
         $departments = $this->DocOutgoings->Departments->find('list', ['limit' => 200]);
 
         $docIncomings = $this->DocOutgoings->DocIncomings->find('list', ['limit' => 10, 'order' => ['reg_date' => 'DESC']]);
-        $this->set(compact('docOutgoing', 'docTypes',  'partners', 'originators',  'docCategories', 'docMethods', 'docSecLevels', 'docStatuses', 'departments', 'docIncomings'));
+        $this->set(compact('docOutgoing', 'docTypes',  'partners', 'originators',  'docCategories', 'docMethods', 'docSecLevels', 'docStatuses', 'departments', 'docIncomings', 'default_dept_id'));
     }
 
     public function reserve()
@@ -406,58 +468,54 @@ class DocOutgoingsController extends AppController
     public function canEdit($user, $docOutgoing)
     {     
         //GM, DGM, GM Sec can edit any doc
-        if (count(array_intersect($user->roleIDs, [2,3,10])) > 0 ) {
-            return true;
-        }
-        
-        if (($user->id == $docOutgoing->inputer_id) || ($user->id == $docOutgoing->modifier_id) || ($user->id == $docOutgoing->originator_id)) {
+        if (count(array_intersect($user->roleIDs, [RolesTable::R_GM, RolesTable::R_DGM, RolesTable::R_GM_SEC])) > 0) {
             return true;
         }
 
-        //Normal Doc, dept DAS staff can edit
-        if ( ($docOutgoing->doc_sec_level_id == 1) && ($user->department_id == $docOutgoing->department_id) && in_array(11, $user->roleIDs)){
+        //anyone input a level 1 doc can edit that doc.
+
+        if (($user->id == $docOutgoing->inputer_id || $user->id == $docOutgoing->modifier_id)) {
             return true;
         }
 
-        
-        //Confidential Doc, recipient dept LM, DLM and DAS editor can edit
-        if ( ($docOutgoing->doc_sec_level_id == 2) && ($user->department_id == $docOutgoing->department_id) && (count(array_intersect($user->roleIDs, [5,6,12])) > 0  )){
-            $result = true;
-            return $result;
+        if ( ( $this->DocOutgoings->Inputters->inDepartments($user->id, [$docOutgoing->department_id])) ){
+            //Normal Doc, recipient dept staff can read
+            if (($docOutgoing->doc_sec_level_id == 1)) {
+                return true;
+            } else if (($docOutgoing->doc_sec_level_id == 2) && count(array_intersect([RolesTable::R_LM, RolesTable::R_DLM], $user->roleIDs)) > 0) { //user is LM or DLM
+                return true;
+            }
+            
         }
         
-
         return false;
     }
 
     public function canView($user, $docOutgoing)
     {
         
-        //GM, DGM, can view any doc
-        if (count(array_intersect($user->roleIDs, [2,3,10])) > 0 ) {
-            //$this->Flash->success('GM DGM');
+        //GM, DGM, GM Sec can view any doc
+        if (count(array_intersect($user->roleIDs, [RolesTable::R_GM, RolesTable::R_DGM, RolesTable::R_GM_SEC])) > 0) {
             return true;
         }
-
+        
         //anyone input a level 1 doc can access that doc.
 
-        if (($user->id == $docOutgoing->inputer_id) || ($user->id == $docOutgoing->modifier_id) || ($user->id == $docOutgoing->originator_id)) {
-            //$this->Flash->success('Inputer modifier');
+        if (($user->id == $docOutgoing->inputer_id || $user->id == $docOutgoing->modifier_id)) {
             return true;
         }
-
 
         //Normal Doc, recipient dept staff can read
-        if (($docOutgoing->doc_sec_level_id == 1) && ($user->department_id == $docOutgoing->department_id)) {
-            //$this->Flash->success('Normal Doc Def DAS');
-            return true;
+        if ( ( $this->DocOutgoings->Inputters->inDepartments($user->id, [$docOutgoing->department_id])) ){
+            //Normal Doc, recipient dept staff can read
+            if (($docOutgoing->doc_sec_level_id == 1)) {
+                return true;
+            } else if (($docOutgoing->doc_sec_level_id == 2) && count(array_intersect([RolesTable::R_LM, RolesTable::R_DLM], $user->roleIDs)) > 0) { //user is LM or DLM
+                return true;
+            }
+            
         }
 
-        //Confidential Doc, recipient dept LM can read
-        if (($docOutgoing->doc_sec_level_id == 2) && ($user->department_id == $docOutgoing->department_id) && (count(array_intersect($user->roleIDs, [5,6,12])) > 0 )) {
-            //$this->Flash->success('Confidential LM');
-            return true;
-        }
         return false;
     }
 }

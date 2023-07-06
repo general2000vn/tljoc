@@ -37,7 +37,7 @@ class Department extends Entity
         'user_id' => true, 'manager' => true,
         'dlm_id' => true, 'dlm' => true,
         'parent_id' => true,
-        'users' => true,
+        'users' => true, 
         'parent_department' => true,
         'child_departments' => true,
         'doc_incomings' => true,
