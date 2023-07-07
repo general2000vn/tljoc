@@ -65,7 +65,7 @@ $this->end();
                                     <td><?= h($user->username)  ?></td>
                                     <td><?php
                                             foreach ($user->departments as $department){
-                                                echo $department->name . ", ";
+                                                echo '<span class="tag tag-purple">' . $department->name . "</span> ";
                                             }  
                                         ?>
                                     </td>

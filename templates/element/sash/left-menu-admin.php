@@ -27,7 +27,7 @@
         </li>
 -->
         <li class="slide">
-            <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="side-menu__icon fe fe-slack"></i><span class="side-menu__label">Users Management</span><i class="angle fe fe-chevron-right"></i></a>
+            <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="side-menu__icon fa fa-user"></i><span class="side-menu__label">Users Management</span><i class="angle fe fe-chevron-right"></i></a>
             <ul class="slide-menu">
                 <li><?= $this->Html->link('Create User', ['controller' => 'Users', 'action' => 'adminAdd'], ['class' => 'slide-item']) ?></li>
                 <li><?= $this->Html->link('Active Users', ['controller' => 'Users', 'action' => 'index'], ['class' => 'slide-item']) ?></li>
@@ -48,7 +48,7 @@
         </li>
 -->
         <li class="slide">
-            <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="side-menu__icon fe fe-slack"></i><span class="side-menu__label">Dept. Management</span><i class="angle fe fe-chevron-right"></i></a>
+            <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="side-menu__icon fa fa-home"></i><span class="side-menu__label">Dept. Management</span><i class="angle fe fe-chevron-right"></i></a>
             <ul class="slide-menu">
                 <li><?= $this->Html->link('Create New', ['controller' => 'Departments', 'action' => 'add'], ['class' => 'slide-item']) ?></li>
                 <li><?= $this->Html->link('Departments List', ['controller' => 'Departments', 'action' => 'index'], ['class' => 'slide-item']) ?></li>
@@ -56,7 +56,7 @@
         </li>
 
         <li class="slide">
-            <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="side-menu__icon fe fe-slack"></i><span class="side-menu__label">Roles Management</span><i class="angle fe fe-chevron-right"></i></a>
+            <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="side-menu__icon fa fa-shield"></i><span class="side-menu__label">Roles Management</span><i class="angle fe fe-chevron-right"></i></a>
             <ul class="slide-menu">
                 <!-- <li><?= $this->Html->link('Create New', ['controller' => 'Roles', 'action' => 'add'], ['class' => 'slide-item']) ?></li> -->
                 <li><?= $this->Html->link('Roles List', ['controller' => 'Roles', 'action' => 'index'], ['class' => 'slide-item']) ?></li>

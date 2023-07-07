@@ -17,7 +17,7 @@
         </li>
 
         <li class="slide">
-            <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="side-menu__icon fe fe-slack"></i><span class="side-menu__label">Incoming Docs</span><i class="angle fe fe-chevron-right"></i></a>
+            <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="side-menu__icon ion ion-log-in"></i><span class="side-menu__label">Incoming Docs</span><i class="angle fe fe-chevron-right"></i></a>
             <ul class="slide-menu">
                 <li><?= $this->Html->link('Register New', ['controller' => 'DocIncomings', 'action' => 'add'], ['class' => 'slide-item']) ?></li>
                 <li><?= $this->Html->link('All Docs ', ['controller' => 'DocIncomings', 'action' => 'index'], ['class' => 'slide-item']) ?></li>
@@ -26,7 +26,7 @@
             </ul>
         </li>
         <li class="slide">
-            <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="side-menu__icon fe fe-slack"></i><span class="side-menu__label">Outgoing Docs</span><i class="angle fe fe-chevron-right"></i></a>
+            <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="side-menu__icon ion ion-log-out"></i><span class="side-menu__label">Outgoing Docs</span><i class="angle fe fe-chevron-right"></i></a>
             <ul class="slide-menu">
                 <li><?= $this->Html->link('Register New', ['controller' => 'DocOutgoings', 'action' => 'add'], ['class' => 'slide-item']) ?></li>
                 <li><?= $this->Html->link('All Docs ', ['controller' => 'DocOutgoings', 'action' => 'index'], ['class' => 'slide-item']) ?></li>
@@ -36,7 +36,7 @@
         </li>
 
         <li class="slide">
-            <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="side-menu__icon fe fe-slack"></i><span class="side-menu__label">Internal Docs</span><i class="angle fe fe-chevron-right"></i></a>
+            <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="side-menu__icon ion ion-ios7-loop-strong"></i><span class="side-menu__label">Internal Docs</span><i class="angle fe fe-chevron-right"></i></a>
             <ul class="slide-menu">
                 <li><?= $this->Html->link('Register New', ['controller' => 'DocInternals', 'action' => 'add'], ['class' => 'slide-item']) ?></li>
                 <li><?= $this->Html->link('All Docs ', ['controller' => 'DocInternals', 'action' => 'index'], ['class' => 'slide-item']) ?></li>
@@ -46,7 +46,7 @@
         </li>
 
         <li class="slide">
-            <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="side-menu__icon fe fe-slack"></i><span class="side-menu__label">External Entity</span><i class="angle fe fe-chevron-right"></i></a>
+            <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="side-menu__icon ti-briefcase"></i><span class="side-menu__label">External Entity</span><i class="angle fe fe-chevron-right"></i></a>
             <ul class="slide-menu">
                 <li><?= $this->Html->link('Add New', ['controller' => 'Partners', 'action' => 'add'], ['class' => 'slide-item']) ?></li>
                 <li><?= $this->Html->link('Entities List', ['controller' => 'Partners', 'action' => 'index'], ['class' => 'slide-item']) ?></li>
