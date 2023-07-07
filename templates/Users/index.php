@@ -63,7 +63,12 @@ $this->end();
                                     <td><?= h($user->firstname)  ?></td>
                                     <td><?= h($user->lastname)  ?></td>
                                     <td><?= h($user->username)  ?></td>
-                                    <td><?= $user->has('department')? $user->department->name : "" ?></td>
+                                    <td><?php
+                                            foreach ($user->departments as $department){
+                                                echo $department->name . ", ";
+                                            }  
+                                        ?>
+                                    </td>
                                     <td><?= $user->has('group')? $user->group->name : "" ?></td>
                                     <td><?= $user->has('email')? $user->email : "" ?></td>
                                     <td class="actions">
