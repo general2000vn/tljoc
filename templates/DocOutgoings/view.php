@@ -92,7 +92,7 @@ $this->loadHelper('Form', [
 
                     if (!is_null($docOutgoing->doc_file) && ($docOutgoing->doc_file != '')) {
                         echo '<div class="col-md-12 form-group">';
-                        echo $this->Form->label('Document File');
+                        echo $this->Form->label('Outgoing Document File');
                         
                         echo $this->Html->link($docOutgoing->doc_file,  DS . DocOutgoingsTable::UPLOAD_DIR . $docOutgoing->doc_file, ['target' => '_blank']);
 
