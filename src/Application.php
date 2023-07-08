@@ -97,6 +97,8 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
          */
         if (Configure::read('debug')) {
             $this->addPlugin('DebugKit');
+
+            Configure::write('DebugKit.safeTld', ['tljoc.com.vn', 'local']);
         }
 
         // Load more plugins here
