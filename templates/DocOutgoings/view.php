@@ -98,10 +98,11 @@ $this->loadHelper('Form', [
 
                         echo '</div>';
                     } else {
-                        echo $this->Form->control('doc_file', ['type' => 'text', 'value' => "", 'label' => 'Outgoing Document file TEST', 'disabled', 'templateVars' => ['ctnClass' => 'col-md-12']]);
+                        echo $this->Form->control('doc_file', ['type' => 'text', 'value' => "", 'label' => 'Outgoing Document file', 'disabled', 'templateVars' => ['ctnClass' => 'col-md-12']]);
                     }
 
-                    echo $this->Form->control('remark', ['label' => 'Remark', 'disabled', 'templateVars' => ['ctnClass' => 'col-md-12']]);
+                    //TODO remove test value in Remark
+                    echo $this->Form->control('remark', ['value' => $docOutgoing->doc_file,'label' => 'Remark', 'disabled', 'templateVars' => ['ctnClass' => 'col-md-12']]);
 
 
                     ?>
