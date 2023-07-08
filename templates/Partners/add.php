@@ -52,7 +52,7 @@ $page_heading = 'Add New';
 
                     <?php
                     echo $this->Form->control('name', ['label' => 'Name', 'required', 'templateVars' => ['lblClass' => 'required','ctnClass' => 'col-md-12']]);
-                    echo $this->Form->control('name2', ['label' => 'Abbreviation',  'templateVars' => ['ctnClass' => 'col-md-6']]);
+                    echo $this->Form->control('name2', ['label' => 'Code or Abbreviation',  'templateVars' => ['ctnClass' => 'col-md-6']]);
                     echo $this->Form->control('tax_code', ['label' => 'Tax Code',  'templateVars' => ['ctnClass' => 'col-md-6']]);
                 
                     ?>

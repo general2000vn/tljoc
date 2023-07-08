@@ -43,7 +43,7 @@ $this->loadHelper('Form', [
                     <table data-order='[[ 0, "asc" ]]' class="table table-striped table-bordered text-nowrap key-buttons border-bottom">
                         <thead>
                             <tr>
-                                <th><?= __('Abbreviation') ?></th>
+                                <th><?= __('Code') ?></th>
                                 <th><?= __('Name') ?></th>
                                 
                                 <th><?= __('Actions') ?></th>

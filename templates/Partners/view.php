@@ -55,7 +55,7 @@ $this->end();
 
                     <?php
                     echo $this->Form->control('name', ['label' => 'Name *', 'class' => 'form-control', 'disabled','templateVars' => ['ctnClass' => 'col-md-12']]);
-                    echo $this->Form->control('name2', ['label' => 'Abbreviation', 'disabled','class' => 'form-control', 'templateVars' => ['ctnClass' => 'col-md-6']]);
+                    echo $this->Form->control('name2', ['label' => 'Code or Abbreviation', 'disabled','class' => 'form-control', 'templateVars' => ['ctnClass' => 'col-md-6']]);
                     echo $this->Form->control('tax_code', ['label' => 'Tax Code', 'disabled', 'class' => 'form-control', 'templateVars' => ['ctnClass' => 'col-md-6']]);
                                         
                     ?>
