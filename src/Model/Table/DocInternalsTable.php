@@ -41,6 +41,7 @@ class DocInternalsTable extends Table
 {
     const UPLOAD_DIR = 'webroot' . DS . 'uploads' . DS . 'doc_internal' . DS;
 
+    const DOC_NUM_OFFSET = 0;
     /**
      * Initialize method
      *
@@ -208,7 +209,7 @@ class DocInternalsTable extends Table
             $docNum ++;
         }
         
-        $docInternal->reg_num = $docNum;
+        $docInternal->reg_num = DocInternalsTable::DOC_NUM_OFFSET + $docNum;
         $docInternal->reg_text = 'INT/' . $today->format('y-') . sprintf('%03d', $docInternal->reg_num);
 
 

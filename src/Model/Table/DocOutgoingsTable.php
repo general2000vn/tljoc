@@ -50,6 +50,8 @@ class DocOutgoingsTable extends Table
 {
     const UPLOAD_DIR = 'webroot' . DS . 'uploads' . DS . 'doc_outgoing' . DS;
 
+    const DOC_NUM_OFFSET = 326;
+
     /**
      * Initialize method
      *
@@ -234,7 +236,7 @@ class DocOutgoingsTable extends Table
             $docNum ++;
         }
 
-        $docOutgoing->reg_num = $docNum;
+        $docOutgoing->reg_num = DocOutgoingsTable::DOC_NUM_OFFSET + $docNum;
         //$docIncoming->reg_text = $today->format('yy-mm-') . str_pad(print($docCount), 4, "0", STR_PAD_LEFT) . '/' . $company->name;
         $docOutgoing->reg_text = 'TL/' . $department->init . '/' . $today->format('y-') . sprintf('%03d', $docOutgoing->reg_num);
 

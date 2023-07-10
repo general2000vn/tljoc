@@ -45,6 +45,8 @@ class DocIncomingsTable extends Table
 {
     const UPLOAD_DIR = 'webroot' . DS . 'uploads' . DS . 'doc_incoming' . DS;
 
+    const DOC_NUM_OFFSET = 194;
+
     /**
      * Initialize method
      *
@@ -258,7 +260,7 @@ class DocIncomingsTable extends Table
             $docNum ++;
         }
 
-        $docIncoming->reg_num = $docNum;
+        $docIncoming->reg_num = DocIncomingsTable::DOC_NUM_OFFSET + $docNum;
         $docIncoming->reg_text = 'TL' . '/' .$today->format('y-') . sprintf('%03d', $docIncoming->reg_num)  ;
 
 
