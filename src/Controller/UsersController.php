@@ -98,7 +98,9 @@ class UsersController extends AppController
 
             $this->Authentication->setIdentity($theUser);
 
-            if (count($theUser->departments)) {
+            //$this->set('theUser', $theUser);
+
+            if (count($theUser->departments) <= 0) {
                 $this->Flash->error(__('Your account has not been configured to any Department!'));
                 $this->Flash->error(__('Please contact IT !'));
                 $this->Authentication->logout();
