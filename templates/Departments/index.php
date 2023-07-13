@@ -53,6 +53,7 @@ $this->end();
                             <th class="border-bottom-0 text-center">Init</th>
                             <th class="border-bottom-0 text-center">Manager</th>
                             <th class="border-bottom-0 text-center">Deputy</th>
+                            <th class="border-bottom-0 text-center">Secretary</th>
                             <th class="actions text-center"><?= __('Actions') ?></th>
                             </tr>
                         </thead>
@@ -64,6 +65,7 @@ $this->end();
                                     <td><?= h($department->init)  ?></td>
                                     <td><?= $department->has('manager')? $department->manager->name : ""  ?></td>
                                     <td><?= $department->has('dlm')? $department->dlm->name : ""  ?></td>
+                                    <td><?= $department->has('sec')? $department->sec->name : ""  ?></td>
                                     
                                     <td class="actions">
                                         

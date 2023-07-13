@@ -32,6 +32,8 @@ use Cake\ORM\Entity;
  * @property bool $is_reserved
  *
  * @property \App\Model\Entity\DocCompany $doc_company
+ * @property \App\Model\Entity\Department[] $departments
+ * @property \App\Model\Entity\User[] $users
  * @property \App\Model\Entity\Partner $partner
  * @property \App\Model\Entity\User $inputter
  * @property \App\Model\Entity\User $modifier
@@ -75,6 +77,7 @@ class DocIncoming extends Entity
         'doc_file' => true,
         'doc_outgoing_id' => true, 'doc_outgoing' => true,
         'is_reserved' => true,
+        'users' => true,
     ];
 
     protected function _getName()

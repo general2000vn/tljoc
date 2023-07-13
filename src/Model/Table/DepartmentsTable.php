@@ -13,6 +13,7 @@ use Cake\Validation\Validator;
  *
  * @property \App\Model\Table\UsersTable&\Cake\ORM\Association\BelongsTo $Managers
  * @property \App\Model\Table\UsersTable&\Cake\ORM\Association\BelongsTo $Dlms
+ * @property \App\Model\Table\UsersTable&\Cake\ORM\Association\BelongsTo $Secs
  * @property \App\Model\Table\DepartmentsTable&\Cake\ORM\Association\BelongsTo $ParentDepartments
  * @property \App\Model\Table\DepartmentsTable&\Cake\ORM\Association\HasMany $ChildDepartments
  * @property \App\Model\Table\DocOutgoingsTable&\Cake\ORM\Association\HasMany $DocOutgoings
@@ -68,6 +69,10 @@ class DepartmentsTable extends Table
             'className' => 'Users',
             'foreignKey' => 'dlm_id',
         ]);
+        $this->belongsTo('Secs',[
+            'className' => 'Users',
+            'foreignKey' => 'sec_id',
+        ]);
 
         $this->belongsTo('ParentDepartments', [
             'className' => 'Departments',
@@ -86,6 +91,8 @@ class DepartmentsTable extends Table
             'joinTable' => 'departments_users',
             'through' => 'DepartmentsUsers',
         ]);
+
+
 
 
     }
@@ -140,5 +147,10 @@ class DepartmentsTable extends Table
     public function getDeputyManager($deptID){
         $dept = $this->get($deptID, ['contain' => ['Dlms']]);
         return $dept->dlm;
+    }
+
+    public function getSecretary($deptID){
+        $dept = $this->get($deptID, ['contain' => ['Secs']]);
+        return $dept->sec;
     }
 }

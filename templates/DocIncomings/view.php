@@ -73,7 +73,9 @@ $this->loadHelper('Form', [
                     echo $this->Form->control('doc_type_id', ['options' => $docTypes, 'label' => 'Type',   'disabled',  'templateVars' => ['lblClass' => 'required', 'ctnClass' => 'col-md-3']]);
                     echo $this->Form->control('contract_num', ['label' => 'RFP/Contract No.',  'disabled', 'templateVars' => ['ctnClass' => 'col-md-3']]);
 
-                    echo $this->Form->control('departments._ids', ['label' => 'Distributed To',  'disabled', 'options' => $departments, 'multiple', 'data-placeholder' => "Pick one or more Departments", 'templateVars' => ['lblClass' => 'required', 'extra_class' => 'select2-show-search form-select', 'ctnClass' => 'col-md-12']]);
+                    echo $this->Form->control('departments._ids', ['label' => 'To Departments',  'disabled', 'options' => $departments, 'multiple', 'templateVars' => ['lblClass' => 'required', 'extra_class' => 'select2-show-search form-select', 'ctnClass' => 'col-md-12']]);
+
+                    echo $this->Form->control('users._ids', ['label' => 'To Staff',  'disabled', 'options' => $users, 'multiple',  'templateVars' => ['extra_class' => 'select2-show-search form-select', 'ctnClass' => 'col-md-12']]);
 
 
                     if ($docIncoming->has('doc_outgoing_id')) {

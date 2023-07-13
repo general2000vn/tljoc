@@ -29,6 +29,10 @@ use Cake\Validation\Validator;
  */
 class DocSecLevelsTable extends Table
 {
+    const L_NORMAL = 1;
+    const L_CONFIDENTIAL = 2;
+    const L_TOP_SECRET = 3;
+    
     /**
      * Initialize method
      *

@@ -131,6 +131,13 @@ class DocIncomingsTable extends Table
             'foreignKey' => 'doc_incoming_id',
         ]);
 
+        $this->belongsToMany('Users', [
+            'className' => 'Users',
+            'joinTable' => 'doc_incomings_users',
+            'targetForeignKey' => 'user_id',
+            'foreignKey' => 'doc_incoming_id',
+        ]);
+
 
         $this->belongsTo('Modifiers', [
             'className' => 'Users',

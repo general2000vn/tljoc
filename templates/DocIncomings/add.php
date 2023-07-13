@@ -56,7 +56,7 @@ $this->loadHelper('Form', [
                     echo $this->Form->control('reg_date', [ 'disabled', 'label' => 'Registration Date', 'templateVars' => ['ctnClass' => 'col-md-3']]);
                     echo $this->Form->control('reg_num', [ 'disabled', 'label' => 'Document Number', 'templateVars' => ['ctnClass' => 'col-md-3']]);
                     echo $this->Form->control('reg_text', [ 'disabled', 'label' => 'Registration Number', 'templateVars' => ['ctnClass' => 'col-md-6']]);
-                    echo $this->Form->control('inputter_id', ['type' => 'text', 'value' => $this->Identity->get('name'),  'disabled', 'label' => 'Inputter', 'templateVars' => ['ctnClass' => 'col-md-6']]);
+                    echo $this->Form->control('inputter_id', ['options' => $users,  'disabled', 'label' => 'Inputter', 'templateVars' => ['ctnClass' => 'col-md-6']]);
                     echo $this->Form->control('modifier_id', ['type' => 'text', 'value' => $this->Identity->get('name'),  'disabled', 'label' => 'Last Modifier', 'templateVars' => ['ctnClass' => 'col-md-6']]);
 
                     echo $this->Form->control('doc_sec_level_id', ['options' => $secretLevels, 'label' => 'Sensitivity level',  'templateVars' => [ 'lblClass' => 'required', 'ctnClass' => 'col-md-3']]);
@@ -71,8 +71,10 @@ $this->loadHelper('Form', [
                     echo $this->Form->control('doc_type_id', ['options' => $docTypes, 'label' => 'Type',   'templateVars' => [ 'lblClass' => 'required', 'ctnClass' => 'col-md-3']]);
                     echo $this->Form->control('contract_num', [ 'label' => 'RFP/Contract No.', 'templateVars' => ['ctnClass' => 'col-md-3']]);
 
-                    echo $this->Form->control('departments._ids', ['label' => 'Distributed To', 'options' => $departments, 'multiple', 'data-placeholder' => "Pick one or more Departments", 'templateVars' => [ 'lblClass' => 'required', 'extra_class' => 'select2', 'ctnClass' => 'col-md-12']]);
+                    echo $this->Form->control('departments._ids', ['label' => 'To Departments', 'options' => $departments, 'multiple', 'data-placeholder' => "Pick one or more Departments", 'templateVars' => [ 'lblClass' => 'required', 'extra_class' => 'select2', 'ctnClass' => 'col-md-12']]);
                     
+                    echo $this->Form->control('users._ids', ['label' => 'To Staff', 'options' => $users, 'multiple', 'data-placeholder' => "Pick one or more Staff", 'templateVars' => [ 'extra_class' => 'select2', 'ctnClass' => 'col-md-12']]);
+
                     echo $this->Form->control('doc_outgoing_id', ['label' => 'Related Outgoing Document', 'empty' => true, 'templateVars' => ['extra_class' => 'select2-show-search form-select selectDocOut' ,'ctnClass' => 'col-md-12']]);
 
                     echo $this->Form->control('doc_file', ['label' => 'Document File', 'type' => 'file',   'templateVars' => ['ctnClass' => 'col-md-12']]);

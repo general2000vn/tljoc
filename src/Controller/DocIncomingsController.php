@@ -240,7 +240,7 @@ class DocIncomingsController extends AppController
     public function view($id = null)
     {
         $docIncoming = $this->DocIncomings->get($id, [
-            'contain' => ['DocOutgoings', 'Partners', 'Modifiers', 'Inputters', 'DocMethods', 'DocStatuses', 'DocTypes', 'Departments'],
+            'contain' => ['DocOutgoings', 'Partners', 'Modifiers', 'Inputters', 'DocMethods', 'DocStatuses', 'DocTypes', 'Departments', 'Users'],
         ]);
 
         $curUser = $this->Authentication->getIdentity();
@@ -258,12 +258,13 @@ class DocIncomingsController extends AppController
         $modifiers = $this->DocIncomings->Modifiers->find('list', ['conditions' => ['id' => $docIncoming->modifier_id]]);
 
         $departments = $this->DocIncomings->Departments->find('list');
+        $users = $this->DocIncomings->Users->find('list')->where(['is_deleted' => false])->order(['firstname' => 'ASC', 'lastname' => 'ASC']);
 
         $secretLevels = $this->DocIncomings->DocSecLevels->find('list', ['limit' => 200]);
         $docMethods = $this->DocIncomings->DocMethods->find('list', ['limit' => 200]);
         $docStatuses = $this->DocIncomings->DocStatuses->find('list', ['limit' => 200]);
         $docTypes = $this->DocIncomings->DocTypes->find('list', ['limit' => 200]);
-        $this->set(compact('docIncoming',  'partners',  'docMethods', 'docStatuses', 'docTypes', 'secretLevels', 'referer', 'inputters', 'modifiers', 'departments'));
+        $this->set(compact('docIncoming',  'partners',  'docMethods', 'docStatuses', 'docTypes', 'secretLevels', 'referer', 'inputters', 'modifiers', 'departments', 'users'));
     }
 
     /**
@@ -292,7 +293,7 @@ class DocIncomingsController extends AppController
                 if ($bNotify){
                     $docIncoming = $this->DocIncomings->get($docIncoming->id, [
                         //'contain' => []
-                        'contain' => ['Partners', 'DocOutgoings', 'DocMethods', 'DocStatuses', 'DocTypes', 'Modifiers', 'Inputters', 'DocSecLevels', 'Departments', 'Inputters', 'Modifiers'],
+                        'contain' => ['Partners', 'DocTypes', 'DocSecLevels', 'Departments', 'Users'],
                     ]);
                     $this->notifyRecievers($docIncoming);
                 }
@@ -310,7 +311,8 @@ class DocIncomingsController extends AppController
         $docMethods = $this->DocIncomings->DocMethods->find('list', ['limit' => 200]);
         $docStatuses = $this->DocIncomings->DocStatuses->find('list', ['limit' => 200]);
         $docTypes = $this->DocIncomings->DocTypes->find('list', ['limit' => 200]);
-        //$relatedDocs = $this->DocIncomings->RelatedDocs->find('list', ['limit' => 200]);
+        $users = $this->DocIncomings->Users->find('list')->where(['is_deleted' => false])->order(['firstname' => 'ASC', 'lastname' => 'ASC']);
+
         $this->set(compact(
             'docIncoming',
             'partners',
@@ -318,8 +320,8 @@ class DocIncomingsController extends AppController
             'docStatuses',
             'docTypes',
             'secretLevels',
-            'departments'
-            //'relatedDocs', 
+            'departments',
+            'users', 
         ));
     }
 
@@ -382,7 +384,7 @@ class DocIncomingsController extends AppController
 
         $docIncoming = $this->DocIncomings->get($id, [
             //'contain' => []
-            'contain' => ['Partners', 'DocOutgoings', 'DocMethods', 'DocStatuses', 'DocTypes', 'Modifiers', 'Inputters', 'DocSecLevels', 'Departments', 'Inputters', 'Modifiers'],
+            'contain' => ['Partners', 'DocOutgoings', 'DocMethods', 'DocStatuses', 'DocTypes', 'Modifiers', 'Inputters', 'DocSecLevels', 'Departments', 'Users', 'Inputters', 'Modifiers'],
         ]);
 
         if (!$this->canEdit($curUser, $docIncoming)) {
@@ -424,13 +426,14 @@ class DocIncomingsController extends AppController
         $docStatuses = $this->DocIncomings->DocStatuses->find('list', ['limit' => 200]);
         $docTypes = $this->DocIncomings->DocTypes->find('list', ['limit' => 200]);
         $secretLevels = $this->DocIncomings->DocSecLevels->find('list');
+        $users = $this->DocIncomings->Users->find('list')->where(['is_deleted' => false])->order(['firstname' => 'ASC', 'lastname' => 'ASC']);
         $relatedDoc = [];
         if ($docIncoming->has('doc_outgoing')) {
             $relatedDoc[0] = [
                 'text' => $docIncoming->doc_outgoing->name, 'value' => $docIncoming->doc_outgoing->id, 'selected' => 'selected'
             ];
         }
-        $this->set(compact('docIncoming',  'partners', 'secretLevels', 'docMethods', 'docStatuses', 'docTypes', 'departments', 'inputters', 'modifiers', 'relatedDoc'));
+        $this->set(compact('docIncoming',  'partners', 'secretLevels', 'docMethods', 'docStatuses', 'docTypes', 'departments', 'inputters', 'modifiers', 'relatedDoc', 'users'));
     }
 
     /**
@@ -485,7 +488,7 @@ class DocIncomingsController extends AppController
             return true;
         }
 
-        //anyone input a level 1 doc can edit that doc.
+        //anyone input a doc can edit that doc.
 
         if (($user->id == $docIncoming->inputer_id || $user->id == $docIncoming->modifier_id)) {
             return true;
@@ -502,9 +505,21 @@ class DocIncomingsController extends AppController
             return true;
         }
 
-        //anyone input a level 1 doc can access that doc.
+        //anyone input a doc can access that doc.
 
         if (($user->id == $docIncoming->inputer_id || $user->id == $docIncoming->modifier_id)) {
+            return true;
+        }
+
+        
+        $allowUsersID = array();
+        $i = 0;
+        foreach ($docIncoming->users as $allowUser) {
+            $allowUsersID[$i] = $allowUser->id;
+            $i++;
+        }
+
+        if (in_array($user->id, $allowUsersID)){
             return true;
         }
 
@@ -514,13 +529,12 @@ class DocIncomingsController extends AppController
             $deptIDs[$i] = $department->id;
             $i++;
         }
-
         
         if ( ( $this->DocIncomings->Inputters->inDepartments($user->id, $deptIDs)) ){
             //Normal Doc, recipient dept staff can read
-            if (($docIncoming->doc_sec_level_id == 1)) {
+            if (($docIncoming->doc_sec_level_id == DocSecLevelsTable::L_NORMAL)) {
                 return true;
-            } else if (($docIncoming->doc_sec_level_id == 2) && count(array_intersect([RolesTable::R_LM, RolesTable::R_DLM], $user->roleIDs)) > 0) { //user is LM or DLM can edit Confidential doc
+            } else if (($docIncoming->doc_sec_level_id == DocSecLevelsTable::L_CONFIDENTIAL) && count(array_intersect([RolesTable::R_LM, RolesTable::R_DLM], $user->roleIDs)) > 0) { //user is LM or DLM or Secretary can view Confidential doc
                 return true;
             }
             
@@ -530,26 +544,41 @@ class DocIncomingsController extends AppController
     }
 
     private function notifyRecievers($docIncoming){
-        $to = array();
+        $emails = array();
         $data = array();
-        $Mans = array();
+        $people = array();
 
         foreach ($docIncoming->departments as $department) {
             $LM = $this->DocIncomings->Departments->getLineManager($department->id);
             $DM = $this->DocIncomings->Departments->getDeputyManager($department->id);
+            
             if (!is_null($LM)){
-                $Mans[] = $LM;
-                $to[] = $LM->email;
+                $people[] = $LM;
+                $emails[] = $LM->email;
             }
 
             if (!is_null($DM)){
-                $Mans[] = $DM;
-                $to[] = $DM->email;
+                $people[] = $DM;
+                $emails[] = $DM->email;
             }
 
+            if ($docIncoming->doc_sec_level_id = DocSecLevelsTable::L_NORMAL) {
+                $sec = $this->DocIncomings->Departments->getSecretary($department->id);
+                if (!is_null($sec)){
+                    $people[] = $sec;
+                    $emails[] = $sec->email;
+                }
+
+            }
+            
         }
 
-        if (count($to) > 0){
+        foreach ($docIncoming->users as $user) {
+            $people[] = $user;
+            $emails[] = $user->email;
+        }
+
+        if (count($emails) > 0){
             $options = [
                 'subject' => '[e.Office DAS] New Incoming Document recieved: ' . $docIncoming->subject,
                 'layout' => 'eoffice',
@@ -563,15 +592,14 @@ class DocIncomingsController extends AppController
             
             $curUser = $this->Authentication->getIdentity();
             $cc = $curUser->email;
-            $data['LMs'] = $Mans;
+            $data['people'] = $people;
             $data['doc_subject'] = $docIncoming->subject;
             $data['doc_id'] = $docIncoming->id;
             $data['doc_type'] = $docIncoming->doc_type->name;
             $data['doc_sender'] = $docIncoming->partner->name;
 
-            EmailQueue::enqueue($to, $cc, $data, $options);
+            EmailQueue::enqueue($emails, $cc, $data, $options);
             
-            //$this->set('enqueue', 'DONE');
         }
     }
 }

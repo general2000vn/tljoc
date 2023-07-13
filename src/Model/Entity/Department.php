@@ -13,10 +13,12 @@ use Cake\ORM\Entity;
  * @property string $init
  * @property int|null $user_id
  * @property int|null $dlm_id
+ * @property int|null $sec_id
  * @property int|null $parent_id
  *
  * @property \App\Model\Entity\User $manager
  * @property \App\Model\Entity\User $dlm
+ * @property \App\Model\Entity\User $sec
  * @property \App\Model\Entity\ParentDepartment $parent_department
  * @property \App\Model\Entity\ChildDepartment[] $child_departments
  */
@@ -36,6 +38,7 @@ class Department extends Entity
         'init' => true,
         'user_id' => true, 'manager' => true,
         'dlm_id' => true, 'dlm' => true,
+        'sec_id' => true, 'sec' => true,
         'parent_id' => true,
         'users' => true, 
         'parent_department' => true,

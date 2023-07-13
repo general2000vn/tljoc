@@ -3,7 +3,7 @@ $(function (e) {
 
     var table = $('#user-list').DataTable({
         buttons: ['copy', 'excel', 'pdf', 'colvis'],
-        order: [[0, 'desc']],
+        order: [[0, 'asc']],
         language: {
             searchPlaceholder: 'Filter...',
             scrollX: "100%",

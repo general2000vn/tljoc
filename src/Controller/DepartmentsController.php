@@ -27,13 +27,12 @@ class DepartmentsController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['ParentDepartments',
-                         'Managers' => ['fields' => ['id', 'firstname', 'lastname']]
-                        ],
-        ];
+        
         $departments = $this->Departments->find()->where(['Departments.is_deleted' => false])
-                                                    ->contain(['ParentDepartments', 'Managers' => ['fields' => ['id', 'firstname', 'lastname']], 'Dlms' => ['fields' => ['id', 'firstname', 'lastname']]
+                                                    ->contain(['ParentDepartments',
+                                                                'Managers' => ['fields' => ['id', 'firstname', 'lastname']],
+                                                                'Dlms' => ['fields' => ['id', 'firstname', 'lastname']],
+                                                                'Secs' => ['fields' => ['id', 'firstname', 'lastname']],
        ]);
 
         $this->set(compact('departments'));
