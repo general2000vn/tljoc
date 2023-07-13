@@ -290,6 +290,10 @@ class DocIncomingsController extends AppController
                 $this->Flash->success(__('The Incoming Document has been saved.'));
 
                 if ($bNotify){
+                    $docIncoming = $this->DocIncomings->get($docIncoming->id, [
+                        //'contain' => []
+                        'contain' => ['Partners', 'DocOutgoings', 'DocMethods', 'DocStatuses', 'DocTypes', 'Modifiers', 'Inputters', 'DocSecLevels', 'Departments', 'Inputters', 'Modifiers'],
+                    ]);
                     $this->notifyRecievers($docIncoming);
                 }
 
@@ -567,7 +571,7 @@ class DocIncomingsController extends AppController
 
             EmailQueue::enqueue($to, $cc, $data, $options);
             
-            $this->set('enqueue', 'DONE');
+            //$this->set('enqueue', 'DONE');
         }
     }
 }
