@@ -280,8 +280,18 @@ class DocIncomingsController extends AppController
             $docIncoming = $this->DocIncomings->patchEntity($docIncoming, $this->request->getData());
             $docIncoming->inputter_id = $curUser->id;
             $docIncoming->modifier_id = $curUser->id;
+
+            $bNotify = false;
+            if (($docIncoming->doc_status_id == DocStatusesTable::S_DISTRIBUTED) && ($docIncoming->has('doc_file'))){
+                $bNotify = true;
+            }
+                
             if ($this->DocIncomings->saveNewDoc($docIncoming)) {
                 $this->Flash->success(__('The Incoming Document has been saved.'));
+
+                if ($bNotify){
+                    $this->notifyRecievers($docIncoming);
+                }
 
                 return $this->redirect(['action' => 'edit', $docIncoming->id]);
             }
@@ -379,13 +389,15 @@ class DocIncomingsController extends AppController
 
         if ($this->request->is(['patch', 'post', 'put'])) {
             $docIncoming = $this->DocIncomings->patchEntity($docIncoming, $this->request->getData());
-
+            $bNotify = false;
+            if (($docIncoming->isDirty('doc_status_id') || $docIncoming->isDirty('doc_file')) && ($docIncoming->doc_status_id == DocStatusesTable::S_DISTRIBUTED) && ($docIncoming->has('doc_file'))){
+                $bNotify = true;
+            }
             if ($this->DocIncomings->saveEditedDoc($docIncoming)) {
-                if (($docIncoming->isDirty('doc_status_id') || $docIncoming->isDirty('doc_file')) && ($docIncoming->doc_status_id == DocStatusesTable::S_DISTRIBUTED) && ($docIncoming->has('doc_file'))){
+                if ($bNotify){
                     $this->notifyRecievers($docIncoming);
-                    
                 }
-                
+
                 $this->Flash->success(__('The Incoming Document has been saved.'));
 
                 return $this->redirect(['action' => 'view', $docIncoming->id]);
@@ -544,6 +556,7 @@ class DocIncomingsController extends AppController
                 'from_email' => Configure::read('from_email')
             ];
 
+            
             $curUser = $this->Authentication->getIdentity();
             $cc = $curUser->email;
             $data['LMs'] = $Mans;
@@ -553,6 +566,8 @@ class DocIncomingsController extends AppController
             $data['doc_sender'] = $docIncoming->partner->name;
 
             EmailQueue::enqueue($to, $cc, $data, $options);
+            
+            $this->set('enqueue', 'DONE');
         }
     }
 }
