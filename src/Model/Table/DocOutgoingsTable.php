@@ -50,7 +50,7 @@ class DocOutgoingsTable extends Table
 {
     const UPLOAD_DIR = 'webroot' . DS . 'uploads' . DS . 'doc_outgoing' . DS;
 
-    const DOC_NUM_OFFSET = 326;
+    const DOC_NUM_OFFSET = 333;
 
     /**
      * Initialize method
