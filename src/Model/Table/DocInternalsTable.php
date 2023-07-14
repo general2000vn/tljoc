@@ -198,7 +198,8 @@ class DocInternalsTable extends Table
             'fields' => ['id', 'reg_num', 'doc_company_id',  'reg_date'],
             'conditions' => ['reg_date >=' => $today->format('Y') . '-01-01',
                             'reg_date <=' => $today->format('Y') . '-12-31',
-                            'is_reserved' => false
+                            'is_reserved' => false,
+                            'reg_num >' => DocInternalsTable::DOC_NUM_OFFSET,
                             ]
                 ])->count();
 

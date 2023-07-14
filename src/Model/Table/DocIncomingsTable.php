@@ -260,6 +260,7 @@ class DocIncomingsTable extends Table
             'conditions' => ['reg_date >=' => $today->format('Y') . '-01-01',
                             'reg_date <=' => $today->format('Y') . '-12-31',
                             'is_reserved' => false,
+                            'reg_num >' => DocIncomingsTable::DOC_NUM_OFFSET,
                             ]
         ])->count();
         

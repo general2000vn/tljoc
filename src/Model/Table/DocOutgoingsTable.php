@@ -226,7 +226,8 @@ class DocOutgoingsTable extends Table
         $docNum = 1 + $this->find('all', [
             'fields' => ['id', 'reg_num',  'reg_date'], 'conditions' => ['reg_date >=' => $today->format('Y') . '-01-01',
                                                                          'reg_date <=' => $today->format('Y') . '-12-31',
-                                                                         'is_reserved' => false
+                                                                         'is_reserved' => false,
+                                                                         'reg_num >' => DocOutgoingsTable::DOC_NUM_OFFSET,
                                                                          ]
         ])->count();
         //$company = $this->DocCompanies->get($docOutgoing->doc_company_id);
