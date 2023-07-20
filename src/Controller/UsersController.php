@@ -29,7 +29,7 @@ class UsersController extends AppController
 
         // in a controller beforeFilter or initialize
         // Make view and index not require a logged in user.
-        $this->Authentication->allowUnauthenticated(['adminAdd', 'login', 'install', 'ajaxGetBd', 'adminLogin']);
+        $this->Authentication->allowUnauthenticated(['adminAdd', 'login', 'rspwd', 'install', 'ajaxGetBd', 'adminLogin']);
     }
 
 

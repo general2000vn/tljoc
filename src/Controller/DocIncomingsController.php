@@ -580,7 +580,7 @@ class DocIncomingsController extends AppController
 
         if (count($emails) > 0){
             $options = [
-                'subject' => '[e.Office DAS] New Incoming Document recieved: ' . $docIncoming->subject,
+                'subject' => '[TLJOC e-Office] New Incoming Document recieved: ' . $docIncoming->subject,
                 'layout' => 'eoffice',
                 'template' => 'das_notify_new_incoming_doc',
                 'format' => 'html',

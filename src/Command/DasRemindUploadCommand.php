@@ -118,7 +118,7 @@ class DasRemindUploadCommand extends Command
         $data['docInts'] = array();
 
         $options = [
-            'subject' => '[e-Office DAS] Remind Pending Documents',
+            'subject' => '[TLJOC e-Office] Remind Pending Documents',
             'layout' => 'eoffice',
             'template' => 'das_remind_pending_doc',
             'format' => 'html',
