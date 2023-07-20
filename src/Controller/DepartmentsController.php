@@ -31,7 +31,7 @@ class DepartmentsController extends AppController
         $departments = $this->Departments->find()->where(['Departments.is_deleted' => false])
                                                     ->contain(['ParentDepartments',
                                                                 'Managers' => ['fields' => ['id', 'firstname', 'lastname']],
-                                                                'Dlms' => ['fields' => ['id', 'firstname', 'lastname']],
+                                                                'Deputies' => ['fields' => ['id', 'firstname', 'lastname']],
                                                                 'Secs' => ['fields' => ['id', 'firstname', 'lastname']],
        ]);
 
@@ -89,7 +89,7 @@ class DepartmentsController extends AppController
     public function edit($id = null)
     {
         $department = $this->Departments->get($id, [
-            'contain' => [],
+            'contain' => ['Deputies'],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $department = $this->Departments->patchEntity($department, $this->request->getData());

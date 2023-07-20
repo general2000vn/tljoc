@@ -63,9 +63,15 @@ $this->end();
                                     
                                     <td><?= h($department->name)  ?></td>
                                     <td><?= h($department->init)  ?></td>
-                                    <td><?= $department->has('manager')? $department->manager->name : ""  ?></td>
-                                    <td><?= $department->has('dlm')? $department->dlm->name : ""  ?></td>
-                                    <td><?= $department->has('sec')? $department->sec->name : ""  ?></td>
+                                    <td><?= $department->has('manager')? '<span class="tag">' . $department->manager->name  . "</span> " : ""?></td>
+                                    <td>
+                                        <?php
+                                            foreach ($department->deputies as $dlm){
+                                                echo '<span class="tag">' . $dlm->name . "</span> ";
+                                            }
+                                        ?>
+                                    </td>
+                                    <td><?= $department->has('sec')? '<span class="tag">' . $department->sec->name . "</span> " : "" ?></td>
                                     
                                     <td class="actions">
                                         

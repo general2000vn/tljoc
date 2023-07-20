@@ -48,7 +48,7 @@ $this->loadHelper('Form', [
                     echo $this->Form->control('parent_id', ['options' => $parentDepartments, 'empty' => true, 'label' => 'Parent Department', 'templateVars' => ['ctnClass' => 'col-md-4']]);
 
                     echo $this->Form->control('user_id',  ['options' => $users, 'empty' => true, 'label' => 'Line Manager', 'templateVars' => [ 'extra_class' => 'select2-show-search form-select', 'ctnClass' => 'col-md-4']]);
-                    echo $this->Form->control('dlm_id',  ['options' => $users, 'empty' => true, 'label' => 'Deputy Line Manager', 'templateVars' => ['extra_class' => 'select2-show-search form-select', 'ctnClass' => 'col-md-4']]);
+                    echo $this->Form->control('deputies._ids',  ['options' => $users, 'multiple' => true, 'empty' => true, 'label' => 'Deputy Line Manager', 'templateVars' => ['extra_class' => 'select2-show-search form-select', 'ctnClass' => 'col-md-4']]);
                     echo $this->Form->control('sec_id',  ['options' => $users, 'empty' => true, 'label' => 'Secretary', 'templateVars' => ['extra_class' => 'select2-show-search form-select', 'ctnClass' => 'col-md-4']]);
                     ?>
                     <div class="form-footer mt-2 text-center">

@@ -154,13 +154,19 @@ class UsersTable extends Table
             'through' => 'RolesUsers',
         ]);
 
-        
-
         $this->belongsToMany('HrPtTasks', [
             'foreignKey' => 'user_id',
             'targetForeignKey' => 'hr_pt_task_id',
             'joinTable' => 'hr_pt_tasks_users',
             'through' => 'HrPtTasksUsers',
+        ]);
+
+        $this->belongsToMany('DeputyDepts', [
+            'className' => 'Departments',
+            'foreignKey' => 'user_id',
+            'targetForeignKey' => 'department_id',
+            'joinTable' => 'dlms',
+            'through' => 'Dlms',
         ]);
         
     }

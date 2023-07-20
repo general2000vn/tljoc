@@ -12,7 +12,7 @@ use Cake\Validation\Validator;
  * Departments Model
  *
  * @property \App\Model\Table\UsersTable&\Cake\ORM\Association\BelongsTo $Managers
- * @property \App\Model\Table\UsersTable&\Cake\ORM\Association\BelongsTo $Dlms
+ * @property \App\Model\Table\UsersTable&\Cake\ORM\Association\BelongsToMany $Deputies
  * @property \App\Model\Table\UsersTable&\Cake\ORM\Association\BelongsTo $Secs
  * @property \App\Model\Table\DepartmentsTable&\Cake\ORM\Association\BelongsTo $ParentDepartments
  * @property \App\Model\Table\DepartmentsTable&\Cake\ORM\Association\HasMany $ChildDepartments
@@ -65,10 +65,8 @@ class DepartmentsTable extends Table
             'foreignKey' => 'user_id',
         ]);
 
-        $this->belongsTo('Dlms',[
-            'className' => 'Users',
-            'foreignKey' => 'dlm_id',
-        ]);
+        
+
         $this->belongsTo('Secs',[
             'className' => 'Users',
             'foreignKey' => 'sec_id',
@@ -92,6 +90,18 @@ class DepartmentsTable extends Table
             'through' => 'DepartmentsUsers',
         ]);
 
+        $this->belongsToMany('Deputies', [
+            'className' => 'Users',
+            'foreignKey' => 'department_id',
+            'targetForeignKey' => 'user_id',
+            'joinTable' => 'dlms',
+            'through' => 'Dlms',
+        ]);
+
+        // $this->belongsTo('Dlms',[
+        //     'className' => 'Users',
+        //     'foreignKey' => 'dlm_id',
+        // ]);
 
 
 
@@ -144,9 +154,9 @@ class DepartmentsTable extends Table
         return $dept->manager;
     }
 
-    public function getDeputyManager($deptID){
-        $dept = $this->get($deptID, ['contain' => ['Dlms']]);
-        return $dept->dlm;
+    public function getDeputyManagers($deptID){
+        $dept = $this->get($deptID, ['contain' => ['Deputies']]);
+        return $dept->deputies;
     }
 
     public function getSecretary($deptID){

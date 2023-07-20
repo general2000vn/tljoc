@@ -550,14 +550,14 @@ class DocIncomingsController extends AppController
 
         foreach ($docIncoming->departments as $department) {
             $LM = $this->DocIncomings->Departments->getLineManager($department->id);
-            $DM = $this->DocIncomings->Departments->getDeputyManager($department->id);
+            $DMs = $this->DocIncomings->Departments->getDeputyManagers($department->id);
             
             if (!is_null($LM)){
                 $people[] = $LM;
                 $emails[] = $LM->email;
             }
 
-            if (!is_null($DM)){
+            foreach ($DMs as $DM) {
                 $people[] = $DM;
                 $emails[] = $DM->email;
             }
@@ -568,9 +568,7 @@ class DocIncomingsController extends AppController
                     $people[] = $sec;
                     $emails[] = $sec->email;
                 }
-
             }
-            
         }
 
         foreach ($docIncoming->users as $user) {

@@ -1,7 +1,8 @@
 <?php
 
 echo '<p>Dear All,' ;
-//foreach ($people as $person) {echo $person['title'] . ' ' . $person['name'] . ', ' ;}
+// clear name list
+//echo '<p>Dear '; foreach ($people as $person) {echo $person['title'] . ' ' . $person['name'] . ', ' ;}
 echo '</p>';
 
 echo "<p>Please be informed that your department has new Incoming Document. Please kindly click on the subject of the document below for more detail:</p>";

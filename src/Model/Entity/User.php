@@ -102,25 +102,10 @@ class User extends Entity
         'id_number' => true,
         'id_date' => true,
         'id_issuer' => true,
-        'vaccine1' => true,
-        'vaccine1_id' => true,
-        'vaccine1_date' => true,
-        'vaccine1_place' => true,
-        'vaccine2' => true,
-        'vaccine2_id' => true,
-        'vaccine2_date' => true,
-        'vaccine2_place' => true,
-        'vaccine3' => true,
-        'vaccine3_id' => true,
-        'vaccine3_date' => true,
-        'vaccine3_place' => true,
-        'vaccine4' => true,
-        'vaccine4_id' => true,
-        'vaccine4_date' => true,
-        'vaccine4_place' => true,
 
         'covid_tests' => true,
-        
+
+        'deputy_depts' => true,
     ];
 
     /**
