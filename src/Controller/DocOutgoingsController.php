@@ -35,30 +35,30 @@ class DocOutgoingsController extends AppController
      * @return \Cake\Http\Response|null|void Renders view
      */
     public function index()
-    {        
+    {
         $curUser = $this->Authentication->getIdentity();
 
         if (count(array_intersect($curUser->roleIDs, [RolesTable::R_GM, RolesTable::R_DGM, RolesTable::R_GM_SEC,])) == 0) {
             $this->Flash->error('You have no privilege to view All Documents!');
             $this->redirect(['action' => 'mydoc']);
         }
-        
+
         $params = $this->request->getQueryParams();
         $criteria = $this->getSearchCriteria($params); //default values or based on posted.
         //$columns = $this->getColumns($params);
-        
+
         $this->set('criteria', $criteria);
-        
+
         $conditions = [
             ['OR' => [
                 ['reg_date >=' => $criteria['date_from'], 'reg_date <=' => $criteria['date_to']],
-                 ['issued_date >=' => $criteria['date_from'], 'issued_date <=' => $criteria['date_to']]
+                ['issued_date >=' => $criteria['date_from'], 'issued_date <=' => $criteria['date_to']]
             ]],
             ['OR' => [
                 'subject LIKE' => '%' . $criteria['search_text'] . '%',
                 'reg_text LIKE' => '%' . $criteria['search_text'] . '%',
                 'contract_no LIKE' => '%' . $criteria['search_text'] . '%',
-                'doc_file LIKE' => '%' . $criteria['search_text'] . '%', 
+                'doc_file LIKE' => '%' . $criteria['search_text'] . '%',
                 'remark LIKE' => '%' . $criteria['search_text']  . '%'
             ]]
         ];
@@ -78,7 +78,7 @@ class DocOutgoingsController extends AppController
                 return $q->where(['Departments.id' => $dept_id]);
             });
         }
-        
+
 
         $deptList = [0 => 'All Departments'];
         $depts = $this->DocOutgoings->Departments->find('list')->toArray();
@@ -88,7 +88,8 @@ class DocOutgoingsController extends AppController
         $this->set(compact('docOutgoings'));
     }
 
-    private function getSearchCriteria($posted){
+    private function getSearchCriteria($posted)
+    {
         $today = FrozenDate::today();
         $criteria['date_from'] = $today->subDay(30)->format('Y-m-d');
         $criteria['date_to'] = $today->format('Y-m-d');
@@ -96,7 +97,7 @@ class DocOutgoingsController extends AppController
 
         $curUser = $this->Authentication->getIdentity();
         $criteria['dept_id'] = $curUser->departments[0]->id;
-      
+
         if (isset($posted['date_from']) && ($posted['date_from'] != '')) {
             //$docOutgoings->where(['OR' => ['reg_date >=' => $posted['date_from'], 'issued_date >=' => $posted['date_from']]]);
             $criteria['date_from'] = $posted['date_from'];
@@ -116,13 +117,14 @@ class DocOutgoingsController extends AppController
             //$docOutgoings->where(['OR' => ['reg_date >=' => $posted['date_from'], 'issued_date >=' => $posted['date_from']]]);
             $criteria['dept_id'] = $posted['dept_id'];
         }
-        
+
         return $criteria;
     }
 
-    private function getColumns($posted){
-        
-        if (!isset($posted['columns'])){
+    private function getColumns($posted)
+    {
+
+        if (!isset($posted['columns'])) {
             $columns['reg_text'] = 1;
             $columns['reg_date'] = 0;
             $columns['issued_date'] = 1;
@@ -134,7 +136,7 @@ class DocOutgoingsController extends AppController
             $columns['subject'] = 1;
         } else {
             $columns = $posted['columns'];
-        }       
+        }
 
         return $columns;
     }
@@ -146,7 +148,7 @@ class DocOutgoingsController extends AppController
         $params = $this->request->getQueryParams();
         $criteria = $this->getSearchCriteria($params); //default values or based on posted.
         //$columns = $this->getColumns($params);
-      
+
 
         $this->set('criteria', $criteria);
 
@@ -167,7 +169,7 @@ class DocOutgoingsController extends AppController
         );
 
         $dept_id = $criteria['dept_id'];
-        
+
         if ($dept_id != 0) {
             $docOutgoings->matching('Departments', function ($q) use ($dept_id) {
                 return $q->where(['Departments.id' => $dept_id]);
@@ -175,7 +177,7 @@ class DocOutgoingsController extends AppController
         }
 
         $curUserID = $curUser->id;
-        $deptList = $this->DocOutgoings->Departments->find('list')->matching('Users', function ($q) use ($curUserID){
+        $deptList = $this->DocOutgoings->Departments->find('list')->matching('Users', function ($q) use ($curUserID) {
             return $q->where(['Users.id' => $curUserID]);
         })->toArray();
 
@@ -191,7 +193,7 @@ class DocOutgoingsController extends AppController
 
         $params = $this->request->getQueryParams();
         $criteria = $this->getSearchCriteria($params); //default values or based on posted.
-        
+
         //$columns = $this->getColumns($params);
         //$this->set('columns', $columns);
 
@@ -218,7 +220,7 @@ class DocOutgoingsController extends AppController
         });
 
         $dept_id = $criteria['dept_id'];
-        
+
         if ($dept_id != 0) {
             $docOutgoings->matching('Departments', function ($q) use ($dept_id) {
                 return $q->where(['Departments.id' => $dept_id]);
@@ -227,7 +229,7 @@ class DocOutgoingsController extends AppController
 
 
         $curUserID = $curUser->id;
-        $deptList = $this->DocOutgoings->Departments->find('list')->matching('Users', function ($q) use ($curUserID){
+        $deptList = $this->DocOutgoings->Departments->find('list')->matching('Users', function ($q) use ($curUserID) {
             return $q->where(['Users.id' => $curUserID]);
         })->toArray();
 
@@ -253,7 +255,7 @@ class DocOutgoingsController extends AppController
         $canView = $this->canView($curUser, $docOutgoing);
         $this->set("canView", $canView);
 
-        if (!$this->canView($curUser, $docOutgoing)){
+        if (!$this->canView($curUser, $docOutgoing)) {
             $this->Flash->error('You have no privilege to view the Document!');
             $this->redirect($this->referer());
         }
@@ -281,17 +283,17 @@ class DocOutgoingsController extends AppController
             $docOutgoing->modifier_id = $curUser->id;
 
             $bNotify = false;
-            if (($docOutgoing->doc_status_id == DocStatusesTable::S_DISTRIBUTED) && ($docOutgoing->has('doc_file'))){
+            if (($docOutgoing->doc_status_id == DocStatusesTable::S_DISTRIBUTED) && ($docOutgoing->has('doc_file'))) {
                 $bNotify = true;
             }
 
             if ($this->DocOutgoings->saveNewDoc($docOutgoing)) {
                 $this->Flash->success(__('The Outgoing Document has been saved.'));
 
-                if ($bNotify){
+                if ($bNotify) {
                     $docOutgoing = $this->DocOutgoings->get($docOutgoing->id, [
                         //'contain' => []
-                        'contain' => ['Partners', 'DocTypes', 'DocSecLevels', 'Departments', 'Inputters'],
+                        'contain' => ['Partners', 'DocTypes', 'DocSecLevels', 'Departments', 'Inputters', 'Originators'],
                     ]);
                     $this->notifyRecievers($docOutgoing);
                 }
@@ -334,15 +336,13 @@ class DocOutgoingsController extends AppController
 
             if ($this->DocOutgoings->exists(['reg_num' => $docOutgoing->reg_num])) {
                 $this->Flash->error(__('The chosen Document Number already exist! Please choose another Number!'));
-            }
-            else if ($this->DocOutgoings->saveReserveDoc($docOutgoing)) {
+            } else if ($this->DocOutgoings->saveReserveDoc($docOutgoing)) {
                 $this->Flash->success(__('The Outgoing Document has been saved.'));
 
                 return $this->redirect(['action' => 'edit', $docOutgoing->id]);
             } else {
                 $this->Flash->error(__('The Outgoing Document could not be saved. Please, try again.'));
             }
-            
         }
 
         $docTypes = $this->DocOutgoings->DocTypes->find('list', ['limit' => 200]);
@@ -376,7 +376,7 @@ class DocOutgoingsController extends AppController
             'contain' => ['Departments', 'Originators', 'DocIncomings', 'Partners', 'Inputters'],
         ]);
 
-        if (!$this->canEdit($curUser, $docOutgoing)){
+        if (!$this->canEdit($curUser, $docOutgoing)) {
             $this->Flash->error('You have no privilege to edit the Document!');
             $this->redirect($this->referer());
         }
@@ -385,14 +385,14 @@ class DocOutgoingsController extends AppController
             $docOutgoing = $this->DocOutgoings->patchEntity($docOutgoing, $this->request->getData());
 
             $bNotify = false;
-            if (($docOutgoing->isDirty('doc_status_id') || $docOutgoing->isDirty('doc_file')) && ($docOutgoing->doc_status_id == DocStatusesTable::S_DISTRIBUTED) && ($docOutgoing->has('doc_file'))){
+            if (($docOutgoing->isDirty('doc_status_id') || $docOutgoing->isDirty('doc_file')) && ($docOutgoing->doc_status_id == DocStatusesTable::S_DISTRIBUTED) && ($docOutgoing->has('doc_file'))) {
                 $bNotify = true;
             }
 
             if ($this->DocOutgoings->saveEditedDoc($docOutgoing)) {
                 $this->Flash->success(__('The Outgoing Document has been saved.'));
 
-                if ($bNotify){
+                if ($bNotify) {
                     $docOutgoing = $this->DocOutgoings->get($id, [
                         'contain' => ['Departments', 'Originators', 'DocIncomings', 'Partners', 'Inputters', 'DocTypes'],
                     ]);
@@ -495,7 +495,7 @@ class DocOutgoingsController extends AppController
     }
 
     public function canEdit($user, $docOutgoing)
-    {     
+    {
         //GM, DGM, GM Sec can edit any doc
         if (count(array_intersect($user->roleIDs, [RolesTable::R_GM, RolesTable::R_DGM, RolesTable::R_GM_SEC])) > 0) {
             return true;
@@ -507,27 +507,26 @@ class DocOutgoingsController extends AppController
             return true;
         }
 
-        if ( ( $this->DocOutgoings->Inputters->inDepartments($user->id, [$docOutgoing->department_id])) ){
+        if (($this->DocOutgoings->Inputters->inDepartments($user->id, [$docOutgoing->department_id]))) {
             //Normal Doc, recipient dept staff can read
             if (($docOutgoing->doc_sec_level_id == 1)) {
                 return true;
             } else if (($docOutgoing->doc_sec_level_id == 2) && count(array_intersect([RolesTable::R_LM, RolesTable::R_DLM], $user->roleIDs)) > 0) { //user is LM or DLM
                 return true;
             }
-            
         }
-        
+
         return false;
     }
 
     public function canView($user, $docOutgoing)
     {
-        
+
         //GM, DGM, GM Sec can view any doc
         if (count(array_intersect($user->roleIDs, [RolesTable::R_GM, RolesTable::R_DGM, RolesTable::R_GM_SEC])) > 0) {
             return true;
         }
-        
+
         //anyone input a level 1 doc can access that doc.
 
         if (($user->id == $docOutgoing->inputer_id || $user->id == $docOutgoing->modifier_id)) {
@@ -535,56 +534,59 @@ class DocOutgoingsController extends AppController
         }
 
         //Normal Doc, recipient dept staff can read
-        if ( ( $this->DocOutgoings->Inputters->inDepartments($user->id, [$docOutgoing->department_id])) ){
+        if (($this->DocOutgoings->Inputters->inDepartments($user->id, [$docOutgoing->department_id]))) {
             //Normal Doc, recipient dept staff can read
             if (($docOutgoing->doc_sec_level_id == 1)) {
                 return true;
             } else if (($docOutgoing->doc_sec_level_id == 2) && count(array_intersect([RolesTable::R_LM, RolesTable::R_DLM], $user->roleIDs)) > 0) { //user is LM or DLM
                 return true;
             }
-            
         }
 
         return false;
     }
 
-    private function notifyRecievers($docOutgoing){
+    private function notifyRecievers($docOutgoing)
+    {
         $emails = array();
         $data = array();
-        
+        $recipients = array();
 
         $GM = $this->DocOutgoings->Inputters->getOneByRole(RolesTable::R_GM);
         $DGM = $this->DocOutgoings->Inputters->getOneByRole(RolesTable::R_DGM);
 
-        
-        
+
+
         $emails[] = $GM->email;
         $emails[] = $DGM->email;
-        
 
         
-            $options = [
-                'subject' => '[TLJOC e-Office] New Incoming Document recieved: ' . $docOutgoing->subject,
-                'layout' => 'eoffice',
-                'template' => 'das_notify_new_outgoing_doc',
-                'format' => 'html',
-                'config' => 'eoffice-cli',
-                'from_name' => 'e.Office',
-                'from_email' => Configure::read('from_email')
-            ];
 
-            
-            $curUser = $this->Authentication->getIdentity();
-            $cc = $curUser->email;
+        foreach ($docOutgoing->partners as $partner) {
+            $recipients[] = $partner->name;
+        }
+
+        $options = [
+            'subject' => '[TLJOC e-Office] New Incoming Document recieved: ' . $docOutgoing->subject,
+            'layout' => 'eoffice',
+            'template' => 'das_notify_new_outgoing_doc',
+            'format' => 'html',
+            'config' => 'eoffice-cli',
+            'from_name' => 'e.Office',
+            'from_email' => Configure::read('from_email')
+        ];
+
+
+        $curUser = $this->Authentication->getIdentity();
+        $cc = $curUser->email;
         //    $data['people'] = $people;
-            $data['doc_subject'] = $docOutgoing->subject;
-            $data['doc_id'] = $docOutgoing->id;
-            $data['doc_type'] = $docOutgoing->doc_type->name;
-            $data['doc_sender'] = $docOutgoing->originator->name;
-            $data['doc_dept'] = $docOutgoing->department->name;
+        $data['doc_subject'] = $docOutgoing->subject;
+        $data['doc_id'] = $docOutgoing->id;
+        $data['doc_type'] = $docOutgoing->doc_type->name;
+        $data['doc_sender'] = $docOutgoing->originator->name;
+        $data['doc_dept'] = $docOutgoing->department->name;
+        $data['doc_recipient'] = $recipients;
 
-            EmailQueue::enqueue($emails, $cc, $data, $options);
-            
-        
+        EmailQueue::enqueue($emails, $cc, $data, $options);
     }
 }
