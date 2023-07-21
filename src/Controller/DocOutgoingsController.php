@@ -7,6 +7,10 @@ namespace App\Controller;
 use App\Model\Table\DocOutgoingsTable;
 use Cake\I18n\FrozenDate;
 use App\Model\Table\RolesTable;
+use App\Model\Table\DocSecLevelsTable;
+use EmailQueue\EmailQueue;
+use Cake\Core\Configure;
+use App\Model\Table\DocStatusesTable;
 
 /**
  * DocOutgoings Controller
@@ -276,8 +280,21 @@ class DocOutgoingsController extends AppController
             $docOutgoing->inputter_id = $curUser->id;
             $docOutgoing->modifier_id = $curUser->id;
 
+            $bNotify = false;
+            if (($docOutgoing->doc_status_id == DocStatusesTable::S_DISTRIBUTED) && ($docOutgoing->has('doc_file'))){
+                $bNotify = true;
+            }
+
             if ($this->DocOutgoings->saveNewDoc($docOutgoing)) {
                 $this->Flash->success(__('The Outgoing Document has been saved.'));
+
+                if ($bNotify){
+                    $docOutgoing = $this->DocOutgoings->get($docOutgoing->id, [
+                        //'contain' => []
+                        'contain' => ['Partners', 'DocTypes', 'DocSecLevels', 'Departments', 'Inputters'],
+                    ]);
+                    $this->notifyRecievers($docOutgoing);
+                }
 
                 return $this->redirect(['action' => 'edit', $docOutgoing->id]);
             }
@@ -367,8 +384,20 @@ class DocOutgoingsController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $docOutgoing = $this->DocOutgoings->patchEntity($docOutgoing, $this->request->getData());
 
+            $bNotify = false;
+            if (($docOutgoing->isDirty('doc_status_id') || $docOutgoing->isDirty('doc_file')) && ($docOutgoing->doc_status_id == DocStatusesTable::S_DISTRIBUTED) && ($docOutgoing->has('doc_file'))){
+                $bNotify = true;
+            }
+
             if ($this->DocOutgoings->saveEditedDoc($docOutgoing)) {
                 $this->Flash->success(__('The Outgoing Document has been saved.'));
+
+                if ($bNotify){
+                    $docOutgoing = $this->DocOutgoings->get($id, [
+                        'contain' => ['Departments', 'Originators', 'DocIncomings', 'Partners', 'Inputters', 'DocTypes'],
+                    ]);
+                    $this->notifyRecievers($docOutgoing);
+                }
 
                 return $this->redirect(['action' => 'view', $docOutgoing->id]);
                 //return;
@@ -517,5 +546,45 @@ class DocOutgoingsController extends AppController
         }
 
         return false;
+    }
+
+    private function notifyRecievers($docOutgoing){
+        $emails = array();
+        $data = array();
+        
+
+        $GM = $this->DocOutgoings->Inputters->getOneByRole(RolesTable::R_GM);
+        $DGM = $this->DocOutgoings->Inputters->getOneByRole(RolesTable::R_DGM);
+
+        
+        
+        $emails[] = $GM->email;
+        $emails[] = $DGM->email;
+        
+
+        
+            $options = [
+                'subject' => '[TLJOC e-Office] New Incoming Document recieved: ' . $docOutgoing->subject,
+                'layout' => 'eoffice',
+                'template' => 'das_notify_new_outgoing_doc',
+                'format' => 'html',
+                'config' => 'eoffice-cli',
+                'from_name' => 'e.Office',
+                'from_email' => Configure::read('from_email')
+            ];
+
+            
+            $curUser = $this->Authentication->getIdentity();
+            $cc = $curUser->email;
+        //    $data['people'] = $people;
+            $data['doc_subject'] = $docOutgoing->subject;
+            $data['doc_id'] = $docOutgoing->id;
+            $data['doc_type'] = $docOutgoing->doc_type->name;
+            $data['doc_sender'] = $docOutgoing->originator->name;
+            $data['doc_dept'] = $docOutgoing->department->name;
+
+            EmailQueue::enqueue($emails, $cc, $data, $options);
+            
+        
     }
 }

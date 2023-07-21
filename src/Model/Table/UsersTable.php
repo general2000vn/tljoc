@@ -459,7 +459,7 @@ class UsersTable extends Table
 
     public function getOneByRole($r_id, $conditions = null){
         $query = $this->find('all');
-        $query->where(['is_deleted' => 0, 'is_active' => 1]);
+        $query->where(['is_deleted' => false]);
         $query->matching('Roles', function ($q) use ($r_id){
                 return $q->where(['Roles.id' => $r_id]);
             }
