@@ -567,7 +567,7 @@ class DocOutgoingsController extends AppController
         }
 
         $options = [
-            'subject' => '[TLJOC e-Office] New Incoming Document recieved: ' . $docOutgoing->subject,
+            'subject' => '[TLJOC e-Office] New Outgoing Document: ' . $docOutgoing->subject,
             'layout' => 'eoffice',
             'template' => 'das_notify_new_outgoing_doc',
             'format' => 'html',
