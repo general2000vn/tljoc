@@ -544,7 +544,7 @@ class UsersController extends AppController
     }
 
     /**
-     * Delete method
+     * Restore method
      *
      * @param string|null $id User id.
      * @return \Cake\Http\Response|null|void Redirects to index.

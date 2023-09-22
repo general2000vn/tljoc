@@ -8,7 +8,7 @@
 <p>Please be informed that there is new Outgoing Document. Please kindly click on the subject of the document below for more detail:</p>
 
 <table>
-<tr><td>Subject:</td><td><?= $this->Html->link($doc_subject, ['controller' => "DocIncomings", 'action' => 'view', $doc_id, '_full' => true]) ?></td></tr>
+<tr><td>Subject:</td><td><?= $this->Html->link($doc_subject, ['controller' => "DocOutgoings", 'action' => 'view', $doc_id, '_full' => true]) ?></td></tr>
 <tr><td>Type:</td><td><?= $doc_type ?></td></tr>
 <tr><td>Originator:</td><td><?= $doc_sender ?></td></tr>
 <tr><td>Department:</td><td><?= $doc_dept ?></td></tr>
