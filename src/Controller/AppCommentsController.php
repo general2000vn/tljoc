@@ -17,7 +17,7 @@ use Cake\Core\Configure;
  */
 class AppCommentsController extends AppController
 {
-    public const ID_CONF_COMMENT_RECIEVER = 1;
+    public const ID_CONF_COMMENT_RECEIVER = 1;
     public function initialize(): void
     {
         parent::initialize();
@@ -240,10 +240,10 @@ class AppCommentsController extends AppController
 
     private function myEnqueueNotifyNew($reporter, $reporter_email, $comment_id, $brief){
         $confTable = $this->getTableLocator()->get('Configs');
-        $reciever_email = $confTable->get($this::ID_CONF_COMMENT_RECIEVER);
-        //debug($reciever_email->value);
+        $receiver_email = $confTable->get($this::ID_CONF_COMMENT_RECEIVER);
+        //debug($receiver_email->value);
         
-        $to = [$reciever_email->value];
+        $to = [$receiver_email->value];
         $cc = [$reporter_email];
         $data = ['reporter' => $reporter, 'comment_id' => $comment_id, 'brief' => $brief];
         $options = [
