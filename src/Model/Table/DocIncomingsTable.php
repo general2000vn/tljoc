@@ -296,7 +296,7 @@ class DocIncomingsTable extends Table
     {
 
         // $company = $this->DocCompanies->get($docIncoming->doc_company_id);
-        $docIncoming->reg_text = 'TL' . '/' . $docIncoming->reg_date->format('Y-') . sprintf('%03d', $docIncoming->reg_num)  ;
+        $docIncoming->reg_text = 'TL' . '/' . $docIncoming->reg_date->format('y-') . sprintf('%03d', $docIncoming->reg_num)  ;
 
 
         if ($this->save($docIncoming)) {
