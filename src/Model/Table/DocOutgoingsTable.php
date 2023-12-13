@@ -223,7 +223,7 @@ class DocOutgoingsTable extends Table
         $today = FrozenDate::now();
         $docOutgoing->reg_date = $today;
 
-        $docNum = 1 + $this->find('all', [
+        $docNum = DocOutgoingsTable::DOC_NUM_OFFSET + 1 + $this->find('all', [
             'fields' => ['id', 'reg_num',  'reg_date'], 'conditions' => ['reg_date >=' => $today->format('Y') . '-01-01',
                                                                          'reg_date <=' => $today->format('Y') . '-12-31',
                                                                          'is_reserved' => false,
@@ -237,7 +237,7 @@ class DocOutgoingsTable extends Table
             $docNum ++;
         }
 
-        $docOutgoing->reg_num = DocOutgoingsTable::DOC_NUM_OFFSET + $docNum;
+        $docOutgoing->reg_num = $docNum;
         //$docIncoming->reg_text = $today->format('yy-mm-') . str_pad(print($docCount), 4, "0", STR_PAD_LEFT) . '/' . $company->name;
         $docOutgoing->reg_text = 'TL/' . $department->init . '/' . $today->format('y-') . sprintf('%03d', $docOutgoing->reg_num);
 

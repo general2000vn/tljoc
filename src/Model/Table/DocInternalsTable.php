@@ -194,7 +194,7 @@ class DocInternalsTable extends Table
         $today = FrozenDate::now();
         $docInternal->reg_date = $today;
 
-        $docNum = 1 + $this->find('all', [
+        $docNum = DocInternalsTable::DOC_NUM_OFFSET + 1 + $this->find('all', [
             'fields' => ['id', 'reg_num', 'doc_company_id',  'reg_date'],
             'conditions' => ['reg_date >=' => $today->format('Y') . '-01-01',
                             'reg_date <=' => $today->format('Y') . '-12-31',
@@ -210,7 +210,7 @@ class DocInternalsTable extends Table
             $docNum ++;
         }
         
-        $docInternal->reg_num = DocInternalsTable::DOC_NUM_OFFSET + $docNum;
+        $docInternal->reg_num = $docNum;
         $docInternal->reg_text = 'INT/' . $today->format('y-') . sprintf('%03d', $docInternal->reg_num);
 
 

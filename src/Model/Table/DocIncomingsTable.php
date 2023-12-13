@@ -255,7 +255,7 @@ class DocIncomingsTable extends Table
         $today = FrozenDate::now();
         $docIncoming->reg_date = $today;
 
-        $docNum = 1 + $this->find('all', [
+        $docNum = DocIncomingsTable::DOC_NUM_OFFSET + 1 + $this->find('all', [
             'fields' => ['id', 'reg_num', 'receive_date', 'reg_date'],
             'conditions' => ['reg_date >=' => $today->format('Y') . '-01-01',
                             'reg_date <=' => $today->format('Y') . '-12-31',
@@ -268,7 +268,7 @@ class DocIncomingsTable extends Table
             $docNum ++;
         }
 
-        $docIncoming->reg_num = DocIncomingsTable::DOC_NUM_OFFSET + $docNum;
+        $docIncoming->reg_num = $docNum;
         $docIncoming->reg_text = 'TL' . '/' .$today->format('y-') . sprintf('%03d', $docIncoming->reg_num)  ;
 
 
