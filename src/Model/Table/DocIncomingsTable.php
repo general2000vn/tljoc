@@ -45,7 +45,7 @@ class DocIncomingsTable extends Table
 {
     const UPLOAD_DIR = 'webroot' . DS . 'uploads' . DS . 'doc_incoming' . DS;
 
-    const DOC_NUM_OFFSET = 194;
+    const DOC_NUM_OFFSET = 0;
 
     /**
      * Initialize method
