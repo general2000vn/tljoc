@@ -190,6 +190,14 @@ class DocOutgoingsController extends AppController
     {
         $curUser = $this->Authentication->getIdentity();
         $curDeptID = $curUser->department_id;
+        $deptIDs = array();
+        foreach ($curUser->departments as $department){
+            $deptIDs[] = $department->id;
+        }
+        $deptList = array();
+        foreach ($curUser->departments as $department){
+            $deptList[$department->id] = $department->name;
+        }
 
         $params = $this->request->getQueryParams();
         $criteria = $this->getSearchCriteria($params); //default values or based on posted.
@@ -215,10 +223,7 @@ class DocOutgoingsController extends AppController
             ]
         );
 
-        $docOutgoings->matching('Departments', function ($q) use ($curDeptID) {
-            return $q->where(['Departments.id' => $curDeptID]);
-        });
-
+        
         $dept_id = $criteria['dept_id'];
 
         if ($dept_id != 0) {
@@ -228,10 +233,10 @@ class DocOutgoingsController extends AppController
         }
 
 
-        $curUserID = $curUser->id;
-        $deptList = $this->DocOutgoings->Departments->find('list')->matching('Users', function ($q) use ($curUserID) {
-            return $q->where(['Users.id' => $curUserID]);
-        })->toArray();
+        // $curUserID = $curUser->id;
+        // $deptList = $this->DocOutgoings->Departments->find('list')->matching('Users', function ($q) use ($curUserID) {
+        //     return $q->where(['Users.id' => $curUserID]);
+        // })->toArray();
 
         $this->set('deptList', $deptList);
 
