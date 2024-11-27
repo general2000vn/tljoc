@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 use Migrations\AbstractMigration;
 
-class Initial extends AbstractMigration
+class TljocDasComplete extends AbstractMigration
 {
     public $autoId = false;
 
@@ -16,79 +16,6 @@ class Initial extends AbstractMigration
      */
     public function up()
     {
-        $this->table('A')
-            ->addColumn('id', 'integer', [
-                'default' => null,
-                'limit' => null,
-                'null' => false,
-            ])
-            ->addColumn('MST', 'integer', [
-                'default' => null,
-                'limit' => null,
-                'null' => false,
-            ])
-            ->addColumn('MSP', 'integer', [
-                'default' => null,
-                'limit' => null,
-                'null' => false,
-            ])
-            ->create();
-
-        $this->table('B')
-            ->addColumn('id', 'integer', [
-                'autoIncrement' => true,
-                'default' => null,
-                'limit' => null,
-                'null' => false,
-            ])
-            ->addPrimaryKey(['id'])
-            ->addColumn('MST', 'integer', [
-                'default' => null,
-                'limit' => null,
-                'null' => false,
-            ])
-            ->addColumn('MSP', 'integer', [
-                'default' => null,
-                'limit' => null,
-                'null' => false,
-            ])
-            ->addColumn('imei', 'string', [
-                'default' => null,
-                'limit' => 2,
-                'null' => false,
-            ])
-            ->addColumn('SL', 'integer', [
-                'default' => null,
-                'limit' => null,
-                'null' => false,
-            ])
-            ->create();
-
-        $this->table('C')
-            ->addColumn('id', 'integer', [
-                'autoIncrement' => true,
-                'default' => null,
-                'limit' => null,
-                'null' => false,
-            ])
-            ->addPrimaryKey(['id'])
-            ->addColumn('MST', 'integer', [
-                'default' => null,
-                'limit' => null,
-                'null' => false,
-            ])
-            ->addColumn('MSP', 'integer', [
-                'default' => null,
-                'limit' => null,
-                'null' => false,
-            ])
-            ->addColumn('SL', 'integer', [
-                'default' => null,
-                'limit' => null,
-                'null' => false,
-            ])
-            ->create();
-
         $this->table('abc_answers')
             ->addColumn('id', 'integer', [
                 'autoIncrement' => true,
@@ -672,6 +599,12 @@ class Initial extends AbstractMigration
                 'null' => true,
                 'signed' => false,
             ])
+            ->addColumn('dlm_id', 'smallinteger', [
+                'default' => null,
+                'limit' => null,
+                'null' => true,
+                'signed' => false,
+            ])
             ->addColumn('parent_id', 'tinyinteger', [
                 'default' => null,
                 'limit' => null,
@@ -682,6 +615,12 @@ class Initial extends AbstractMigration
                 'default' => false,
                 'limit' => null,
                 'null' => false,
+            ])
+            ->addColumn('sec_id', 'integer', [
+                'default' => null,
+                'limit' => null,
+                'null' => true,
+                'signed' => false,
             ])
             ->create();
 
@@ -701,6 +640,52 @@ class Initial extends AbstractMigration
                 'signed' => false,
             ])
             ->addColumn('doc_incoming_id', 'integer', [
+                'default' => null,
+                'limit' => null,
+                'null' => false,
+                'signed' => false,
+            ])
+            ->create();
+
+        $this->table('departments_users')
+            ->addColumn('id', 'integer', [
+                'autoIncrement' => true,
+                'default' => null,
+                'limit' => null,
+                'null' => false,
+                'signed' => false,
+            ])
+            ->addPrimaryKey(['id'])
+            ->addColumn('user_id', 'integer', [
+                'default' => null,
+                'limit' => null,
+                'null' => false,
+                'signed' => false,
+            ])
+            ->addColumn('department_id', 'integer', [
+                'default' => null,
+                'limit' => null,
+                'null' => false,
+                'signed' => false,
+            ])
+            ->create();
+
+        $this->table('dlms')
+            ->addColumn('id', 'integer', [
+                'autoIncrement' => true,
+                'default' => null,
+                'limit' => null,
+                'null' => false,
+                'signed' => false,
+            ])
+            ->addPrimaryKey(['id'])
+            ->addColumn('department_id', 'integer', [
+                'default' => null,
+                'limit' => null,
+                'null' => false,
+                'signed' => false,
+            ])
+            ->addColumn('user_id', 'integer', [
                 'default' => null,
                 'limit' => null,
                 'null' => false,
@@ -895,6 +880,44 @@ class Initial extends AbstractMigration
                 'default' => false,
                 'limit' => null,
                 'null' => false,
+            ])
+            ->addIndex(
+                [
+                    'doc_type_id',
+                ]
+            )
+            ->addIndex(
+                [
+                    'doc_sec_level_id',
+                ]
+            )
+            ->addIndex(
+                [
+                    'partner_id',
+                ]
+            )
+            ->create();
+
+        $this->table('doc_incomings_users')
+            ->addColumn('id', 'integer', [
+                'autoIncrement' => true,
+                'default' => null,
+                'limit' => null,
+                'null' => false,
+                'signed' => false,
+            ])
+            ->addPrimaryKey(['id'])
+            ->addColumn('user_id', 'integer', [
+                'default' => null,
+                'limit' => null,
+                'null' => false,
+                'signed' => false,
+            ])
+            ->addColumn('doc_incoming_id', 'integer', [
+                'default' => null,
+                'limit' => null,
+                'null' => false,
+                'signed' => false,
             ])
             ->create();
 
@@ -1159,6 +1182,21 @@ class Initial extends AbstractMigration
                 'limit' => null,
                 'null' => false,
             ])
+            ->addIndex(
+                [
+                    'originator_id',
+                ]
+            )
+            ->addIndex(
+                [
+                    'department_id',
+                ]
+            )
+            ->addIndex(
+                [
+                    'doc_sec_level_id',
+                ]
+            )
             ->create();
 
         $this->table('doc_outgoings_partners')
@@ -2615,9 +2653,6 @@ class Initial extends AbstractMigration
      */
     public function down()
     {
-        $this->table('A')->drop()->save();
-        $this->table('B')->drop()->save();
-        $this->table('C')->drop()->save();
         $this->table('abc_answers')->drop()->save();
         $this->table('abc_campaigns')->drop()->save();
         $this->table('abc_categories')->drop()->save();
@@ -2639,11 +2674,14 @@ class Initial extends AbstractMigration
         $this->table('deli_addresses')->drop()->save();
         $this->table('departments')->drop()->save();
         $this->table('departments_doc_incomings')->drop()->save();
+        $this->table('departments_users')->drop()->save();
+        $this->table('dlms')->drop()->save();
         $this->table('doc_categories')->drop()->save();
         $this->table('doc_companies')->drop()->save();
         $this->table('doc_in_depts')->drop()->save();
         $this->table('doc_in_depts_doc_incomings')->drop()->save();
         $this->table('doc_incomings')->drop()->save();
+        $this->table('doc_incomings_users')->drop()->save();
         $this->table('doc_internal_types')->drop()->save();
         $this->table('doc_internals')->drop()->save();
         $this->table('doc_methods')->drop()->save();
